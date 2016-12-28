@@ -13,24 +13,11 @@ switch($_GET['action']) {
         break;
     
     //merchant links
-    case 'clickbank':
-        
+    case 'clickbank':       
         $link = 'https://accounts.clickbank.com/login.htm';
         break;
     
-    case 'clicksure':
-        $link = 'https://www.clicksure.com/affiliate'; 
-        break;
-    
-    case 'skrill':
-        $link = 'https://www.skrill.com/en-us/'; 
-        break;
-   
-    case 'aweber':
-        $link = 'https://www.aweber.com/users/';
-        break;
-    
-    
+ 
     //adhitz
     case 'site-ads':
         $link = 'http://www.adhitz.com/en/Advertisers-My_Site_Specific_Ads';
@@ -151,101 +138,86 @@ switch($_GET['action']) {
     
     
     case 'newsletters':
-        $link = 'http://localhost/newsletters';
+        $link = 'http://localhost/SaintlyNewsletters';
         break;
     case 'newsl-all':
-        $link = 'http://localhost/newsletters/AllSubscribers';
+        $link = 'http://localhost/SaintlyNewsletters/AllSubscribers';
         break;
     case 'newsl-mms':
-        $link = 'http://localhost/newsletters/MakeMoneySurveys';
+        $link = 'http://localhost/SaintlyNewsletters/MakeMoneySurveys';
         break;
     case 'newsl-ppb':
-        $link = 'http://localhost/newsletters/PaypalBooster';
+        $link = 'http://localhost/SaintlyNewsletters/PaypalBooster';
         break;
     case 'newsl-nus':
-        $link = 'http://localhost/newsletters/UltimateStrategy';
+        $link = 'http://localhost/SaintlyNewsletters/UltimateStrategy';
         break;
     case 'newsl-ptcprograms':
-        $link = 'http://localhost/newsletters/PTCPrograms';
+        $link = 'http://localhost/SaintlyNewsletters/PTCPrograms';
         break;
     case 'newsl-translate':
-        $link = 'http://localhost/newsletters/TranslatorJobs';
+        $link = 'http://localhost/SaintlyNewsletters/TranslatorJobs';
         break;
     case 'newsl-online':
-        $link = 'http://localhost/newsletters/OnlineJobs';
+        $link = 'http://localhost/SaintlyNewsletters/OnlineJobs';
         break;
 		
 	
     case 'copy':
         $splitScreen = true;
-        $leftScreen = 'http://localhost/newsletters';
+        $leftScreen = 'http://localhost/SaintlyNewsletters';
         $rightScreen = 'https://www.trafficwave.net/members_only/members_only.cgi/toolbar.html';
         break;
 
     case 'copy-all':
         $splitScreen = true;
-        $leftScreen = 'http://localhost/newsletters/AllSubscribers';
+        $leftScreen = 'http://localhost/SaintlyNewsletters/AllSubscribers';
         $rightScreen = 'https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?header=letters&series=350956';
         break;
 
     case 'copy-ppbooster':
         $splitScreen = true;
-        $leftScreen = 'http://localhost/newsletters/PaypalBooster';
+        $leftScreen = 'http://localhost/SaintlyNewsletters/PaypalBooster';
         $rightScreen = 'https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?header=letters&series=290716';
         break; 
     case 'copy-nusnewsl':
         $splitScreen = true;
-        $leftScreen = 'http://localhost/newsletters/UltimateStrategy';
+        $leftScreen = 'http://localhost/SaintlyNewsletters/UltimateStrategy';
         $rightScreen = 'https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?header=letters&series=247336';
         break;
     case 'copy-ptcprograms':
         $splitScreen = true;
-        $leftScreen = 'http://localhost/newsletters/PTCPrograms';
+        $leftScreen = 'http://localhost/SaintlyNewsletters/PTCPrograms';
         $rightScreen = 'https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?header=letters&series=357941';
         break;
     case 'copy-mms':
         $splitScreen = true;
-        $leftScreen = 'http://localhost/newsletters/MakeMoneySurveys';
+        $leftScreen = 'http://localhost/SaintlyNewsletters/MakeMoneySurveys';
         $rightScreen = 'https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?header=letters&series=263238';
         break;
     case 'copy-translate':
         $splitScreen = true;
-        $leftScreen = 'http://localhost/newsletters/TranslatorJobs';
+        $leftScreen = 'http://localhost/SaintlyNewsletters/TranslatorJobs';
         $rightScreen = 'https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?header=letters&series=342122';
         break;
     case 'copy-onlinejobs':
         $splitScreen = true;
-        $leftScreen = 'http://localhost/newsletters/OnlineJobs';
+        $leftScreen = 'http://localhost/SaintlyNewsletters/OnlineJobs';
         $rightScreen = 'https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?header=letters&series=375894';
         break;
     
-    
-    case 'splash-surveys-neobux-live':
-        $link = 'http://bestpayingsites.com/?action=surveys-neobux';
-        break;
-    case 'splash-surveys-neobux-local':
-        $link = 'http://localhost/bestpayingsites/?action=surveys-neobux';
-        break; 
-
-    case 'splash-surveys-ptc-live':
-        $link = 'http://bestpayingsites.com/?action=surveys-ptc';
-        break;
-    case 'splash-surveys-ptc-local':
-        $link = 'http://localhost/bestpayingsites/?action=surveys-ptc';
-        break;
-
     case 'splash-freereport-live':
         $link = 'http://neobuxultimatestrategy.com/?action=freereport';
         break;
     case 'splash-freereport-local':
-        $link = 'http://localhost/ultimatestrategy/?action=freereport';
+        $link = 'http://localhost/NeobuxUltimateStrategy/?action=freereport';
         break;
 
     case 'splash-ecourse-live': 
         $link = 'http://neobuxultimatestrategy.com/?action=ecourse';
         break;
     case 'splash-ecourse-local': 
-        $link = 'http://localhost/ultimatestrategy/?action=ecourse';
+        $link = 'http://localhost/NeobuxUltimateStrategy/?action=ecourse';
         break;
 
     case 'splash-ppb-live': 
@@ -450,32 +422,23 @@ switch($_GET['action']) {
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Splash Pages <b class="caret"></b></a>
                         
                         <ul class="dropdown-menu">
-                          
-                            <li class="dropdown-submenu">
-                                <a tabindex="-1" href="?action=splash-ptc-cc-live">Paypal Booster</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="?action=splash-ppb-live">live</a></li>
-                                    <li><a href="?action=splash-ppb-local">localhost</a></li>
-                                </ul>
-                            </li>
-                            
-                             <li class="divider"></li>
-                            
-                            <li class="dropdown-submenu">
-                                <a tabindex="-1" href="?action=splash-freereport-live">Free Neobux Report</a>
-                                <ul class="dropdown-menu">
-                                     <li><a href="?action=splash-freereport-live">live</a></li>
-                                    <li><a href="?action=splash-freereport-local">localhost</a></li>
-                                </ul>
-                            </li>
-                             
-                            <li class="dropdown-submenu">
-                                <a tabindex="-1" href="?action=splash-ecourse-live">Free PTC Report</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="?action=splash-ecourse-live">live</a></li>
-                                    <li><a href="?action=splash-ecourse-local">localhost</a></li>
-                                </ul>
-                            </li>
+                           
+							<li><a href="?action=splash-ppb-live">Paypal Booster</a></li>
+							<li><a href="?action=splash-ppb-live">live</a></li>
+							<li><a href="?action=splash-ppb-local">localhost</a></li>
+						 
+							<li class="divider"></li>
+						 
+							<li><a href="?action=splash-freereport-live">Free Neobux Report</a></li>
+							<li><a href="?action=splash-freereport-live">live</a></li>
+							<li><a href="?action=splash-freereport-local">localhost</a></li>
+							
+							<li class="divider"></li>
+							
+							<li><a href="?action=splash-ecourse-live">Free PTC Report</a></li>
+							<li><a href="?action=splash-ecourse-live">live</a></li>
+							<li><a href="?action=splash-ecourse-local">localhost</a></li>
+							
                             
                         </ul>
                     </li>
@@ -491,6 +454,11 @@ switch($_GET['action']) {
 
                             <li><a href="http://neobuxultimatestrategy.com/?action=download&id=vipuser" target="_blank">NUS Download Page</a></li>
                             <li><a href="http://bestpayingsites.com/?action=download&id=vipuser" target="_blank">EPS Download Page</a></li>
+							
+                            <li class="divider"></li>
+							
+							<li><a href="https://paypal.com" target="_BLANK">Paypal</a></li>
+                            <li><a href="https://accounts.clickbank.com/login.htm">Clickbank</a></li>
                         </ul>
                     </li>
                     
@@ -512,32 +480,16 @@ switch($_GET['action']) {
                         </ul>
                     </li>
                     
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Merchants<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="https://paypal.com" target="_BLANK">Paypal</a></li>
-                            <li><a href="https://accounts.clickbank.com/login.htm">Clickbank</a></li>
-                            
-                            <li><a href="?action=aweber">Aweber</a></li>
-                            <li><a href="?action=skrill">Skrill</a></li>
-                            
-                            <li class="divider"></li>
-                             
-                            <li><a href="?action=clicksure">Clicksure</a></li>
-                            
-                            
-                        </ul>
-                    </li>
                     
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Trello<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="https://trello.com/b/lx8xpiWr/2016-goals"><?=date('Y', time())?> Goals</a></li>
-                            <li><a href="https://trello.com/b/eCbwlbjV/email-answers-faq">Email Answers & FAQ</a></li>
-                            <li><a href="https://trello.com/b/tT7IOsDu/affiliate-links">Affiliate Links</a></li>
-                            <li><a href="https://trello.com/b/L7rsEyHd/events">Events</a></li>
-                            <li><a href="https://trello.com/b/9YHVktaG/stories">Stories</a></li>
-                            <li><a href="https://trello.com/b/Y57UfweD/jokes-quotes">Jokes & Quotes</a></li>
+                            <li><a href="https://trello.com/b/lx8xpiWr/2016-goals" target="_BLANK"><?=date('Y', time())?> Goals</a></li>
+                            <li><a href="https://trello.com/b/eCbwlbjV/email-answers-faq" target="_BLANK">Email Answers & FAQ</a></li>
+                            <li><a href="https://trello.com/b/tT7IOsDu/affiliate-links" target="_BLANK">Affiliate Links</a></li>
+                            <li><a href="https://trello.com/b/L7rsEyHd/events" target="_BLANK">Events</a></li>
+                            <li><a href="https://trello.com/b/9YHVktaG/stories" target="_BLANK">Stories</a></li>
+                            <li><a href="https://trello.com/b/Y57UfweD/jokes-quotes" target="_BLANK">Jokes & Quotes</a></li>
                         </ul>
                     </li>
                     

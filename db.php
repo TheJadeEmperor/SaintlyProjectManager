@@ -35,7 +35,7 @@ $dbName = 'links';
 <?
 //domains
 $siteNUS = 'http://neobuxultimatestrategy.com/';
-$localNUS = 'http://localhost/ultimatestrategy/';
+$localNUS = 'http://localhost/NeobuxUltimateStrategy/';
 
 $siteBPS = 'http://bestpayingsites.com/';
 $localBPS = 'http://localhost/bestpayingsites/';
