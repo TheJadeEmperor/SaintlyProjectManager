@@ -1,28 +1,3 @@
-<?php
-
-function database($host, $user, $pw, $dbName) {
-    global $conn;
-
-    if (is_int(strpos(__FILE__, 'C:\\'))) { //connect to database remotely (local server)
-        $conn = mysql_connect($host, $user, $pw) or die(mysql_error() . ' (' . __LINE__ . ')');
-    } else { //connect to database directly (live server)
-        $conn = mysql_connect('localhost', $user, $pw) or die(mysql_error() . ' (' . __LINE__ . ')');
-    }
-
-    mysql_select_db($dbName) or die(mysql_error());
-
-    return $conn;
-}
-
-//database info goes here
-//////////////////////////////
-$dbHost = 'localhost';
-$dbUser = 'root';
-$dbPW = '';
-$dbName = 'links';
-/////////////////////////////
-//$conn = database($dbHost, $dbUser, $dbPW, $dbName);
-?>
 <style>
     h1, h2 {
         text-align: center; 
@@ -254,7 +229,7 @@ $spm = array(
     </tr>
     
     <tr valign="top">
-	<td>
+		<td>
             <div class="contentBox">
                 <h2>PP Booster - live</h2>
                 <?
@@ -280,30 +255,11 @@ $spm = array(
 
               
             </div>
-	</td>
+		</td>
     </tr>
-    
-   
-</table>
-    
-    <table>
-        <tr>
-            <td>
-            <div class="contentBox">
-                <h2>Get Cash For Surveys - Landing Page</h2>
-            
-                <p>Live</p>
-
-                <p><a href="<?=$siteBPS?>?action=get-cash-for-surveys" target="_blank"><?=$siteBPS?>?action=get-cash-for-surveys</a></p>	
-            
-                <p>Localhost</p>
-                    
-                 <p><a href="<?=$localBPS?>?action=get-cash-for-surveys" target="_blank"><?=$siteBPS?>?action=get-cash-for-surveys</a></p>           
-            </div>
-            </td>
-        </tr>
-        <tr>
-             <td>
+	
+	<tr>
+		<td>
             <div class="contentBox">
                 <h2>Real Translators Job - Landing Page</h2>
             
@@ -313,9 +269,44 @@ $spm = array(
             
                 <p>Localhost</p>
                     
-                 <p><a href="<?=$localBPS?>?action=real-translator-jobs" target="_blank"><?=$siteBPS?>?action=real-translator-jobs</a></p>           
+                 <p><a href="<?=$localBPS?>?action=real-translator-jobs" target="_blank"><?=$localBPS?>?action=real-translator-jobs</a></p>           
+            </div>
+		</td>
+		 <td width="15px"></td>
+		 <td>
+            <div class="contentBox">
+                <h2>Get Cash For Surveys - Landing Page</h2>
+            
+                <p>Live</p>
+
+                <p><a href="<?=$siteBPS?>?action=get-cash-for-surveys" target="_blank"><?=$siteBPS?>?action=get-cash-for-surveys</a></p>	
+            
+                <p>Localhost</p>
+                    
+                 <p><a href="<?=$localBPS?>?action=get-cash-for-surveys" target="_blank"><?=$localBPS?>?action=get-cash-for-surveys</a></p>           
+            </div>
+            </td>
+	</tr>
+    
+   
+</table>
+    
+    <table>
+        <tr>
+            <td>
+            <div class="contentBox">
+                <h2>Extreme Tracking Links</h2>
+            
+                <p>NUS</p>
+
+                <p><a href="http://extremetracking.com/open;geo?login=richptc" target="_blank">http://extremetracking.com/open;geo?login=richptc</a></p>	
+            
+                <p>CodeGeass</p>
+                    
+                 <p><a href="http://extremetracking.com/open?login=geass" target="_blank">http://extremetracking.com/open?login=geass</a></p>           
             </div>
             </td>
         </tr>
+        
     </table>
 </center>

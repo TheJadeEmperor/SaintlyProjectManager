@@ -11,6 +11,10 @@ switch($_GET['action']) {
     case 'accounts':
         $link = 'http://localhost/SaintlyAccountsManager';
         break;
+	case 'archive_links':
+        $link = 'archive_links.php';
+        break;
+		
     
     //merchant links
     case 'clickbank':       
@@ -314,9 +318,17 @@ switch($_GET['action']) {
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Localhost <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="http://localhost" target="_blank">Localhost</a></li>
+							
                             <li><a href="?action=phpMyAdmin">phpMyAdmin</a></li>
+							
                             <li class="divider"></li>
+							
                             <li><a href="?action=accounts">Account Manager</a></li> 
+							
+							<li class="divider"></li>
+							
+                            <li><a href="?action=archive_links">Archive Links</a></li> 
+                            
                         </ul>
                     </li>
                    
