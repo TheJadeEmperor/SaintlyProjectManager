@@ -15,13 +15,11 @@ switch($_GET['action']) {
         $link = 'archive_links.php';
         break;
 		
-    
     //merchant links
     case 'clickbank':       
         $link = 'https://accounts.clickbank.com/login.htm';
         break;
     
- 
     //adhitz
     case 'site-ads':
         $link = 'http://www.adhitz.com/en/Advertisers-My_Site_Specific_Ads';
@@ -111,20 +109,6 @@ switch($_GET['action']) {
         $link = 'https://www.trafficwave.net/cgi-bin/autoresp/editprofile.cgi?header=admin&series=263238';
         break;
 
-    //// translatorjobs newsl \\\\
-    case 'translate-stats':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/subscrstats.cgi?action=subscr_overview&series=342122';	
-        break;
-    case 'translate-manage':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/subscrstats.cgi?action=subscr_manage&series=342122';
-        break;
-    case 'translate-letters':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?header=letters&series=342122';
-        break;	
-    case 'translate-profile':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/subscrstats.cgi?header=admin&series=342122';
-        break;
-		 
     //// onlinejobs newsl \\\\
     case 'onlinejobs-stats':
         $link = 'https://www.trafficwave.net/cgi-bin/autoresp/subscrstats.cgi?action=subscr_overview&series=375894';	
@@ -140,6 +124,20 @@ switch($_GET['action']) {
         break;
 		 		
     
+    //// ptcprograms newsl \\\\
+    case 'ptcprograms-stats':
+        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/subscrstats.cgi?action=subscr_overview&series=357941';	
+        break;
+    case 'ptcprograms-manage':
+        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/subscrstats.cgi?action=subscr_manage&series=357941';
+        break;
+    case 'ptcprograms-letters':
+        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?header=letters&series=357941';
+        break;	
+    case 'ptcprograms-profile':
+        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/subscrstats.cgi?header=admin&series=357941';
+        break;
+		 
     
     case 'newsletters':
         $link = 'http://localhost/SaintlyNewsletters';
@@ -348,7 +346,6 @@ switch($_GET['action']) {
                                 </ul>
                             </li>
                             
-                            
                             <li class="divider"></li>
                             
                             <li class="dropdown-submenu">
@@ -357,15 +354,6 @@ switch($_GET['action']) {
                                      <li><a href="?action=mms-letters">mms - letters</a></li>
                                     <li><a href="?action=mms-stats">mms - stats</a></li>
                                     <li><a href="?action=mms-manage">mms - manage</a></li>
-                                </ul>
-                            </li>
-                            
-                            <li class="dropdown-submenu">
-                                <a tabindex="-1" href="?action=translate-letters" title="translatorjobs">Translator Jobs</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="?action=translate-letters">translate - letters</a></li>
-                                    <li><a href="?action=translate-stats">translate - stats</a></li>
-                                    <li><a href="?action=translate-manage">translate - manage</a></li>
                                 </ul>
                             </li>
                             
@@ -388,6 +376,15 @@ switch($_GET['action']) {
                                     <li><a href="?action=nusnewsl-manage">nus - manage</a></li>
                                 </ul>
                             </li>
+							
+							<li class="dropdown-submenu">
+                                <a tabindex="-1" href="?action=ptcprograms-letters" title="ptcprograms">PTC Programs</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="?action=ptcprograms-letters">ptcprograms - letters</a></li>
+                                    <li><a href="?action=ptcprograms-stats">ptcprograms - stats</a></li>
+                                    <li><a href="?action=ptcprograms-manage">ptcprograms - manage</a></li>
+                                </ul>
+                            </li>
                               
                             <li class="dropdown-submenu">
                                 <a tabindex="-1" href="?action=ppbooster-profile" title="paypalbooster">Paypal Booster</a>
@@ -408,25 +405,31 @@ switch($_GET['action']) {
                             <li class="divider"></li>
                             <li><a href="?action=newsl-all">All Subscribers - Edit</a></li>
                             <li><a href="?action=copy-all">All Subscribers - Copy</a></li>
+							
                             <li class="divider"></li>
-                            <li><a href="?action=newsl-mms">Make Money Surveys - Edit</a></li>
-                            <li><a href="?action=copy-mms">Make Money Surveys - Copy</a></li>
-                            <li class="divider"></li>
-                            <li><a href="?action=newsl-translate">Translator Jobs - Edit</a></li>
-                            <li><a href="?action=copy-translate">Translator Jobs - Copy</a></li>
-                            <li class="divider"></li>
-                            <li><a href="?action=newsl-online">Online Jobs - Edit</a></li>
-                            <li><a href="?action=copy-onlinejobs">Online Jobs - Copy</a></li>
-                            <li class="divider"></li>
+							
                             <li><a href="?action=newsl-nus">NUS Newsletter - Edit</a></li>
                             <li><a href="?action=copy-nusnewsl">NUS Newsletter - Copy</a></li>
+							
                             <li class="divider"></li>
+							
+                            <li><a href="?action=newsl-mms">Make Money Surveys - Edit</a></li>
+                            <li><a href="?action=copy-mms">Make Money Surveys - Copy</a></li>
+							
+                            <li class="divider"></li>
+							
+                            <li><a href="?action=newsl-online">Online Jobs - Edit</a></li>
+                            <li><a href="?action=copy-onlinejobs">Online Jobs - Copy</a></li>
+							
+                            <li class="divider"></li>
+							
                             <li><a href="?action=newsl-ptcprograms">PTC Programs - Edit</a></li>
                             <li><a href="?action=copy-ptcprograms">PTC Programs - Copy</a></li>
+							
                             <li class="divider"></li>
+							
                             <li><a href="?action=newsl-ppb">Paypal Booster - Edit</a></li>
                             <li><a href="?action=copy-ppbooster">Paypal Booster - Copy</a></li>
-
                         </ul>
                     </li>
                     
@@ -434,7 +437,6 @@ switch($_GET['action']) {
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Splash Pages <b class="caret"></b></a>
                         
                         <ul class="dropdown-menu">
-                           
 							<li><a href="?action=splash-ppb-live">Paypal Booster</a></li>
 							<li><a href="?action=splash-ppb-live">live</a></li>
 							<li><a href="?action=splash-ppb-local">localhost</a></li>
@@ -450,8 +452,6 @@ switch($_GET['action']) {
 							<li><a href="?action=splash-ecourse-live">Free PTC Report</a></li>
 							<li><a href="?action=splash-ecourse-live">live</a></li>
 							<li><a href="?action=splash-ecourse-local">localhost</a></li>
-							
-                            
                         </ul>
                     </li>
                     
@@ -481,11 +481,15 @@ switch($_GET['action']) {
                             <li><a href="?action=network-ads">Network Ads</a></li>
                             <li><a href="?action=site-ads">Site Ads</a></li>
                             <li><a href="http://www.adhitz.com/en/Advertisers-Buy_Network_Ads" target="_blank">Buy Network Ads</a></li>
+							
                             <li class="divider"></li>
-                            <li><a href="http://www.clixsense.com/en/ClixGrid-My_Links" target="_blank">Clixsense<b class="caret"></b></a></li>
+                            
+							<li><a href="http://www.clixsense.com/en/ClixGrid-My_Links" target="_blank">Clixsense<b class="caret"></b></a></li>
                             <li><a href="http://www.clixsense.com/en/ClixGrid-My_Links" target="_blank">Clixgrid View</a></li>
-                            <li><a href="http://www.clixsense.com/en/ClixGrid-Buy_Links" target="_blank">Clixgrid Buy</a></li>
-                            <li class="divider"></li>
+							<li><a href="http://www.clixsense.com/en/ClixGrid-Buy_Links" target="_blank">Clixgrid Buy</a></li>
+                            
+							<li class="divider"></li>
+
                             <li><a href="http://neobux.com" target="_blank">Neobux <b class="caret"></b></a></li>
                             <li><a href="http://www.neobux.com/c/a/" target="_blank">Manage Ads</a></li>
                             <li><a href="https://www.neobux.com/c/a/?s1=pgt" target="_blank">Buy Ads</a></li>
