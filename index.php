@@ -529,7 +529,7 @@ switch($_GET['action']) {
     if ($splitScreen)
         echo '<table width="100%" height="95%">
 	<tr>
-            <td><iframe src="' . $leftScreen . '"></iframe></td>
+            <td width="40%"><iframe src="' . $leftScreen . '"></iframe></td>
             <td><iframe src="' . $rightScreen . '"></iframe></td>
 	</tr>
 	</table>';
