@@ -11,6 +11,17 @@ switch($_GET['action']) {
     case 'accounts':
         $link = 'http://localhost/SaintlyAccountsManager';
         break;
+		
+	case 'btc-trading-api-localhost':
+		$link = 'http://localhost/btcTradingAPI/';
+		$metaTitle = 'BTC API Dashboard - Localhost';
+		break;
+		
+	case 'btc-trading-api-localhost':
+		$link = 'http://bestpayingsites.com/admin/btcTradingAPI/';
+		$metaTitle = 'BTC API Dashboard - Live';
+		break;
+		
 	case 'archive_links':
         $link = 'archive_links.php';
         break;
@@ -325,6 +336,12 @@ switch($_GET['action']) {
 							
 							<li class="divider"></li>
 							
+							 <li><a href="?action=btc-trading-api-localhost">BTC API - Localhost</a></li> 
+							  <li><a href="?action=btc-trading-api-live">BTC API - Live</a></li> 
+							
+							<li class="divider"></li>
+							
+							
                             <li><a href="?action=archive_links">Archive Links</a></li> 
                             
                         </ul>
@@ -477,6 +494,11 @@ switch($_GET['action']) {
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Buy Ads <b class="caret"></b></a>
                         <ul class="dropdown-menu">
+						
+							<li><a href="http://www.easyhits4u.com/" target="_blank">EasyHits4U<b class="caret"></b></a></li>
+                            
+							<li class="divider"></li>
+						
                             <li><a href="?action=network-ads">Adhitz<b class="caret"></b></a></li>
                             <li><a href="?action=network-ads">Network Ads</a></li>
                             <li><a href="?action=site-ads">Site Ads</a></li>
@@ -484,14 +506,8 @@ switch($_GET['action']) {
 							
                             <li class="divider"></li>
                             
-							<li><a href="http://www.clixsense.com/en/ClixGrid-My_Links" target="_blank">Clixsense<b class="caret"></b></a></li>
-                            <li><a href="http://www.clixsense.com/en/ClixGrid-My_Links" target="_blank">Clixgrid View</a></li>
-							<li><a href="http://www.clixsense.com/en/ClixGrid-Buy_Links" target="_blank">Clixgrid Buy</a></li>
-                            
-							<li class="divider"></li>
-
                             <li><a href="http://neobux.com" target="_blank">Neobux <b class="caret"></b></a></li>
-                            <li><a href="http://www.neobux.com/c/a/" target="_blank">Manage Ads</a></li>
+
                             <li><a href="https://www.neobux.com/c/a/?s1=pgt" target="_blank">Buy Ads</a></li>
                         </ul>
                     </li>
