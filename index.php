@@ -17,14 +17,11 @@ switch($_GET['action']) {
 		$metaTitle = 'BTC API Dashboard - Localhost';
 		break;
 		
-	case 'btc-trading-api-localhost':
+	case 'btc-trading-api-live':
 		$link = 'http://bestpayingsites.com/admin/btcTradingAPI/';
 		$metaTitle = 'BTC API Dashboard - Live';
 		break;
 		
-	case 'archive_links':
-        $link = 'archive_links.php';
-        break;
 		
     //merchant links
     case 'clickbank':       
@@ -337,13 +334,8 @@ switch($_GET['action']) {
 							<li class="divider"></li>
 							
 							 <li><a href="?action=btc-trading-api-localhost">BTC API - Localhost</a></li> 
-							  <li><a href="?action=btc-trading-api-live">BTC API - Live</a></li> 
+							 <li><a href="?action=btc-trading-api-live">BTC API - Live</a></li> 
 							
-							<li class="divider"></li>
-							
-							
-                            <li><a href="?action=archive_links">Archive Links</a></li> 
-                            
                         </ul>
                     </li>
                    
