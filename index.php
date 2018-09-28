@@ -1,4 +1,4 @@
-<?
+<?php
 switch($_GET['action']) {
 
     //localhost
@@ -250,12 +250,12 @@ switch($_GET['action']) {
 ?>
 <html>
 <head>
-    <title>Links Project</title>
+    <title>Saintly Projects Manager</title>
     <link href="include/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" media="screen" />
     <link href="include/bootstrap/css/bootstrap-theme.css" rel="stylesheet" type="text/css" media="screen" />    
     <link href="<?= $dir ?>admin.css" rel="stylesheet" type="text/css" media="screen" />
     <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-    <script src="http://code.jquery.com/jquery-latest.min.js" type='text/javascript' /></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js" type='text/javascript' /></script> 
     <script src="include/jquery-ui/ui/jquery-ui.js"></script>
     <script src="include/bootstrap/js/bootstrap.js"></script>
     <style>
@@ -533,7 +533,7 @@ switch($_GET['action']) {
         </div><!-- /.container-fluid -->
     </nav>
     
-    <?
+    <?php
     if ($splitScreen)
         echo '<table width="100%" height="95%">
 	<tr>
