@@ -22,7 +22,6 @@ switch($_GET['action']) {
 		$metaTitle = 'BTC API Dashboard - Live';
 		break;
 		
-		
     //merchant links
     case 'clickbank':       
         $link = 'https://accounts.clickbank.com/login.htm';
@@ -244,7 +243,17 @@ switch($_GET['action']) {
         $link = 'http://localhost/bestpayingsites/?action=translate';
         break;
 
-    default:
+	case 'hostmonster-login': 
+		$link = 'https://my.hostmonster.com/cgi-bin/cplogin?lil=1';
+		break;
+	case 'hostmonster-cron':
+		$link = 'https://host187.hostmonster.com:2083/cpsess7112426105/frontend/hostmonster/cron/index.html';
+		break; 
+	case 'hostmonster-email':
+		$link = '		https://host187.hostmonster.com:2083/cpsess7112426105/frontend/hostmonster/mail/pops.html';
+		break; 
+		
+   default:
         $link = 'db.php';
 }
 ?>
@@ -504,19 +513,27 @@ switch($_GET['action']) {
                         </ul>
                     </li>
                     
-                    
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Trello<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="https://trello.com/b/lx8xpiWr/2016-goals" target="_BLANK"><?=date('Y', time())?> Goals</a></li>
+                            <li><a href="https://trello.com/b/lx8xpiWr/2019-goals" target="_BLANK"><?=date('Y', time())?> Goals</a></li>
                             <li><a href="https://trello.com/b/eCbwlbjV/email-answers-faq" target="_BLANK">Email Answers & FAQ</a></li>
                             <li><a href="https://trello.com/b/tT7IOsDu/affiliate-links" target="_BLANK">Affiliate Links</a></li>
                             <li><a href="https://trello.com/b/L7rsEyHd/events" target="_BLANK">Events</a></li>
-                            <li><a href="https://trello.com/b/9YHVktaG/stories" target="_BLANK">Stories</a></li>
+                            <li><a href="https://trello.com/b/Tu9CxFFh/writing" target="_BLANK">Writing</a></li>
                             <li><a href="https://trello.com/b/Y57UfweD/jokes-quotes" target="_BLANK">Jokes & Quotes</a></li>
                         </ul>
                     </li>
-                    
+					
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hostmonster<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="?action=hostmonster-login" target="_BLANK">Login</a></li>
+                            <li><a href="?action=hostmonster-cron">Cron Jobs</a></li>
+                             <li><a href="?action=hostmonster-email">Emails</a></li>
+                        </ul>
+                    </li>
+					
                 </ul><!--navbar-->
                 
                 <ul class="nav navbar-nav navbar-left">
