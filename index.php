@@ -11,17 +11,7 @@ switch($_GET['action']) {
     case 'accounts':
         $link = 'http://localhost/SaintlyAccountsManager';
         break;
-		
-	case 'btc-trading-api-localhost':
-		$link = 'http://localhost/btcTradingAPI/';
-		$metaTitle = 'BTC API Dashboard - Localhost';
-		break;
-		
-	case 'btc-trading-api-live':
-		$link = 'http://bestpayingsites.com/admin/btcTradingAPI/';
-		$metaTitle = 'BTC API Dashboard - Live';
-		break;
-		
+				
     //merchant links
     case 'clickbank':       
         $link = 'https://accounts.clickbank.com/login.htm';
@@ -170,14 +160,21 @@ switch($_GET['action']) {
     case 'newsl-online':
         $link = 'http://localhost/SaintlyNewsletters/OnlineJobs';
         break;
-		
-	
+
+    case 'tw-chain':
+        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/campaignchain.cgi?action=campaign_chain&series=';
+        break;
+				
+    case 'tw-global':		
+		$link = '	https://www.trafficwave.net/cgi-bin/autoresp/subscrmgr.cgi?series=global';
+		break;
+
     case 'copy':
         $splitScreen = true;
         $leftScreen = 'http://localhost/SaintlyNewsletters';
         $rightScreen = 'https://www.trafficwave.net/members_only/members_only.cgi/toolbar.html';
         break;
-
+		
     case 'copy-all':
         $splitScreen = true;
         $leftScreen = 'http://localhost/SaintlyNewsletters/AllSubscribers';
@@ -341,10 +338,7 @@ switch($_GET['action']) {
                             <li><a href="?action=accounts">Account Manager</a></li> 
 							
 							<li class="divider"></li>
-							
-							 <li><a href="?action=btc-trading-api-localhost">BTC API - Localhost</a></li> 
-							 <li><a href="?action=btc-trading-api-live">BTC API - Live</a></li> 
-							
+												
                         </ul>
                     </li>
                    
@@ -412,6 +406,13 @@ switch($_GET['action']) {
                                     <li><a href="?action=ppbooster-manage">ppbooster - manage</a></li>
                                 </ul>
                             </li>
+							
+							<li class="divider"></li>
+                            
+							 <li><a href="?action=tw-chain">Campaign Chaining</a></li>
+                           
+						    <li><a href="?action=tw-gloabl">Global Subscribers</a></li>
+                           
                             
                           </ul>
                     </li>
@@ -529,8 +530,6 @@ switch($_GET['action']) {
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hostmonster<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="?action=hostmonster-login" target="_BLANK">Login</a></li>
-                            <li><a href="?action=hostmonster-cron">Cron Jobs</a></li>
-                             <li><a href="?action=hostmonster-email">Emails</a></li>
                         </ul>
                     </li>
 					
