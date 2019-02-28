@@ -64,16 +64,12 @@ $ppb = array(
     'live' => array(
         'Main Site' => '<a href="'.$sitePPB.'" target="_blank">'.$sitePPB.'</a>',
         'Download Page' => '<a href="'.$sitePPB.$downloadPage.'" target="_blank">'.$sitePPB.$downloadPage.'</a>',
-        'Members Login' => '<a href="'.$sitePPB.$membersPage.'" target="_blank">'.$sitePPB.$membersPage.'</a>',
-        'Forgot Password' => '<a href="'.$sitePPB.$forgotPage.'" target="_blank">'.$sitePPB.$forgotPage.'</a>',
-        'Admin Login' => '<a href="'.$sitePPB.$adminPage.'" target="_blank">'.$sitePPB.$adminPage.'</a>'
+		'FAQ Page ' => '<a href="'.$siteBPS.'?action=faq" target="_blank">'.$siteBPS.'?action=faq</a>'
     ),
     'local' => array(
         'Main Site' => '<a href="'.$localPPB.'" target="_blank">'.$localPPB.'</a>',
         'Download Page' => '<a href="'.$localPPB.$downloadPage.'" target="_blank">'.$localPPB.$downloadPage.'</a>',
-        'Members Login' => '<a href="'.$localPPB.$membersPage.'" target="_blank">'.$localPPB.$membersPage.'</a>',
-        'Forgot Password' => '<a href="'.$localPPB.$forgotPage.'" target="_blank">'.$localPPB.$forgotPage.'</a>',
-        'Admin Login' => '<a href="'.$localPPB.$adminPage.'" target="_blank">'.$localPPB.$adminPage.'</a>'
+		'FAQ Page ' => '<a href="'.$localBPS.'?action=faq" target="_blank">'.$localBPS.'?action=faq</a>'
     ),
 );
 
@@ -153,22 +149,12 @@ $spm = array(
     <tr>
         <td>
             <div class="contentBox">
-                <h2>BPS - live</h2>
+                <h2>EPS - live</h2>
                 <?
                 foreach($bps['live'] as $siteTitle => $siteURL) {
                      echo '<p>'.$siteTitle.'<br />'.$siteURL.'</p>';
                 }
-                ?>
                 
-                <p align="center"><b>Paypal Booster</b></p>
-                
-                <p>Main Site<br />
-                <a href="<?=$sitePPB?>" target=_blank><?=$sitePPB?></a></p>
-                
-                <p>Download Page<br />
-                <a href="<?=$sitePPB?>?action=download&id=vipuser" target=_blank><?=$sitePPB?>?action=download&id=vipuser</a></p>
-                
-                <?
                 echo $sitePages;
                 ?>
                 
@@ -191,22 +177,12 @@ $spm = array(
         <td width="15px"></td>
         <td>
             <div class="contentBox">
-                <h2>BPS - localhost</h2>
+                <h2>EPS - localhost</h2>
                 <?
                 foreach($bps['local'] as $siteTitle => $siteURL) {
                     echo '<p>'.$siteTitle.'<br />'.$siteURL.'</p>';
                 }
-                ?>
-                
-                <p align="center"><b>Paypal Booster</b></p>
-                
-                <p>Main Site<br />
-                <a href="<?=$localPPB?>" target=_blank><?=$localPPB?></a></p>
-                
-                <p>Download Page<br />
-                <a href="<?=$localPPB?>?action=download&id=vipuser" target=_blank><?=$localPPB?>?action=download&id=vipuser</a></p>
-                
-                <?
+                 
                 echo $sitePages;
                 ?>
                                 
