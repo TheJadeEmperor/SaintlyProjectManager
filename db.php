@@ -18,6 +18,10 @@ $localBPS = 'http://localhost/bestpayingsites/';
 $sitePPB = 'http://bestpayingsites.com/ppbooster/';
 $localPPB = 'http://localhost/bestpayingsites/ppbooster/';
 
+$siteSurveys = 'http://bestpayingsites.com/surveys/';
+$localSurveys = 'http://localhost/bestpayingsites/surveys';
+
+
 //spm pages
 $downloadPage = '?action=download&id=vipuser';
 $membersPage = 'members';
@@ -64,29 +68,23 @@ $ppb = array(
     'live' => array(
         'Main Site' => '<a href="'.$sitePPB.'" target="_blank">'.$sitePPB.'</a>',
         'Download Page' => '<a href="'.$sitePPB.$downloadPage.'" target="_blank">'.$sitePPB.$downloadPage.'</a>',
-		'FAQ Page ' => '<a href="'.$siteBPS.'?action=faq" target="_blank">'.$siteBPS.'?action=faq</a>'
+		'FAQ Page' => '<a href="'.$siteBPS.'?action=faq" target="_blank">'.$siteBPS.'?action=faq</a>'
     ),
     'local' => array(
         'Main Site' => '<a href="'.$localPPB.'" target="_blank">'.$localPPB.'</a>',
         'Download Page' => '<a href="'.$localPPB.$downloadPage.'" target="_blank">'.$localPPB.$downloadPage.'</a>',
-		'FAQ Page ' => '<a href="'.$localBPS.'?action=faq" target="_blank">'.$localBPS.'?action=faq</a>'
+		'FAQ Page' => '<a href="'.$localBPS.'?action=faq" target="_blank">'.$localBPS.'?action=faq</a>'
     ),
 );
 
-$spm = array(
+$surveys = array(
     'live' => array(
-        'Main Site' => '<a href="'.$siteSPM.'" target="_blank">'.$siteSPM.'</a>',
-        'Download Page' => '<a href="'.$siteSPM.$downloadPage.'" target="_blank">'.$siteSPM.$downloadPage.'</a>',
-        'Members Login' => '<a href="'.$siteSPM.$membersPage.'" target="_blank">'.$siteSPM.$membersPage.'</a>',
-        'Forgot Password' => '<a href="'.$siteSPM.$forgotPage.'" target="_blank">'.$siteSPM.$forgotPage.'</a>',
-        'Admin Login' => '<a href="'.$siteSPM.$adminPage.'" target="_blank">'.$siteSPM.$adminPage.'</a>'
+        'Main Site' => '<a href="'.$siteSurveys.'" target="_blank">'.$siteSurveys.'</a>',
+        'Download Page' => '<a href="'.$siteSurveys.$downloadPage.'" target="_blank">'.$siteSurveys.$downloadPage.'</a>',
     ),
     'local' => array(
-        'Main Site' => '<a href="'.$localSPM.'" target="_blank">'.$localSPM.'</a>',
-        'Download Page' => '<a href="'.$localSPM.$downloadPage.'" target="_blank">'.$localSPM.$downloadPage.'</a>',
-        'Members Login' => '<a href="'.$localSPM.$membersPage.'" target="_blank">'.$localSPM.$membersPage.'</a>',
-        'Forgot Password' => '<a href="'.$localSPM.$forgotPage.'" target="_blank">'.$localSPM.$forgotPage.'</a>',
-        'Admin Login' => '<a href="'.$localSPM.$adminPage.'" target="_blank">'.$localSPM.$adminPage.'</a>'
+        'Main Site' => '<a href="'.$localSurveys.'" target="_blank">'.$localSurveys.'</a>',
+        'Download Page' => '<a href="'.$localSurveys.$downloadPage.'" target="_blank">'.$localSurveys.$downloadPage.'</a>',
     ),
 ); 
 ?> 
@@ -212,9 +210,7 @@ $spm = array(
                 foreach($ppb['live'] as $siteTitle => $siteURL) {
                     echo '<p>'.$siteTitle.'<br />'.$siteURL.'</p>';
                 }
-
                 ?>
-             
             </div>
         </td>
         <td width="15px"></td>
@@ -225,11 +221,30 @@ $spm = array(
                 foreach($ppb['local'] as $siteTitle => $siteURL) {
                     echo '<p>'.$siteTitle.'<br />'.$siteURL.'</p>';
                 }
-
-              
                 ?>
-
-              
+            </div>
+		</td>
+    </tr>
+    <tr valign="top">
+		<td>
+            <div class="contentBox">
+                <h2>BPS - live</h2>
+                <?
+                foreach($surveys['live'] as $siteTitle => $siteURL) {
+                    echo '<p>'.$siteTitle.'<br />'.$siteURL.'</p>';
+                }
+                ?>
+            </div>
+        </td>
+        <td width="15px"></td>
+        <td>
+            <div class="contentBox">
+                <h2>BPS - local</h2>
+                <?
+                foreach($surveys['local'] as $siteTitle => $siteURL) {
+                    echo '<p>'.$siteTitle.'<br />'.$siteURL.'</p>';
+                }
+                ?>
             </div>
 		</td>
     </tr>
