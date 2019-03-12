@@ -11,6 +11,10 @@ switch($_GET['action']) {
     case 'accounts':
         $link = 'http://localhost/SaintlyAccountsManager';
         break;
+	case 'blog':
+        $link = 'blog.php';
+        break;
+				
 				
     //merchant links
     case 'clickbank':       
@@ -338,6 +342,9 @@ switch($_GET['action']) {
                             <li><a href="?action=accounts">Account Manager</a></li> 
 							
 							<li class="divider"></li>
+							
+							<li><a href="?action=blog">Blog SEO Links</a></li> 
+							
 												
                         </ul>
                     </li>
