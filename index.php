@@ -216,6 +216,14 @@ switch($_GET['action']) {
         $rightScreen = 'https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?header=letters&series=375894';
         break;
     
+	case 'gmail-filters':
+		$link = 'https://mail.google.com/mail/u/0/?shva=1#settings/filters';
+		break;
+	case 'gmail-accounts':
+		$link = 'https://mail.google.com/mail/u/0/?shva=1#settings/accounts';
+		break;
+				
+	
     case 'splash-freereport-live':
         $link = 'http://neobuxultimatestrategy.com/?action=freereport';
         break;
@@ -243,6 +251,8 @@ switch($_GET['action']) {
     case 'splash-video-local': 
         $link = 'http://localhost/bestpayingsites/?action=translate';
         break;
+		
+	
 
 	case 'hostmonster-login': 
 		$link = 'https://my.hostmonster.com/cgi-bin/cplogin?lil=1';
@@ -458,6 +468,16 @@ switch($_GET['action']) {
                             <li><a href="?action=copy-ppbooster">Paypal Booster - Copy</a></li>
                         </ul>
                     </li>
+
+
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gmail<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://mail.google.com/mail/u/0/?shva=1#settings/accounts" target="_BLANK">Accounts</a></li>
+                            <li><a href="https://mail.google.com/mail/u/0/?shva=1#settings/filters" target="_BLANK">Filters</a></li>
+                        </ul>
+                    </li>
+					
                     
                     <li id="splash pages">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Splash Pages <b class="caret"></b></a>
@@ -480,7 +500,9 @@ switch($_GET['action']) {
 							<li><a href="?action=splash-ecourse-local">localhost</a></li>
                         </ul>
                     </li>
-                    
+     
+
+	 
                     <li>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ad Pages <b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -532,6 +554,7 @@ switch($_GET['action']) {
                             <li><a href="https://trello.com/b/Y57UfweD/jokes-quotes" target="_BLANK">Jokes & Quotes</a></li>
                         </ul>
                     </li>
+	 
 					
 					<li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hostmonster<b class="caret"></b></a>
