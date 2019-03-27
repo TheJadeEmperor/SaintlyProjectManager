@@ -428,7 +428,7 @@ switch($_GET['action']) {
                             
 							 <li><a href="?action=tw-chain">Campaign Chaining</a></li>
                            
-						    <li><a href="?action=tw-gloabl">Global Subscribers</a></li>
+						    <li><a href="?action=tw-global">Global Subscribers</a></li>
                            
                             
                           </ul>
