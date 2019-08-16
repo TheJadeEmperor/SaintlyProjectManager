@@ -159,9 +159,6 @@ $surveys = array(
                 <p>PTC Mini Sites<br />
                 <a href="<?=$siteBPS?>site" target=_blank><?=$siteBPS?>site</a></p>
                 
-                <p>Catalog Page<br />
-                <a href="<?=$siteBPS?>site/catalog" target="_blank"><?=$siteBPS?>site/catalog</a></p>
-
                 <p>Bonus Downloads<br />
                 <a href="<?=$siteBPS?>?action=bonus" target="_blank"><?=$siteBPS?>?action=bonus</a></p>	
                 
@@ -186,9 +183,6 @@ $surveys = array(
                                 
                 <p>PTC Mini Sites<br />
                 <a href="<?=$localBPS?>site" target="_blank"><?=$localBPS?>site</a></p>
-
-                <p>Catalog Page<br />
-                <a href="<?=$localBPS?>site/catalog" target="_blank"><?=$localBPS?>site/catalog</a></p>
 
                 <p>Bonus Downloads<br />
                 <a href="<?=$localBPS?>?action=bonus" target="_blank"><?=$localBPS?>?action=bonus</a></p>
@@ -282,22 +276,22 @@ $surveys = array(
    
 </table>
     
-    <table>
-        <tr>
-            <td>
-            <div class="contentBox">
-                <h2>Extreme Tracking Links</h2>
-            
-                <p>NUS</p>
+<table>
+	<tr>
+		<td>
+		<div class="contentBox">
+			<h2>Extreme Tracking Links</h2>
+		
+			<p>NUS</p>
 
-                <p><a href="http://extremetracking.com/open;geo?login=richptc" target="_blank">http://extremetracking.com/open;geo?login=richptc</a></p>	
-            
-                <p>CodeGeass</p>
-                    
-                 <p><a href="http://extremetracking.com/open?login=geass" target="_blank">http://extremetracking.com/open?login=geass</a></p>           
-            </div>
-            </td>
-        </tr>
-        
-    </table>
+			<p><a href="http://extremetracking.com/open;geo?login=richptc" target="_blank">http://extremetracking.com/open;geo?login=richptc</a></p>	
+		
+			<p>CodeGeass</p>
+				
+			 <p><a href="http://extremetracking.com/open?login=geass" target="_blank">http://extremetracking.com/open?login=geass</a></p>           
+		</div>
+		</td>
+	</tr>
+	
+</table>
 </center>
