@@ -163,10 +163,10 @@ $surveys = array(
                 <a href="<?=$siteBPS?>?action=bonus" target="_blank"><?=$siteBPS?>?action=bonus</a></p>	
                 
                 <p>F.A.Q. <br />
-                <a href="<?=$sitePPB?>?action=faq" target="_blank"><?=$sitePPB?>?action=faq</a></p>
+                <a href="<?=$siteBPS?>?action=faq" target="_blank"><?=$siteBPS?>?action=faq</a></p>
 
                 <p>Contact Form <br />
-                <a href="<?=$sitePPB?>?action=contact" target="_blank"><?=$sitePPB?>?action=contact</a></p>
+                <a href="<?=$siteBPS?>?action=contact" target="_blank"><?=$siteBPS?>?action=contact</a></p>
             </div>
         </td>
         <td width="15px"></td>
@@ -188,10 +188,10 @@ $surveys = array(
                 <a href="<?=$localBPS?>?action=bonus" target="_blank"><?=$localBPS?>?action=bonus</a></p>
                 
                 <p>F.A.Q. <br />
-                <a href="<?=$localPPB?>?action=faq" target="_blank"><?=$localPPB?>?action=faq</a></p>
+                <a href="<?=$localBPS?>?action=faq" target="_blank"><?=$localBPS?>?action=faq</a></p>
 
                 <p>Contact Form <br />
-                <a href="<?=$localPPB?>?action=contact" target="_blank"><?=$localPPB?>?action=contact</a></p>
+                <a href="<?=$localBPS?>?action=contact" target="_blank"><?=$localBPS?>?action=contact</a></p>
             </div>
         </td>
     </tr>
@@ -268,7 +268,7 @@ $surveys = array(
             
                 <p>Localhost</p>
                     
-                 <p><a href="<?=$localBPS?>?action=get-cash-for-surveys" target="_blank"><?=$localBPS?>?action=get-cash-for-surveys</a></p>           
+                <p><a href="<?=$localBPS?>?action=get-cash-for-surveys" target="_blank"><?=$localBPS?>?action=get-cash-for-surveys</a></p>           
             </div>
             </td>
 	</tr>
