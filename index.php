@@ -251,19 +251,7 @@ switch($_GET['action']) {
     case 'splash-video-local': 
         $link = 'http://localhost/bestpayingsites/?action=translate';
         break;
-		
 	
-
-	case 'hostmonster-login': 
-		$link = 'https://my.hostmonster.com/cgi-bin/cplogin?lil=1';
-		break;
-	case 'hostmonster-cron':
-		$link = 'https://host187.hostmonster.com:2083/cpsess7112426105/frontend/hostmonster/cron/index.html';
-		break; 
-	case 'hostmonster-email':
-		$link = '		https://host187.hostmonster.com:2083/cpsess7112426105/frontend/hostmonster/mail/pops.html';
-		break; 
-		
    default:
         $link = 'db.php';
 }
@@ -430,7 +418,6 @@ switch($_GET['action']) {
                            
 						    <li><a href="?action=tw-global">Global Subscribers</a></li>
                            
-                            
                           </ul>
                     </li>
                     
@@ -475,6 +462,15 @@ switch($_GET['action']) {
                         <ul class="dropdown-menu">
                             <li><a href="https://mail.google.com/mail/u/0/?shva=1#settings/accounts" target="_BLANK">Accounts</a></li>
                             <li><a href="https://mail.google.com/mail/u/0/?shva=1#settings/filters" target="_BLANK">Filters</a></li>
+							
+							<li class="divider"></li>
+							
+							<li><a href="https://my.hostmonster.com/cgi-bin/cplogin?lil=1" target="_BLANK">Hostmonster<b class="caret"></b></a></li>
+							
+							<li><a href="https://my.hostmonster.com/cgi-bin/cplogin?lil=1" target="_BLANK">Login</a></li>
+							
+							<li><a href="https://host187.hostmonster.com:2083/cpsess7112426105/frontend/hostmonster/cron/index.html" target="_BLANK">Cron Jobs</a></li>
+							
                         </ul>
                     </li>
 					
@@ -513,33 +509,38 @@ switch($_GET['action']) {
                             <li class="divider"></li>
 
                             <li><a href="http://neobuxultimatestrategy.com/?action=download&id=vipuser" target="_blank">NUS Download Page</a></li>
+							
                             <li><a href="http://bestpayingsites.com/?action=download&id=vipuser" target="_blank">EPS Download Page</a></li>
 							
                             <li class="divider"></li>
 							
-							<li><a href="https://paypal.com" target="_BLANK">Paypal</a></li>
-                            <li><a href="https://accounts.clickbank.com/login.htm">Clickbank</a></li>
+                            <li><a href="https://accounts.clickbank.com/login.htm" target="_blank">Clickbank</a></li>
                         </ul>
                     </li>
                     
+					
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Buy Ads <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-						
-							<li><a href="http://www.easyhits4u.com/" target="_blank">EasyHits4U<b class="caret"></b></a></li>
-                            
-							<li class="divider"></li>
 						
                             <li><a href="?action=network-ads">Adhitz<b class="caret"></b></a></li>
                             <li><a href="?action=network-ads">Network Ads</a></li>
                             <li><a href="?action=site-ads">Site Ads</a></li>
                             <li><a href="http://www.adhitz.com/en/Advertisers-Buy_Network_Ads" target="_blank">Buy Network Ads</a></li>
 							
+							<li class="divider"></li>
+						
+							<li><a href="http://www.easyhits4u.com/" target="_blank">EasyHits4U</a></li>
+                            
                             <li class="divider"></li>
                             
                             <li><a href="http://neobux.com" target="_blank">Neobux <b class="caret"></b></a></li>
 
                             <li><a href="https://www.neobux.com/c/a/?s1=pgt" target="_blank">Buy Ads</a></li>
+							
+							<li class="divider"></li>
+                            
+                            <li><a href="http://ysense.com" target="_blank">ySense</a></li>
                         </ul>
                     </li>
                     
@@ -552,14 +553,6 @@ switch($_GET['action']) {
                             <li><a href="https://trello.com/b/L7rsEyHd/events" target="_BLANK">Events</a></li>
                             <li><a href="https://trello.com/b/Tu9CxFFh/writing" target="_BLANK">Writing</a></li>
                             <li><a href="https://trello.com/b/Y57UfweD/jokes-quotes" target="_BLANK">Jokes & Quotes</a></li>
-                        </ul>
-                    </li>
-	 
-					
-					<li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hostmonster<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="?action=hostmonster-login" target="_BLANK">Login</a></li>
                         </ul>
                     </li>
 					
