@@ -254,7 +254,9 @@ $surveys = array(
             
                 <p>Localhost</p>
                     
-                 <p><a href="<?=$localBPS?>?action=real-translator-jobs" target="_blank"><?=$localBPS?>?action=real-translator-jobs</a></p>           
+                <p><a href="<?=$localBPS?>?action=real-translator-jobs" target="_blank"><?=$localBPS?>?action=real-translator-jobs</a></p>   
+
+				 
             </div>
 		</td>
 		 <td width="15px"></td>
@@ -270,7 +272,7 @@ $surveys = array(
                     
                 <p><a href="<?=$localBPS?>?action=get-cash-for-surveys" target="_blank"><?=$localBPS?>?action=get-cash-for-surveys</a></p>           
             </div>
-            </td>
+		</td>
 	</tr>
     
    
@@ -278,6 +280,19 @@ $surveys = array(
     
 <table>
 	<tr>
+		<td>
+			<div class="contentBox">
+				<h2>Social Media Jobs Splash Page</h2>
+			
+				<p>Live</p>
+
+				<p><a href="http://bestpayingsites.com/?action=clickbank" target="_BLANK">http://bestpayingsites.com/?action=clickbank</a></p>	
+			
+				<p>Localhost</p>
+					
+				 <p><a href="http://localhost/bestpayingsites/?action=clickbank" target="_blank">http://localhost/bestpayingsites/?action=clickbank</a></p>           
+			</div>
+		</td>
 		<td>
 		<div class="contentBox">
 			<h2>Extreme Tracking Links</h2>
