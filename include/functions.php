@@ -8,6 +8,26 @@ insertRecord($dbFields, $tableName)
 
 
 
+/* connect to database, returns resource */
+// connect to database, returns resource 
+function database($dbHost, $dbUser, $dbPW, $dbName) {
+	global $conn; 
+	
+	//connect to database directly (live server) 
+	if(!is_int(strpos(__FILE__, 'C:\\'))) { 
+		$dbHost = 'localhost'; 
+	}
+	
+	$conn = new mysqli($dbHost, $dbUser, $dbPW, $dbName); 
+	
+	if ($conn->connect_error) {
+		die("(".__LINE__.") Connection failed: " . $conn->connect_error);
+	}
+	
+	return $conn;
+}
+
+
 function embedYoutube($src, $width, $height)
 {
 	return '<object width="'.$width.'" height="'.$height.'"><param name="movie" 
@@ -17,25 +37,6 @@ function embedYoutube($src, $width, $height)
 	<embed src="http://www.youtube.com/v/'.$src.'&hl=en_US&fs=1&" type="application/x-shockwave-flash" 
 	allowscriptaccess="always" allowfullscreen="true" width="'.$width.'" height="'.$height.'"></embed></object>';
 }
-
-
-/* connect to database, returns resource */
-function database($host, $user, $pw, $dbName)
-{
-	if(is_int(strpos(__FILE__, 'C:\\')))	//connect to database remotely (local server)
-	{ 
-		$conn = mysql_connect($host, $user, $pw) or die(mysql_error().' ('.__LINE__.')');
-	}
-	else //connect to database directly (live server)
-	{
-		$conn = mysql_connect('localhost', $user, $pw) or die(mysql_error().' ('.__LINE__.')');
-	}
-	
-	mysql_select_db($dbName) or die(mysql_error());
-	
-	return $conn;
-}
-
 
 
 function insertRecord($dbFields, $tableName)

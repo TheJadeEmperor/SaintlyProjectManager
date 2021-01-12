@@ -5,40 +5,17 @@ switch($_GET['action']) {
     case 'localhost':
         $link = 'http://localhost';
         break;
-    case 'phpMyAdmin':
-        $link = 'http://localhost/phpmyadmin/';
+	case 'blog-bcm':
+        $link = 'blog_bcm.php';
         break;
-    case 'accounts':
-        $link = 'http://localhost/SaintlyAccountsManager';
+     case 'archive':
+        $link = 'archive_links.php';
         break;
-	case 'blog':
-        $link = 'blog.php';
-        break;
-				
-				
-    //merchant links
-    case 'clickbank':       
-        $link = 'https://accounts.clickbank.com/login.htm';
-        break;
-    
-    //adhitz
-    case 'site-ads':
-        $link = 'http://www.adhitz.com/en/Advertisers-My_Site_Specific_Ads';
-        break;
-    case 'network-ads':
-        $link = 'http://www.adhitz.com/en/Advertisers-My_Network_Ads';
-        break;
-    case 'adhitz':
-        $link = 'http://adhitz.com';
-        break;
+	
     case 'trafficwave':
         $link = 'https://www.trafficwave.net/members_only/members_only.cgi/toolbar.html';
         break;
-
-    case 'site-pages':
-        $link = 'site-pages.php';
-        break;
-        
+ 
     //allsubscribers 
     case 'all-stats':
         $link = 'https://www.trafficwave.net/cgi-bin/autoresp/subscrstats.cgi?action=subscr_overview&series=350956';
@@ -222,8 +199,7 @@ switch($_GET['action']) {
 	case 'gmail-accounts':
 		$link = 'https://mail.google.com/mail/u/0/?shva=1#settings/accounts';
 		break;
-				
-	
+		
     case 'splash-freereport-live':
         $link = 'http://neobuxultimatestrategy.com/?action=freereport';
         break;
@@ -252,8 +228,17 @@ switch($_GET['action']) {
         $link = 'http://localhost/bestpayingsites/?action=translate';
         break;
 	
-   default:
-        $link = 'db.php';
+    case 'nus':
+        $link = 'nus.php';
+        break;
+	case 'blog': 
+		$link = 'blog_nus.php';
+		break;
+	case 'ig-posts': 
+		$link = 'ig_posts.php';
+		break;
+	default:
+        $link = 'blog_bcm.php';
 }
 ?>
 <html>
@@ -333,20 +318,60 @@ switch($_GET['action']) {
                         <ul class="dropdown-menu">
                             <li><a href="http://localhost" target="_blank">Localhost</a></li>
 							
-                            <li><a href="?action=phpMyAdmin">phpMyAdmin</a></li>
+                            <li><a href="http://localhost/phpmyadmin/" target="_blank">phpMyAdmin</a></li>
 							
-                            <li class="divider"></li>
-							
-                            <li><a href="?action=accounts">Account Manager</a></li> 
+                            
+                            <li><a href="http://SaintlyAccountsManager.test">Account Manager</a></li> 
+
+                            <li><a href="?action=archive">Achive Links</a></li> 
 							
 							<li class="divider"></li>
 							
-							<li><a href="?action=blog">Blog SEO Links</a></li> 
+							<li><a href="?action=ig-posts">IG Posts</a></li> 
+						
+							<li><a href="?action=blog-bcm">BCM Blog</a></li> 
+														
+							<li><a href="?action=blog">NUS Blog & SEO</a></li> 
 							
-												
+							<li><a href="?action=nus">NUS & PPB Links</a></li> 					
                         </ul>
                     </li>
                    
+                    <li id="trello">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Trello<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://trello.com/b/lx8xpiWr/2019-goals" target="_BLANK"><?=date('Y', time())?> Goals</a></li>
+                           
+                            <li><a href="https://trello.com/b/tT7IOsDu/affiliate-links" target="_BLANK">Affiliate Links</a></li>
+						
+							<li><a href="https://trello.com/b/Y57UfweD/jokes-quotes" target="_BLANK">Jokes & Quotes</a></li>
+													
+                            <li><a href="https://trello.com/b/Tu9CxFFh/writing" target="_BLANK">Writing</a></li>
+                            
+							<li><a href="https://trello.com/b/5CNProvG/animefavoritechannel" target="_BLANK">AnimeFavorite</a></li>
+							 
+							<li><a href="https://trello.com/b/sguRUO8x/blackcrimesmatter" target="_BLANK">Black Crime Matters</a></li>
+                        </ul>
+                    </li>
+					
+					
+					<li id="gmail">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gmail<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://mail.google.com/mail/u/0/?shva=1#settings/accounts" target="_BLANK">Accounts</a></li>
+                            <li><a href="https://mail.google.com/mail/u/0/?shva=1#settings/filters" target="_BLANK">Filters</a></li>
+							
+							<li class="divider"></li>
+							
+							<li><a href="https://my.hostmonster.com/cgi-bin/cplogin?lil=1" target="_BLANK">Hostmonster<b class="caret"></b></a></li>
+							
+							<li><a href="https://my.hostmonster.com/cgi-bin/cplogin?lil=1" target="_BLANK">Login</a></li>
+							
+							<li><a href="https://host187.hostmonster.com:2083/cpsess7112426105/frontend/hostmonster/cron/index.html" target="_BLANK">Cron Jobs</a></li>
+							
+                        </ul>
+                    </li>
+					
                     <li id="trafficwave">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">TrafficWave <b class="caret"></b></a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
@@ -421,7 +446,7 @@ switch($_GET['action']) {
                           </ul>
                     </li>
                     
-                    <li class="dropdown" id="newsletters"> 
+                    <li id="newsletters"> 
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Newsletters <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="?action=copy">Newsletters Index</a></li>
@@ -456,54 +481,23 @@ switch($_GET['action']) {
                         </ul>
                     </li>
 
-
-					<li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gmail<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="https://mail.google.com/mail/u/0/?shva=1#settings/accounts" target="_BLANK">Accounts</a></li>
-                            <li><a href="https://mail.google.com/mail/u/0/?shva=1#settings/filters" target="_BLANK">Filters</a></li>
-							
-							<li class="divider"></li>
-							
-							<li><a href="https://my.hostmonster.com/cgi-bin/cplogin?lil=1" target="_BLANK">Hostmonster<b class="caret"></b></a></li>
-							
-							<li><a href="https://my.hostmonster.com/cgi-bin/cplogin?lil=1" target="_BLANK">Login</a></li>
-							
-							<li><a href="https://host187.hostmonster.com:2083/cpsess7112426105/frontend/hostmonster/cron/index.html" target="_BLANK">Cron Jobs</a></li>
-							
-                        </ul>
-                    </li>
-					
                     
                     <li id="splash pages">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Splash Pages <b class="caret"></b></a>
                         
                         <ul class="dropdown-menu">
-							<li><a href="?action=splash-ppb-live">Paypal Booster</a></li>
-							<li><a href="?action=splash-ppb-live">live</a></li>
-							<li><a href="?action=splash-ppb-local">localhost</a></li>
+							<li><a href="?action=splash-ppb-live">live - Paypal Booster</a></li>
+							<li><a href="?action=splash-ppb-local">local - Paypal Booster</a></li>
 						 
 							<li class="divider"></li>
 						 
-							<li><a href="?action=splash-freereport-live">Free Neobux Report</a></li>
-							<li><a href="?action=splash-freereport-live">live</a></li>
-							<li><a href="?action=splash-freereport-local">localhost</a></li>
+							<li><a href="?action=splash-freereport-live">live - Free Neobux Report</a></li>
+							<li><a href="?action=splash-freereport-local">local - Free Neobux Report</a></li>
 							
 							<li class="divider"></li>
+							<li><a href="http://bestpayingsites.com/?action=bonus" target="_blank">Ad Pages<b class="caret"></b></a></li>
 							
-							<li><a href="?action=splash-ecourse-live">Free PTC Report</a></li>
-							<li><a href="?action=splash-ecourse-live">live</a></li>
-							<li><a href="?action=splash-ecourse-local">localhost</a></li>
-                        </ul>
-                    </li>
-     
-
-	 
-                    <li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ad Pages <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-                            <li><a href="http://bestpayingsites.com/?action=bonus" target="_blank">PPB & EPS Bonus Downloads</a></li>
+							<li><a href="http://bestpayingsites.com/?action=bonus" target="_blank">PPB & EPS Bonus Downloads</a></li>
                             <li><a href="http://neobuxultimatestrategy.com/basics/" target="_blank">NUS Basics</a></li>
                             
                             <li class="divider"></li>
@@ -512,50 +506,26 @@ switch($_GET['action']) {
 							
                             <li><a href="http://bestpayingsites.com/?action=download&id=vipuser" target="_blank">EPS Download Page</a></li>
 							
-                            <li class="divider"></li>
-							
-                            <li><a href="https://accounts.clickbank.com/login.htm" target="_blank">Clickbank</a></li>
+
                         </ul>
                     </li>
-                    
-					
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Buy Ads <b class="caret"></b></a>
+	 	
+                    <li id="buy_ads">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login 1x/month<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-						
-                            <li><a href="?action=network-ads">Adhitz<b class="caret"></b></a></li>
-                            <li><a href="?action=network-ads">Network Ads</a></li>
-                            <li><a href="?action=site-ads">Site Ads</a></li>
-                            <li><a href="http://www.adhitz.com/en/Advertisers-Buy_Network_Ads" target="_blank">Buy Network Ads</a></li>
-							
-							<li class="divider"></li>
 						
 							<li><a href="http://www.easyhits4u.com/" target="_blank">EasyHits4U</a></li>
                             
                             <li class="divider"></li>
                             
-                            <li><a href="http://neobux.com" target="_blank">Neobux <b class="caret"></b></a></li>
-
-                            <li><a href="https://www.neobux.com/c/a/?s1=pgt" target="_blank">Buy Ads</a></li>
+							<li><a href="http://neobux.com/login" target="_blank"></a></li>
 							
-							<li class="divider"></li>
-                            
-                            <li><a href="http://ysense.com" target="_blank">ySense</a></li>
+                            <li><a href="http://neobux.com/login" target="_blank">Neobux</a></li>
+
+                            <li><a href="http://ysense.com/login" target="_blank">ySense</a></li>
                         </ul>
                     </li>
                     
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Trello<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="https://trello.com/b/lx8xpiWr/2019-goals" target="_BLANK"><?=date('Y', time())?> Goals</a></li>
-                            <li><a href="https://trello.com/b/eCbwlbjV/email-answers-faq" target="_BLANK">Email Answers & FAQ</a></li>
-                            <li><a href="https://trello.com/b/tT7IOsDu/affiliate-links" target="_BLANK">Affiliate Links</a></li>
-                            <li><a href="https://trello.com/b/L7rsEyHd/events" target="_BLANK">Events</a></li>
-                            <li><a href="https://trello.com/b/Tu9CxFFh/writing" target="_BLANK">Writing</a></li>
-                            <li><a href="https://trello.com/b/Y57UfweD/jokes-quotes" target="_BLANK">Jokes & Quotes</a></li>
-                        </ul>
-                    </li>
-					
                 </ul><!--navbar-->
                 
                 <ul class="nav navbar-nav navbar-left">

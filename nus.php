@@ -10,22 +10,24 @@
 <?
 //domains
 $siteNUS = 'http://neobuxultimatestrategy.com/';
-$localNUS = 'http://localhost/NeobuxUltimateStrategy/';
+//$localNUS = 'http://localhost/NeobuxUltimateStrategy/';
+$localNUS = 'http://NeobuxUltimateStrategy.test/';
 
 $siteBPS = 'http://bestpayingsites.com/';
-$localBPS = 'http://localhost/bestpayingsites/';
+//$localBPS = 'http://localhost/bestpayingsites/';
+$localBPS = 'http://BestPayingSites.test/';
 
 $sitePPB = 'http://bestpayingsites.com/ppbooster/';
-$localPPB = 'http://localhost/bestpayingsites/ppbooster/';
+//$localPPB = 'http://localhost/bestpayingsites/ppbooster/';
+$localPPB = 'http://bestpayingsites.test/ppbooster/';
 
 $siteSurveys = 'http://bestpayingsites.com/surveys/';
-$localSurveys = 'http://localhost/bestpayingsites/surveys';
-
+//$localSurveys = 'http://localhost/bestpayingsites/surveys/';
+$localSurveys = 'http://bestpayingsites.test/surveys/';
 
 //spm pages
 $downloadPage = '?action=download&id=vipuser';
 $membersPage = 'members';
-$forgotPage = 'members/?action=forgot';
 $adminPage = 'admin';
 
 $sitePages = '<p align="center"><b>Site Pages</b></p>';
@@ -35,14 +37,12 @@ $nus = array(
         'Main Site' => '<a href="'.$siteNUS.'" target="_blank">'.$siteNUS.'</a>',
         'Download Page' => '<a href="'.$siteNUS.$downloadPage.'" target="_blank">'.$siteNUS.$downloadPage.'</a>',
         'Members Login' => '<a href="'.$siteNUS.$membersPage.'" target="_blank">'.$siteNUS.$membersPage.'</a>',
-        'Forgot Password' => '<a href="'.$siteNUS.$forgotPage.'" target="_blank">'.$siteNUS.$forgotPage.'</a>',
         'Admin Login' => '<a href="'.$siteNUS.$adminPage.'" target="_blank">'.$siteNUS.$adminPage.'</a>'
     ),
     'local' => array(
         'Main Site' => '<a href="'.$localNUS.'" target="_blank">'.$localNUS.'</a>',
         'Download Page' => '<a href="'.$localNUS.$downloadPage.'" target="_blank">'.$localNUS.$downloadPage.'</a>',
         'Members Login' => '<a href="'.$localNUS.$membersPage.'" target="_blank">'.$localNUS.$membersPage.'</a>',
-        'Forgot Password' => '<a href="'.$localNUS.$forgotPage.'" target="_blank">'.$localNUS.$forgotPage.'</a>',
         'Admin Login' => '<a href="'.$localNUS.$adminPage.'" target="_blank">'.$localNUS.$adminPage.'</a>'
     ),
 );
@@ -52,14 +52,12 @@ $bps = array(
         'Main Site' => '<a href="'.$siteBPS.'" target="_blank">'.$siteBPS.'</a>',
         'Download Page' => '<a href="'.$siteBPS.$downloadPage.'" target="_blank">'.$siteBPS.$downloadPage.'</a>',
         'Members Login' => '<a href="'.$siteBPS.$membersPage.'" target="_blank">'.$siteBPS.$membersPage.'</a>',
-        'Forgot Password' => '<a href="'.$siteBPS.$forgotPage.'" target="_blank">'.$siteBPS.$forgotPage.'</a>',
         'Admin Login' => '<a href="'.$siteBPS.$adminPage.'" target="_blank">'.$siteBPS.$adminPage.'</a>'
     ),
     'local' => array(
         'Main Site' => '<a href="'.$localBPS.'" target="_blank">'.$localBPS.'</a>',
         'Download Page' => '<a href="'.$localBPS.$downloadPage.'" target="_blank">'.$localBPS.$downloadPage.'</a>',
         'Members Login' => '<a href="'.$localBPS.$membersPage.'" target="_blank">'.$localBPS.$membersPage.'</a>',
-        'Forgot Password' => '<a href="'.$localBPS.$forgotPage.'" target="_blank">'.$localBPS.$forgotPage.'</a>',
         'Admin Login' => '<a href="'.$localBPS.$adminPage.'" target="_blank">'.$localBPS.$adminPage.'</a>'
     ),
 ); 
@@ -89,9 +87,6 @@ $surveys = array(
 ); 
 ?> 
 <center>
-
-
-    
     <table>
     <tr valign="top">
         <td>
