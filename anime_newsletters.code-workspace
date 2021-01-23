@@ -1,27 +1,43 @@
 {
 	"folders": [
 		{
+			"name": "backups",
 			"path": "..\\backups"
 		},
 		{
+			"name": "CodeGeass.info",
+			"path": "..\\CodeGeass.info"
+		},
+		{
+			"name": "AnimeFanservice.org",
 			"path": "..\\AnimeFanservice.org"
 		},
 		{
+			"name": "SaintlyNewsletters",
 			"path": "..\\SaintlyNewsletters"
 		},
 		{
-			"path": "..\\NeobuxUltimateStrategy"
-		},
-		{
+			"name": "lightbox_gallery",
 			"path": "..\\lightbox_gallery"
 		},
 		{
+			"name": "BCM",
 			"path": "..\\BCM"
 		},
 		{
+			"name": "SaintlyProjectManager",
 			"path": "."
 		},
 		{
+			"name": "SaintlyAccountsManager",
+			"path": "..\\SaintlyAccountsManager"
+		},
+		{
+			"name": "NeobuxUltimateStrategy",
+			"path": "..\\NeobuxUltimateStrategy"
+		},
+		{
+			"name": "BestPayingSites",
 			"path": "..\\BestPayingSites"
 		}
 	],
