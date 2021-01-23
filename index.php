@@ -1,4 +1,7 @@
 <?php
+
+$newslHost = 'http://saintlynewsletters.test/';
+
 switch($_GET['action']) {
 
     //localhost
@@ -8,147 +11,41 @@ switch($_GET['action']) {
 	case 'blog-bcm':
         $link = 'blog_bcm.php';
         break;
-     case 'archive':
+    case 'archive':
         $link = 'archive_links.php';
         break;
-	
-    case 'trafficwave':
-        $link = 'https://www.trafficwave.net/members_only/members_only.cgi/toolbar.html';
+    case 'fanfic':
+        $link = 'fanfic_html.php';
         break;
- 
-    //allsubscribers 
-    case 'all-stats':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/subscrstats.cgi?action=subscr_overview&series=350956';
+    //sendgrid 
+    case 'sendgrid_api':  
+        $link = $newslHost.'sendgrid/api_test.php';  
         break;
-    case 'all-manage':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/subscrstats.cgi?action=subscr_manage&series=350956';
-        break; 
-    case 'all-letters':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?header=letters&series=350956';
-        break;
-    case 'all-profile':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/editprofile.cgi?series=350956';
-        break;
-        
-    //allcustomers
-    case 'nuscust-stats':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/subscrstats.cgi?action=subscr_overview&series=375842';
-        break;
-    case 'nuscust-manage':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/subscrstats.cgi?action=subscr_manage&series=375842';
-        break;	
-    case 'nuscust-letters':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?header=letters&series=375842';
-        break;
-    case 'nuscust-profile':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/editprofile.cgi?header=admin&series=375842';
-        break;
-        
-    //nus newsl		
-    case 'nusnewsl-stats':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/subscrstats.cgi?action=subscr_overview&series=247336';
-        break;
-    case 'nusnewsl-manage':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/subscrstats.cgi?action=subscr_manage&series=247336';
-        break; 
-    case 'nusnewsl-letters':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?header=letters&series=247336';
-        break;
-    case 'nusnewsl-profile':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/editprofile.cgi?header=admin&series=247336';
-        break;
-
-    //ppb newsl
-    case 'ppbooster-stats':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/subscrstats.cgi?action=subscr_overview&series=290716';
-        break;
-    case 'ppbooster-manage':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/subscrstats.cgi?action=subscr_manage&series=290716';
-        break;
-    case 'ppbooster-letters':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?header=letters&series=290716';
-        break;
-    case 'ppbooster-profile':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/editprofile.cgi?header=admin&series=290716';
-        break;
-
-            
-    //mms newsl
-    case 'mms-stats':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/subscrstats.cgi?action=subscr_overview&series=263238';
-        break; 
-    case 'mms-manage':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/subscrstats.cgi?action=subscr_manage&series=263238';
-        break;
-    case 'mms-letters':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?header=letters&series=263238';
-        break;
-    case 'mms-profile':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/editprofile.cgi?header=admin&series=263238';
-        break;
-
-    //// onlinejobs newsl \\\\
-    case 'onlinejobs-stats':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/subscrstats.cgi?action=subscr_overview&series=375894';	
-        break;
-    case 'onlinejobs-manage':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/subscrstats.cgi?action=subscr_manage&series=375894';
-        break;
-    case 'onlinejobs-letters':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?header=letters&series=375894';
-        break;	
-    case 'onlinejobs-profile':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/subscrstats.cgi?header=admin&series=375894';
-        break;
-		 		
-    
-    //// ptcprograms newsl \\\\
-    case 'ptcprograms-stats':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/subscrstats.cgi?action=subscr_overview&series=357941';	
-        break;
-    case 'ptcprograms-manage':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/subscrstats.cgi?action=subscr_manage&series=357941';
-        break;
-    case 'ptcprograms-letters':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?header=letters&series=357941';
-        break;	
-    case 'ptcprograms-profile':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/subscrstats.cgi?header=admin&series=357941';
-        break;
-		 
-    
     case 'newsletters':
-        $link = 'http://localhost/SaintlyNewsletters';
+        $link = $newslHost;
         break;
+	 		
     case 'newsl-all':
-        $link = 'http://localhost/SaintlyNewsletters/AllSubscribers';
+        $link = $newslHost.'AllSubscribers';
         break;
     case 'newsl-mms':
-        $link = 'http://localhost/SaintlyNewsletters/MakeMoneySurveys';
+        $link = $newslHost.'MakeMoneySurveys';
         break;
     case 'newsl-ppb':
-        $link = 'http://localhost/SaintlyNewsletters/PaypalBooster';
+        $link = $newslHost.'PaypalBooster';
         break;
     case 'newsl-nus':
-        $link = 'http://localhost/SaintlyNewsletters/UltimateStrategy';
+        $link = $newslHost.'UltimateStrategy';
         break;
     case 'newsl-ptcprograms':
-        $link = 'http://localhost/SaintlyNewsletters/PTCPrograms';
+        $link = $newslHost.'PTCPrograms';
         break;
     case 'newsl-translate':
-        $link = 'http://localhost/SaintlyNewsletters/TranslatorJobs';
+        $link = $newslHost.'TranslatorJobs';
         break;
     case 'newsl-online':
-        $link = 'http://localhost/SaintlyNewsletters/OnlineJobs';
+        $link = $newslHost.'OnlineJobs';
         break;
-
-    case 'tw-chain':
-        $link = 'https://www.trafficwave.net/cgi-bin/autoresp/campaignchain.cgi?action=campaign_chain&series=';
-        break;
-				
-    case 'tw-global':		
-		$link = '	https://www.trafficwave.net/cgi-bin/autoresp/subscrmgr.cgi?series=global';
-		break;
 
     case 'copy':
         $splitScreen = true;
@@ -320,12 +217,13 @@ switch($_GET['action']) {
 							
                             <li><a href="http://localhost/phpmyadmin/" target="_blank">phpMyAdmin</a></li>
 							
-                            
                             <li><a href="http://SaintlyAccountsManager.test">Account Manager</a></li> 
 
                             <li><a href="?action=archive">Achive Links</a></li> 
 							
-							<li class="divider"></li>
+                            <li class="divider"></li>
+                            
+                            <li><a href="?action=fanfic">Fanfiction</a></li> 
 							
 							<li><a href="?action=ig-posts">IG Posts</a></li> 
 						
@@ -373,10 +271,11 @@ switch($_GET['action']) {
                     </li>
 					
                     <li id="trafficwave">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">TrafficWave <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sendgrid <b class="caret"></b></a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                            <li><a href="?action=trafficwave">TrafficWave Login</a></li>
+                            <li><a href="?action=sendgrid_api">Sendgrid API</a></li>
 
+                            <li><a href="?action=newsletters">Newsletters List</a></li>
                             <li class="divider"></li>
                              
                             <li class="dropdown-submenu">
@@ -452,32 +351,26 @@ switch($_GET['action']) {
                             <li><a href="?action=copy">Newsletters Index</a></li>
                             <li class="divider"></li>
                             <li><a href="?action=newsl-all">All Subscribers - Edit</a></li>
-                            <li><a href="?action=copy-all">All Subscribers - Copy</a></li>
-							
+                      		
                             <li class="divider"></li>
 							
                             <li><a href="?action=newsl-nus">NUS Newsletter - Edit</a></li>
-                            <li><a href="?action=copy-nusnewsl">NUS Newsletter - Copy</a></li>
-							
+                      
                             <li class="divider"></li>
 							
                             <li><a href="?action=newsl-mms">Make Money Surveys - Edit</a></li>
-                            <li><a href="?action=copy-mms">Make Money Surveys - Copy</a></li>
-							
+                      		
                             <li class="divider"></li>
 							
                             <li><a href="?action=newsl-online">Online Jobs - Edit</a></li>
-                            <li><a href="?action=copy-onlinejobs">Online Jobs - Copy</a></li>
-							
+                      		
                             <li class="divider"></li>
 							
                             <li><a href="?action=newsl-ptcprograms">PTC Programs - Edit</a></li>
-                            <li><a href="?action=copy-ptcprograms">PTC Programs - Copy</a></li>
-							
+                      		
                             <li class="divider"></li>
 							
                             <li><a href="?action=newsl-ppb">Paypal Booster - Edit</a></li>
-                            <li><a href="?action=copy-ppbooster">Paypal Booster - Copy</a></li>
                         </ul>
                     </li>
 
