@@ -8,7 +8,7 @@ switch($_GET['action']) {
     case 'localhost':
         $link = 'http://localhost';
         break;
-	case 'blog-bcm':
+	case 'blog_bcm':
         $link = 'blog_bcm.php';
         break;
     case 'archive':
@@ -21,10 +21,13 @@ switch($_GET['action']) {
     case 'sendgrid_api':  
         $link = $newslHost.'sendgrid/api_test.php';  
         break;
+    case 'sendEmailsDaily':  
+        $link = $newslHost.'sendEmailsDaily.php';  
+        break;
     case 'newsletters':
         $link = $newslHost;
         break;
-	 		
+
     case 'newsl-all':
         $link = $newslHost.'AllSubscribers';
         break;
@@ -47,49 +50,6 @@ switch($_GET['action']) {
         $link = $newslHost.'OnlineJobs';
         break;
 
-    case 'copy':
-        $splitScreen = true;
-        $leftScreen = 'http://localhost/SaintlyNewsletters';
-        $rightScreen = 'https://www.trafficwave.net/members_only/members_only.cgi/toolbar.html';
-        break;
-		
-    case 'copy-all':
-        $splitScreen = true;
-        $leftScreen = 'http://localhost/SaintlyNewsletters/AllSubscribers';
-        $rightScreen = 'https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?header=letters&series=350956';
-        break;
-
-    case 'copy-ppbooster':
-        $splitScreen = true;
-        $leftScreen = 'http://localhost/SaintlyNewsletters/PaypalBooster';
-        $rightScreen = 'https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?header=letters&series=290716';
-        break; 
-    case 'copy-nusnewsl':
-        $splitScreen = true;
-        $leftScreen = 'http://localhost/SaintlyNewsletters/UltimateStrategy';
-        $rightScreen = 'https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?header=letters&series=247336';
-        break;
-    case 'copy-ptcprograms':
-        $splitScreen = true;
-        $leftScreen = 'http://localhost/SaintlyNewsletters/PTCPrograms';
-        $rightScreen = 'https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?header=letters&series=357941';
-        break;
-    case 'copy-mms':
-        $splitScreen = true;
-        $leftScreen = 'http://localhost/SaintlyNewsletters/MakeMoneySurveys';
-        $rightScreen = 'https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?header=letters&series=263238';
-        break;
-    case 'copy-translate':
-        $splitScreen = true;
-        $leftScreen = 'http://localhost/SaintlyNewsletters/TranslatorJobs';
-        $rightScreen = 'https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?header=letters&series=342122';
-        break;
-    case 'copy-onlinejobs':
-        $splitScreen = true;
-        $leftScreen = 'http://localhost/SaintlyNewsletters/OnlineJobs';
-        $rightScreen = 'https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?header=letters&series=375894';
-        break;
-    
 	case 'gmail-filters':
 		$link = 'https://mail.google.com/mail/u/0/?shva=1#settings/filters';
 		break;
@@ -227,7 +187,7 @@ switch($_GET['action']) {
 							
 							<li><a href="?action=ig-posts">IG Posts</a></li> 
 						
-							<li><a href="?action=blog-bcm">BCM Blog</a></li> 
+							<li><a href="?action=blog_bcm">BCM Blog</a></li> 
 														
 							<li><a href="?action=blog">NUS Blog & SEO</a></li> 
 							
@@ -275,28 +235,15 @@ switch($_GET['action']) {
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
                             <li><a href="?action=sendgrid_api">Sendgrid API</a></li>
 
-                            <li><a href="?action=newsletters">Newsletters List</a></li>
+                            <li><a href="?action=sendEmailsDaily">sendEmailsDaily</a></li>
+
                             <li class="divider"></li>
-                             
-                            <li class="dropdown-submenu">
-                                <a tabindex="-1" href="?action=all-profile" title="allsubscribers">All Subscribers</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="?action=all-letters">allsubscribers - letters</a></li>
-                                    <li><a href="?action=all-stats">allsubscribers - stats</a></li>
-                                    <li><a href="?action=all-manage">allsubscribers - manage</a></li>
-                                </ul>
-                            </li>
+
+                            <li><a href="https://mc.sendgrid.com/contacts">Sendgrid Contacts</a></li>
+                            <li><a href="https://app.sendgrid.com/settings/sender_auth">Sender Authentication</a></li>
                             
                             <li class="divider"></li>
                             
-                            <li class="dropdown-submenu">
-                                <a tabindex="-1" href="?action=mms-profile" title="makemoneysurveys">Make Money Surveys</a>
-                                <ul class="dropdown-menu">
-                                     <li><a href="?action=mms-letters">mms - letters</a></li>
-                                    <li><a href="?action=mms-stats">mms - stats</a></li>
-                                    <li><a href="?action=mms-manage">mms - manage</a></li>
-                                </ul>
-                            </li>
                             
                             <li class="dropdown-submenu">
                                 <a tabindex="-1" href="?action=onlinejobs-profile" title="onlinejobs">Online Jobs</a>
@@ -335,13 +282,7 @@ switch($_GET['action']) {
                                     <li><a href="?action=ppbooster-manage">ppbooster - manage</a></li>
                                 </ul>
                             </li>
-							
-							<li class="divider"></li>
-                            
-							 <li><a href="?action=tw-chain">Campaign Chaining</a></li>
-                           
-						    <li><a href="?action=tw-global">Global Subscribers</a></li>
-                           
+							 
                           </ul>
                     </li>
                     
