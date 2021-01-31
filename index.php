@@ -71,6 +71,10 @@ switch($_GET['action']) {
         $link = $apiHost .'script_bittrex_dwc_trades.php';
         break;
 
+    case 'curl': 
+        $link = $apiHost .'curl.php';
+        break;
+
     case 'splash-freereport-live':
         $link = 'http://neobuxultimatestrategy.com/?action=freereport';
         break;
@@ -181,6 +185,7 @@ switch($_GET['action']) {
                 <a class="navbar-brand" href="?action=db">Links Project</a>
             </div>
 
+
 <?
 $menuAPI = array(
     'Bittrex API' => array(
@@ -213,6 +218,26 @@ $menuLocal = array(
         'href' => '?action=nus'),
 );
 
+$menuTrello = array(
+    date('Y', time()).' Goals' => array(
+        'href' => 'https://trello.com/b/lx8xpiWr/2021-goals',
+        'attr' => 'target="_BLANK"'),
+   'Affiliate Links' => array( 
+        'href' => 'https://trello.com/b/tT7IOsDu/affiliate-links',
+        'attr' => 'target="_BLANK"'), 
+    'Writing' => array( 
+        'href' => 'https://trello.com/b/Tu9CxFFh/writing',
+        'attr' => 'target="_BLANK"'),        
+    'AnimeFavorite' => array( 
+        'href' => 'https://trello.com/b/5CNProvG/animefavoritechannel',
+        'attr' => 'target="_BLANK"'),        
+    'Black Crime Matters' => array( 
+        'href' => 'https://trello.com/b/sguRUO8x/blackcrimesmatter',
+        'attr' => 'target="_BLANK"'),
+    'NUS & BPS & BTC Tasks' => array( 
+        'href' => 'https://trello.com/b/jZ0Oxejm/shitsmas-vacation',
+        'attr' => 'target="_BLANK"'),
+)
 ?>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse">
@@ -230,25 +255,25 @@ $menuLocal = array(
                     <li id="trello">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Trello<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            
-                            <li><a href="https://trello.com/b/lx8xpiWr/2019-goals" target="_BLANK"><?=date('Y', time())?> Goals</a></li>
-                           
-                            <li><a href="https://trello.com/b/tT7IOsDu/affiliate-links" target="_BLANK">Affiliate Links</a></li>
-						
-							<li><a href="https://trello.com/b/Y57UfweD/jokes-quotes" target="_BLANK">Jokes & Quotes</a></li>
-													
-                            <li><a href="https://trello.com/b/Tu9CxFFh/writing" target="_BLANK">Writing</a></li>
-                            
-							<li><a href="https://trello.com/b/5CNProvG/animefavoritechannel" target="_BLANK">AnimeFavorite</a></li>
-							 
-							<li><a href="https://trello.com/b/sguRUO8x/blackcrimesmatter" target="_BLANK">Black Crime Matters</a></li>
+                            <?
+                            echo displayMenu($menuTrello);
+                            ?>
                         </ul>
                     </li>
 					
 					
 					<li id="gmail">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gmail<b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gmail & HM<b class="caret"></b></a>
                         <ul class="dropdown-menu">
+                            <?
+$menuTrello = array(
+    date('Y', time()).' Goals' => array(
+        'href' => 'https://trello.com/b/lx8xpiWr/2021-goals',
+        'attr' => 'target="_BLANK"'),
+    );
+
+                            echo displayMenu($menuGmail);
+                            ?>
                             <li><a href="https://mail.google.com/mail/u/0/?shva=1#settings/accounts" target="_BLANK">Accounts</a></li>
                             <li><a href="https://mail.google.com/mail/u/0/?shva=1#settings/filters" target="_BLANK">Filters</a></li>
 							
@@ -276,7 +301,6 @@ $menuLocal = array(
                             <li><a href="https://app.sendgrid.com/settings/sender_auth">Sender Authentication</a></li>
                             
                             <li class="divider"></li>
-                            
                             
                             <li class="dropdown-submenu">
                                 <a tabindex="-1" href="?action=onlinejobs-profile" title="onlinejobs">Online Jobs</a>
@@ -353,8 +377,6 @@ $menuLocal = array(
 
                         <ul class="dropdown-menu">
                         <?
-                      
-                         
                         echo displayMenu($menuAPI);
                         ?>
                          
@@ -418,16 +440,9 @@ $menuLocal = array(
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-    
+
+
     <?php
-    if ($splitScreen)
-        echo '<table width="100%" height="95%">
-	<tr>
-            <td width="40%"><iframe src="' . $leftScreen . '"></iframe></td>
-            <td><iframe src="' . $rightScreen . '"></iframe></td>
-	</tr>
-	</table>';
-    else
         echo '<iframe width=100% height=95% src="' . $link . '"></iframe>';
     ?>
 </body>
