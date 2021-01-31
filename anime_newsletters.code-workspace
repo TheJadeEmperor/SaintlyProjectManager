@@ -39,6 +39,9 @@
 		{
 			"name": "BestPayingSites",
 			"path": "..\\BestPayingSites"
+		},
+		{
+			"path": "..\\btcAPI"
 		}
 	],
 	"settings": {}

@@ -1,6 +1,16 @@
 <?php
+function displayMenu($menu) {
+    foreach($menu as $name => $url) {
+        if($name == 'divider')
+            $display .= '<li class="divider"></li>';
+        else
+            $display .= '<li><a href="'.$url['href'].'" '.$url['attr'].'>'.$name.'</a></li>';
+    }
+    return $display;
+}
 
 $newslHost = 'http://saintlynewsletters.test/';
+$apiHost = 'http://localhost/btcAPI/';
 
 switch($_GET['action']) {
 
@@ -56,7 +66,11 @@ switch($_GET['action']) {
 	case 'gmail-accounts':
 		$link = 'https://mail.google.com/mail/u/0/?shva=1#settings/accounts';
 		break;
-		
+
+    case 'bittrex-api': 
+        $link = $apiHost .'script_bittrex_dwc_trades.php';
+        break;
+
     case 'splash-freereport-live':
         $link = 'http://neobuxultimatestrategy.com/?action=freereport';
         break;
@@ -166,38 +180,57 @@ switch($_GET['action']) {
                 </button>
                 <a class="navbar-brand" href="?action=db">Links Project</a>
             </div>
- 
+
+<?
+$menuAPI = array(
+    'Bittrex API' => array(
+        'href' => '?action=bittrex-api'),
+    'Curl' => array(
+        'href' => '?action=curl'),
+    'Bitmex API' => array(
+        'href' => '#'),
+);
+
+$menuLocal = array(
+    'Localhost' => array(
+        'href' => 'http://localhost'),
+    'phpMyAdmin' => array(
+        'href' => 'http://localhost/phpmyadmin/'),
+    'Account Manager' => array(
+        'href' => 'http://SaintlyAccountsManager.test'),
+    'Achive Links' => array(
+        'href' => '?action=archive'),
+    'divider',
+    'Fanfiction' => array(
+        'href' => '?action=fanfic'),
+    'IG Posts' => array(
+        'href' => '?action=ig-posts'),
+    'BCM Blog' => array(
+        'href' => '?action=blog_bcm'),
+    'NUS Blog & SEO' => array(
+        'href' => '?action=blog'),
+    'NUS & PPB Links' => array(
+        'href' => '?action=nus'),
+);
+
+?>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav"  id="main-menu">
                     <li class="dropdown" id="localhost">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Localhost <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="http://localhost" target="_blank">Localhost</a></li>
-							
-                            <li><a href="http://localhost/phpmyadmin/" target="_blank">phpMyAdmin</a></li>
-							
-                            <li><a href="http://SaintlyAccountsManager.test">Account Manager</a></li> 
-
-                            <li><a href="?action=archive">Achive Links</a></li> 
-							
-                            <li class="divider"></li>
-                            
-                            <li><a href="?action=fanfic">Fanfiction</a></li> 
-							
-							<li><a href="?action=ig-posts">IG Posts</a></li> 
-						
-							<li><a href="?action=blog_bcm">BCM Blog</a></li> 
-														
-							<li><a href="?action=blog">NUS Blog & SEO</a></li> 
-							
-							<li><a href="?action=nus">NUS & PPB Links</a></li> 					
+                           
+                            <?
+                            echo displayMenu($menuLocal);
+                            ?>				
                         </ul>
                     </li>
                    
                     <li id="trello">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Trello<b class="caret"></b></a>
                         <ul class="dropdown-menu">
+                            
                             <li><a href="https://trello.com/b/lx8xpiWr/2019-goals" target="_BLANK"><?=date('Y', time())?> Goals</a></li>
                            
                             <li><a href="https://trello.com/b/tT7IOsDu/affiliate-links" target="_BLANK">Affiliate Links</a></li>
@@ -315,7 +348,19 @@ switch($_GET['action']) {
                         </ul>
                     </li>
 
-                    
+                    <li id="splash pages">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">BTC API<b class="caret"></b></a>
+
+                        <ul class="dropdown-menu">
+                        <?
+                      
+                         
+                        echo displayMenu($menuAPI);
+                        ?>
+                         
+                        </ul>
+                    </li>
+
                     <li id="splash pages">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Splash Pages <b class="caret"></b></a>
                         
@@ -339,8 +384,6 @@ switch($_GET['action']) {
                             <li><a href="http://neobuxultimatestrategy.com/?action=download&id=vipuser" target="_blank">NUS Download Page</a></li>
 							
                             <li><a href="http://bestpayingsites.com/?action=download&id=vipuser" target="_blank">EPS Download Page</a></li>
-							
-
                         </ul>
                     </li>
 	 	
