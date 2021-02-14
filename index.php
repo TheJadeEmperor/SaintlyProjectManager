@@ -67,13 +67,16 @@ switch($_GET['action']) {
 		$link = 'https://mail.google.com/mail/u/0/?shva=1#settings/accounts';
 		break;
 
+    case 'api-login': 
+        $link = $apiHost;
+        break;
     case 'bittrex-api': 
         $link = $apiHost .'script_bittrex_dwc_trades.php';
         break;
-
     case 'curl': 
         $link = $apiHost .'curl.php';
         break;
+
 
     case 'splash-freereport-live':
         $link = 'http://neobuxultimatestrategy.com/?action=freereport';
@@ -188,12 +191,12 @@ switch($_GET['action']) {
 
 <?
 $menuAPI = array(
+    'API Login' => array(
+        'href' => '?action=api-login'),
     'Bittrex API' => array(
         'href' => '?action=bittrex-api'),
     'Curl' => array(
         'href' => '?action=curl'),
-    'Bitmex API' => array(
-        'href' => '#'),
 );
 
 $menuLocal = array(
