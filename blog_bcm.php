@@ -45,26 +45,6 @@ $printify2 = array(
 	),	
 );
 
-$etsy = array(
-	'my_store' => array (
-		'display' => 'My Store',
-		'url' => 'https://www.etsy.com/shop/ConfuciusStore'
-	),
-	'my_listings' => array (
-		'display' => 'My listings',
-		'url' => 'https://www.etsy.com/your/shops/ConfuciusStore/tools/listings/stats:true'
-	),
-	'my_stats' => array (
-		'display' => 'My stats',
-		'url' => 'https://www.etsy.com/your/shops/me/stats?ref=seller-platform-mcnav'
-	),	
-	'shitting_profiles' => array (
-		'display' => 'Shitting profiles',
-		'url' => 'https://www.etsy.com/your/shops/ConfuciusStore/tools/shipping-profiles'
-	),		
-);
-
-
 $etsy2 = array(
 	'my_store' => array (
 		'display' => 'My Store',
@@ -89,14 +69,6 @@ $etsy2 = array(
 <center>
 <table>
     <tr valign="top">
-        <td>
-            <div class="contentBox">
-			ConfuciusStore
-			<?
-				echo displayLinks($etsy);
-			?>
-			</div>
-		</td>
 		<td>
             <div class="contentBox">
 			AnimeEmpireShop

@@ -70,9 +70,6 @@ switch($_GET['action']) {
     case 'api-login': 
         $link = $apiHost;
         break;
-    case 'bittrex-api': 
-        $link = $apiHost .'script_bittrex_dwc_trades.php';
-        break;
     case 'curl': 
         $link = $apiHost .'curl.php';
         break;
@@ -193,9 +190,7 @@ switch($_GET['action']) {
 $menuAPI = array(
     'API Login' => array(
         'href' => '?action=api-login'),
-    'Bittrex API' => array(
-        'href' => '?action=bittrex-api'),
-    'Curl' => array(
+    'Curl Main Page' => array(
         'href' => '?action=curl'),
 );
 
@@ -443,8 +438,6 @@ $menuTrello = array(
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-
-
     <?php
         echo '<iframe width=100% height=95% src="' . $link . '"></iframe>';
     ?>
