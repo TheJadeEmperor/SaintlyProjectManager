@@ -18,26 +18,16 @@ switch($_GET['action']) {
     case 'localhost':
         $link = 'http://localhost';
         break;
-	case 'blog_bcm':
-        $link = 'blog_bcm.php';
-        break;
     case 'archive':
         $link = 'archive_links.php';
-        break;
-    case 'fanfic':
-        $link = 'fanfic_html.php';
-        break;
-    //sendgrid 
-    case 'sendgrid_api':  
-        $link = $newslHost.'sendgrid/api_test.php';  
-        break;
-    case 'sendEmailsDaily':  
-        $link = $newslHost.'sendEmailsDaily.php';  
         break;
     case 'newsletters':
         $link = $newslHost;
         break;
 
+    case 'newsl-index':
+        $link = $newslHost;
+        break;
     case 'newsl-all':
         $link = $newslHost.'AllSubscribers';
         break;
@@ -59,7 +49,8 @@ switch($_GET['action']) {
     case 'newsl-online':
         $link = $newslHost.'OnlineJobs';
         break;
-
+ 
+        
 	case 'gmail-filters':
 		$link = 'https://mail.google.com/mail/u/0/?shva=1#settings/filters';
 		break;
@@ -74,20 +65,13 @@ switch($_GET['action']) {
         $link = $apiHost .'curl.php';
         break;
 
-
     case 'splash-freereport-live':
-        $link = 'http://neobuxultimatestrategy.com/?action=freereport';
+        $link = 'http://NeobuxUltimateStrategy.test/?action=freereport';
         break;
     case 'splash-freereport-local':
-        $link = 'http://localhost/NeobuxUltimateStrategy/?action=freereport';
+        $link = 'http://NeobuxUltimateStrategy.test/?action=freereport';
         break;
-
-    case 'splash-ecourse-live': 
-        $link = 'http://neobuxultimatestrategy.com/?action=ecourse';
-        break;
-    case 'splash-ecourse-local': 
-        $link = 'http://localhost/NeobuxUltimateStrategy/?action=ecourse';
-        break;
+ 
 
     case 'splash-ppb-live': 
         $link = 'http://bestpayingsites.com/?action=booster';
@@ -102,18 +86,17 @@ switch($_GET['action']) {
     case 'splash-video-local': 
         $link = 'http://localhost/bestpayingsites/?action=translate';
         break;
-	
+
+        
+
     case 'nus':
         $link = 'nus.php';
         break;
 	case 'blog': 
 		$link = 'blog_nus.php';
 		break;
-	case 'ig-posts': 
-		$link = 'ig_posts.php';
-		break;
 	default:
-        $link = 'blog_bcm.php';
+        $link = 'nus.php';
 }
 ?>
 <html>
@@ -235,6 +218,7 @@ $menuTrello = array(
     'NUS & BPS & BTC Tasks' => array( 
         'href' => 'https://trello.com/b/jZ0Oxejm/shitsmas-vacation',
         'attr' => 'target="_BLANK"'),
+
 )
 ?>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -286,65 +270,11 @@ $menuTrello = array(
                         </ul>
                     </li>
 					
-                    <li id="trafficwave">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sendgrid <b class="caret"></b></a>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                            <li><a href="?action=sendgrid_api">Sendgrid API</a></li>
-
-                            <li><a href="?action=sendEmailsDaily">sendEmailsDaily</a></li>
-
-                            <li class="divider"></li>
-
-                            <li><a href="https://mc.sendgrid.com/contacts">Sendgrid Contacts</a></li>
-                            <li><a href="https://app.sendgrid.com/settings/sender_auth">Sender Authentication</a></li>
-                            
-                            <li class="divider"></li>
-                            
-                            <li class="dropdown-submenu">
-                                <a tabindex="-1" href="?action=onlinejobs-profile" title="onlinejobs">Online Jobs</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="?action=onlinejobs-letters">onlinejobs - letters</a></li>
-                                    <li><a href="?action=onlinejobs-stats">onlinejobs - stats</a></li>
-                                    <li><a href="?action=onlinejobs-manage">onlinejobs - manage</a></li>
-                                </ul>
-                            </li>
-                            
-                            <li class="divider"></li>
-                            
-                            <li class="dropdown-submenu">
-                                <a tabindex="-1" href="?action=nusnewsl-profile" title="nusnewsletter">NUS Newsletter</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="?action=nusnewsl-letters">nus - letters</a></li>
-                                    <li><a href="?action=nusnewsl-stats">nus - stats</a></li>
-                                    <li><a href="?action=nusnewsl-manage">nus - manage</a></li>
-                                </ul>
-                            </li>
-							
-							<li class="dropdown-submenu">
-                                <a tabindex="-1" href="?action=ptcprograms-letters" title="ptcprograms">PTC Programs</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="?action=ptcprograms-letters">ptcprograms - letters</a></li>
-                                    <li><a href="?action=ptcprograms-stats">ptcprograms - stats</a></li>
-                                    <li><a href="?action=ptcprograms-manage">ptcprograms - manage</a></li>
-                                </ul>
-                            </li>
-                              
-                            <li class="dropdown-submenu">
-                                <a tabindex="-1" href="?action=ppbooster-profile" title="paypalbooster">Paypal Booster</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="?action=ppbooster-letters">ppbooster - letters</a></li>
-                                    <li><a href="?action=ppbooster-stats">ppbooster - stats</a></li>
-                                    <li><a href="?action=ppbooster-manage">ppbooster - manage</a></li>
-                                </ul>
-                            </li>
-							 
-                          </ul>
-                    </li>
-                    
+                  
                     <li id="newsletters"> 
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Newsletters <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="?action=copy">Newsletters Index</a></li>
+                            <li><a href="?action=newsl-index">Newsletters Index</a></li>
                             <li class="divider"></li>
                             <li><a href="?action=newsl-all">All Subscribers - Edit</a></li>
                       		
@@ -370,17 +300,52 @@ $menuTrello = array(
                         </ul>
                     </li>
 
-                    <li id="splash pages">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">BTC API<b class="caret"></b></a>
-
-                        <ul class="dropdown-menu">
-                        <?
-                        echo displayMenu($menuAPI);
-                        ?>
-                         
-                        </ul>
+                    <li id="trafficwave">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">TrafficWave <b class="caret"></b></a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                        
+                        <li class="dropdown-submenu">
+                                <a tabindex="-1" href="https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?action=edit_letter&series=472175" title="nusnewsletter"  target="_BLANK">NUS Newsletter</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?action=edit_letter&series=472175" target="_BLANK">nus - letters</a></li>
+                                    <li><a href="?action=nusnewsl-stats">nus - stats</a></li>
+                                    <li><a href="?action=nusnewsl-manage">nus - manage</a></li>
+                                </ul>
+                            </li>
+						
+                            <li class="dropdown-submenu">
+                                <a tabindex="-1" href="?action=onlinejobs-profile" title="onlinejobs">Online Jobs</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="?action=onlinejobs-letters">onlinejobs - letters</a></li>
+                                    <li><a href="?action=onlinejobs-stats">onlinejobs - stats</a></li>
+                                    <li><a href="?action=onlinejobs-manage">onlinejobs - manage</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li class="divider"></li>
+                            
+							<li class="dropdown-submenu">
+                                <a tabindex="-1" href="?action=ptcprograms-letters" title="ptcprograms">PTC Programs</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="?action=ptcprograms-letters">ptcprograms - letters</a></li>
+                                    <li><a href="?action=ptcprograms-stats">ptcprograms - stats</a></li>
+                                    <li><a href="?action=ptcprograms-manage">ptcprograms - manage</a></li>
+                                </ul>
+                            </li>
+                              
+                            <li class="dropdown-submenu">
+                                <a tabindex="-1" href="?action=ppbooster-profile" title="paypalbooster">Paypal Booster</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="?action=ppbooster-letters">ppbooster - letters</a></li>
+                                    <li><a href="?action=ppbooster-stats">ppbooster - stats</a></li>
+                                    <li><a href="?action=ppbooster-manage">ppbooster - manage</a></li>
+                                </ul>
+                            </li>
+							 
+                          </ul>
                     </li>
-
+                    
+ 
                     <li id="splash pages">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Splash Pages <b class="caret"></b></a>
                         
@@ -408,7 +373,7 @@ $menuTrello = array(
                     </li>
 	 	
                     <li id="buy_ads">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login 1x/month<b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login<b class="caret"></b></a>
                         <ul class="dropdown-menu">
 						
 							<li><a href="http://www.easyhits4u.com/" target="_blank">EasyHits4U</a></li>
@@ -418,8 +383,9 @@ $menuTrello = array(
 							<li><a href="http://neobux.com/login" target="_blank"></a></li>
 							
                             <li><a href="http://neobux.com/login" target="_blank">Neobux</a></li>
-
-                            <li><a href="http://ysense.com/login" target="_blank">ySense</a></li>
+ 
+                            <li><a href="https://www.trafficwave.net/login.html" target="_blank">TrafficWave Login</a></li>
+                           
                         </ul>
                     </li>
                     

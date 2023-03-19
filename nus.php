@@ -9,20 +9,16 @@
 </style>
 <?
 //domains
-$siteNUS = 'http://neobuxultimatestrategy.com/';
-//$localNUS = 'http://localhost/NeobuxUltimateStrategy/';
+$siteNUS = 'http://ultimateneobuxstrategy.com/';
 $localNUS = 'http://NeobuxUltimateStrategy.test/';
 
 $siteBPS = 'http://bestpayingsites.com/';
-//$localBPS = 'http://localhost/bestpayingsites/';
 $localBPS = 'http://BestPayingSites.test/';
 
 $sitePPB = 'http://bestpayingsites.com/ppbooster/';
-//$localPPB = 'http://localhost/bestpayingsites/ppbooster/';
 $localPPB = 'http://bestpayingsites.test/ppbooster/';
 
 $siteSurveys = 'http://bestpayingsites.com/surveys/';
-//$localSurveys = 'http://localhost/bestpayingsites/surveys/';
 $localSurveys = 'http://bestpayingsites.test/surveys/';
 
 //spm pages
