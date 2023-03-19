@@ -254,7 +254,6 @@ $menuTrello = array(
         'attr' => 'target="_BLANK"'),
     );
 
-                            echo displayMenu($menuGmail);
                             ?>
                             <li><a href="https://mail.google.com/mail/u/0/?shva=1#settings/accounts" target="_BLANK">Accounts</a></li>
                             <li><a href="https://mail.google.com/mail/u/0/?shva=1#settings/filters" target="_BLANK">Filters</a></li>
@@ -265,8 +264,12 @@ $menuTrello = array(
 							
 							<li><a href="https://my.hostmonster.com/cgi-bin/cplogin?lil=1" target="_BLANK">Login</a></li>
 							
-							<li><a href="https://host187.hostmonster.com:2083/cpsess7112426105/frontend/hostmonster/cron/index.html" target="_BLANK">Cron Jobs</a></li>
-							
+                            <li><a href="https://cpanel-host2140.hostmonster.com/cpsess7988113223/frontend/hostmonster/version_control/index.html#/list" target="_BLANK">Github Repos</a></li>
+                           
+							<li><a href="https://cpanel-host2140.hostmonster.com/cpsess7988113223/frontend/hostmonster/cron/index.html" target="_BLANK">Cron Jobs</a></li>
+					
+                            <li><a href="https://cpanel-host2140.hostmonster.com/cpsess7988113223/frontend/hostmonster/email_accounts/index.html#/list" target="_BLANK">Email Accounts</a></li>
+					 
                         </ul>
                     </li>
 					

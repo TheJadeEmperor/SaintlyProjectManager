@@ -237,7 +237,7 @@ $surveys = array(
 	<tr>
 		<td>
             <div class="contentBox">
-                <h2>Real Translators Job - Landing Page</h2>
+                <h2>Writing Jobs - Landing Page</h2>
             
                 <p>Live</p>
 
@@ -247,7 +247,6 @@ $surveys = array(
                     
                 <p><a href="<?=$localBPS?>?action=real-translator-jobs" target="_blank"><?=$localBPS?>?action=real-translator-jobs</a></p>   
 
-				 
             </div>
 		</td>
 		 <td width="15px"></td>
@@ -273,15 +272,15 @@ $surveys = array(
 	<tr>
 		<td>
 			<div class="contentBox">
-				<h2>Social Media Jobs Splash Page</h2>
+				<h2>Social Media Jobs Opt in Page</h2>
 			
 				<p>Live</p>
 
-				<p><a href="http://bestpayingsites.com/?action=clickbank" target="_BLANK">http://bestpayingsites.com/?action=clickbank</a></p>	
+				<p><a href="<?=$siteBPS?>?action=clickbank" target="_BLANK"><?=$siteBPS?>?action=clickbank</a></p>	
 			
 				<p>Localhost</p>
 					
-				 <p><a href="http://localhost/bestpayingsites/?action=clickbank" target="_blank">http://localhost/bestpayingsites/?action=clickbank</a></p>           
+				 <p><a href="<?=$localBPS?>?action=clickbank" target="_blank"><?=$localBPS?>?action=clickbank</a></p>           
 			</div>
 		</td>
 		<td>
