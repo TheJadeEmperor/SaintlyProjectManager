@@ -9,16 +9,16 @@
 </style>
 <?
 //domains
-$siteNUS = 'http://ultimateneobuxstrategy.com/';
+$siteNUS = 'https://ultimateneobuxstrategy.com/';
 $localNUS = 'http://NeobuxUltimateStrategy.test/';
 
-$siteBPS = 'http://bestpayingsites.com/';
+$siteBPS = 'https://bestpayingsites.com/';
 $localBPS = 'http://BestPayingSites.test/';
 
-$sitePPB = 'http://bestpayingsites.com/ppbooster/';
+$sitePPB = 'https://bestpayingsites.com/ppbooster/';
 $localPPB = 'http://bestpayingsites.test/ppbooster/';
 
-$siteSurveys = 'http://bestpayingsites.com/surveys/';
+$siteSurveys = 'https://bestpayingsites.com/surveys/';
 $localSurveys = 'http://bestpayingsites.test/surveys/';
 
 //spm pages
@@ -289,7 +289,7 @@ $surveys = array(
 		
 			<p>NUS</p>
 
-			<p><a href="http://extremetracking.com/open;geo?login=richptc" target="_blank">http://extremetracking.com/open;geo?login=richptc</a></p>	
+			<p title="password: 1a1a1a1a"><a href="http://extremetracking.com/open;geo?login=nus" target="_blank">http://extremetracking.com/open;geo?login=nus</a><br /></p> 
 		
 			<p>CodeGeass</p>
 				

@@ -1,6 +1,6 @@
 <?
-$siteNUS = 'http://neobuxultimatestrategy.com/';
-$localNUS = 'http://localhost/NeobuxUltimateStrategy/';
+$siteNUS = 'http://ultimateneobuxstrategy.com/';
+$localNUS = 'http://neobuxultimatestrategy.test/';
 $prlog = 'https://biz.prlog.org/';
 ?>
 
