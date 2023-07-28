@@ -372,7 +372,9 @@ $menuNewsl = array(
                         <ul class="dropdown-menu">
 						
 							<li><a href="http://www.easyhits4u.com/" target="_blank">EasyHits4U</a></li>
-                            
+                        
+							<li><a href="https://accounts.clickbank.com/login.htm" target="_blank">Clickbank</a></li>
+							
                             <li class="divider"></li>
                             
 							<li><a href="http://neobux.com/login" target="_blank"></a></li>
