@@ -95,6 +95,9 @@ switch($_GET['action']) {
 	case 'blog': 
 		$link = 'blog_nus.php';
 		break;
+    case 'ninja': 
+        $link = 'code_ninja.php';
+        break;
  
 	default:
         $link = 'nus.php';
@@ -192,6 +195,9 @@ $menuLocal = array(
   
     'NUS Blog & SEO' => array(
         'href' => '?action=blog'),
+          
+    'Code Ninja' => array(
+        'href' => '?action=ninja'),
 );
 
 $menuTrello = array(
@@ -370,12 +376,16 @@ $menuNewsl = array(
                     <li id="buy_ads">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login<b class="caret"></b></a>
                         <ul class="dropdown-menu">
+
+                            <li><a href="https://accounts.clickbank.com/login.htm" target="_blank">Clickbank Login</a></li>
+
+                            <li><a href="https://ironprice.accounts.clickbank.com/account/analytics.htm" target="_blank">CB Reporting</a></li>
+							
+                        <li class="divider"></li>
 						
 							<li><a href="http://www.easyhits4u.com/" target="_blank">EasyHits4U</a></li>
                         
-							<li><a href="https://accounts.clickbank.com/login.htm" target="_blank">Clickbank</a></li>
-							
-                            <li class="divider"></li>
+                          
                             
 							<li><a href="http://neobux.com/login" target="_blank"></a></li>
 							
