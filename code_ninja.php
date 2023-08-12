@@ -1,6 +1,6 @@
 <?php
 $siteNinja = 'https://CodeLikeANinja.com/';
-$localNinja = 'http://localhost//CodeLikeANinja/'; 
+$localNinja = 'http://CodeLikeANinja.test/'; 
 ?>
 
 <center>
@@ -16,7 +16,7 @@ $localNinja = 'http://localhost//CodeLikeANinja/';
 </p>
 
 <p>Splash Page<br />
-<a target="_BLANK" href="<?=$localNinja?>splash"><?=$localNinja?>splash</a></p>
+<a target="_BLANK" href="<?=$localNinja?>splash/?campaign="><?=$localNinja?>splash/?campaign=</a></p>
  
 
 <p>Live<br /></p>
@@ -26,7 +26,7 @@ $localNinja = 'http://localhost//CodeLikeANinja/';
 </p>
 
 <p>Splash Page<br />
-<a target="_BLANK" href="<?=$siteNinja?>splash"><?=$siteNinja?>splash</a></p>
+<a target="_BLANK" href="<?=$siteNinja?>splash/?campaign="><?=$siteNinja?>splash/?campaign=</a></p>
  
 
 		</div>
