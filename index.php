@@ -174,12 +174,6 @@ switch($_GET['action']) {
 
 
 <?php
-$menuAPI = array(
-    'API Login' => array(
-        'href' => '?action=api-login'),
-    'Curl Main Page' => array(
-        'href' => '?action=curl'),
-);
 
 $menuLocal = array(
     'Localhost' => array(
@@ -245,8 +239,11 @@ $menuTrello = array(
 							<li class="divider"></li>
 							
 							<li><a href="https://my.hostmonster.com/cgi-bin/cplogin?lil=1" target="_BLANK">Hostmonster<b class="caret"></b></a></li>
-							
 							<li><a href="https://my.hostmonster.com/cgi-bin/cplogin?lil=1" target="_BLANK">Login</a></li>
+
+                            <li class="divider"></li>
+                            <li><a href="https://hpanel.hostinger.com/websites/ultimateneobuxstrategy.com" target="_BLANK">Hostinger</a></li>
+                            <li><a href="https://hpanel.hostinger.com/domains" target="_BLANK">Domains</a></li>
                         </ul>
                     </li>
 <?php
@@ -303,8 +300,8 @@ $menuNewsl = array(
                                 <a tabindex="-1" href="https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?action=edit_letter&series=472175" title="nusnewsletter"  target="_BLANK">NUS Newsletter</a>
                                 <ul class="dropdown-menu">
                                     <li><a href="https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?action=edit_letter&series=472175" target="_BLANK">nusnewsl - letters</a></li>
-                                    <li><a href=""  target="_BLANK">automated series</a></li>
-                                    <li><a href=""  target="_BLANK">manage subs</a></li>
+                                    <li><a href="https://www.trafficwave.net/cgi-bin/autoresp/autoletter.cgi?series=472175"  target="_BLANK">automated series</a></li>
+                                    <li><a href="https://www.trafficwave.net/cgi-bin/autoresp/subscrmgr.cgi?action=subscr_manage&series=472175"  target="_BLANK">manage subs</a></li>
                                 </ul>
                             </li>
 
