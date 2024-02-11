@@ -81,9 +81,36 @@ $surveys = array(
         'Download Page' => '<a href="'.$localSurveys.$downloadPage.'" target="_blank">'.$localSurveys.$downloadPage.'</a>',
     ),
 ); 
+
+
+$scamLocal = 'http://localhost//SusanZhuangLies/';
+$scamSite = 'https://susanzhuanglies.com/';
 ?> 
 <center>
-    <table>
+
+
+<table>
+    <tr valign="top">
+        <td align="left">
+            <div class="contentBox">
+            <p>Scam Susan<br /></p>
+ 
+            <a target="_BLANK" href="<?=$scamLocal?>"><?=$scamLocal?></a>
+            </p>
+            </div>
+        </td>
+        <td>
+            <div class="contentBox">
+            <p>Scam Susan<br /></p>
+ 
+    <a target="_BLANK" href="<?=$scamSite?>"><?=$scamSite?></a>
+            </div>
+        </td>
+    </tr>
+</table>
+ 
+
+<table>
     <tr valign="top">
         <td>
             <div class="contentBox">
