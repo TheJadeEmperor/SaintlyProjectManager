@@ -1,10 +1,13 @@
 <?php
 
+$siteNinja = 'https://CodeLikeANinja.com';
+$localNinja = 'http://CodeLikeANinja.test';
+
+$siteAirbnb = 'https://vacationrentals4ny.com';
+$localAirbnb = 'http://localhost//vacationrentals4ny.com';
+
 $siteBLWS = 'https://benjaminlouie.com';
 $localBLWS = 'http://localhost//BenjaminLouie';
-
-$siteNinja = 'https://CodeLikeANinja.com';
-$localNinja = 'http://CodeLikeANinja.test'; 
 
 $scamLocal = 'http://localhost//SusanZhuangLies';
 $scamSite = 'https://susanzhuanglies.com';
@@ -16,7 +19,6 @@ $siteCulture = 'https://myculturelink.com/';
 $localCulture = 'http://localhost//MyCultureLink';
 
 ?>
-
 <head>
     <title>Saintly Projects Manager</title>
     
@@ -36,20 +38,21 @@ $localCulture = 'http://localhost//MyCultureLink';
     <div class="row">
         <div class="col-lg">
           <div class="section-heading">
-            <br /><p>5GRadio1</p>
+            <br /> <p>Benjamin4NY</p>
           </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-md text-sm-end">
+        <div class="col-sm text-sm-end">
          
-            <a target="_BLANK" href="<?=$local5G?>"><?=$local5G?></a>
+            <a target="_BLANK" href="<?=$localAirbnb?>"><?=$localAirbnb?></a>
         </div>
-        <div class="col-md text-start">
-         
-            <a target="_BLANK" href="<?=$local5G?>"><?=$local5G?></a>
+        <div class="col-sm text-start">
+      
+            <a target="_BLANK" href="<?=$siteAirbnb?>"><?=$siteAirbnb?></a>
         </div>
     </div>
+   
     <div class="row">
         <div class="col-lg">
           <div class="section-heading">
@@ -103,47 +106,23 @@ $localCulture = 'http://localhost//MyCultureLink';
             <a target="_BLANK" href="<?=$scamSite?>"><?=$scamSite?></a>
         </div>
     </div>
+    <div class="row">
+        <div class="col-lg">
+          <div class="section-heading">
+            <br /><p>5GRadio1</p>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md text-sm-end">
+         
+            <a target="_BLANK" href="<?=$local5G?>"><?=$local5G?></a>
+        </div>
+        <div class="col-md text-start">
+         
+            <a target="_BLANK" href="<?=$site5G?>"><?=$site5G?></a>
+        </div>
+    </div>
 </div>
-
-<p>&nbsp;</p>
-<p>Code Ninja</p>
-
-<table>
-    <tr valign="top">
-        <td>
-            <div class="contentBox">
-
-<p>Localhost<br /></p>
-
-<p>Main Page<br />
-<a target="_BLANK" href="<?=$localNinja?>"><?=$localNinja?></a>
-</p>
-
-<p>Splash Page<br />
-<a target="_BLANK" href="<?=$localNinja?>splash/?campaign="><?=$localNinja?>splash/?campaign=</a></p>
-
-<p>Admin Page<br />
-<a target="_BLANK" href="<?=$localNinja?>admin"><?=$localNinja?>admin</a>
-</p>
-
-		</div>
-	</td>
-    <td>
-
-    <p>Live<br /></p>
-
-<p>Main Page<br />
-<a target="_BLANK" href="<?=$siteNinja?>"><?=$siteNinja?></a>
-</p>
-
-<p>Splash Page<br />
-<a target="_BLANK" href="<?=$siteNinja?>splash/?campaign="><?=$siteNinja?>splash/?campaign=</a></p>
-
-<p>Admin Page<br />
-<a target="_BLANK" href="<?=$siteNinja?>admin"><?=$siteNinja?>admin</a>
-</p>
-
-</td>
-	</tr>
-</table>
+ 
 </center>

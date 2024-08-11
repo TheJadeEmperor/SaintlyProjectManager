@@ -169,42 +169,30 @@ switch($_GET['action']) {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="?action=db">Links Project</a>
+                <a class="navbar-brand" href="?action=db">SPM</a>
             </div>
-
 
 <?php
 
-$menuLocal = array(
-    'Localhost' => array(
-        'href' => 'http://localhost'),
-    'phpMyAdmin' => array(
-        'href' => 'http://localhost/phpmyadmin/'),
-    'Account Manager' => array(
-        'href' => 'http://SaintlyAccountsManager.test',
-     'attr' => 'target="_BLANK"' ),
-    'Achive Links' => array(
-        'href' => '?action=archive'),
-    'divider',
-  
-    'NUS Blog & SEO' => array(
-        'href' => '?action=blog'),
-          
-    'Code Ninja' => array(
-        'href' => '?action=ninja'),
-);
+    $menuLocal = array(
+        'Localhost' => array(
+            'href' => 'http://localhost'),
+        'phpMyAdmin' => array(
+            'href' => 'http://localhost/phpmyadmin/'),
+        'Account Manager' => array(
+            'href' => 'http://SaintlyAccountsManager.test',
+        'attr' => 'target="_BLANK"' ),
+        'Achive Links' => array(
+            'href' => '?action=archive'),
+        'divider',
+    
+        'NUS Blog & SEO' => array(
+            'href' => '?action=blog'),
+            
+        'Code Ninja' => array(
+            'href' => '?action=ninja'),
+    );
 
-$menuTrello = array(
-    'Stripe Payments' => array(
-        'href' => 'https://dashboard.stripe.com/payments',
-        'attr' => 'target="_BLANK"'),
-    'Payment Links' => array( 
-        'href' => 'https://dashboard.stripe.com/payment-links',
-        'attr' => 'target="_BLANK"'), 
-    'Webook' => array( 
-        'href' => 'https://dashboard.stripe.com/webhooks',
-        'attr' => 'target="_BLANK"'),
-)
 ?>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse">
@@ -219,12 +207,44 @@ $menuTrello = array(
                         </ul>
                     </li>
                    
-                    <li id="trello">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stripe<b class="caret"></b></a>
+<?php
+
+    $menuCohost = array(
+        'Cohost Training 1' => array(
+            'href' => 'https://9hlkiaj7v8uncrbvap4u.app.clientclub.net/courses/products/cc438f35-c5c8-4b4c-a626-22f513398456/categories/6bfce0bf-a058-4bc7-875e-3ae92294de6f/posts/f5e4a432-6763-4468-9b31-cd88148fa093',
+            'attr' => 'target="_BLANK"'),
+        'Cohost Training 2' => array( 
+            'href' => 'https://9hlkiaj7v8uncrbvap4u.app.clientclub.net/courses/products/188ea491-afbb-4362-9d44-7a5bb7087670/categories/e38ec500-74e9-4005-96a1-e226d7acb1b3/posts/f4c84c72-6300-43fd-9b56-f09f1a57331e',
+            'attr' => 'target="_BLANK"'), 
+        'Discord' => array( 
+            'href' => 'https://discord.com/channels/1247641248857198773',
+            'attr' => 'target="_BLANK"'),
+        );
+
+        $menuTools = array(
+            'Airdna' => array(
+                'href' => 'https://www.airdna.co/',
+                'attr' => 'target="_BLANK"'),
+            'Pricelabs' => array(
+                'href' => 'https://pricelabs.co/pricing',
+                'attr' => 'target="_BLANK"'),
+        );
+?>
+
+                    <li id="cohost">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cohost<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <?
-                            echo displayMenu($menuTrello);
+                            echo displayMenu($menuCohost);
                             ?>
+
+                            <li class="divider"></li>
+
+                            <li><a href="#" target="_BLANK">Pricing Tools<b class="caret"></b></a></li>
+                            <?
+                            echo displayMenu($menuTools);
+                            ?>
+ 
                         </ul>
                     </li>
 					
@@ -247,149 +267,120 @@ $menuTrello = array(
                         </ul>
                     </li>
 <?php
-$menuNewsl = array(
-    'Newsletters Index' => array(
-        'href' => '?action=newsl-index'),
-    'divider',
-    'All Subscribers - Edit' => array(
-        'href' => '?action=newsl-all'),
-    //'divider',
-    'NUS Newsletter - Edit' => array(
-        'href' => '?action=newsl-nus'),
+$menuContacts = array(
+    'Upwork' => array(
+        'href' => 'https://www.upwork.com/ab/account-security/login?redir=%2Fab%2Fmessages%2F'),
+   
+    'Batch Skip Trace' => array(
+        'href' => 'https://app.batchskiptracing.com/app/skip-trace/list'),
+    'divider', 
+    'Hubspot - import' => array(
+        'href' => 'https://app.hubspot.com/import/47026806'),
+    'Hubspot - Contacts' => array(
+        'href' => 'https://app.hubspot.com/contacts/47026806/objects/0-1/views/all/list'),
 )
 ?>                 
-                    <li id="newsletters"> 
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Newsletters <b class="caret"></b></a>
+                    <li id="contacts"> 
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Contacts <b class="caret"></b></a>
                         <ul class="dropdown-menu">
 
                             <?
-                            echo displayMenu($menuNewsl);
+                            echo displayMenu($menuContacts);
                             ?>
                             
-                      
-                            <li class="divider"></li>
-							
-                            <li><a href="?action=newsl-mms">Make Money Surveys - Edit</a></li>
-                      		
-                            <li class="divider"></li>
-							
-                            <li><a href="?action=newsl-online">Online Jobs - Edit</a></li>
-                      		 
-                            <li class="divider"></li>
-							
-                            <li><a href="?action=newsl-ppb">Paypal Booster - Edit</a></li>
                         </ul>
                     </li>
 
-                    <li id="trafficwave">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">TrafficWave <b class="caret"></b></a>
+<?php
+    $menuMessages = array(
+        'All Messages' => array(
+            'href' => 'https://www.airbnb.com/hosting/inbox/folder/all/'),
+        'Sched Messages - Listings' => array(
+            'href' => 'https://www.airbnb.com/hosting/messages/settings/scheduled-messages?product=STAYS'),
+        'Sched Messages - Experiences' => array(
+            'href' => 'https://www.airbnb.com/hosting/messages/settings/scheduled-messages?product=EXPERIENCES'),
+        );
+
+    $menuVRBO = array(
+        'Vrbo Calendar' => array(
+            'href' => 'https://www.airbnb.com/hosting/inbox/folder/all/'),
+        'Vrbo Inbox' => array(
+            'href' => 'https://www.airbnb.com/hosting/messages/settings/scheduled-messages?product=STAYS'),
+    );
+
+    $menuListings = array(
+        'Royal Room' => array(
+            'href' => 'https://www.airbnb.com/rooms/841300394500737442?source_impression_id=p3_1719790415_P36temSnhYUDm2Le'),
+ 
+    );
+
+?>    
+                    <li id="airbnb">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Airbnb <b class="caret"></b></a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
                         
-                        <li class="dropdown-submenu">
-                                <a tabindex="-1" href="?action=ptcprograms-letters" title="ptcprograms">All Subscribers</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?action=edit_letter&series=472254" target="_BLANK">allsubscribers - letters</a></li>
-                                    <li><a href="https://www.trafficwave.net/cgi-bin/autoresp/autoletter.cgi?series=472254"  target="_BLANK">automated series</a></li>
-                                    <li><a href="https://www.trafficwave.net/cgi-bin/autoresp/subscrmgr.cgi?action=subscr_manage&series=472254" target="_BLANK">manage subs</a></li>
-                                </ul>
-                            </li>
+                        <li>
+                            <a tabindex="-1" href="https://www.airbnb.com/hosting/listings"  target="_BLANK">Listings<b class="caret"></b></a>
+                        </li>
 
-                            <li class="divider"></li>
+                        <?
+                        echo displayMenu($menuListings);
+                        ?>
+                            
+
+
+                        <li class="divider"></li>
+
+ 
 
                         <li class="dropdown-submenu">
-                                <a tabindex="-1" href="https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?action=edit_letter&series=472175" title="nusnewsletter"  target="_BLANK">NUS Newsletter</a>
+                                <a tabindex="-1" href="https://www.airbnb.com/hosting/inbox/folder/all/" target="_BLANK">Messages</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?action=edit_letter&series=472175" target="_BLANK">nusnewsl - letters</a></li>
-                                    <li><a href="https://www.trafficwave.net/cgi-bin/autoresp/autoletter.cgi?series=472175"  target="_BLANK">automated series</a></li>
-                                    <li><a href="https://www.trafficwave.net/cgi-bin/autoresp/subscrmgr.cgi?action=subscr_manage&series=472175"  target="_BLANK">manage subs</a></li>
+                                    <?
+                                    echo displayMenu($menuMessages);
+                                    ?>
                                 </ul>
                             </li>
 
                             <li class="divider"></li>
 						
                             <li class="dropdown-submenu">
-                                <a tabindex="-1" href="?action=onlinejobs-profile" title="onlinejobs">Online Jobs</a>
+                                <a tabindex="-1" href="?action=onlinejobs-profile" title="onlinejobs">VRBO</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?action=edit_letter&series=472253" target="_BLANK">onlinejobs - letters</a></li>
-                                    <li><a href="https://www.trafficwave.net/cgi-bin/autoresp/autoletter.cgi?series=472253" target="_BLANK">automated series</a></li>
-                                    <li><a href="https://www.trafficwave.net/cgi-bin/autoresp/subscrmgr.cgi?action=subscr_manage&series=472253" target="_BLANK">manage subs</a></li>
+                                    <?
+                                    echo displayMenu($menuVRBO);
+                                    ?>
                                 </ul>
+                                
                             </li>
-                            
-                            <li class="divider"></li>
+                             
                          
-                            <li class="dropdown-submenu">
-                                <a tabindex="-1" href="?action=ppbooster-profile" title="paypalbooster">Paypal Booster</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?action=edit_letter&series=472259"  target="_BLANK">ppbooster - letters</a></li>
-                                    <li><a href="https://www.trafficwave.net/cgi-bin/autoresp/autoletter.cgi?series=472259" target="_BLANK">ppbooster - stats</a></li>
-                                    <li><a href="https://www.trafficwave.net/cgi-bin/autoresp/subscrmgr.cgi?action=subscr_manage&series=472259" target="_BLANK">ppbooster - manage</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="divider"></li>
-                         
-                         <li class="dropdown-submenu">
-                             <a tabindex="-1" href="?action=ppbooster-profile" title="paypalbooster">Make Money Surveys</a>
-                             <ul class="dropdown-menu">
-                                 <li><a href="https://www.trafficwave.net/cgi-bin/autoresp/reviewletter.cgi?action=edit_letter&series=472260"  target="_BLANK">makemoneysurveys - letters</a></li>
-                                 <li><a href="https://www.trafficwave.net/cgi-bin/autoresp/autoletter.cgi?series=472260" target="_BLANK">makemoneysurveys - stats</a></li>
-                                 <li><a href="https://www.trafficwave.net/cgi-bin/autoresp/subscrmgr.cgi?action=subscr_manage&series=472260" target="_BLANK">makemoneysurveys - manage</a></li>
-                             </ul>
-                         </li>
-
-                         <li class="divider"></li>
-
-                            <li><a href="https://www.trafficwave.net/cgi-bin/autoresp/AFSstart.cgi" target="_BLANK">Campaign Manager</a></li>   
-                          </ul>
-                    </li>
- 
-                    <li id="splash pages">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Splash Pages <b class="caret"></b></a>
-                        
-                        <ul class="dropdown-menu">
-							<li><a href="?action=splash-ppb-live">live - Paypal Booster</a></li>
-							<li><a href="?action=splash-ppb-local">local - Paypal Booster</a></li>
-						 
-							<li class="divider"></li>
-						 
-							<li><a href="?action=splash-freereport-live">live - Free Neobux Report</a></li>
-							<li><a href="?action=splash-freereport-local">local - Free Neobux Report</a></li>
-							
-							<li class="divider"></li>
-							<li><a href="http://bestpayingsites.com/?action=bonus" target="_blank">Ad Pages<b class="caret"></b></a></li>
-							
-							<li><a href="http://bestpayingsites.com/?action=bonus" target="_blank">PPB & EPS Bonus Downloads</a></li>
-                            <li><a href="http://neobuxultimatestrategy.com/basics/" target="_blank">NUS Basics</a></li>
-                            
-                            <li class="divider"></li>
-
-                            <li><a href="http://neobuxultimatestrategy.com/?action=download&id=vipuser" target="_blank">NUS Download Page</a></li>
-							
-                            <li><a href="http://bestpayingsites.com/?action=download&id=vipuser" target="_blank">EPS Download Page</a></li>
                         </ul>
                     </li>
-	 	
-                    <li id="buy_ads">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
 
-                            <li><a href="https://accounts.clickbank.com/login.htm" target="_blank">Clickbank Login</a></li>
 
-                            <li><a href="https://ironprice.accounts.clickbank.com/account/analytics.htm" target="_blank">CB Reporting</a></li>
-							
-                        <li class="divider"></li>
-						
-							<li><a href="http://www.easyhits4u.com/" target="_blank">EasyHits4U</a></li>
-                        
-                          
-                            
-							<li><a href="http://neobux.com/login" target="_blank"></a></li>
-							
-                            <li><a href="http://neobux.com/login" target="_blank">Neobux</a></li>
+<?php
+    $menuEvents = array(
+        'Facebook' => array(
+            'href' => 'https://www.facebook.com/groups/AirbnbNYC'),
+        'OSE Permit'=> array(
+            'href' => 'https://strr-portal.ose.nyc.gov/s/?language=en_US&t=1722621055881'),
+        'divider',
  
-                            <li><a href="https://www.trafficwave.net/login.html" target="_blank">TrafficWave Login</a></li>
-                           
+        );
+
+?>    
+
+                    <li id="events">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
+                        
+                        <ul class="dropdown-menu">
+                        <?
+                        echo displayMenu($menuEvents);
+                        ?>
+						 
+                         
+                        
                         </ul>
                     </li>
                     
@@ -400,7 +391,7 @@ $menuNewsl = array(
                         <form class="navbar-form navbar-left" role="search">
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="URL" value="<?= $link ?>" onclick="this.select();" size="70">
-                                <a href="<?=$link?>" target="_blank"><input type="button" value="Open in New Window" /></a>
+                                <a href="<?=$link?>" target="_BLANK"><input type="button" value="Open in New Window" /></a>
                             </div>
                         </form>
                     </li>
