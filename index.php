@@ -182,13 +182,11 @@ switch($_GET['action']) {
         'Account Manager' => array(
             'href' => 'http://SaintlyAccountsManager.test',
         'attr' => 'target="_BLANK"' ),
+        'divider',
         'Achive Links' => array(
             'href' => '?action=archive'),
-        'divider',
-    
         'NUS Blog & SEO' => array(
-            'href' => '?action=blog'),
-            
+            'href' => '?action=blog'),         
         'Code Ninja' => array(
             'href' => '?action=ninja'),
     );
@@ -229,6 +227,15 @@ switch($_GET['action']) {
                 'href' => 'https://pricelabs.co/pricing',
                 'attr' => 'target="_BLANK"'),
         );
+        
+        $websiteTools = array(
+            'Search Console' => array(
+                'href' => 'https://search.google.com/search-console?utm_source=about-page&resource_id=https://vacationrentals4ny.com/',
+                'attr' => 'target="_BLANK"'),
+            'UptimeRobot' => array(
+                'href' => 'https://uptimerobot.com/dashboard#mainDashboard',
+                'attr' => 'target="_BLANK"'),
+        );
 ?>
 
                     <li id="cohost">
@@ -244,7 +251,13 @@ switch($_GET['action']) {
                             <?
                             echo displayMenu($menuTools);
                             ?>
- 
+                            <li class="divider"></li>
+                            <li><a href="#" target="_BLANK">Website Tools<b class="caret"></b></a></li>
+                           
+                            <?
+                            echo displayMenu($websiteTools);
+                            ?>
+
                         </ul>
                     </li>
 					

@@ -8,6 +8,12 @@ function displayLinks ($tools) {
     return $output;
 }
 
+?>
+<table>
+    <tr valign="top">
+        <td>
+<?
+
 $tools = array(
     'Word to PDF' => 'https://smallpdf.com/word-to-pdf',
     'PDF Converter' => 'https://www.freepdfconvert.com/',
@@ -30,7 +36,6 @@ $tools = array(
 
 echo '<p><b>More Tools</b></p>';
 echo displayLinks($tools); 
-
 
 $tools = array( 
     'FunnelDash' => 'https://www.funneldash.com/',
@@ -92,10 +97,13 @@ $tools = array(
 echo '<p><b>Coding</b></p>';
 echo displayLinks($tools); 
 
+?>
+    </td>
+    <td>
 
-$tools = array( 
-    'Investing' => 'http://cryptocurrencyvirtualportal.com/cc2cwcf.php',
+<?
 
+$tools = array(  
     '4 Hour Work Week' => 'http://fourhourworkweek.com/',
     
     'Modee World - Paypal / Ebay Forums' => 'http://www.modeeworld.com/forums/',
@@ -130,3 +138,6 @@ echo displayLinks($tools);
 
 
 ?>
+    </td>
+    </tr>
+</table>
