@@ -269,15 +269,18 @@ switch($_GET['action']) {
 <?php
 $menuContacts = array(
     'Upwork' => array(
-        'href' => 'https://www.upwork.com/ab/account-security/login?redir=%2Fab%2Fmessages%2F'),
-   
+        'href' => 'https://www.upwork.com/ab/account-security/login?redir=%2Fab%2Fmessages%2F',
+        'attr' => 'target="_BLANK"' ),  
     'Batch Skip Trace' => array(
-        'href' => 'https://app.batchskiptracing.com/app/skip-trace/list'),
+        'href' => 'https://app.batchskiptracing.com/app/skip-trace/list',
+        'attr' => 'target="_BLANK"' ),
     'divider', 
     'Hubspot - import' => array(
-        'href' => 'https://app.hubspot.com/import/47026806'),
+        'href' => 'https://app.hubspot.com/import/47026806',
+        'attr' => 'target="_BLANK"'  ),
     'Hubspot - Contacts' => array(
-        'href' => 'https://app.hubspot.com/contacts/47026806/objects/0-1/views/all/list'),
+        'href' => 'https://app.hubspot.com/contacts/47026806/objects/0-1/views/all/list',
+        'attr' => 'target="_BLANK"' ),
 )
 ?>                 
                     <li id="contacts"> 
