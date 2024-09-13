@@ -174,14 +174,16 @@ switch($_GET['action']) {
 
 <?php
 
-    $menuLocal = array(
+    $menuLocal = array( 
         'Localhost' => array(
-            'href' => 'http://localhost'),
+            'href' => 'http://localhost',
+            'attr' => 'target="_BLANK"' ),
         'phpMyAdmin' => array(
-            'href' => 'http://localhost/phpmyadmin/'),
+            'href' => 'http://localhost/phpmyadmin/',
+            'attr' => 'target="_BLANK"' ),
         'Account Manager' => array(
             'href' => 'http://SaintlyAccountsManager.test',
-        'attr' => 'target="_BLANK"' ),
+            'attr' => 'target="_BLANK"' ),
         'divider',
         'Achive Links' => array(
             'href' => '?action=archive'),
@@ -199,7 +201,7 @@ switch($_GET['action']) {
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Localhost <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                            
-                            <?
+                            <?php
                             echo displayMenu($menuLocal);
                             ?>				
                         </ul>
@@ -241,20 +243,20 @@ switch($_GET['action']) {
                     <li id="cohost">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cohost<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <?
+                            <?php
                             echo displayMenu($menuCohost);
                             ?>
 
                             <li class="divider"></li>
 
                             <li><a href="#" target="_BLANK">Pricing Tools<b class="caret"></b></a></li>
-                            <?
+                            <?php
                             echo displayMenu($menuTools);
                             ?>
                             <li class="divider"></li>
                             <li><a href="#" target="_BLANK">Website Tools<b class="caret"></b></a></li>
                            
-                            <?
+                            <?php
                             echo displayMenu($websiteTools);
                             ?>
 
@@ -288,6 +290,12 @@ $menuContacts = array(
         'href' => 'https://app.batchskiptracing.com/app/skip-trace/list',
         'attr' => 'target="_BLANK"' ),
     'divider', 
+    'SPM - import' => array(
+        'href' => './contacts/contact_import.php',
+        'attr' => 'target="_BLANK"'  ),
+    'SPM - Contacts' => array(
+        'href' => './contacts/contact_list.php',
+        'attr' => 'target="_BLANK"'  ),
     'Hubspot - import' => array(
         'href' => 'https://app.hubspot.com/import/47026806',
         'attr' => 'target="_BLANK"'  ),
@@ -300,7 +308,7 @@ $menuContacts = array(
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Contacts <b class="caret"></b></a>
                         <ul class="dropdown-menu">
 
-                            <?
+                            <?php
                             echo displayMenu($menuContacts);
                             ?>
                             
@@ -310,23 +318,29 @@ $menuContacts = array(
 <?php
     $menuMessages = array(
         'All Messages' => array(
-            'href' => 'https://www.airbnb.com/hosting/inbox/folder/all/'),
+            'href' => 'https://www.airbnb.com/hosting/inbox/folder/all/',
+            'attr' => 'target="_BLANK"' ),
         'Sched Messages - Listings' => array(
-            'href' => 'https://www.airbnb.com/hosting/messages/settings/scheduled-messages?product=STAYS'),
+            'href' => 'https://www.airbnb.com/hosting/messages/settings/scheduled-messages?product=STAYS',
+            'attr' => 'target="_BLANK"' ),
         'Sched Messages - Experiences' => array(
-            'href' => 'https://www.airbnb.com/hosting/messages/settings/scheduled-messages?product=EXPERIENCES'),
+            'href' => 'https://www.airbnb.com/hosting/messages/settings/scheduled-messages?product=EXPERIENCES',
+            'attr' => 'target="_BLANK"' ),
         );
 
     $menuVRBO = array(
         'Vrbo Calendar' => array(
-            'href' => 'https://www.airbnb.com/hosting/inbox/folder/all/'),
+            'href' => 'https://www.vrbo.com/p/calendar/321.3541578.4114724',
+            'attr' => 'target="_BLANK"' ),
         'Vrbo Inbox' => array(
-            'href' => 'https://www.airbnb.com/hosting/messages/settings/scheduled-messages?product=STAYS'),
+            'href' => 'https://www.vrbo.com/supply/inbox?propertyId=96496552',
+            'attr' => 'target="_BLANK"' ),
     );
 
     $menuListings = array(
         'Royal Room' => array(
-            'href' => 'https://www.airbnb.com/rooms/841300394500737442?source_impression_id=p3_1719790415_P36temSnhYUDm2Le'),
+            'href' => 'https://www.airbnb.com/rooms/841300394500737442?source_impression_id=p3_1719790415_P36temSnhYUDm2Le',
+            'attr' => 'target="_BLANK"' ),
  
     );
 
@@ -339,20 +353,16 @@ $menuContacts = array(
                             <a tabindex="-1" href="https://www.airbnb.com/hosting/listings"  target="_BLANK">Listings<b class="caret"></b></a>
                         </li>
 
-                        <?
+                        <?php
                         echo displayMenu($menuListings);
                         ?>
                             
-
-
                         <li class="divider"></li>
-
- 
 
                         <li class="dropdown-submenu">
                                 <a tabindex="-1" href="https://www.airbnb.com/hosting/inbox/folder/all/" target="_BLANK">Messages</a>
                                 <ul class="dropdown-menu">
-                                    <?
+                                    <?php
                                     echo displayMenu($menuMessages);
                                     ?>
                                 </ul>
@@ -363,7 +373,7 @@ $menuContacts = array(
                             <li class="dropdown-submenu">
                                 <a tabindex="-1" href="?action=onlinejobs-profile" title="onlinejobs">VRBO</a>
                                 <ul class="dropdown-menu">
-                                    <?
+                                    <?php
                                     echo displayMenu($menuVRBO);
                                     ?>
                                 </ul>
@@ -378,9 +388,11 @@ $menuContacts = array(
 <?php
     $menuEvents = array(
         'Facebook' => array(
-            'href' => 'https://www.facebook.com/groups/AirbnbNYC'),
+            'href' => 'https://www.facebook.com/groups/AirbnbNYC',
+            'attr' => 'target="_BLANK"' ),
         'OSE Permit'=> array(
-            'href' => 'https://strr-portal.ose.nyc.gov/s/?language=en_US&t=1722621055881'),
+            'href' => 'https://strr-portal.ose.nyc.gov/s/?language=en_US&t=1722621055881',
+            'attr' => 'target="_BLANK"' ),
         'divider',
  
         );
@@ -391,7 +403,7 @@ $menuContacts = array(
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
                         
                         <ul class="dropdown-menu">
-                        <?
+                        <?php
                         echo displayMenu($menuEvents);
                         ?>
 						 

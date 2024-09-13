@@ -384,17 +384,21 @@ function dbInsert($opt) {
 	$res = $conn->query($ins);
 
 	if($_GET['debug'] == 1) {
-		echo '<pre>'.$ins.'</pre>';
+		echo '<pre>'.$ins.' '.$res.'</pre>';
 	}
+
+	
+echo $conn -> error;
+	 
 	
 	return $res;
 }
 
 /*
- * $opt = array(
- * 	'tableName' => $tableName,
- * 	'cond' => $cond)
- * */
+  $opt = array(
+  	'tableName' => $tableName,
+ 	'cond' => $cond)
+ */
 function dbSelect($opt) {
 	global $conn; 
 	
@@ -439,6 +443,8 @@ function dbSelectQuery($opt) {
 	if($_GET['debug'] == 1) {
 		echo '<pre>'.$sel.'</pre>';
 	}
+
+	
 
 	return $res;
 }

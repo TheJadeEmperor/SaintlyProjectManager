@@ -7,7 +7,7 @@
         padding: 25px;
     }
 </style>
-<?
+<?php
 //domains
 $siteNUS = 'https://ultimateneobuxstrategy.com/';
 $localNUS = 'http://NeobuxUltimateStrategy.test/';
@@ -115,7 +115,7 @@ $scamSite = 'https://susanzhuanglies.com/';
         <td>
             <div class="contentBox">
                 <h2>NUS - live</h2>
-                <?
+                <?php
                 foreach($nus['live'] as $siteTitle => $siteURL) {
                     echo '<p>'.$siteTitle.'<br />'.$siteURL.'</p>';
                 }

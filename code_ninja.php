@@ -1,10 +1,10 @@
 <?php
 
-$siteNinja = 'https://CodeLikeANinja.com';
-$localNinja = 'http://CodeLikeANinja.test';
-
 $siteAirbnb = 'https://vacationrentals4ny.com';
-$localAirbnb = 'http://localhost//vacationrentals4ny.com';
+$localAirbnb = 'http://vacationrentals4ny.test';
+
+$siteWP = 'https://vacationrentals4ny.com/wp-login';
+$localWP = 'http://vacationrentals4ny.test/wp-login';
 
 $siteBLWS = 'https://benjaminlouie.com';
 $localBLWS = 'http://localhost//BenjaminLouie';
@@ -45,11 +45,14 @@ $localCulture = 'http://localhost//MyCultureLink';
     <div class="row">
         <div class="col-sm text-sm-end">
          
-            <a target="_BLANK" href="<?=$localAirbnb?>"><?=$localAirbnb?></a>
+            <a target="_BLANK" href="<?=$localAirbnb?>"><?=$localAirbnb?></a> <br />
+            <a target="_BLANK" href="<?=$localWP?>"><?=$localWP?></a>
+
         </div>
         <div class="col-sm text-start">
       
-            <a target="_BLANK" href="<?=$siteAirbnb?>"><?=$siteAirbnb?></a>
+            <a target="_BLANK" href="<?=$siteAirbnb?>"><?=$siteAirbnb?></a> <br />
+            <a target="_BLANK" href="<?=$siteWP?>"><?=$siteWP?></a>
         </div>
     </div>
    
