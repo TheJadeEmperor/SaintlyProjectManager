@@ -157,8 +157,8 @@ switch($_GET['action']) {
         }
     </style>
 </head>
-<body>	
-    
+<body>
+
     <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -189,7 +189,7 @@ switch($_GET['action']) {
             'href' => '?action=archive'),
         'NUS Blog & SEO' => array(
             'href' => '?action=blog'),         
-        'Code Ninja' => array(
+        'Cohost Ninja' => array(
             'href' => '?action=ninja'),
     );
 
@@ -206,65 +206,8 @@ switch($_GET['action']) {
                             ?>				
                         </ul>
                     </li>
-                   
-<?php
 
-    $menuCohost = array(
-        'Cohost Training 1' => array(
-            'href' => 'https://9hlkiaj7v8uncrbvap4u.app.clientclub.net/courses/products/cc438f35-c5c8-4b4c-a626-22f513398456/categories/6bfce0bf-a058-4bc7-875e-3ae92294de6f/posts/f5e4a432-6763-4468-9b31-cd88148fa093',
-            'attr' => 'target="_BLANK"'),
-        'Cohost Training 2' => array( 
-            'href' => 'https://9hlkiaj7v8uncrbvap4u.app.clientclub.net/courses/products/188ea491-afbb-4362-9d44-7a5bb7087670/categories/e38ec500-74e9-4005-96a1-e226d7acb1b3/posts/f4c84c72-6300-43fd-9b56-f09f1a57331e',
-            'attr' => 'target="_BLANK"'), 
-        'Discord' => array( 
-            'href' => 'https://discord.com/channels/1247641248857198773',
-            'attr' => 'target="_BLANK"'),
-        );
-
-        $menuTools = array(
-            'Airdna' => array(
-                'href' => 'https://www.airdna.co/',
-                'attr' => 'target="_BLANK"'),
-            'Pricelabs' => array(
-                'href' => 'https://pricelabs.co/pricing',
-                'attr' => 'target="_BLANK"'),
-        );
-        
-        $websiteTools = array(
-            'Search Console' => array(
-                'href' => 'https://search.google.com/search-console?utm_source=about-page&resource_id=https://vacationrentals4ny.com/',
-                'attr' => 'target="_BLANK"'),
-            'UptimeRobot' => array(
-                'href' => 'https://uptimerobot.com/dashboard#mainDashboard',
-                'attr' => 'target="_BLANK"'),
-        );
-?>
-
-                    <li id="cohost">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cohost<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <?php
-                            echo displayMenu($menuCohost);
-                            ?>
-
-                            <li class="divider"></li>
-
-                            <li><a href="#" target="_BLANK">Pricing Tools<b class="caret"></b></a></li>
-                            <?php
-                            echo displayMenu($menuTools);
-                            ?>
-                            <li class="divider"></li>
-                            <li><a href="#" target="_BLANK">Website Tools<b class="caret"></b></a></li>
-                           
-                            <?php
-                            echo displayMenu($websiteTools);
-                            ?>
-
-                        </ul>
-                    </li>
-					
-					
-					<li id="gmail">
+                    <li id="gmail">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gmail & HM<b class="caret"></b></a>
                         <ul class="dropdown-menu">
         
@@ -277,12 +220,72 @@ switch($_GET['action']) {
 							<li><a href="https://my.hostmonster.com/cgi-bin/cplogin?lil=1" target="_BLANK">Login</a></li>
 
                             <li class="divider"></li>
-                            <li><a href="https://hpanel.hostinger.com/websites/ultimateneobuxstrategy.com" target="_BLANK">Hostinger</a></li>
+                            <li><a href="https://hpanel.hostinger.com/websites/vacationrentals4ny.com" target="_BLANK">Hostinger</a></li>
                             <li><a href="https://hpanel.hostinger.com/domains" target="_BLANK">Domains</a></li>
                         </ul>
                     </li>
+                   
 <?php
-$menuContacts = array(
+
+    $menuCohost = array(
+        'Cohost Course' => array(
+            'href' => 'https://cohostingacquisitions.circle.so/c/module-1/',
+            'attr' => 'target="_BLANK"'),
+        'Group Chat' => array(
+            'href' => 'https://cohostingacquisitions.circle.so/c/group-chat/',
+            'attr' => 'target="_BLANK"'),
+
+        'divider',
+
+        'Old Courses' => array(
+             'href' => 'https://9hlkiaj7v8uncrbvap4u.app.clientclub.net/courses/products/cc438f35-c5c8-4b4c-a626-22f513398456/categories/6bfce0bf-a058-4bc7-875e-3ae92294de6f/posts/f5e4a432-6763-4468-9b31-cd88148fa093',
+            'attr' => 'target="_BLANK"'
+        ),
+
+        'Cohost Training 1' => array(
+            'href' => 'https://9hlkiaj7v8uncrbvap4u.app.clientclub.net/courses/products/cc438f35-c5c8-4b4c-a626-22f513398456/categories/6bfce0bf-a058-4bc7-875e-3ae92294de6f/posts/f5e4a432-6763-4468-9b31-cd88148fa093',
+            'attr' => 'target="_BLANK"'),
+        'Cohost Training 2' => array( 
+            'href' => 'https://9hlkiaj7v8uncrbvap4u.app.clientclub.net/courses/products/188ea491-afbb-4362-9d44-7a5bb7087670/categories/e38ec500-74e9-4005-96a1-e226d7acb1b3/posts/f4c84c72-6300-43fd-9b56-f09f1a57331e',
+            'attr' => 'target="_BLANK"'), 
+        );
+
+
+        $menuEvents = array(
+            'Facebook' => array(
+                'href' => 'https://www.facebook.com/groups/AirbnbNYC',
+                'attr' => 'target="_BLANK"' ), 
+            'BiggerPocketsForum' => array(
+                'href' => 'https://www.biggerpockets.com/forums/530',
+                'attr' => 'target="_BLANK"' ), 
+               
+        );
+       
+?>
+
+                    <li id="cohost">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cohost<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                           
+                        <li><a href="#" target="_BLANK">Cohost Group<b class="caret"></b></a></li>
+                           <?php
+                            echo displayMenu($menuCohost);
+                            ?>
+
+                            <li class="divider"></li>
+
+                            <?php
+                            echo displayMenu($menuEvents);
+                            ?>
+                            
+ 
+                        </ul>
+                    </li>
+					
+					
+					
+<?php
+$menuContacts = array( 
     'Upwork' => array(
         'href' => 'https://www.upwork.com/ab/account-security/login?redir=%2Fab%2Fmessages%2F',
         'attr' => 'target="_BLANK"' ),  
@@ -290,15 +293,7 @@ $menuContacts = array(
         'href' => 'https://app.batchskiptracing.com/app/skip-trace/list',
         'attr' => 'target="_BLANK"' ),
     'divider', 
-    'SPM - import' => array(
-        'href' => './contacts/contact_import.php',
-        'attr' => 'target="_BLANK"'  ),
-    'SPM - Contacts' => array(
-        'href' => './contacts/contact_list.php',
-        'attr' => 'target="_BLANK"'  ),
-    'Hubspot - import' => array(
-        'href' => 'https://app.hubspot.com/import/47026806',
-        'attr' => 'target="_BLANK"'  ),
+   
     'Hubspot - Contacts' => array(
         'href' => 'https://app.hubspot.com/contacts/47026806/objects/0-1/views/all/list',
         'attr' => 'target="_BLANK"' ),
@@ -317,9 +312,15 @@ $menuContacts = array(
 
 <?php
     $menuMessages = array(
-        'All Messages' => array(
+
+  
+        'Read All Messages' => array(
             'href' => 'https://www.airbnb.com/hosting/inbox/folder/all/',
             'attr' => 'target="_BLANK"' ),
+        'Quick Replies' => array(
+            'href' => ' https://www.airbnb.com/hosting/messages/settings/quick-replies?product=STAYS',
+            'attr' => 'target="_BLANK"' ),
+
         'Sched Messages - Listings' => array(
             'href' => 'https://www.airbnb.com/hosting/messages/settings/scheduled-messages?product=STAYS',
             'attr' => 'target="_BLANK"' ),
@@ -328,21 +329,37 @@ $menuContacts = array(
             'attr' => 'target="_BLANK"' ),
         );
 
-    $menuVRBO = array(
-        'Vrbo Calendar' => array(
-            'href' => 'https://www.vrbo.com/p/calendar/321.3541578.4114724',
+   
+    $menuListings = array(
+        'Royal Room' => array(
+            'href' => 'https://www.airbnb.com/rooms/841300394500737442',
             'attr' => 'target="_BLANK"' ),
-        'Vrbo Inbox' => array(
-            'href' => 'https://www.vrbo.com/supply/inbox?propertyId=96496552',
+        'East Orange NJ' => array( 
+            'href' => 'https://www.airbnb.com/rooms/1242921062592325647',
+            'attr' => 'target="_BLANK"' ),
+  
+    );
+
+
+    $royalRoom = array(
+        'View' => array(
+            'href' => 'https://www.airbnb.com/rooms/841300394500737442',
+            'attr' => 'target="_BLANK"' ),
+        'Edit' => array(
+            'href' => 'https://www.airbnb.com/hosting/listings/editor/841300394500737442/details',
             'attr' => 'target="_BLANK"' ),
     );
 
-    $menuListings = array(
-        'Royal Room' => array(
-            'href' => 'https://www.airbnb.com/rooms/841300394500737442?source_impression_id=p3_1719790415_P36temSnhYUDm2Le',
+
+    $EastOrange = array(
+        'View' => array(
+            'href' => 'https://www.airbnb.com/rooms/1242921062592325647',
             'attr' => 'target="_BLANK"' ),
- 
-    );
+        'Edit' => array(
+            'href' => 'https://www.airbnb.com/hosting/listings/editor/1242921062592325647/details/photo-tour',
+            'attr' => 'target="_BLANK"' ),
+    ); 
+
 
 ?>    
                     <li id="airbnb">
@@ -351,11 +368,31 @@ $menuContacts = array(
                         
                         <li>
                             <a tabindex="-1" href="https://www.airbnb.com/hosting/listings"  target="_BLANK">Listings<b class="caret"></b></a>
+                        </li> 
+
+                        <li>
+                            <a href="https://trello.com/b/C4SVxqSY/new-jersey-jerkoff"  target="_BLANK">Trello</a>
+                        </li>
+ 
+
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1" href="?action=onlinejobs-profile">Royal Room</a>
+                            <ul class="dropdown-menu">
+                                <?php
+                                echo displayMenu($royalRoom);
+                                ?>
+                            </ul>
                         </li>
 
-                        <?php
-                        echo displayMenu($menuListings);
-                        ?>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1" href="?action=onlinejobs-profile">East Orange</a>
+                            <ul class="dropdown-menu">
+                                <?php
+                                echo displayMenu($EastOrange);
+                                ?>
+                            </ul>
+                        </li>
+
                             
                         <li class="divider"></li>
 
@@ -370,45 +407,63 @@ $menuContacts = array(
 
                             <li class="divider"></li>
 						
-                            <li class="dropdown-submenu">
-                                <a tabindex="-1" href="?action=onlinejobs-profile" title="onlinejobs">VRBO</a>
-                                <ul class="dropdown-menu">
-                                    <?php
-                                    echo displayMenu($menuVRBO);
-                                    ?>
-                                </ul>
-                                
-                            </li>
-                             
-                         
+                            
                         </ul>
                     </li>
 
 
 <?php
-    $menuEvents = array(
+  
+
+    
+    $menuTools = array(
         'Facebook' => array(
             'href' => 'https://www.facebook.com/groups/AirbnbNYC',
-            'attr' => 'target="_BLANK"' ),
-        'OSE Permit'=> array(
-            'href' => 'https://strr-portal.ose.nyc.gov/s/?language=en_US&t=1722621055881',
-            'attr' => 'target="_BLANK"' ),
-        'divider',
- 
-        );
+            'attr' => 'target="_BLANK"' ), 
+
+        'Airdna' => array(
+            'href' => 'https://www.airdna.co/',
+            'attr' => 'target="_BLANK"'),
+
+
+
+        'Pricelabs' => array(
+            'href' => 'https://pricelabs.co/pricing',
+            'attr' => 'target="_BLANK"'),
+    );
+
+
+
+    //https://awning.com/airbnb-estimator
+
+    //https://app.airbtics.com/airbnb-data/landing
+
+
+
+    $websiteTools = array(
+        'Search Console' => array(
+            'href' => 'https://search.google.com/search-console?utm_source=about-page&resource_id=https://vacationrentals4ny.com/',
+            'attr' => 'target="_BLANK"'),
+        'UptimeRobot' => array(
+            'href' => 'https://uptimerobot.com/dashboard#mainDashboard',
+            'attr' => 'target="_BLANK"'),
+    );
 
 ?>    
 
                     <li id="events">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools<b class="caret"></b></a>
                         
                         <ul class="dropdown-menu">
-                        <?php
-                        echo displayMenu($menuEvents);
-                        ?>
-						 
-                         
-                        
+                        <li><a href="#" target="_BLANK">Pricing Tools<b class="caret"></b></a></li>
+                            <?php
+                            echo displayMenu($menuTools);
+                            ?>
+                            <li class="divider"></li>
+                            <li><a href="#" target="_BLANK">Website Tools<b class="caret"></b></a></li>
+						    <?php
+                            echo displayMenu($websiteTools);
+                            ?>
                         </ul>
                     </li>
                     

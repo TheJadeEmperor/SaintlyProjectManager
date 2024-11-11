@@ -3,8 +3,12 @@
 $siteAirbnb = 'https://vacationrentals4ny.com';
 $localAirbnb = 'http://vacationrentals4ny.test';
 
-$siteWP = 'https://vacationrentals4ny.com/wp-login';
-$localWP = 'http://vacationrentals4ny.test/wp-login';
+
+$siteBlog = 'https://vacationrentals4ny.com/blog';
+$localBlog = 'http://vacationrentals4ny.test/blog';
+
+$siteWP = 'https://vacationrentals4ny.com/wp-login.php';
+$localWP = 'http://vacationrentals4ny.test/wp-login.php';
 
 $siteBLWS = 'https://benjaminlouie.com';
 $localBLWS = 'http://localhost//BenjaminLouie';
@@ -38,7 +42,7 @@ $localCulture = 'http://localhost//MyCultureLink';
     <div class="row">
         <div class="col-lg">
           <div class="section-heading">
-            <br /> <p>Benjamin4NY</p>
+            <br /> <p>Vacation Rentals 4 NY</p>
           </div>
         </div>
     </div>
@@ -46,34 +50,19 @@ $localCulture = 'http://localhost//MyCultureLink';
         <div class="col-sm text-sm-end">
          
             <a target="_BLANK" href="<?=$localAirbnb?>"><?=$localAirbnb?></a> <br />
+            <a target="_BLANK" href="<?=$localBlog?>"><?=$localBlog?></a> <br />
             <a target="_BLANK" href="<?=$localWP?>"><?=$localWP?></a>
 
         </div>
         <div class="col-sm text-start">
       
             <a target="_BLANK" href="<?=$siteAirbnb?>"><?=$siteAirbnb?></a> <br />
+            <a target="_BLANK" href="<?=$siteBlog?>"><?=$siteBlog?></a> <br />
             <a target="_BLANK" href="<?=$siteWP?>"><?=$siteWP?></a>
         </div>
     </div>
    
-    <div class="row">
-        <div class="col-lg">
-          <div class="section-heading">
-            <br /> <p>MyCultureLink</p>
-          </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm text-sm-end">
-         
-            <a target="_BLANK" href="<?=$localCulture?>"><?=$localCulture?></a>
-        </div>
-        <div class="col-sm text-start">
-      
-            <a target="_BLANK" href="<?=$siteCulture?>"><?=$siteCulture?></a>
-        </div>
-    </div>
-
+   
     <div class="row">
         <div class="col-lg">
           <div class="section-heading">
