@@ -342,19 +342,7 @@ $menuContacts = array(
             'href' => 'https://www.airbnb.com/hosting/messages/settings/scheduled-messages?product=EXPERIENCES',
             'attr' => 'target="_BLANK"' ),
         );
-
-   /*
-    $menuListings = array(
-        'Royal Room' => array(
-            'href' => 'https://www.airbnb.com/rooms/841300394500737442',
-            'attr' => 'target="_BLANK"' ),
-        'East Orange NJ' => array( 
-            'href' => 'https://www.airbnb.com/rooms/1242921062592325647',
-            'attr' => 'target="_BLANK"' ),
-  
-    );
-*/
-
+ 
     $royalRoom = array(
         'View' => array(
             'href' => 'https://www.airbnb.com/rooms/841300394500737442',
@@ -384,7 +372,7 @@ $menuContacts = array(
     ); 
 
 ?>    
-                    <li id="airbnb">
+                <li id="airbnb">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Airbnb <b class="caret"></b></a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
                         
@@ -433,8 +421,70 @@ $menuContacts = array(
                         echo displayMenu($cal);
                         ?>
                              
-                    </ul>
+                     </ul>
                 </li>
+
+                <?php
+   
+ 
+    $royalRoom = array(
+        'View' => array(
+            'href' => 'https://www.vrbo.com/3541578?dateless=true',
+            'attr' => 'target="_BLANK"' ),
+        'Edit' => array(
+            'href' => 'https://www.vrbo.com/p/calendar/321.3541578.4114724',
+            'attr' => 'target="_BLANK"' ),
+    );
+
+    $EastOrange = array(
+        'View' => array(
+            'href' => 'https://www.vrbo.com/4361703?dateless=true',
+            'attr' => 'target="_BLANK"' ),
+        'Edit' => array(
+            'href' => 'https://www.vrbo.com/p/calendar/321.4361703.4935873',
+            'attr' => 'target="_BLANK"' ),
+    ); 
+
+    
+
+?>    
+
+
+                <li id="vrbo">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">VRBO <b class="caret"></b></a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                        
+                        <li>
+                            <a tabindex="-1" href="https://www.airbnb.com/hosting/listings"  target="_BLANK">Listings<b class="caret"></b></a>
+                        </li> 
+ 
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1" href="?action=onlinejobs-profile">Royal Room</a>
+                            <ul class="dropdown-menu">
+                                <?php
+                                echo displayMenu($royalRoom);
+                                ?>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1" href="?action=onlinejobs-profile">East Orange</a>
+                            <ul class="dropdown-menu">
+                                <?php
+                                echo displayMenu($EastOrange);
+                                ?>
+                            </ul>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li>
+                            <a tabindex="-1" href="https://www.vrbo.com/supply/inbox?propertyId=96496552"  target="_BLANK">Inbox</a>
+                        </li> 
+
+                     </ul>
+                </li>
+
 
 <?php
   
