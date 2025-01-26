@@ -52,8 +52,7 @@ switch($_GET['action']) {
     case 'newsl-online':
         $link = $newslHost.'OnlineJobs';
         break;
- 
-        
+         
 	case 'gmail-filters':
 		$link = 'https://mail.google.com/mail/u/0/?shva=1#settings/filters';
 		break;
@@ -95,12 +94,14 @@ switch($_GET['action']) {
 	case 'blog': 
 		$link = 'blog_nus.php';
 		break;
-    case 'ninja': 
-        $link = 'code_ninja.php';
-        break;
- 
-	default:
+  
+    case 'nus': 
         $link = 'nus.php';
+
+    case 'rentals': 
+    default:
+        $link = 'rentals.php';
+        break;
 }
 ?>
 <html>
@@ -188,9 +189,11 @@ switch($_GET['action']) {
         'Achive Links' => array(
             'href' => '?action=archive'),
         'NUS Blog & SEO' => array(
-            'href' => '?action=blog'),         
+            'href' => '?action=blog'),
+        'NUS BPS' => array(
+            'href' => '?action=nus'),           
         'Cohost Ninja' => array(
-            'href' => '?action=ninja'),
+            'href' => '.'),
     );
 
 ?>
