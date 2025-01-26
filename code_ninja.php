@@ -3,7 +3,6 @@
 $siteAirbnb = 'https://vacationrentals4ny.com';
 $localAirbnb = 'http://vacationrentals4ny.test';
 
-
 $siteBlog = 'https://vacationrentals4ny.com/blog';
 $localBlog = 'http://vacationrentals4ny.test/blog';
 
@@ -13,14 +12,11 @@ $localWP = 'http://vacationrentals4ny.test/wp-login.php';
 $siteBLWS = 'https://benjaminlouie.com';
 $localBLWS = 'http://localhost//BenjaminLouie';
 
-$scamLocal = 'http://localhost//SusanZhuangLies';
-$scamSite = 'https://susanzhuanglies.com';
+$scamLocal = 'http://localhost//ccpstevechan.com/';
+$scamSite = 'https://ccpstevechan.com/';
 
 $site5G = 'https://5gradio1.com';
 $local5G = 'http://localhost//5gradio1.com';
-
-$siteCulture = 'https://myculturelink.com/';
-$localCulture = 'http://localhost//MyCultureLink';
 
 ?>
 <head>
@@ -84,7 +80,7 @@ $localCulture = 'http://localhost//MyCultureLink';
     <div class="row">
         <div class="col-lg">
           <div class="section-heading">
-            <br /> <p>Scammer Susan</p>
+            <br /> <p>CCP Steve Chan</p>
           </div>
         </div>
     </div>

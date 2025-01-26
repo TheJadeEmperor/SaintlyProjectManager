@@ -326,8 +326,6 @@ $menuContacts = array(
 
 <?php
     $menuMessages = array(
-
-  
         'Read All Messages' => array(
             'href' => 'https://www.airbnb.com/hosting/inbox/folder/all/',
             'attr' => 'target="_BLANK"' ),
@@ -352,7 +350,6 @@ $menuContacts = array(
             'attr' => 'target="_BLANK"' ),
     );
 
-
     $EastOrange = array(
         'View' => array(
             'href' => 'https://www.airbnb.com/rooms/1242921062592325647',
@@ -371,6 +368,12 @@ $menuContacts = array(
             'attr' => 'target="_BLANK"' ),
     ); 
 
+    $misc = array(
+        "Referral Program" => array(
+            'href' => 'https://www.airbnb.com/refer?touch_point=POST_HOST_REVIEW',
+            'attr' => 'target="_BLANK"' ),
+    );
+
 ?>    
                 <li id="airbnb">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Airbnb <b class="caret"></b></a>
@@ -383,8 +386,7 @@ $menuContacts = array(
                         <li>
                             <a href="https://trello.com/b/C4SVxqSY/new-jersey-jerkoff"  target="_BLANK">Trello</a>
                         </li>
- 
-
+  
                         <li class="dropdown-submenu">
                             <a tabindex="-1" href="?action=onlinejobs-profile">Royal Room</a>
                             <ul class="dropdown-menu">
@@ -402,8 +404,7 @@ $menuContacts = array(
                                 ?>
                             </ul>
                         </li>
-
-                            
+ 
                         <li class="divider"></li>
 
                         <li class="dropdown-submenu">
@@ -420,13 +421,15 @@ $menuContacts = array(
                         <?php
                         echo displayMenu($cal);
                         ?>
+
+                        <?php
+                        echo displayMenu($misc);
+                        ?>
                              
                      </ul>
                 </li>
 
                 <?php
-   
- 
     $royalRoom = array(
         'View' => array(
             'href' => 'https://www.vrbo.com/3541578?dateless=true',
@@ -444,11 +447,7 @@ $menuContacts = array(
             'href' => 'https://www.vrbo.com/p/calendar/321.4361703.4935873',
             'attr' => 'target="_BLANK"' ),
     ); 
-
-    
-
 ?>    
-
 
                 <li id="vrbo">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">VRBO <b class="caret"></b></a>
@@ -477,11 +476,9 @@ $menuContacts = array(
                         </li>
 
                         <li class="divider"></li>
-
                         <li>
                             <a tabindex="-1" href="https://www.vrbo.com/supply/inbox?propertyId=96496552"  target="_BLANK">Inbox</a>
                         </li> 
-
                      </ul>
                 </li>
 
@@ -490,6 +487,16 @@ $menuContacts = array(
   
     $menuTools = array(
     
+        'Pricelabs Dashboard' => array(
+            'href' => 'https://pricelabs.co/pricing',
+            'attr' => 'target="_BLANK"'),
+
+        'Pricelabs Mappings' => array(
+            'href' => 'https://pricelabs.co/mappings',
+            'attr' => 'target="_BLANK"'),
+
+        'divider',
+
         'Awning' => array(
             'href' => 'https://awning.com/airbnb-estimator',
             'attr' => 'target="_BLANK"'),
@@ -502,9 +509,6 @@ $menuContacts = array(
             'href' => 'https://www.airdna.co/',
             'attr' => 'target="_BLANK"'),
 
-        'Pricelabs' => array(
-            'href' => 'https://pricelabs.co/pricing',
-            'attr' => 'target="_BLANK"'),
     );
 
 
