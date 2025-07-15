@@ -9,14 +9,8 @@ $localBlog = 'http://vacationrentals4ny.test/blog';
 $siteWP = 'https://vacationrentals4ny.com/wp-login.php';
 $localWP = 'http://vacationrentals4ny.test/wp-login.php';
 
-$siteBLWS = 'https://benjaminlouie.com';
-$localBLWS = 'http://localhost//BenjaminLouie';
-
-$scamLocal = 'http://localhost//ccpstevechan.com/';
-$scamSite = 'https://ccpstevechan.com/';
-
-$site5G = 'https://5gradio1.com';
-$local5G = 'http://localhost//5gradio1.com';
+$shittyLocal = 'http://localhost//2134_shelter/';
+$shittyLive = 'https://noshelterhere.com/';
 
 ?>
 <head>
@@ -44,73 +38,57 @@ $local5G = 'http://localhost//5gradio1.com';
     </div>
     <div class="row">
         <div class="col-sm text-sm-end">
-         
             <a target="_BLANK" href="<?=$localAirbnb?>"><?=$localAirbnb?></a> <br />
             <a target="_BLANK" href="<?=$localBlog?>"><?=$localBlog?></a> <br />
             <a target="_BLANK" href="<?=$localWP?>"><?=$localWP?></a>
-
         </div>
         <div class="col-sm text-start">
-      
             <a target="_BLANK" href="<?=$siteAirbnb?>"><?=$siteAirbnb?></a> <br />
             <a target="_BLANK" href="<?=$siteBlog?>"><?=$siteBlog?></a> <br />
             <a target="_BLANK" href="<?=$siteWP?>"><?=$siteWP?></a>
         </div>
     </div>
-   
-   
-    <div class="row">
-        <div class="col-lg">
-          <div class="section-heading">
-            <br /> <p>BL Web Solutions</p>
-          </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm text-sm-end">
-         
-            <a target="_BLANK" href="<?=$localBLWS?>"><?=$localBLWS?></a>
-        </div>
-        <div class="col-sm text-start">
-      
-            <a target="_BLANK" href="<?=$siteBLWS?>"><?=$siteBLWS?></a>
-        </div>
-    </div>
 
     <div class="row">
         <div class="col-lg">
           <div class="section-heading">
-            <br /> <p>CCP Steve Chan</p>
+            <br /> <p>Properties </p> 
           </div>
         </div>
     </div>
-    <div class="row justify-content-center">
+   <div class="row">
         <div class="col-sm text-sm-end">
-         
-            <a target="_BLANK" href="<?=$scamLocal?>"><?=$scamLocal?></a>
+            <a href="">105 Pine Cone Lane</a>  <br />
+            Jennifer Cottone 10-3-2 <br /> 
         </div>
         <div class="col-sm text-start">
-      
-            <a target="_BLANK" href="<?=$scamSite?>"><?=$scamSite?></a>
+            <a target="_BLANK" href="https://app.turno.com/properties/523877">Turno</a> <br />
+            <a target="_BLANK" href="https://drive.google.com/drive/folders/14ylgljqnW7Zy_HcoxXhxOSiO9VZqv9VH?usp=drive_link">G-Drive</a> <br />
+
+            <a target="_BLANK" href="https://www.airbnb.com/hosting/listings/editor/1397966363653363779/details/photo-tour">Airbnb Listing</a> |  <a target="_BLANK" href="https://www.airbnb.com/hosting/listings/editor/1397966363653363779/details/photo-tour">Edit</a> | <a target="_BLANK" href="https://www.airbnb.com/multicalendar/1397966363653363779/pricing-settings/fees">Fees</a> | <a target="_BLANK" href="https://airbnb.com/h/mtg-firepit">| Live </a> <br /> 
+            
+            <a target="_BLANK" href="https://app.pricelabs.co/pricing?listings=1397966363653363779&pms_name=airbnb&open_calendar=true">Pricelabs</a> | 
+            <a href="https://app.pricelabs.co/reports/140863">Comp Set</a> <br />
+            <a target="_BLANK" href="https://my.hospitable.com/properties/property/1830588/messaging-rules">Hospitable Messages</a>
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg">
-          <div class="section-heading">
-            <br /><p>5GRadio1</p>
-          </div>
+
+       <div class="row">
+        <div class="col-sm text-sm-end">
+            2037 Coyle Street 
+            2-1-1
+        </div>
+        <div class="col-sm text-start">
+            <a target="_BLANK" href="#">G-Drive</a> <br /> 
+
+            <a target="_BLANK" href="https://www.airbnb.com/hosting/listings/editor/841300394500737442/details/photo-tour">Airbnb Listing</a> | <a target="_BLANK" href="https://www.airbnb.com/hosting/listings/editor/841300394500737442/details/photo-tour">Edit</a> | <a target="_BLANK" href="https://www.airbnb.com/multicalendar/841300394500737442/pricing-settings/fees">Fees</a> | <a target="_BLANK" href="https://www.airbnb.com/rooms/841300394500737442?source_impression_id=p3_1719790415_P36temSnhYUDm2Le">| Live </a> <br />
+
+            <a target="_BLANK" href="https://app.pricelabs.co/pricing?listings=841300394500737442&pms_name=airbnb&open_calendar=true">Pricelabs</a> <br />
+            <a target="_BLANK" href="https://my.hospitable.com/properties/property/1830574/messaging-rules">Hospitable Messages</a>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md text-sm-end">
-         
-            <a target="_BLANK" href="<?=$local5G?>"><?=$local5G?></a>
-        </div>
-        <div class="col-md text-start">
-         
-            <a target="_BLANK" href="<?=$site5G?>"><?=$site5G?></a>
-        </div>
-    </div>
+    
 </div>
- 
+
+
 </center>

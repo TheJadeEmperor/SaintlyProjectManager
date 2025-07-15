@@ -7,7 +7,7 @@ function displayMenu($menu) {
             $display .= '<li><a href="'.$url['href'].'" '.$url['attr'].'>'.$name.'</a></li>';
     }
     return $display;
-}
+} 
 
 $newslHost = 'http://saintlynewsletters.test/';
 $apiHost = 'http://localhost/btcAPI/';
@@ -192,7 +192,7 @@ switch($_GET['action']) {
             'href' => '?action=blog'),
         'NUS BPS' => array(
             'href' => '?action=nus'),           
-        'Cohost Ninja' => array(
+        'Little Book Stays' => array(
             'href' => '.'),
     );
 
@@ -255,9 +255,7 @@ switch($_GET['action']) {
 
 
         $menuEvents = array(
-            'Facebook' => array(
-                'href' => 'https://www.facebook.com/groups/AirbnbNYC',
-                'attr' => 'target="_BLANK"' ), 
+        
             'BiggerPocketsForum' => array(
                 'href' => 'https://www.biggerpockets.com/forums/530',
                 'attr' => 'target="_BLANK"' ), 
@@ -285,36 +283,26 @@ switch($_GET['action']) {
                         </ul>
                     </li>
 					
-					
-					
 <?php
 $menuContacts = array( 
-    'Upwork' => array(
-        'href' => 'https://www.upwork.com/ab/account-security/login?redir=%2Fab%2Fmessages%2F',
-        'attr' => 'target="_BLANK"' ),  
+    'Upwork Messages' => array(
+        'href' => 'https://www.upwork.com/ab/messages/rooms/room_007a0a45db0a964b83f0854be6c2e37e?pageTitle=Mahran%20Makin&companyReference=1816859020641894400&sidebar=true'),
+    'Transaction History' => array(
+        'href' => 'https://www.upwork.com/nx/payments/reports/transaction-history',
+        'attr' => 'target="_BLANK"' ),
+
+
+    'divider', 
+       
+
     'Batch Skip Trace' => array(
         'href' => 'https://app.batchskiptracing.com/app/skip-trace/list',
         'attr' => 'target="_BLANK"' ),
-    'Hubspot - Contacts' => array(
-        'href' => 'https://app.hubspot.com/contacts/47026806/objects/0-1/views/all/list',
-        'attr' => 'target="_BLANK"' ),
 
-    'divider', 
-
-    'PRLog' => array( 
-        'href' => 'https://www.prlog.org/pub/submit3.html',
+    'Close' => array(
+        'href' => 'https://app.batchskiptracing.com/app/skip-trace/list',
         'attr' => 'target="_BLANK"' ),
-  
-    'Submit PR' => array(
-        'href' => 'https://www.prlog.org/pub/submit3.html',
-        'attr' => 'target="_BLANK"' ),
-    
-    'Manage PR' => array(
-        'href' => 'https://www.prlog.org/pub/manage.html',
-        'attr' => 'target="_BLANK"' ),
-
-
-)
+    );
 ?>                 
                     <li id="contacts"> 
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Contacts <b class="caret"></b></a>
@@ -328,22 +316,34 @@ $menuContacts = array(
                     </li>
 
 <?php
-    $menuMessages = array(
-        'Read All Messages' => array(
-            'href' => 'https://www.airbnb.com/hosting/inbox/folder/all/',
-            'attr' => 'target="_BLANK"' ),
-        'Quick Replies' => array(
-            'href' => ' https://www.airbnb.com/hosting/messages/settings/quick-replies?product=STAYS',
-            'attr' => 'target="_BLANK"' ),
+$menuSales = array( 
+    'Google Meets' => array(
 
-        'Sched Messages - Listings' => array(
-            'href' => 'https://www.airbnb.com/hosting/messages/settings/scheduled-messages?product=STAYS',
-            'attr' => 'target="_BLANK"' ),
-        'Sched Messages - Experiences' => array(
-            'href' => 'https://www.airbnb.com/hosting/messages/settings/scheduled-messages?product=EXPERIENCES',
-            'attr' => 'target="_BLANK"' ),
-        );
- 
+    ), 
+    'divider',  
+    'Awning' => array(
+            'href' => 'https://awning.com/airbnb-estimator',
+            'attr' => 'target="_BLANK"'),
+    'Airbtics' => array(
+            'href' => 'https://app.airbtics.com/airbnb-data/landing',
+            'attr' => 'target="_BLANK"'),
+
+    'Airdna' => array(
+        'href' => 'https://www.airdna.co/',
+        'attr' => 'target="_BLANK"'),
+
+);
+?>
+                <li id="contacts"> 
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Sales <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <?php
+                        echo displayMenu($menuSales);
+                        ?>
+                    </ul>
+                </li>
+
+<?php
     $royalRoom = array(
         'View' => array(
             'href' => 'https://www.airbnb.com/rooms/841300394500737442',
@@ -353,43 +353,54 @@ $menuContacts = array(
             'attr' => 'target="_BLANK"' ),
     );
 
-    $EastOrange = array(
+    //
+    $EastOrange = $GreenTown = array(
         'View' => array(
-            'href' => 'https://www.airbnb.com/rooms/1242921062592325647',
+            'href' => 'https://www.airbnb.com/rooms/1397966363653363779/',
             'attr' => 'target="_BLANK"' ),
         'Edit' => array(
-            'href' => 'https://www.airbnb.com/hosting/listings/editor/1242921062592325647/details/photo-tour',
+            'href' => 'https://www.airbnb.com/hosting/listings/editor/1397966363653363779/details/',
             'attr' => 'target="_BLANK"' ),
     ); 
 
-    $cal = array(
-        'Calendar RR' => array(
-            'href' => ' https://www.airbnb.com/multicalendar/841300394500737442',
-            'attr' => 'target="_BLANK"' ),
-        'Calendar NJ' => array(
-            'href' => 'https://www.airbnb.com/multicalendar/1242921062592325647',
-            'attr' => 'target="_BLANK"' ),
-    ); 
 
-    $misc = array(
-        "Referral Program" => array(
-            'href' => 'https://www.airbnb.com/refer?touch_point=POST_HOST_REVIEW',
+    $menuMessages = array(
+        'Read All Messages' => array(
+            'href' => 'https://my.hospitable.com/inbox/segments/default',
             'attr' => 'target="_BLANK"' ),
+       
+        'Calendar' => array(
+            'href' => 'https://my.hospitable.com/calendar/occupancy',
+            'attr' => 'target="_BLANK"' ),
+        'Sched Messages - Experiences' => array(
+            'href' => 'https://www.airbnb.com/hosting/messages/settings/scheduled-messages?product=EXPERIENCES',
+            'attr' => 'target="_BLANK"' ),
+        );
+ 
+    $menuTurno = array(
+        'Calendar' => array(
+            'href' => 'https://app.turno.com/view/schedule',
+            'attr' => 'target="_BLANK"' ),
+        'Chat' => array(
+            'href' => 'https://chat.turno.com/',
+            'attr' => 'target="_BLANK"' ),
+        'Thumbtack' => array(
+            'href' => 'https://www.thumbtack.com/team',
+            'attr' => 'target="_BLANK"' ),
+
     );
 
+    
 ?>    
                 <li id="airbnb">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Airbnb <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Props <b class="caret"></b></a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
                         
                         <li>
                             <a tabindex="-1" href="https://www.airbnb.com/hosting/listings"  target="_BLANK">Listings<b class="caret"></b></a>
                         </li> 
-
-                        <li>
-                            <a href="https://trello.com/b/C4SVxqSY/new-jersey-jerkoff"  target="_BLANK">Trello</a>
-                        </li>
   
+
                         <li class="dropdown-submenu">
                             <a tabindex="-1" href="?action=onlinejobs-profile">Royal Room</a>
                             <ul class="dropdown-menu">
@@ -400,10 +411,10 @@ $menuContacts = array(
                         </li>
 
                         <li class="dropdown-submenu">
-                            <a tabindex="-1" href="?action=onlinejobs-profile">East Orange</a>
+                            <a tabindex="-1" href="?action=onlinejobs-profile">PA GreenTown</a>
                             <ul class="dropdown-menu">
                                 <?php
-                                echo displayMenu($EastOrange);
+                                echo displayMenu($GreenTown);
                                 ?>
                             </ul>
                         </li>
@@ -421,18 +432,30 @@ $menuContacts = array(
 
                         <li class="divider"></li>
 						
-                        <?php
-                        echo displayMenu($cal);
-                        ?>
-
-                        <?php
-                        echo displayMenu($misc);
-                        ?>
+                        
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1" href="https://www.airbnb.com/hosting/inbox/folder/all/" target="_BLANK">Turno</a>
+                            <ul class="dropdown-menu">
+                                <?php
+                                echo displayMenu($menuTurno);
+                                ?>
+                            </ul>
+                        </li>
                              
                      </ul>
                 </li>
 
-                <?php
+<?php
+  $priceLabs = array(
+    'Pricelabs Dashboard' => array(
+        'href' => 'https://pricelabs.co/pricing',
+        'attr' => 'target="_BLANK"'),
+
+    'Pricelabs Mappings' => array(
+        'href' => 'https://pricelabs.co/mappings',
+        'attr' => 'target="_BLANK"'),
+    );
+
     $royalRoom = array(
         'View' => array(
             'href' => 'https://www.vrbo.com/3541578?dateless=true',
@@ -440,48 +463,37 @@ $menuContacts = array(
         'Edit' => array(
             'href' => 'https://www.vrbo.com/p/calendar/321.3541578.4114724',
             'attr' => 'target="_BLANK"' ),
-    );
+    ); 
 
-    $EastOrange = array(
-        'View' => array(
-            'href' => 'https://www.vrbo.com/4361703?dateless=true',
+    $cal = array(
+        'Calendar RR' => array(
+            'href' => ' https://www.airbnb.com/multicalendar/841300394500737442',
             'attr' => 'target="_BLANK"' ),
-        'Edit' => array(
-            'href' => 'https://www.vrbo.com/p/calendar/321.4361703.4935873',
+        'Calendar PA' => array(
+            'href' => 'https://www.airbnb.com/multicalendar/1397966363653363779',
             'attr' => 'target="_BLANK"' ),
     ); 
+
 ?>    
 
-                <li id="vrbo">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">VRBO <b class="caret"></b></a>
+                <li id="pricelabs">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pricelabs <b class="caret"></b></a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
                         
                         <li>
                             <a tabindex="-1" href="https://www.airbnb.com/hosting/listings"  target="_BLANK">Listings<b class="caret"></b></a>
                         </li> 
  
-                        <li class="dropdown-submenu">
-                            <a tabindex="-1" href="?action=onlinejobs-profile">Royal Room</a>
-                            <ul class="dropdown-menu">
-                                <?php
-                                echo displayMenu($royalRoom);
-                                ?>
-                            </ul>
-                        </li>
-
-                        <li class="dropdown-submenu">
-                            <a tabindex="-1" href="?action=onlinejobs-profile">East Orange</a>
-                            <ul class="dropdown-menu">
-                                <?php
-                                echo displayMenu($EastOrange);
-                                ?>
-                            </ul>
-                        </li>
-
+                        <?php
+                            echo displayMenu($priceLabs);
+                        ?>
+                        
                         <li class="divider"></li>
-                        <li>
-                            <a tabindex="-1" href="https://www.vrbo.com/supply/inbox?propertyId=96496552"  target="_BLANK">Inbox</a>
-                        </li> 
+                      
+                        <?php
+                        echo displayMenu($cal);
+                        ?>
+
                      </ul>
                 </li>
 
@@ -500,21 +512,8 @@ $menuContacts = array(
 
         'divider',
 
-        'Awning' => array(
-            'href' => 'https://awning.com/airbnb-estimator',
-            'attr' => 'target="_BLANK"'),
-
-        'Airbtics' => array(
-                'href' => 'https://app.airbtics.com/airbnb-data/landing',
-                'attr' => 'target="_BLANK"'),
     
-        'Airdna' => array(
-            'href' => 'https://www.airdna.co/',
-            'attr' => 'target="_BLANK"'),
-
     );
-
-
 
     $websiteTools = array(
         'Search Console' => array(
