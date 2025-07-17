@@ -231,20 +231,18 @@ switch($_GET['action']) {
 <?php
 
     $menuCohost = array(
-        'Cohost Course' => array(
+        'Cohost Course 1' => array(
             'href' => 'https://cohostingacquisitions.circle.so/c/module-1/',
+            'attr' => 'target="_BLANK"'),
+        'Cohost Course 2' => array( 
+            'href' => 'https://cohostingacquisitions.circle.so/c/elite-curriculum/',
             'attr' => 'target="_BLANK"'),
         'Group Chat' => array(
             'href' => 'https://cohostingacquisitions.circle.so/c/group-chat/',
             'attr' => 'target="_BLANK"'),
+        );
 
-        'divider',
-
-        'Old Courses' => array(
-             'href' => 'https://9hlkiaj7v8uncrbvap4u.app.clientclub.net/courses/products/cc438f35-c5c8-4b4c-a626-22f513398456/categories/6bfce0bf-a058-4bc7-875e-3ae92294de6f/posts/f5e4a432-6763-4468-9b31-cd88148fa093',
-            'attr' => 'target="_BLANK"'
-        ),
-
+    $oldCourse = array(
         'Cohost Training 1' => array(
             'href' => 'https://9hlkiaj7v8uncrbvap4u.app.clientclub.net/courses/products/cc438f35-c5c8-4b4c-a626-22f513398456/categories/6bfce0bf-a058-4bc7-875e-3ae92294de6f/posts/f5e4a432-6763-4468-9b31-cd88148fa093',
             'attr' => 'target="_BLANK"'),
@@ -253,14 +251,11 @@ switch($_GET['action']) {
             'attr' => 'target="_BLANK"'), 
         );
 
-
-        $menuEvents = array(
-        
-            'BiggerPocketsForum' => array(
-                'href' => 'https://www.biggerpockets.com/forums/530',
-                'attr' => 'target="_BLANK"' ), 
-               
-        );
+    $menuEvents = array(
+        'BiggerPocketsForum' => array(
+            'href' => 'https://www.biggerpockets.com/forums/530',
+            'attr' => 'target="_BLANK"' ),  
+    );
        
 ?>
 
@@ -273,13 +268,22 @@ switch($_GET['action']) {
                             echo displayMenu($menuCohost);
                             ?>
 
-                            <li class="divider"></li>
+                        <li class="divider"></li>
+
+                            <li class="dropdown-submenu">
+                            <a tabindex="-1" target="_BLANK" href="https://9hlkiaj7v8uncrbvap4u.app.clientclub.net/courses/products/cc438f35-c5c8-4b4c-a626-22f513398456/categories/6bfce0bf-a058-4bc7-875e-3ae92294de6f/posts/f5e4a432-6763-4468-9b31-cd88148fa093">Old Course</a>
+                            <ul class="dropdown-menu"> 
+                                <?php
+                                echo displayMenu($oldCourse);
+                                ?>
+                            </ul>
+                        </li>
+
+                        <li class="divider"></li>
 
                             <?php
                             echo displayMenu($menuEvents);
                             ?>
-                            
- 
                         </ul>
                     </li>
 					
@@ -291,10 +295,8 @@ $menuContacts = array(
         'href' => 'https://www.upwork.com/nx/payments/reports/transaction-history',
         'attr' => 'target="_BLANK"' ),
 
-
     'divider', 
-       
-
+    
     'Batch Skip Trace' => array(
         'href' => 'https://app.batchskiptracing.com/app/skip-trace/list',
         'attr' => 'target="_BLANK"' ),
@@ -316,18 +318,33 @@ $menuContacts = array(
                     </li>
 
 <?php
+$googleMeets = array(
+    'Google Workspace Business Standard - Admin Console' => array(
+        'href' => ' https://admin.google.com/u/0/ac/billing/subscriptions/r5lljMN30oQ8tNPznBdY5A?ms=pt%3A488%3Bs%3A237&utm_source=discover',
+        'attr' => 'target="_BLANK"'
+    ),
+    
+    'Productivity Apps for Business Owners & Entrepreneurs | Google Workspace Individual' => array(
+        'href' => 'https://workspace.google.com/individual/?utm_source=meet-in-product&utm_medium=et&utm_term=learn-more&utm_campaign=meet-premium-feature-paywall-cloud-recordings',
+        'attr' => 'target="_BLANK"'
+    ),
+
+    'Account details' => array(
+        'href' => 'https://pay.google.com/gp/w/home/accountdetail?ebaid=AJ9oCCwedUDDJcBC%2BGcDW2xBVhcD5mHXFRsk8S%2BvHGPDRiKGMNO8%2F%2B3dTHBQdSn85zcM4KLwc9uI&hl=en',
+        'attr' => 'target="_BLANK"'
+    ),
+);
+
 $menuSales = array( 
-    'Google Meets' => array(
-
-    ), 
-    'divider',  
+    'divider',
     'Awning' => array(
-            'href' => 'https://awning.com/airbnb-estimator',
-            'attr' => 'target="_BLANK"'),
+        'href' => 'https://awning.com/airbnb-estimator',
+        'attr' => 'target="_BLANK"'
+    ),
     'Airbtics' => array(
-            'href' => 'https://app.airbtics.com/airbnb-data/landing',
-            'attr' => 'target="_BLANK"'),
-
+        'href' => 'https://app.airbtics.com/airbnb-data/landing',
+        'attr' => 'target="_BLANK"'
+    ),
     'Airdna' => array(
         'href' => 'https://www.airdna.co/',
         'attr' => 'target="_BLANK"'),
@@ -336,10 +353,20 @@ $menuSales = array(
 ?>
                 <li id="contacts"> 
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Sales <b class="caret"></b></a>
+                       
                     <ul class="dropdown-menu">
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1" target="_BLANK" href="https://meet.google.com/efe-fvyp-hev">Google Meets</a>
+                            <ul class="dropdown-menu"> 
+                                <?php
+                                echo displayMenu($googleMeets);
+                                ?>
+                            </ul>
+                        </li>
+
                         <?php
                         echo displayMenu($menuSales);
-                        ?>
+                        ?> 
                     </ul>
                 </li>
 
@@ -354,7 +381,7 @@ $menuSales = array(
     );
 
     //
-    $EastOrange = $GreenTown = array(
+    $GreenTown = array(
         'View' => array(
             'href' => 'https://www.airbnb.com/rooms/1397966363653363779/',
             'attr' => 'target="_BLANK"' ),
@@ -399,8 +426,7 @@ $menuSales = array(
                         <li>
                             <a tabindex="-1" href="https://www.airbnb.com/hosting/listings"  target="_BLANK">Listings<b class="caret"></b></a>
                         </li> 
-  
-
+   
                         <li class="dropdown-submenu">
                             <a tabindex="-1" href="?action=onlinejobs-profile">Royal Room</a>
                             <ul class="dropdown-menu">
@@ -496,52 +522,7 @@ $menuSales = array(
 
                      </ul>
                 </li>
-
-
-<?php
-  
-    $menuTools = array(
-    
-        'Pricelabs Dashboard' => array(
-            'href' => 'https://pricelabs.co/pricing',
-            'attr' => 'target="_BLANK"'),
-
-        'Pricelabs Mappings' => array(
-            'href' => 'https://pricelabs.co/mappings',
-            'attr' => 'target="_BLANK"'),
-
-        'divider',
-
-    
-    );
-
-    $websiteTools = array(
-        'Search Console' => array(
-            'href' => 'https://search.google.com/search-console?utm_source=about-page&resource_id=https://vacationrentals4ny.com/',
-            'attr' => 'target="_BLANK"'),
-        'UptimeRobot' => array(
-            'href' => 'https://uptimerobot.com/dashboard#mainDashboard',
-            'attr' => 'target="_BLANK"'),
-    );
-
-?>    
-
-                    <li id="events">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools<b class="caret"></b></a>
-                        
-                        <ul class="dropdown-menu">
-                        <li><a href="#" target="_BLANK">Pricing Tools<b class="caret"></b></a></li>
-                            <?php
-                            echo displayMenu($menuTools);
-                            ?>
-                            <li class="divider"></li>
-                            <li><a href="#" target="_BLANK">Website Tools<b class="caret"></b></a></li>
-						    <?php
-                            echo displayMenu($websiteTools);
-                            ?>
-                        </ul>
-                    </li>
-                    
+ 
                 </ul><!--navbar-->
                 
                 <ul class="nav navbar-nav navbar-left">
