@@ -1,4 +1,40 @@
 <?php
+
+function dropDownMenu ($menu) {
+    //print_r($menu); exit;
+    
+    foreach($menu as $name => $url) {
+       
+        if ($url['dropdown']) { 
+           
+            $display .= '<li class="dropdown-submenu">
+                <a tabindex="-1" target="_BLANK" href="'.$url['href'].'">'.$name.'</a>
+                    <ul class="dropdown-menu">';
+
+                    $display .=  displayMenu($url['dropdown']);
+            
+                        $display .= '
+                    </ul>
+                </li>'; 
+        }
+        else {
+            $display .= '<li><a href="'.$url['href'].'" '.$url['attr'].'>'.$name.'</a>';
+ 
+            if($url['caret']) {
+                $display = '<b class="caret"></b>'; 
+            }
+
+            $display .= '</li>';
+        }
+
+        if($url['divider']) {
+            $display .= '<li class="divider"></li>'; 
+        }
+
+    }
+    return $display;
+}
+
 function displayMenu($menu) {
     foreach($menu as $name => $url) {
         if($name == 'divider')
@@ -185,7 +221,7 @@ switch($_GET['action']) {
         'Account Manager' => array(
             'href' => 'http://SaintlyAccountsManager.test',
             'attr' => 'target="_BLANK"' ),
-        'divider',
+        'divider' => 1,
         'Achive Links' => array(
             'href' => '?action=archive'),
         'NUS Blog & SEO' => array(
@@ -212,21 +248,32 @@ switch($_GET['action']) {
                         </ul>
                     </li>
 
+<?php
+$menuGmail = array( 
+    'gmail Accounts' => array(
+        'href' => 'https://mail.google.com/mail/u/0/?shva=1#settings/accounts',
+        'attr' => 'target="_BLANK"' ),
+    'gmail Filters' => array(
+        'href' => 'https://mail.google.com/mail/u/0/?shva=1#settings/filters',
+        'attr' => 'target="_BLANK"',
+        'divider' => 1, ),
+
+    'Hostinger' => array(
+        'href' => 'https://hpanel.hostinger.com/websites/vacationrentals4ny.com',
+        'attr' => 'target="_BLANK"' ),
+    'Domains' => array(
+        'href' => 'https://hpanel.hostinger.com/domains',
+        'attr' => 'target="_BLANK"' ),
+);
+
+?>
+
                     <li id="gmail">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gmail & HM<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-        
-                            <li><a href="https://mail.google.com/mail/u/0/?shva=1#settings/accounts" target="_BLANK">gmail Accounts</a></li>
-                            <li><a href="https://mail.google.com/mail/u/0/?shva=1#settings/filters" target="_BLANK">gmail Filters</a></li>
-							
-							<li class="divider"></li>
-							
-							<li><a href="https://my.hostmonster.com/cgi-bin/cplogin?lil=1" target="_BLANK">Hostmonster<b class="caret"></b></a></li>
-							<li><a href="https://my.hostmonster.com/cgi-bin/cplogin?lil=1" target="_BLANK">Login</a></li>
 
-                            <li class="divider"></li>
-                            <li><a href="https://hpanel.hostinger.com/websites/vacationrentals4ny.com" target="_BLANK">Hostinger</a></li>
-                            <li><a href="https://hpanel.hostinger.com/domains" target="_BLANK">Domains</a></li>
+                            <?php echo dropDownMenu($menuGmail) ?>
+        
                         </ul>
                     </li>
                    
@@ -396,40 +443,7 @@ $menuSales = array(
                 </li>
  
 <?php
-function dropDownMenu ($menu) {
-    //print_r($menu); exit;
-    
-    foreach($menu as $name => $url) {
-       
-        if ($url['dropdown']) { 
-           
-            $display .= '<li class="dropdown-submenu">
-                <a tabindex="-1" target="_BLANK" href="'.$url['href'].'">'.$name.'</a>
-                    <ul class="dropdown-menu">';
 
-                    $display .=  displayMenu($url['dropdown']);
-            
-                        $display .= '
-                    </ul>
-                </li>'; 
-        }
-        else {
-            $display .= '<li><a href="'.$url['href'].'" '.$url['attr'].'>'.$name.'</a>';
- 
-            if($url['caret']) {
-                $display = '<b class="caret"></b>'; 
-            }
-
-            $display .= '</li>';
-        }
-
-        if($url['divider']) {
-            $display .= '<li class="divider"></li>'; 
-        }
-
-    }
-    return $display;
-}
 
 
 
@@ -452,6 +466,11 @@ $priceLabs = array(
         'href' => 'https://app.rankbreeze.com/listings',
         'attr' => 'target="_BLANK"',
         'divider' => 1  ),
+     'Hospitable' => array (
+        'href' => 'https://my.hospitable.com/calendar/occupancy',
+        'attr' => 'target="_BLANK"',
+        'divider' => 1  ),
+            
     'Turno Calendar' => array(
         'href' => 'https://app.turno.com/view/schedule',
         'attr' => 'target="_BLANK"' ),
@@ -461,7 +480,7 @@ $priceLabs = array(
     'Thumbtack' => array(
         'href' => 'https://www.thumbtack.com/team',
         'attr' => 'target="_BLANK"',
-        ),
+    ),
      
 );
  
