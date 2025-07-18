@@ -196,6 +196,8 @@ switch($_GET['action']) {
             'href' => '.'),
     );
 
+
+
 ?>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse">
@@ -290,21 +292,33 @@ switch($_GET['action']) {
 <?php
 $menuContacts = array( 
     'Upwork Messages' => array(
-        'href' => 'https://www.upwork.com/ab/messages/rooms/room_007a0a45db0a964b83f0854be6c2e37e?pageTitle=Mahran%20Makin&companyReference=1816859020641894400&sidebar=true'),
+        'href' => 'https://www.upwork.com/ab/messages/rooms/room_007a0a45db0a964b83f0854be6c2e37e?pageTitle=Mahran%20Makin&companyReference=1816859020641894400&sidebar=true',
+         'attr' => 'target="_BLANK"' 
+    ),
     'Transaction History' => array(
         'href' => 'https://www.upwork.com/nx/payments/reports/transaction-history',
-        'attr' => 'target="_BLANK"' ),
+        'attr' => 'target="_BLANK"' 
+    ),
 
     'divider', 
     
     'Batch Skip Trace' => array(
         'href' => 'https://app.batchskiptracing.com/app/skip-trace/list',
-        'attr' => 'target="_BLANK"' ),
-
-    'Close' => array(
-        'href' => 'https://app.batchskiptracing.com/app/skip-trace/list',
-        'attr' => 'target="_BLANK"' ),
-    );
+        'attr' => 'target="_BLANK"' 
+    ),
+    'Close Inbox' => array(
+        'href' => 'https://app.close.com/tasks/inbox/',
+        'attr' => 'target="_BLANK"' 
+    ),
+    'Close Contacts' => array( 
+        'href' => 'https://app.close.com/contacts/',
+        'attr' => 'target="_BLANK"' 
+    ),
+    'Close Sched Links' => array(
+        'href' => 'https://app.close.com/settings/scheduling-links/my-links/',
+        'attr' => 'target="_BLANK"' 
+    ),
+);
 ?>                 
                     <li id="contacts"> 
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Contacts <b class="caret"></b></a>
@@ -347,14 +361,25 @@ $menuSales = array(
     ),
     'Airdna' => array(
         'href' => 'https://www.airdna.co/',
+        'attr' => 'target="_BLANK"'
+    ),
+    'Pricelabs Rev Est' => array(
+        'href' => 'https://app.pricelabs.co/revenue_estimator',
         'attr' => 'target="_BLANK"'),
-
 );
 ?>
                 <li id="contacts"> 
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Sales <b class="caret"></b></a>
-                       
-                    <ul class="dropdown-menu">
+                     
+
+                    <ul class="dropdown-menu"> 
+  
+                        <li>
+                            <a target="_BLANK" href="https://calendly.com/kaiba-online-acc/prop-mgr?preview_source=et_card&month=2025-07">Calendly</a>
+                            
+                        </li>
+
+
                         <li class="dropdown-submenu">
                             <a tabindex="-1" target="_BLANK" href="https://meet.google.com/efe-fvyp-hev">Google Meets</a>
                             <ul class="dropdown-menu"> 
@@ -369,157 +394,87 @@ $menuSales = array(
                         ?> 
                     </ul>
                 </li>
-
-<?php
-    $royalRoom = array(
-        'View' => array(
-            'href' => 'https://www.airbnb.com/rooms/841300394500737442',
-            'attr' => 'target="_BLANK"' ),
-        'Edit' => array(
-            'href' => 'https://www.airbnb.com/hosting/listings/editor/841300394500737442/details',
-            'attr' => 'target="_BLANK"' ),
-    );
-
-    //
-    $GreenTown = array(
-        'View' => array(
-            'href' => 'https://www.airbnb.com/rooms/1397966363653363779/',
-            'attr' => 'target="_BLANK"' ),
-        'Edit' => array(
-            'href' => 'https://www.airbnb.com/hosting/listings/editor/1397966363653363779/details/',
-            'attr' => 'target="_BLANK"' ),
-    ); 
-
-
-    $menuMessages = array(
-        'Read All Messages' => array(
-            'href' => 'https://my.hospitable.com/inbox/segments/default',
-            'attr' => 'target="_BLANK"' ),
-       
-        'Calendar' => array(
-            'href' => 'https://my.hospitable.com/calendar/occupancy',
-            'attr' => 'target="_BLANK"' ),
-        'Sched Messages - Experiences' => array(
-            'href' => 'https://www.airbnb.com/hosting/messages/settings/scheduled-messages?product=EXPERIENCES',
-            'attr' => 'target="_BLANK"' ),
-        );
  
-    $menuTurno = array(
-        'Calendar' => array(
-            'href' => 'https://app.turno.com/view/schedule',
-            'attr' => 'target="_BLANK"' ),
-        'Chat' => array(
-            'href' => 'https://chat.turno.com/',
-            'attr' => 'target="_BLANK"' ),
-        'Thumbtack' => array(
-            'href' => 'https://www.thumbtack.com/team',
-            'attr' => 'target="_BLANK"' ),
-
-    );
-
+<?php
+function dropDownMenu ($menu) {
+    //print_r($menu); exit;
     
-?>    
-                <li id="airbnb">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Props <b class="caret"></b></a>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                        
-                        <li>
-                            <a tabindex="-1" href="https://www.airbnb.com/hosting/listings"  target="_BLANK">Listings<b class="caret"></b></a>
-                        </li> 
-   
-                        <li class="dropdown-submenu">
-                            <a tabindex="-1" href="?action=onlinejobs-profile">Royal Room</a>
-                            <ul class="dropdown-menu">
-                                <?php
-                                echo displayMenu($royalRoom);
-                                ?>
-                            </ul>
-                        </li>
+    foreach($menu as $name => $url) {
+       
+        if ($url['dropdown']) { 
+           
+            $display .= '<li class="dropdown-submenu">
+                <a tabindex="-1" target="_BLANK" href="'.$url['href'].'">'.$name.'</a>
+                    <ul class="dropdown-menu">';
 
-                        <li class="dropdown-submenu">
-                            <a tabindex="-1" href="?action=onlinejobs-profile">PA GreenTown</a>
-                            <ul class="dropdown-menu">
-                                <?php
-                                echo displayMenu($GreenTown);
-                                ?>
-                            </ul>
-                        </li>
+                    $display .=  displayMenu($url['dropdown']);
+            
+                        $display .= '
+                    </ul>
+                </li>'; 
+        }
+        else {
+            $display .= '<li><a href="'.$url['href'].'" '.$url['attr'].'>'.$name.'</a>';
  
-                        <li class="divider"></li>
+            if($url['caret']) {
+                $display = '<b class="caret"></b>'; 
+            }
 
-                        <li class="dropdown-submenu">
-                            <a tabindex="-1" href="https://www.airbnb.com/hosting/inbox/folder/all/" target="_BLANK">Messages</a>
-                            <ul class="dropdown-menu">
-                                <?php
-                                echo displayMenu($menuMessages);
-                                ?>
-                            </ul>
-                        </li>
+            $display .= '</li>';
+        }
 
-                        <li class="divider"></li>
-						
-                        
-                        <li class="dropdown-submenu">
-                            <a tabindex="-1" href="https://www.airbnb.com/hosting/inbox/folder/all/" target="_BLANK">Turno</a>
-                            <ul class="dropdown-menu">
-                                <?php
-                                echo displayMenu($menuTurno);
-                                ?>
-                            </ul>
-                        </li>
-                             
-                     </ul>
-                </li>
+        if($url['divider']) {
+            $display .= '<li class="divider"></li>'; 
+        }
 
-<?php
-  $priceLabs = array(
+    }
+    return $display;
+}
+
+
+
+$priceLabs = array(
     'Pricelabs Dashboard' => array(
         'href' => 'https://pricelabs.co/pricing',
-        'attr' => 'target="_BLANK"'),
-
-    'Pricelabs Mappings' => array(
-        'href' => 'https://pricelabs.co/mappings',
-        'attr' => 'target="_BLANK"'),
-    );
-
-    $royalRoom = array(
-        'View' => array(
-            'href' => 'https://www.vrbo.com/3541578?dateless=true',
-            'attr' => 'target="_BLANK"' ),
-        'Edit' => array(
-            'href' => 'https://www.vrbo.com/p/calendar/321.3541578.4114724',
-            'attr' => 'target="_BLANK"' ),
-    ); 
-
-    $cal = array(
-        'Calendar RR' => array(
-            'href' => ' https://www.airbnb.com/multicalendar/841300394500737442',
-            'attr' => 'target="_BLANK"' ),
-        'Calendar PA' => array(
-            'href' => 'https://www.airbnb.com/multicalendar/1397966363653363779',
-            'attr' => 'target="_BLANK"' ),
-    ); 
-
+        'attr' => 'target="_BLANK"', 
+        'dropdown' => array (
+            'Pricelabs Mappings' => array(
+                'href' => 'https://pricelabs.co/mappings',
+                'attr' => 'target="_BLANK"'),
+        'Comp Set' => array(
+                'href' => 'https://pricelabs.co/reports',
+                'attr' => 'target="_BLANK"'),
+        ),
+        'divider' => 1
+    ),
+    
+    'Rankbreeze' => array (
+        'href' => 'https://app.rankbreeze.com/listings',
+        'attr' => 'target="_BLANK"',
+        'divider' => 1  ),
+    'Turno Calendar' => array(
+        'href' => 'https://app.turno.com/view/schedule',
+        'attr' => 'target="_BLANK"' ),
+    'Turno Chat' => array(
+        'href' => 'https://chat.turno.com/',
+        'attr' => 'target="_BLANK"' ),
+    'Thumbtack' => array(
+        'href' => 'https://www.thumbtack.com/team',
+        'attr' => 'target="_BLANK"',
+        ),
+     
+);
+ 
 ?>    
 
-                <li id="pricelabs">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pricelabs <b class="caret"></b></a>
+                <li id="pm">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">PM <b class="caret"></b></a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
                         
-                        <li>
-                            <a tabindex="-1" href="https://www.airbnb.com/hosting/listings"  target="_BLANK">Listings<b class="caret"></b></a>
-                        </li> 
- 
                         <?php
-                            echo displayMenu($priceLabs);
+                            echo dropdownMenu($priceLabs);
                         ?>
-                        
-                        <li class="divider"></li>
-                      
-                        <?php
-                        echo displayMenu($cal);
-                        ?>
-
+                                         
                      </ul>
                 </li>
  
