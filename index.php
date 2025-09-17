@@ -275,7 +275,7 @@ $menuGmail = array(
                             <?php echo dropDownMenu($menuGmail) ?>
         
                         </ul>
-                    </li>
+                    </li> 
                    
 <?php
 
@@ -353,12 +353,12 @@ $menuContacts = array(
         'href' => 'https://app.batchskiptracing.com/app/skip-trace/list',
         'attr' => 'target="_BLANK"' 
     ),
-    'Close Inbox' => array(
-        'href' => 'https://app.close.com/tasks/inbox/',
+    'Close Leads' => array(
+        'href' => 'https://app.close.com/leads',
         'attr' => 'target="_BLANK"' 
     ),
     'Close Contacts' => array( 
-        'href' => 'https://app.close.com/contacts/',
+        'href' => 'https://app.close.com/contacts',
         'attr' => 'target="_BLANK"' 
     ),
     'Close Sched Links' => array(
@@ -401,11 +401,7 @@ $menuSales = array(
     'Awning' => array(
         'href' => 'https://awning.com/airbnb-estimator',
         'attr' => 'target="_BLANK"'
-    ),
-    'Airbtics' => array(
-        'href' => 'https://app.airbtics.com/airbnb-data/landing',
-        'attr' => 'target="_BLANK"'
-    ),
+    ), 
     'Airdna' => array(
         'href' => 'https://www.airdna.co/',
         'attr' => 'target="_BLANK"'
@@ -444,9 +440,6 @@ $menuSales = array(
  
 <?php
 
-
-
-
 $priceLabs = array(
     'Pricelabs Dashboard' => array(
         'href' => 'https://pricelabs.co/pricing',
@@ -462,15 +455,31 @@ $priceLabs = array(
         'divider' => 1
     ),
     
+    'Hospitable | Cal' => array (
+        'href' => 'https://my.hospitable.com/calendar/occupancy',
+        'attr' => 'target="_BLANK"',
+         'divider' => 1,
+        'dropdown' => array (
+            'Calendars' => array (
+                'href' => 'https://my.hospitable.com/calendar/occupancy',
+                'attr' => 'target="_BLANK"' ),
+            'AI Questions' => array (
+                'href' => 'https://my.hospitable.com/gx/questions',
+                'attr' => 'target="_BLANK"' ),
+            'Upsells' => array (
+                'href' => 'https://my.hospitable.com/gx/upsells',
+                'attr' => 'target="_BLANK"' ), 
+            'Msg Rules' => array (
+                'href' => 'https://my.hospitable.com/gx/rules',
+                'attr' => 'target="_BLANK"' ),
+        ),
+    ),
+    
     'Rankbreeze' => array (
         'href' => 'https://app.rankbreeze.com/listings',
         'attr' => 'target="_BLANK"',
         'divider' => 1  ),
-     'Hospitable' => array (
-        'href' => 'https://my.hospitable.com/calendar/occupancy',
-        'attr' => 'target="_BLANK"',
-        'divider' => 1  ),
-            
+    
     'Turno Calendar' => array(
         'href' => 'https://app.turno.com/view/schedule',
         'attr' => 'target="_BLANK"' ),

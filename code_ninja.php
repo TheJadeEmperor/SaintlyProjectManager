@@ -5,9 +5,6 @@ $localBLWS = 'http://localhost//BenjaminLouie';
 $scamLocal = 'http://localhost//SusanZhuangScam';
 $scamSite = 'https://susanzhuangscam.com/';
 
-$ccpLocal = 'http://localhost//ccpstevechan.com/';
-$ccpSite = 'https://ccpstevechan.com/';
-
 $site5G = 'https://5gradio1.com';
 $local5G = 'http://localhost//5gradio1.com';
 ?>
