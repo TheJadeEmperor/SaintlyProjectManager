@@ -14,6 +14,28 @@ $shittyLive = 'https://noshelterhere.com/';
 
 
 $propsAll = array(
+'59 Gregory Dr<br />Steve Summers 6-3-1.5' => array(
+        'shorturl' => '',
+        'Turno' => 'https://app.turno.com/properties/589380',
+        'G-Drive' => 'https://drive.google.com/drive/folders/1PDWk7DbFB25ypyLAVJsrBxu4uN8W9EKd', 
+
+        'Airbnb Listing' => 'https://www.airbnb.com/hosting/listings/editor/1501050725249962697/details/photo-tour', 
+        'Amenities' => 'https://www.airbnb.com/hosting/listings/editor/1501050725249962697/details/amenities',
+        'Fees' => 'https://www.airbnb.com/multicalendar/1501050725249962697/pricing-settings/fees',
+        'A Live' => 'https://www.airbnb.com/rooms/1501050725249962697',
+        
+        'Vrbo Listing' => 'https://www.vrbo.com/supply/pe/?propertyId=120651120', 
+        'V Calendar' => 'https://www.vrbo.com/p/calendar/321.4844374.5418540', 
+        'V Live' => '', 
+
+        'Pricelabs' => 'https://app.pricelabs.co/pricing?listings=1501050725249962697&pms_name=airbnb&open_calendar=true',
+        'Comp Set' => '',
+        'Rankbreeze' => '',
+        'Hospitable' => '',
+        'H Calendar' => '', 
+    ), 
+
+
     '105 Pine Cone Lane<br />Jennifer Cottone 10-3-2' => array(
         'shorturl' => 'https://airbnb.com/h/mtg-firepit',
         'Turno' => 'https://app.turno.com/properties/523877',
@@ -25,7 +47,7 @@ $propsAll = array(
         'A Live' => 'https://www.airbnb.com/rooms/1397966363653363779?source_impression_id=p3_1752274162_P3ZEAwc7Eau_D_ga',
         
         'Vrbo Listing' => 'https://www.vrbo.com/supply/pe/?propertyId=120453789', 
-        'V Calendar' => 'https://www.vrbo.com/p/calendar/321.3541578.4114724', 
+        'V Calendar' => 'https://www.vrbo.com/p/calendar/321.4824102.5398269', 
         'V Live' => 'https://www.vrbo.com/4824102?dateless=true', 
 
         'Pricelabs' => 'https://app.pricelabs.co/pricing?listings=0e7b5cb5-de02-4a13-abb9-6b2f87e557e5&pms_name=smartbnb&open_calendar=true',
@@ -36,7 +58,7 @@ $propsAll = array(
     ), 
 
     '2037 Coyle Street 2-1-1' => array(
-        'shorturl' => 'https://airbnb.com/h/mtg-firepit',
+        'shorturl' => '',
         'G-Drive' => 'https://drive.google.com/drive/folders/1u4P7hDa_OXMzd3wGbEeNF0pFPHXueRiA?usp=drive_link',
         'Airbnb Listing' => 'https://www.airbnb.com/hosting/listings/editor/841300394500737442/details/photo-tour',
         'Amenities' => 'https://www.airbnb.com/hosting/listings/editor/841300394500737442/details/amenities',
@@ -120,14 +142,19 @@ foreach ($propsAll as $propName => $p) {
     } 
 
     if ($p['Airbnb Listing']) { 
-        $output .= '<a target="_BLANK" href="'.$p['Airbnb Listing'].'">Airbnb Listing</a> | <a target="_BLANK" href="'.$p['Amenities'].'">Amen</a> | <a target="_BLANK" href="'.$p['Fees'].'">Fees</a> | <a target="_BLANK" href="'.$p['A Live'].'">Live</a>'.$newline;
+        $output .= '<a target="_BLANK" href="'.$p['Airbnb Listing'].'">Airbnb Listing</a> | <a target="_BLANK" href="'.$p['Amenities'].'">Amen</a> | <a target="_BLANK" href="'.$p['Fees'].'">Fees</a> | <a target="_BLANK" href="'.$p['A Live'].'">Live</a>';
     }
 
     if ($p['Vrbo Listing']) { 
-          $output .= '<a target="_BLANK" href="'.$p['Vrbo Listing'].'">Vrbo Listing</a> |  <a target="_BLANK" href="'.$p['Calendar'].'">Calendar</a> | <a target="_BLANK" href="'.$p['V Live'].'">Live</a>'.$newline;
+        $output .= $newline.'<a target="_BLANK" href="'.$p['Vrbo Listing'].'">Vrbo Listing</a> |  <a target="_BLANK" href="'.$p['V Calendar'].'">Calendar</a>';
     }
 
-    $output .= '<a target="_BLANK" href="'.$p['Pricelabs'].'">Pricelabs</a> | '; 
+    if ($p['V Live']) {
+        $output .=  ' | <a target="_BLANK" href="'.$p['V Live'].'">Live</a>';
+    }
+
+
+    $output .= $newline.'<a target="_BLANK" href="'.$p['Pricelabs'].'">Pricelabs</a> | '; 
 
     if($p['Comp Set'])
         $output .= '<a target="_BLANK" href="'.$p['Comp Set'].'">Comp Set</a> '; 

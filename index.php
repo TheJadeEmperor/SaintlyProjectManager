@@ -340,25 +340,30 @@ $menuGmail = array(
 $menuContacts = array( 
     'Upwork Messages' => array(
         'href' => 'https://www.upwork.com/ab/messages/rooms/room_007a0a45db0a964b83f0854be6c2e37e?pageTitle=Mahran%20Makin&companyReference=1816859020641894400&sidebar=true',
-         'attr' => 'target="_BLANK"' 
+        'attr' => 'target="_BLANK"' 
     ),
     'Transaction History' => array(
         'href' => 'https://www.upwork.com/nx/payments/reports/transaction-history',
-        'attr' => 'target="_BLANK"' 
+        'attr' => 'target="_BLANK"',
+        'divider' => 1,
     ),
-
-    'divider', 
-    
+     
     'Batch Skip Trace' => array(
         'href' => 'https://app.batchskiptracing.com/app/skip-trace/list',
-        'attr' => 'target="_BLANK"' 
-    ),
+        'attr' => 'target="_BLANK"',
+        'divider' => 1,
+    ), 
+    
     'Close Leads' => array(
         'href' => 'https://app.close.com/leads',
         'attr' => 'target="_BLANK"' 
+    ), 
+    'Email Signature' => array( 
+        'href' => 'https://app.close.com/settings/email/',
+        'attr' => 'target="_BLANK"' 
     ),
-    'Close Contacts' => array( 
-        'href' => 'https://app.close.com/contacts',
+    'Email Templates' => array( 
+        'href' => 'https://app.close.com/settings/templates/email/',
         'attr' => 'target="_BLANK"' 
     ),
     'Close Sched Links' => array(
@@ -372,7 +377,7 @@ $menuContacts = array(
                         <ul class="dropdown-menu">
 
                             <?php
-                            echo displayMenu($menuContacts);
+                            echo dropdownMenu($menuContacts);
                             ?>
                             
                         </ul>
@@ -458,7 +463,7 @@ $priceLabs = array(
     'Hospitable | Cal' => array (
         'href' => 'https://my.hospitable.com/calendar/occupancy',
         'attr' => 'target="_BLANK"',
-         'divider' => 1,
+        'divider' => 1,
         'dropdown' => array (
             'Calendars' => array (
                 'href' => 'https://my.hospitable.com/calendar/occupancy',
