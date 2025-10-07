@@ -259,10 +259,13 @@ $menuGmail = array(
         'divider' => 1, ),
 
     'Hostinger' => array(
-        'href' => 'https://hpanel.hostinger.com/websites/vacationrentals4ny.com',
+        'href' => 'https://hpanel.hostinger.com/domains',
         'attr' => 'target="_BLANK"' ),
     'Domains' => array(
         'href' => 'https://hpanel.hostinger.com/domains',
+        'attr' => 'target="_BLANK"' ),
+    'phpMyAdmin' => array(
+        'href' => 'https://hpanel.hostinger.com/websites/littlebookstays.com/databases/my-sql-databases',
         'attr' => 'target="_BLANK"' ),
 );
 
@@ -292,11 +295,11 @@ $menuGmail = array(
         );
 
     $oldCourse = array(
-        'Cohost Training 1' => array(
-            'href' => 'https://9hlkiaj7v8uncrbvap4u.app.clientclub.net/courses/products/cc438f35-c5c8-4b4c-a626-22f513398456/categories/6bfce0bf-a058-4bc7-875e-3ae92294de6f/posts/f5e4a432-6763-4468-9b31-cd88148fa093',
+        'Viator Shop' => array(
+            'href' => 'https://selector.viator.com/edit-shop',
             'attr' => 'target="_BLANK"'),
-        'Cohost Training 2' => array( 
-            'href' => 'https://9hlkiaj7v8uncrbvap4u.app.clientclub.net/courses/products/188ea491-afbb-4362-9d44-7a5bb7087670/categories/e38ec500-74e9-4005-96a1-e226d7acb1b3/posts/f4c84c72-6300-43fd-9b56-f09f1a57331e',
+        'Viator Dashboard' => array( 
+            'href' => 'https://partners.viator.com/dashboard',
             'attr' => 'target="_BLANK"'), 
         );
 
@@ -320,7 +323,7 @@ $menuGmail = array(
                         <li class="divider"></li>
 
                             <li class="dropdown-submenu">
-                            <a tabindex="-1" target="_BLANK" href="https://9hlkiaj7v8uncrbvap4u.app.clientclub.net/courses/products/cc438f35-c5c8-4b4c-a626-22f513398456/categories/6bfce0bf-a058-4bc7-875e-3ae92294de6f/posts/f5e4a432-6763-4468-9b31-cd88148fa093">Old Course</a>
+                            <a tabindex="-1" target="_BLANK" href="https://selector.viator.com/edit-shop">Viator</a>
                             <ul class="dropdown-menu"> 
                                 <?php
                                 echo displayMenu($oldCourse);

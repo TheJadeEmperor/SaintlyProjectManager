@@ -102,6 +102,32 @@ echo displayLinks($tools);
     <td>
 
 <?
+$hack = array(  
+    'Hidden wiki – Tor' => 'http://zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion/wiki/index.php/Main_Page',
+    
+    'if ur google is hacked' => 'https://support.google.com/accounts/answer/6294825?hl=en',
+    
+    'Has your email been pwned?' => 'https://haveibeenpwned.com/',
+    
+    'Ethical hacking websites' => 'Ethical hacking 
+hacksplaining 
+geeksforgeeks.org
+classcentral.org
+logodiffusion 
+fakedetail.com
+',
+    'AI img' => 'https://coopeai.com/',
+    'Deepfake videos ' => 'heygen',
+    
+
+);
+
+
+
+echo '<p><b>Hacking & AI</b></p>';
+echo displayLinks($hack); 
+
+
 
 $tools = array(  
     '4 Hour Work Week' => 'http://fourhourworkweek.com/',
@@ -115,9 +141,6 @@ $tools = array(
 
 echo '<p><b>Business & Investing</b></p>';
 echo displayLinks($tools); 
-
-
-
 
 $tools = array(
     'Yoast SEO' => 'https://wordpress.org/plugins/wordpress-seo/',

@@ -18,6 +18,7 @@ $propsAll = array(
         'shorturl' => '',
         'Turno' => 'https://app.turno.com/properties/589380',
         'G-Drive' => 'https://drive.google.com/drive/folders/1PDWk7DbFB25ypyLAVJsrBxu4uN8W9EKd', 
+        'Prop Hub' => 'https://littlebookstays.com/wp-admin/post.php?post=131&action=edit',
 
         'Airbnb Listing' => 'https://www.airbnb.com/hosting/listings/editor/1501050725249962697/details/photo-tour', 
         'Amenities' => 'https://www.airbnb.com/hosting/listings/editor/1501050725249962697/details/amenities',
@@ -29,17 +30,18 @@ $propsAll = array(
         'V Live' => '', 
 
         'Pricelabs' => 'https://app.pricelabs.co/pricing?listings=1501050725249962697&pms_name=airbnb&open_calendar=true',
-        'Comp Set' => '',
+        'Comp Set' => 'https://app.pricelabs.co/reports/155484?compSet=59+Gregory+Drive+Franklin+NC&template=full_dashboard',
         'Rankbreeze' => '',
         'Hospitable' => '',
         'H Calendar' => '', 
     ), 
-
-
+ 
     '105 Pine Cone Lane<br />Jennifer Cottone 10-3-2' => array(
         'shorturl' => 'https://airbnb.com/h/mtg-firepit',
         'Turno' => 'https://app.turno.com/properties/523877',
         'G-Drive' => 'https://drive.google.com/drive/folders/14ylgljqnW7Zy_HcoxXhxOSiO9VZqv9VH?usp=drive_link', 
+        'Prop Hub' => 'https://littlebookstays.com/wp-admin/post.php?post=119&action=edit', 
+
         'Airbnb Listing' => 'https://www.airbnb.com/hosting/listings/editor/1397966363653363779/details/photo-tour',
 
         'Amenities' => 'https://www.airbnb.com/hosting/listings/editor/1397966363653363779/details/amenities',
@@ -60,6 +62,8 @@ $propsAll = array(
     '2037 Coyle Street 2-1-1' => array(
         'shorturl' => '',
         'G-Drive' => 'https://drive.google.com/drive/folders/1u4P7hDa_OXMzd3wGbEeNF0pFPHXueRiA?usp=drive_link',
+        'Prop Hub' => 'https://littlebookstays.com/wp-admin/post.php?post=115&action=edit', 
+        
         'Airbnb Listing' => 'https://www.airbnb.com/hosting/listings/editor/841300394500737442/details/photo-tour',
         'Amenities' => 'https://www.airbnb.com/hosting/listings/editor/841300394500737442/details/amenities',
         'Fees' => 'https://www.airbnb.com/multicalendar/841300394500737442/pricing-settings/fees',
@@ -134,11 +138,19 @@ foreach ($propsAll as $propName => $p) {
     <div class="col-sm text-start">';
  
     if ($p['Turno']) {
-        $output .= '<a target="_BLANK" href="'.$p['Turno'].'">Turno</a> <br />';
+        $output .= '<a target="_BLANK" href="'.$p['Turno'].'">Turno</a> ';
     }
 
+    if($p['Rankbreeze']) 
+        $output .= ' | <a target="_BLANK" href="'.$p['Rankbreeze'].'">Rankbreeze</a> '.$newline; 
+
+
     if ($p['G-Drive']) { 
-        $output .= '<a target="_BLANK" href="'.$p['G-Drive'].'">G-Drive</a>'.$newline;
+        $output .= '<a target="_BLANK" href="'.$p['G-Drive'].'">G-Drive</a>';
+    } 
+
+    if ($p['Prop Hub']) { 
+        $output .= ' | <a target="_BLANK" href="'.$p['Prop Hub'].'">Prop Hub</a>'.$newline;
     } 
 
     if ($p['Airbnb Listing']) { 
@@ -159,9 +171,7 @@ foreach ($propsAll as $propName => $p) {
     if($p['Comp Set'])
         $output .= '<a target="_BLANK" href="'.$p['Comp Set'].'">Comp Set</a> '; 
 
-    if($p['Rankbreeze']) 
-        $output .= ' | <a target="_BLANK" href="'.$p['Rankbreeze'].'">Rankbreeze</a> '; 
-
+   
     $output .= $newline;
 
 
