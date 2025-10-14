@@ -192,6 +192,10 @@ switch($_GET['action']) {
             moz-border-radius: 6px 0 6px 6px;
             webkit-border-radius: 6px 0 6px 6px;
         }
+
+        .container {
+            margin: 0 !important;
+        }
     </style>
 </head>
 <body>

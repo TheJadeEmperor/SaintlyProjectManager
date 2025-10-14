@@ -3,18 +3,18 @@
 $siteAirbnb = 'https://littlebookstays.com';
 $localAirbnb = 'http://vacationrentals4ny.test';
 
+$siteG = 'https://littlebookstays.com/guests/';
+$localG = 'http://vacationrentals4ny.test/guests/';
+
 $siteBlog = 'https://littlebookstays.com/blog';
 $localBlog = 'http://vacationrentals4ny.test/blog';
 
 $siteWP = 'https://littlebookstays.com/wp-login.php';
 $localWP = 'http://vacationrentals4ny.test/wp-login.php';
 
-$shittyLocal = 'http://localhost//2134_shelter/';
-$shittyLive = 'https://noshelterhere.com/';
-
 
 $propsAll = array(
-'59 Gregory Dr<br />Steve Summers 6-3-1.5' => array(
+    '59 Gregory Dr<br />Steve Summers 6-3-1.5' => array(
         'shorturl' => '',
         'Turno' => 'https://app.turno.com/properties/589380',
         'G-Drive' => 'https://drive.google.com/drive/folders/1PDWk7DbFB25ypyLAVJsrBxu4uN8W9EKd', 
@@ -25,15 +25,15 @@ $propsAll = array(
         'Fees' => 'https://www.airbnb.com/multicalendar/1501050725249962697/pricing-settings/fees',
         'A Live' => 'https://www.airbnb.com/rooms/1501050725249962697',
         
-        'Vrbo Listing' => 'https://www.vrbo.com/supply/pe/?propertyId=120651120', 
-        'V Calendar' => 'https://www.vrbo.com/p/calendar/321.4844374.5418540', 
-        'V Live' => '', 
+        //'Vrbo Listing' => 'https://www.vrbo.com/supply/pe/?propertyId=120651120', 
+       // 'V Calendar' => 'https://www.vrbo.com/p/calendar/321.4844374.5418540', 
+       // 'V Live' => '', 
 
         'Pricelabs' => 'https://app.pricelabs.co/pricing?listings=1501050725249962697&pms_name=airbnb&open_calendar=true',
         'Comp Set' => 'https://app.pricelabs.co/reports/155484?compSet=59+Gregory+Drive+Franklin+NC&template=full_dashboard',
-        'Rankbreeze' => '',
-        'Hospitable' => '',
-        'H Calendar' => '', 
+        'Rankbreeze' => 'https://app.rankbreeze.com/rankings/127212/optimization ',
+        'Hospitable' => 'https://my.hospitable.com/properties/property/1970206/messaging-rules',
+        'H Calendar' => 'https://my.hospitable.com/calendar/property/1970206', 
     ), 
  
     '105 Pine Cone Lane<br />Jennifer Cottone 10-3-2' => array(
@@ -59,8 +59,9 @@ $propsAll = array(
         'H Calendar' => 'https://my.hospitable.com/calendar/property/1830588', 
     ), 
 
-    '2037 Coyle Street 2-1-1' => array(
+    '2037 Coyle Street 2-2-1' => array(
         'shorturl' => '',
+        'Turno' => 'https://app.turno.com/properties/258377',
         'G-Drive' => 'https://drive.google.com/drive/folders/1u4P7hDa_OXMzd3wGbEeNF0pFPHXueRiA?usp=drive_link',
         'Prop Hub' => 'https://littlebookstays.com/wp-admin/post.php?post=115&action=edit', 
         
@@ -90,38 +91,63 @@ $propsAll = array(
     <script src="http://code.jquery.com/jquery-latest.min.js" type='text/javascript' /></script> 
     <script src="include/jquery-ui/ui/jquery-ui.js"></script>
     <script src="include/bootstrap/js/bootstrap.js"></script>
+
+    <style>
+        .container {
+            margin: 0 !important;
+            max-width: unset
+        }
+    </style>
 </head>
 
 <center>
 <div class="container">
     <div class="row">
-        <div class="col-lg">
-          <div class="section-heading">
-            <br /> <p>Little Book Stays</p>
-          </div>
+
+        <div class="col-2 text-start">
+            <div class="section-heading">
+                <br /> RevPAR = Rev per available room <br /> 
+                ADR = average daily rate <br />
+                LOS = length of stay <br /> 
+            </div>
         </div>
-    </div>
-    <div class="row">
+        <div class="col-9  ">
+            <div class="row">
+                <div class="col-lg">
+                <div class="section-heading">
+                    <br /> <p>Little Book Stays</p>
+                </div>
+                </div>
+            </div>
+
+    `<div class="row">
         <div class="col-sm text-sm-end">
             Localhost <br />
             <a target="_BLANK" href="<?=$localAirbnb?>"><?=$localAirbnb?></a> <br />
+            <a target="_BLANK" href="<?=$localG?>"><?=$localG?></a> <br />
             <a target="_BLANK" href="<?=$localBlog?>"><?=$localBlog?></a> <br />
             <a target="_BLANK" href="<?=$localWP?>"><?=$localWP?></a>
         </div>
         <div class="col-sm text-start">
             Live <br />
             <a target="_BLANK" href="<?=$siteAirbnb?>"><?=$siteAirbnb?></a> <br />
-            <a target="_BLANK" href="<?=$siteBlog?>"><?=$siteBlog?></a> <br />
+            <a target="_BLANK" href="<?=$siteG?>"><?=$siteG?></a> <br />
+            <a target="_BLANK" href="<?=$localBlog?>"><?=$localBlog?></a> <br />
             <a target="_BLANK" href="<?=$siteWP?>"><?=$siteWP?></a>
+        </div>
+    </div>`
+
         </div>
     </div>
 
     <div class="row">
+        
         <div class="col-lg">
           <div class="section-heading">
             <br /><p> Listings | <a target="_BLANK" href="https://www.airbnb.com/hosting/listings">Airbnb</a> | <a target="_BLANK" href="https://www.vrbo.com/p/properties">VRBO</a> </p> 
           </div>
         </div>
+
     </div>
    
 <?php
@@ -187,12 +213,7 @@ foreach ($propsAll as $propName => $p) {
 
         <div class="row">
         <div class="col-lg">
-          <div class="section-heading">
-            <br /> RevPAR = Rev per available room <br /> 
-            ADR = average daily rate <br />
-            LOS = length of stay <br />
-            OTA = online travel agency 
-          </div>
+          
         </div>
     </div>
 </div>
