@@ -455,18 +455,12 @@ $menuSales = array(
 $priceLabs = array(
     'Pricelabs Dashboard' => array(
         'href' => 'https://pricelabs.co/pricing',
-        'attr' => 'target="_BLANK"', 
-        'dropdown' => array (
-            'Pricelabs Mappings' => array(
-                'href' => 'https://pricelabs.co/mappings',
-                'attr' => 'target="_BLANK"'),
-        'Comp Set' => array(
-                'href' => 'https://pricelabs.co/reports',
-                'attr' => 'target="_BLANK"'),
-        ),
-        'divider' => 1
-    ),
-    
+        'attr' => 'target="_BLANK"' ),
+    'Comp Sets' => array(
+        'href' => 'https://pricelabs.co/reports',
+        'attr' => 'target="_BLANK"',
+         'divider' => 1, ),
+
     'Hospitable | Cal' => array (
         'href' => 'https://my.hospitable.com/calendar/occupancy',
         'attr' => 'target="_BLANK"',

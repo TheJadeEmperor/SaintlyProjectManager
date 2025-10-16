@@ -38,7 +38,7 @@ $propsAll = array(
  
     '105 Pine Cone Lane<br />Jennifer Cottone 10-3-2' => array(
         'shorturl' => 'https://airbnb.com/h/mtg-firepit',
-        'Turno' => 'https://app.turno.com/properties/523877',
+
         'G-Drive' => 'https://drive.google.com/drive/folders/14ylgljqnW7Zy_HcoxXhxOSiO9VZqv9VH?usp=drive_link', 
         'Prop Hub' => 'https://littlebookstays.com/wp-admin/post.php?post=119&action=edit', 
 
@@ -51,6 +51,10 @@ $propsAll = array(
         'Vrbo Listing' => 'https://www.vrbo.com/supply/pe/?propertyId=120453789', 
         'V Calendar' => 'https://www.vrbo.com/p/calendar/321.4824102.5398269', 
         'V Live' => 'https://www.vrbo.com/4824102?dateless=true', 
+
+        'Book Listing' => 'https://admin.booking.com/hotel/hoteladmin/extranet_ng/manage/home.html?hotel_account_id=23703383&hotel_id=15044068&lang=xu&ses=1c60931044f027c41c4b46d559f647db',
+        'B Calendar' => 'https://admin.booking.com/hotel/hoteladmin/extranet_ng/manage/calendar/index.html?lang=xu&hotel_id=15044068&ses=1c60931044f027c41c4b46d559f647db&source=nav',
+        'B Live' => 'https://www.booking.com/hotel/us/1mi-to-lake-wallenpaupack-firepit-pet-friendly-greentown.html',
 
         'Pricelabs' => 'https://app.pricelabs.co/pricing?listings=0e7b5cb5-de02-4a13-abb9-6b2f87e557e5&pms_name=smartbnb&open_calendar=true',
         'Comp Set' => 'https://app.pricelabs.co/reports/140863',
@@ -164,12 +168,11 @@ foreach ($propsAll as $propName => $p) {
     <div class="col-sm text-start">';
  
     if ($p['Turno']) {
-        $output .= '<a target="_BLANK" href="'.$p['Turno'].'">Turno</a> ';
+        $output .= '<a target="_BLANK" href="'.$p['Turno'].'">Turno</a> | ';
     }
 
     if($p['Rankbreeze']) 
-        $output .= ' | <a target="_BLANK" href="'.$p['Rankbreeze'].'">Rankbreeze</a> '.$newline; 
-
+        $output .= ' <a target="_BLANK" href="'.$p['Rankbreeze'].'">Rankbreeze</a> '.$newline; 
 
     if ($p['G-Drive']) { 
         $output .= '<a target="_BLANK" href="'.$p['G-Drive'].'">G-Drive</a>';
@@ -184,11 +187,11 @@ foreach ($propsAll as $propName => $p) {
     }
 
     if ($p['Vrbo Listing']) { 
-        $output .= $newline.'<a target="_BLANK" href="'.$p['Vrbo Listing'].'">Vrbo Listing</a> |  <a target="_BLANK" href="'.$p['V Calendar'].'">Calendar</a>';
+        $output .= $newline.'<a target="_BLANK" href="'.$p['Vrbo Listing'].'">Vrbo Listing</a> |  <a target="_BLANK" href="'.$p['V Calendar'].'">Calendar</a> | <a target="_BLANK" href="'.$p['V Live'].'">Live</a>';
     }
-
-    if ($p['V Live']) {
-        $output .=  ' | <a target="_BLANK" href="'.$p['V Live'].'">Live</a>';
+ 
+    if ($p['Book Listing']) { 
+        $output .= $newline.'<a target="_BLANK" href="'.$p['Book Listing'].'">Booking.com Listing</a> | <a target="_BLANK" href="'.$p['B Calendar'].'">Calendar</a> | <a target="_BLANK" href="'.$p['B Live'].'">Live</a>';
     }
 
 
