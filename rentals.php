@@ -14,22 +14,42 @@ $localWP = 'http://vacationrentals4ny.test/wp-login.php';
 
 
 $propsAll = array(
+    
+    '1680 Willow Grove<br />Angela Scott 6-3-1.5' => array(
+        'zip' => '19090',
+        'shorturl' => '',
+        'Turno' => 'https://app.turno.com/properties/616644',
+        'G-Drive' => '#', 
+        'Prop Hub' => '#',
+        'Viatour' => '#',
+
+        'Airbnb Listing' => 'https://www.airbnb.com/hosting/listings/editor/1556014027336970177/details/photo-tour', 
+        'Amenities' => 'https://www.airbnb.com/hosting/listings/editor/1556014027336970177/details/amenities',
+        'Fees' => 'https://www.airbnb.com/hosting/listings/editor/1556014027336970177/details/fees',
+        'A Live' => '',
+         
+        'Pricelabs' => 'https://app.pricelabs.co/pricing?listings=e1b08cf6-b39c-44ab-b8fe-59fd024ac396&pms_name=smartbnb&open_calendar=true', 
+        'Comp Set' => 'tps://app.pricelabs.co/reports/160875?compSet=1680+Easton+Rd++Willow+Grove+PA&template=full_dashboard',
+        'Rankbreeze' => '#',
+        'Hospitable' => 'https://my.hospitable.com/properties/property/2060148/messaging-rules',
+        'H Calendar' => 'https://my.hospitable.com/calendar/property/2060148', 
+    ), 
+ 
+
     '59 Gregory Dr<br />Steve Summers 6-3-1.5' => array(
+        'zip' => '28734',
         'shorturl' => '',
         'Turno' => 'https://app.turno.com/properties/589380',
         'G-Drive' => 'https://drive.google.com/drive/folders/1PDWk7DbFB25ypyLAVJsrBxu4uN8W9EKd', 
         'Prop Hub' => 'https://littlebookstays.com/wp-admin/post.php?post=131&action=edit',
+        'Viatour' => 'https://vi.me/Khe9W',
 
         'Airbnb Listing' => 'https://www.airbnb.com/hosting/listings/editor/1501050725249962697/details/photo-tour', 
         'Amenities' => 'https://www.airbnb.com/hosting/listings/editor/1501050725249962697/details/amenities',
         'Fees' => 'https://www.airbnb.com/multicalendar/1501050725249962697/pricing-settings/fees',
         'A Live' => 'https://www.airbnb.com/rooms/1501050725249962697',
-        
-        //'Vrbo Listing' => 'https://www.vrbo.com/supply/pe/?propertyId=120651120', 
-       // 'V Calendar' => 'https://www.vrbo.com/p/calendar/321.4844374.5418540', 
-       // 'V Live' => '', 
-
-        'Pricelabs' => 'https://app.pricelabs.co/pricing?listings=1501050725249962697&pms_name=airbnb&open_calendar=true',
+         
+        'Pricelabs' => 'https://app.pricelabs.co/pricing?listings=be694a73-23f3-414b-a6af-12198666c1de&pms_name=smartbnb&open_calendar=true',
         'Comp Set' => 'https://app.pricelabs.co/reports/155484?compSet=59+Gregory+Drive+Franklin+NC&template=full_dashboard',
         'Rankbreeze' => 'https://app.rankbreeze.com/rankings/127212/optimization ',
         'Hospitable' => 'https://my.hospitable.com/properties/property/1970206/messaging-rules',
@@ -37,10 +57,12 @@ $propsAll = array(
     ), 
  
     '105 Pine Cone Lane<br />Jennifer Cottone 10-3-2' => array(
+        'zip' => '18426',
         'shorturl' => 'https://airbnb.com/h/mtg-firepit',
 
         'G-Drive' => 'https://drive.google.com/drive/folders/14ylgljqnW7Zy_HcoxXhxOSiO9VZqv9VH?usp=drive_link', 
         'Prop Hub' => 'https://littlebookstays.com/wp-admin/post.php?post=119&action=edit', 
+        'Viatour' => 'https://vi.me/agHe1',
 
         'Airbnb Listing' => 'https://www.airbnb.com/hosting/listings/editor/1397966363653363779/details/photo-tour',
 
@@ -57,24 +79,26 @@ $propsAll = array(
         'B Live' => 'https://www.booking.com/hotel/us/1mi-to-lake-wallenpaupack-firepit-pet-friendly-greentown.html',
 
         'Pricelabs' => 'https://app.pricelabs.co/pricing?listings=0e7b5cb5-de02-4a13-abb9-6b2f87e557e5&pms_name=smartbnb&open_calendar=true',
-        'Comp Set' => 'https://app.pricelabs.co/reports/140863',
+        'Comp Set' => 'https://app.pricelabs.co/reports/140863?compSet=Green+Town&template=full_dashboard',
         'Rankbreeze' => 'https://app.rankbreeze.com/rankings/116604/optimization',
         'Hospitable' => 'https://my.hospitable.com/properties/property/1830588/messaging-rules',
         'H Calendar' => 'https://my.hospitable.com/calendar/property/1830588', 
     ), 
 
-    '2037 Coyle Street 2-2-1' => array(
-        'shorturl' => '',
+    '2037 Coyle Street 2-1-1' => array(
+        'zip' => '11229',
+        'shorturl' => 'https://airbnb.com/h/royal-room-brooklyn',
         'Turno' => 'https://app.turno.com/properties/258377',
         'G-Drive' => 'https://drive.google.com/drive/folders/1u4P7hDa_OXMzd3wGbEeNF0pFPHXueRiA?usp=drive_link',
         'Prop Hub' => 'https://littlebookstays.com/wp-admin/post.php?post=115&action=edit', 
+        'Viatour' => 'https://vi.me/nypNX',
         
         'Airbnb Listing' => 'https://www.airbnb.com/hosting/listings/editor/841300394500737442/details/photo-tour',
         'Amenities' => 'https://www.airbnb.com/hosting/listings/editor/841300394500737442/details/amenities',
         'Fees' => 'https://www.airbnb.com/multicalendar/841300394500737442/pricing-settings/fees',
         'A Live' => 'https://www.airbnb.com/rooms/841300394500737442?source_impression_id=p3_1719790415_P36temSnhYUDm2Le',
         'Pricelabs' => 'https://app.pricelabs.co/pricing?listings=b67a0e70-784b-4c5f-9713-e2b2cfe7342c&pms_name=smartbnb&open_calendar=true', 
-        'Comp Set' => 'https://app.pricelabs.co/reports/140863',
+       // 'Comp Set' => 'https://app.pricelabs.co/reports/140863',
         'Rankbreeze' => 'https://app.rankbreeze.com/rankings/116605/optimization',
         'Hospitable' => 'https://my.hospitable.com/properties/property/1830574/messaging-rules', 
         'H Calendar' => 'https://my.hospitable.com/calendar/property/1830574', 
@@ -114,110 +138,132 @@ $propsAll = array(
                 ADR = average daily rate <br />
                 LOS = length of stay <br /> 
             </div>
+             <div class="section-heading">
+                <br />Furnished Finder<br /> 
+                <a href="https://www.furnishedfinder.com/members/tenant-lead" target="_BLANK">Leads</a><br /> 
+                <a href="https://www.furnishedfinder.com/members/tenant-message" target="_BLANK">Messages</a> <br /> 
+                <a href="https://www.furnishedfinder.com/members/pm/availability?p=930555_1 " target="_BLANK"> Calendar</a> <br />
+            </div>
+            <div>
+                <br /> AI Tools <br /> 
+                <a href="https://www.chatgpt.com/" target="_BLANK">chatgpt</a><br /> 
+                <a href="https://www.grok.com" target="_BLANK">grok</a> <br /> 
+                <a href="https://gemini.google.com/app" target="_BLANK">gemini</a> <br />
+            </div>
+            <div>
+                <br /> Sales Forms <br /> 
+                <a href="https://drive.google.com/drive/folders/1fBPRkrfLUd7_hx08NCDepKgLcgMP1Ekw" target="_BLANK">Onboarding Forms</a><br /> 
+
+                <a href="https://drive.google.com/drive/folders/1vYQLa272dzjUdnllnQyAd-0k-mgxkuMJ" target="_BLANK">Scripts</a><br /> 
+
+                <a href="https://drive.google.com/drive/folders/1bqj6vWUCHvW9Wk5KSSCcWHB0NK7BFCQH" target="_BLANK">VA Training</a><br /> 
+            </div>
         </div>
-        <div class="col-9  ">
+        <div class="col-9">
             <div class="row">
                 <div class="col-lg">
-                <div class="section-heading">
-                    <br /> <p>Little Book Stays</p>
-                </div>
+                    <div class="section-heading">
+                        <br /> <p>Little Book Stays</p>
+                    </div>
                 </div>
             </div>
 
-    `<div class="row">
-        <div class="col-sm text-sm-end">
-            Localhost <br />
-            <a target="_BLANK" href="<?=$localAirbnb?>"><?=$localAirbnb?></a> <br />
-            <a target="_BLANK" href="<?=$localG?>"><?=$localG?></a> <br />
-            <a target="_BLANK" href="<?=$localBlog?>"><?=$localBlog?></a> <br />
-            <a target="_BLANK" href="<?=$localWP?>"><?=$localWP?></a>
-        </div>
-        <div class="col-sm text-start">
-            Live <br />
-            <a target="_BLANK" href="<?=$siteAirbnb?>"><?=$siteAirbnb?></a> <br />
-            <a target="_BLANK" href="<?=$siteG?>"><?=$siteG?></a> <br />
-            <a target="_BLANK" href="<?=$localBlog?>"><?=$localBlog?></a> <br />
-            <a target="_BLANK" href="<?=$siteWP?>"><?=$siteWP?></a>
-        </div>
-    </div>`
+            <div class="row">
+                <div class="col-sm text-sm-end">
+                    Localhost <br />
+                    <a target="_BLANK" href="<?=$localAirbnb?>"><?=$localAirbnb?></a> <br />
+                    <a target="_BLANK" href="<?=$localG?>"><?=$localG?></a> <br />
+                    <a target="_BLANK" href="<?=$localBlog?>"><?=$localBlog?></a> <br />
+                    <a target="_BLANK" href="<?=$localWP?>"><?=$localWP?></a>
+                </div>
+                <div class="col-sm text-start">
+                    Live <br />
+                    <a target="_BLANK" href="<?=$siteAirbnb?>"><?=$siteAirbnb?></a> <br />
+                    <a target="_BLANK" href="<?=$siteG?>"><?=$siteG?></a> <br />
+                    <a target="_BLANK" href="<?=$localBlog?>"><?=$localBlog?></a> <br />
+                    <a target="_BLANK" href="<?=$siteWP?>"><?=$siteWP?></a>
+                </div>
+            </div>
 
-        </div>
-    </div>
+            <div class="row">
+                <div class="col-lg">
+                    <div class="section-heading">
+                        <br /><p> Listings | <a target="_BLANK" href="https://www.airbnb.com/hosting/listings">Airbnb</a> | <a target="_BLANK" href="https://www.vrbo.com/p/properties">VRBO</a> </p> 
+                    </div>
+                </div>
+            </div>
 
-    <div class="row">
-        
-        <div class="col-lg">
-          <div class="section-heading">
-            <br /><p> Listings | <a target="_BLANK" href="https://www.airbnb.com/hosting/listings">Airbnb</a> | <a target="_BLANK" href="https://www.vrbo.com/p/properties">VRBO</a> </p> 
-          </div>
-        </div>
-
-    </div>
    
+
 <?php
-$newline = ' <br />';
-foreach ($propsAll as $propName => $p) {
+    $newline = ' <br />';
 
-    if ($p['shorturl']) 
-        $propTitle = '<a target="_BLANK" href="'.$p['shorturl'].'">'.$propName.'</a>';
-    else 
-        $propTitle = $propName; 
+    foreach ($propsAll as $propName => $p) {
 
-    $output = '<div class="row">
-    <div class="col-sm text-sm-end">'.$propTitle.'</div>
-    <div class="col-sm text-start">';
- 
-    if ($p['Turno']) {
-        $output .= '<a target="_BLANK" href="'.$p['Turno'].'">Turno</a> | ';
+        if ($p['shorturl']) 
+            $propTitle = '<a target="_BLANK" href="'.$p['shorturl'].'">'.$propName.'</a>';
+        else 
+            $propTitle = $propName; 
+
+        $output = '<div class="row">
+        <div class="col-sm text-sm-end">'.$propTitle.'<br /><a href="https://www.google.com/maps/place/'.$p['zip'].'" target="_BLANK">'.$p['zip'].'</a></div>
+        <div class="col-sm text-start">'; 
+    
+        if ($p['Turno']) {
+            $output .= '<a target="_BLANK" href="'.$p['Turno'].'">Turno</a> | ';
+        }
+
+        if($p['Rankbreeze']) 
+            $output .= ' <a target="_BLANK" href="'.$p['Rankbreeze'].'">Rankbreeze</a> '.$newline; 
+
+        if ($p['G-Drive']) { 
+            $output .= '<a target="_BLANK" href="'.$p['G-Drive'].'">G-Drive</a>';
+        } 
+
+        if ($p['Viatour']) { 
+            $output .= ' | <a target="_BLANK" href="'.$p['Viatour'].'"><span class="viatour">Viatour</span></a>';
+        } 
+
+        if ($p['Prop Hub']) { 
+            $output .= ' | <a target="_BLANK" href="'.$p['Prop Hub'].'"><span class="propHub">Prop Hub</span></a>'.$newline;
+        } 
+
+        if ($p['Airbnb Listing']) { 
+            $output .= '<a target="_BLANK" href="'.$p['Airbnb Listing'].'">Airbnb Listing</a> | <a target="_BLANK" href="'.$p['Amenities'].'">Amen</a> | <a target="_BLANK" href="'.$p['Fees'].'">Fees</a> | <a target="_BLANK" href="'.$p['A Live'].'">Live</a>';
+        }
+
+        if ($p['Vrbo Listing']) { 
+            $output .= $newline.'<a target="_BLANK" href="'.$p['Vrbo Listing'].'">Vrbo Listing</a> |  <a target="_BLANK" href="'.$p['V Calendar'].'">Calendar</a> | <a target="_BLANK" href="'.$p['V Live'].'">Live</a>';
+        }
+    
+        if ($p['Book Listing']) { 
+            $output .= $newline.'<a target="_BLANK" href="'.$p['Book Listing'].'">Booking.com Listing</a> | <a target="_BLANK" href="'.$p['B Calendar'].'">Calendar</a> | <a target="_BLANK" href="'.$p['B Live'].'">Live</a>';
+        }
+
+        $output .= $newline.'<a target="_BLANK" href="'.$p['Pricelabs'].'"><span class="pricelabs">Pricelabs</span></a> | '; 
+
+        if($p['Comp Set'])
+            $output .= '<a target="_BLANK" href="'.$p['Comp Set'].'">Comp Set</a> '; 
+
+    
+        $output .= $newline;
+
+
+        $output .= '<a target="_BLANK" href="'.$p['Hospitable'].'">Hospitable</a> | <a target="_BLANK" href="'.$p['H Calendar'].'">Calendar</a>'; 
+        $output .= '</div>
+        </div>';
+
+        echo $output.$newline;
     }
-
-    if($p['Rankbreeze']) 
-        $output .= ' <a target="_BLANK" href="'.$p['Rankbreeze'].'">Rankbreeze</a> '.$newline; 
-
-    if ($p['G-Drive']) { 
-        $output .= '<a target="_BLANK" href="'.$p['G-Drive'].'">G-Drive</a>';
-    } 
-
-    if ($p['Prop Hub']) { 
-        $output .= ' | <a target="_BLANK" href="'.$p['Prop Hub'].'">Prop Hub</a>'.$newline;
-    } 
-
-    if ($p['Airbnb Listing']) { 
-        $output .= '<a target="_BLANK" href="'.$p['Airbnb Listing'].'">Airbnb Listing</a> | <a target="_BLANK" href="'.$p['Amenities'].'">Amen</a> | <a target="_BLANK" href="'.$p['Fees'].'">Fees</a> | <a target="_BLANK" href="'.$p['A Live'].'">Live</a>';
-    }
-
-    if ($p['Vrbo Listing']) { 
-        $output .= $newline.'<a target="_BLANK" href="'.$p['Vrbo Listing'].'">Vrbo Listing</a> |  <a target="_BLANK" href="'.$p['V Calendar'].'">Calendar</a> | <a target="_BLANK" href="'.$p['V Live'].'">Live</a>';
-    }
- 
-    if ($p['Book Listing']) { 
-        $output .= $newline.'<a target="_BLANK" href="'.$p['Book Listing'].'">Booking.com Listing</a> | <a target="_BLANK" href="'.$p['B Calendar'].'">Calendar</a> | <a target="_BLANK" href="'.$p['B Live'].'">Live</a>';
-    }
-
-
-    $output .= $newline.'<a target="_BLANK" href="'.$p['Pricelabs'].'">Pricelabs</a> | '; 
-
-    if($p['Comp Set'])
-        $output .= '<a target="_BLANK" href="'.$p['Comp Set'].'">Comp Set</a> '; 
-
-   
-    $output .= $newline;
-
-
-    $output .= '<a target="_BLANK" href="'.$p['Hospitable'].'">Hospitable</a> | <a target="_BLANK" href="'.$p['H Calendar'].'">Calendar</a>'; 
-    $output .= '</div>
-    </div>';
-
-    echo $output.$newline;
-}
 
 ?>
+    </div>
+</div>
+
+
 <p>&nbsp;</p>
 
-        <div class="row">
-        <div class="col-lg">
-          
-        </div>
+         
     </div>
 </div>
 

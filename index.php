@@ -391,23 +391,7 @@ $menuContacts = array(
                     </li>
 
 <?php
-$googleMeets = array(
-    'Google Workspace Business Standard - Admin Console' => array(
-        'href' => ' https://admin.google.com/u/0/ac/billing/subscriptions/r5lljMN30oQ8tNPznBdY5A?ms=pt%3A488%3Bs%3A237&utm_source=discover',
-        'attr' => 'target="_BLANK"'
-    ),
-    
-    'Productivity Apps for Business Owners & Entrepreneurs | Google Workspace Individual' => array(
-        'href' => 'https://workspace.google.com/individual/?utm_source=meet-in-product&utm_medium=et&utm_term=learn-more&utm_campaign=meet-premium-feature-paywall-cloud-recordings',
-        'attr' => 'target="_BLANK"'
-    ),
-
-    'Account details' => array(
-        'href' => 'https://pay.google.com/gp/w/home/accountdetail?ebaid=AJ9oCCwedUDDJcBC%2BGcDW2xBVhcD5mHXFRsk8S%2BvHGPDRiKGMNO8%2F%2B3dTHBQdSn85zcM4KLwc9uI&hl=en',
-        'attr' => 'target="_BLANK"'
-    ),
-);
-
+ 
 $menuSales = array( 
     'divider',
     'Awning' => array(
@@ -425,25 +409,13 @@ $menuSales = array(
 ?>
                 <li id="contacts"> 
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Sales <b class="caret"></b></a>
-                     
-
+                      
                     <ul class="dropdown-menu"> 
-  
                         <li>
                             <a target="_BLANK" href="https://calendly.com/kaiba-online-acc/prop-mgr?preview_source=et_card&month=2025-07">Calendly</a>
-                            
                         </li>
 
-
-                        <li class="dropdown-submenu">
-                            <a tabindex="-1" target="_BLANK" href="https://meet.google.com/efe-fvyp-hev">Google Meets</a>
-                            <ul class="dropdown-menu"> 
-                                <?php
-                                echo displayMenu($googleMeets);
-                                ?>
-                            </ul>
-                        </li>
-
+                       
                         <?php
                         echo displayMenu($menuSales);
                         ?> 
@@ -461,8 +433,8 @@ $priceLabs = array(
         'attr' => 'target="_BLANK"',
          'divider' => 1, ),
 
-    'Hospitable | Cal' => array (
-        'href' => 'https://my.hospitable.com/calendar/occupancy',
+    'Hospitable | Inbox' => array (
+        'href' => 'https://my.hospitable.com/inbox/segments/default',
         'attr' => 'target="_BLANK"',
         'divider' => 1,
         'dropdown' => array (
@@ -491,13 +463,21 @@ $priceLabs = array(
         'attr' => 'target="_BLANK"' ),
     'Turno Chat' => array(
         'href' => 'https://chat.turno.com/',
-        'attr' => 'target="_BLANK"' ),
-    'Thumbtack' => array(
-        'href' => 'https://www.thumbtack.com/team',
-        'attr' => 'target="_BLANK"',
-    ),
-     
+        'attr' => 'target="_BLANK"' ),     
 );
+
+
+$bnb = array(
+    'Get Help' => array(
+        'href' => 'https://www.airbnb.com/help/contact-us?entry=HELP_CENTER&role=home_host',
+        'attr' => 'target="_BLANK"' ),
+    'Res Center' => array(
+        'href' => 'https://www.airbnb.com/resolutions',
+        'attr' => 'target="_BLANK"' ),
+    'Trans History' => array(
+        'href' => 'https://www.airbnb.com/users/transaction_history',
+        'attr' => 'target="_BLANK"' ),
+    );
  
 ?>    
 
@@ -507,6 +487,17 @@ $priceLabs = array(
                         
                         <?php
                             echo dropdownMenu($priceLabs);
+                        ?>
+                                         
+                     </ul>
+                </li>
+
+                <li id="bnb">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">BNB <b class="caret"></b></a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                        
+                        <?php
+                            echo dropdownMenu($bnb);
                         ?>
                                          
                      </ul>

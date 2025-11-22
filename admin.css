@@ -10,7 +10,7 @@ body, container {
     color: #8467D7;
     background-attachment: fixed;
     background-repeat: repeat-x;
-    background-color: #FFFFFF;
+    background-color: #fff6f6;
     font-family: Tahoma, Geneva, sans-serif;
     font-size: small;
     font-weight: 100;
@@ -224,4 +224,16 @@ a:hover  {
 
 .adminBox a:hover {
     background: #000;
+}
+
+.pricelabs {
+    color: rgb(247, 125, 125);
+}
+
+.viatour {
+    color:#62c462; 
+}
+
+.propHub {
+     color:#1d2327;
 }
