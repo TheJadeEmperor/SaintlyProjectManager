@@ -7,7 +7,9 @@ iframe { height: 92%; width: 99%;
 }
 
 body, container {	
-    color: #8467D7;
+    margin: 0 !important;
+    max-width: unset;
+    color: #8060d7;
     background-attachment: fixed;
     background-repeat: repeat-x;
     background-color: #fff6f6;
@@ -17,55 +19,17 @@ body, container {
     margin: 0px;
 }
 
-a {
-    color: #AF89E8;
-    text-decoration: none;
-}
-
-a:visited {
-    color: #AF89E8;
+a, a:visited  {
+    color: #8060d7;
     text-decoration: none;
 }
 
 a:hover  { 
-    color: #AF89E8; 
+    color: #8060d7; 
     background-color: transparent;
     text-decoration: underline;	
 }
 
-.moduleBlue {
-    border: 1px solid #AF89E8; 
-}
-
-.moduleBlue h1 {
-    margin: 0px;
-    font-size: 90%;
-    color: #FFFFFF;
-    text-align: center;
-    padding: 5px; 
-    background: #531D2A;
-}
-
-.moduleBlue th {
-    margin: 0px; 	
-    font-size: 90%;
-    color: #FFFFFF;
-    text-align: center;
-    background: #531D2A;
-    padding: 5px; 
-}
-
-.moduleBlue td {
-    padding: 6px 10px 6px 10px;
-}
-
-.moduleBlue .moduleBody {
-    padding: 10px; 
-}
-
-.moduleBlue a { 
-    color: blue;
-}
 
 .activeField {
     background: #FFFFFF;

@@ -399,7 +399,7 @@ $menuSales = array(
         'attr' => 'target="_BLANK"'
     ), 
     'Airdna' => array(
-        'href' => 'https://www.airdna.co/',
+        'href' => 'https://app.airdna.co/data',
         'attr' => 'target="_BLANK"'
     ),
     'Pricelabs Rev Est' => array(

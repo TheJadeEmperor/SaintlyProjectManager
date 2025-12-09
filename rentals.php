@@ -1,5 +1,4 @@
 <?php
-
 $siteAirbnb = 'https://littlebookstays.com';
 $localAirbnb = 'http://vacationrentals4ny.test';
 
@@ -14,10 +13,36 @@ $localWP = 'http://vacationrentals4ny.test/wp-login.php';
 
 
 $propsAll = array(
-    
-    '1680 Willow Grove<br />Angela Scott 6-3-1.5' => array(
-        'zip' => '19090',
-        'shorturl' => '',
+
+    '7/3/2 | Lake Erie' => array(
+        'client' => 'Sandra Tendilla', 
+        'close' => 'https://app.close.com/lead/lead_gyxKXy0QY2NiOVxQdo7eM9iqb1CxLEerJfppX6KCfiz/#contactId=cont_UeAVsuRTtiPjXRPgG1BvJJRVVLh5EUaTsRq7lcSdFa1', 
+        'zip' => '16507', 
+        'shorturl' => 'https://airbnb.com/h/lake-erie',
+        'Turno' => 'https://app.turno.com/properties/624428',
+        'G-Drive' => 'https://drive.google.com/drive/folders/1nC_tfC4Fm2e90bo6jLfZgGEaBeV_pZdN?usp=sharing', 
+        'Prop Hub' => 'https://littlebookstays.com/wp-admin/post.php?post=227&action=edit',
+        'Viatour' => 'https://vi.me/yYHFa', 
+
+        'Airbnb Listing' => 'https://www.airbnb.com/hosting/listings/editor/1570074268054232382/details/photo-tour', 
+        'Amenities' => 'https://www.airbnb.com/hosting/listings/editor/1570074268054232382/details/amenities',
+        'Fees' => 'https://www.airbnb.com/multicalendar/1570074268054232382/pricing-settings#fees',
+        'A Live' => 'https://www.airbnb.com/rooms/1570074268054232382/',
+         
+        'Pricelabs' => 'https://app.pricelabs.co/pricing?listings=0f570685-186b-41ac-81e1-68093536a3fd&pms_name=smartbnb&open_calendar=true', 
+        'Comp Set' => 'https://app.pricelabs.co/reports/162367?compSet=Lake+Erie+PA+16507&template=full_dashboard',
+        'Rankbreeze' => '#', 
+        'Hospitable' => 'https://my.hospitable.com/properties/property/2084386/messaging-rules',
+        'H Calendar' => 'https://my.hospitable.com/calendar/property/2084386', 
+    ), 
+ 
+
+/*
+    '6/3/1.5 | 1680 Willow Grove' => array(
+        'client' => 'Angela Scott', 
+        'close' => 'https://app.close.com/lead/lead_j5cfFo7sx6C4ngnbzUqd3qMHoZsAInpP9xowaRaL5Ei/', 
+        'zip' => '19090', 
+        'shorturl' => 'airbnb.com/h/willow-grove-townhouse', 
         'Turno' => 'https://app.turno.com/properties/616644',
         'G-Drive' => '#', 
         'Prop Hub' => '#',
@@ -26,19 +51,21 @@ $propsAll = array(
         'Airbnb Listing' => 'https://www.airbnb.com/hosting/listings/editor/1556014027336970177/details/photo-tour', 
         'Amenities' => 'https://www.airbnb.com/hosting/listings/editor/1556014027336970177/details/amenities',
         'Fees' => 'https://www.airbnb.com/hosting/listings/editor/1556014027336970177/details/fees',
-        'A Live' => '',
+        'A Live' => 'https://www.airbnb.com/rooms/1556014027336970177/',
          
         'Pricelabs' => 'https://app.pricelabs.co/pricing?listings=e1b08cf6-b39c-44ab-b8fe-59fd024ac396&pms_name=smartbnb&open_calendar=true', 
-        'Comp Set' => 'tps://app.pricelabs.co/reports/160875?compSet=1680+Easton+Rd++Willow+Grove+PA&template=full_dashboard',
+        'Comp Set' => 'https://app.pricelabs.co/reports/160875?compSet=1680+Easton+Rd++Willow+Grove+PA&template=full_dashboard',
         'Rankbreeze' => '#',
         'Hospitable' => 'https://my.hospitable.com/properties/property/2060148/messaging-rules',
         'H Calendar' => 'https://my.hospitable.com/calendar/property/2060148', 
     ), 
- 
+ */
 
-    '59 Gregory Dr<br />Steve Summers 6-3-1.5' => array(
+    '6/3/1.5 | 59 Gregory Dr ' => array(
+        'client' => 'Steve Summers', 
+        'close' => 'https://app.close.com/lead/lead_oia96IQJqCQ094vteteMEnU4ddKON1Q50WKlozLiRkI/#contactId=cont_42RCv5CNx0lb6UFUeO6UHPZVmZk15xDUJetIP26sf69', 
         'zip' => '28734',
-        'shorturl' => '',
+        'shorturl' => 'airbnb.com/h/tumbling-leaf-cabin',
         'Turno' => 'https://app.turno.com/properties/589380',
         'G-Drive' => 'https://drive.google.com/drive/folders/1PDWk7DbFB25ypyLAVJsrBxu4uN8W9EKd', 
         'Prop Hub' => 'https://littlebookstays.com/wp-admin/post.php?post=131&action=edit',
@@ -56,7 +83,10 @@ $propsAll = array(
         'H Calendar' => 'https://my.hospitable.com/calendar/property/1970206', 
     ), 
  
-    '105 Pine Cone Lane<br />Jennifer Cottone 10-3-2' => array(
+    '10/3/2 | 105 Pine Cone Lane' => array(
+        'client' => 'Jennifer Cottone', 
+        'close' => 'https://app.close.com/lead/lead_IRrbBfQiVtuFhiBHnGUSzej8vX4yPcRzIrFa1KTxc8X/', 
+        
         'zip' => '18426',
         'shorturl' => 'https://airbnb.com/h/mtg-firepit',
 
@@ -85,7 +115,8 @@ $propsAll = array(
         'H Calendar' => 'https://my.hospitable.com/calendar/property/1830588', 
     ), 
 
-    '2037 Coyle Street 2-1-1' => array(
+    '2/1/1 | 2037 Coyle Street ' => array(
+        'client' => 'Me myself & I',
         'zip' => '11229',
         'shorturl' => 'https://airbnb.com/h/royal-room-brooklyn',
         'Turno' => 'https://app.turno.com/properties/258377',
@@ -98,7 +129,6 @@ $propsAll = array(
         'Fees' => 'https://www.airbnb.com/multicalendar/841300394500737442/pricing-settings/fees',
         'A Live' => 'https://www.airbnb.com/rooms/841300394500737442?source_impression_id=p3_1719790415_P36temSnhYUDm2Le',
         'Pricelabs' => 'https://app.pricelabs.co/pricing?listings=b67a0e70-784b-4c5f-9713-e2b2cfe7342c&pms_name=smartbnb&open_calendar=true', 
-       // 'Comp Set' => 'https://app.pricelabs.co/reports/140863',
         'Rankbreeze' => 'https://app.rankbreeze.com/rankings/116605/optimization',
         'Hospitable' => 'https://my.hospitable.com/properties/property/1830574/messaging-rules', 
         'H Calendar' => 'https://my.hospitable.com/calendar/property/1830574', 
@@ -114,8 +144,9 @@ $propsAll = array(
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
-    <link href="<?= $dir ?>admin.css" rel="stylesheet" type="text/css" media="screen" />
     <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+      <link href="<?= $dir ?>admin.css" rel="stylesheet" type="text/css" media="screen" />
+  
     <script src="http://code.jquery.com/jquery-latest.min.js" type='text/javascript' /></script> 
     <script src="include/jquery-ui/ui/jquery-ui.js"></script>
     <script src="include/bootstrap/js/bootstrap.js"></script>
@@ -142,11 +173,16 @@ $propsAll = array(
                 <br />Furnished Finder<br /> 
                 <a href="https://www.furnishedfinder.com/members/tenant-lead" target="_BLANK">Leads</a><br /> 
                 <a href="https://www.furnishedfinder.com/members/tenant-message" target="_BLANK">Messages</a> <br /> 
-                <a href="https://www.furnishedfinder.com/members/pm/availability?p=930555_1 " target="_BLANK"> Calendar</a> <br />
+                <a href="https://www.furnishedfinder.com/members/pm/availability?p=930555_1" target="_BLANK"> Calendar</a> <br />
+            
+                <br />TurboTenant<br />
+                <a href=" https://rental.turbotenant.com/owners/renters/leads?page=0" target="_BLANK"> Leads</a> <br />
+                <a href=" https://rental.turbotenant.com/owners/properties/manage/TGlzdGluZzoxNDMyNzYw/overview" target="_BLANK">Property</a> <br />
+            
             </div>
             <div>
                 <br /> AI Tools <br /> 
-                <a href="https://www.chatgpt.com/" target="_BLANK">chatgpt</a><br /> 
+                <a href="https://www.chatgpt.com/" target="_BLANK">chumpgpt</a><br /> 
                 <a href="https://www.grok.com" target="_BLANK">grok</a> <br /> 
                 <a href="https://gemini.google.com/app" target="_BLANK">gemini</a> <br />
             </div>
@@ -206,7 +242,9 @@ $propsAll = array(
             $propTitle = $propName; 
 
         $output = '<div class="row">
-        <div class="col-sm text-sm-end">'.$propTitle.'<br /><a href="https://www.google.com/maps/place/'.$p['zip'].'" target="_BLANK">'.$p['zip'].'</a></div>
+        <div class="col-sm text-sm-end">'.$propTitle.'<br />
+        <a href="'.$p['close'].'" target="_BLANK">'.$p['client'].'</a> <br />
+        <a href="https://www.google.com/maps/place/'.$p['zip'].'" target="_BLANK">'.$p['zip'].'</a></div>
         <div class="col-sm text-start">'; 
     
         if ($p['Turno']) {
