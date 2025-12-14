@@ -194,10 +194,18 @@ a:hover  {
     color: rgb(247, 125, 125);
 }
 
-.viatour {
-    color:#62c462; 
+.viator {
+    color: #008768;
 }
 
 .propHub {
      color:#1d2327;
+}
+
+.hostb {
+    color: #146ef5;
+}
+
+.hospital {
+    color: #ed3c6a;
 }

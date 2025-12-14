@@ -69,12 +69,18 @@ $propsAll = array(
         'Turno' => 'https://app.turno.com/properties/589380',
         'G-Drive' => 'https://drive.google.com/drive/folders/1PDWk7DbFB25ypyLAVJsrBxu4uN8W9EKd', 
         'Prop Hub' => 'https://littlebookstays.com/wp-admin/post.php?post=131&action=edit',
-        'Viatour' => 'https://vi.me/Khe9W',
-
+  
+        'Viatour' => 'https://vi.me/nypNX',
+        
         'Airbnb Listing' => 'https://www.airbnb.com/hosting/listings/editor/1501050725249962697/details/photo-tour', 
         'Amenities' => 'https://www.airbnb.com/hosting/listings/editor/1501050725249962697/details/amenities',
         'Fees' => 'https://www.airbnb.com/multicalendar/1501050725249962697/pricing-settings/fees',
         'A Live' => 'https://www.airbnb.com/rooms/1501050725249962697',
+
+        'Vrbo Listing' => 'https://www.vrbo.com/supply/pe/?propertyId=120651120', 
+        'V Fees' => 'https://www.vrbo.com/pxcalendars/settings/321.4844374.5418540/fees',
+        'V Ins' => 'https://www.vrbo.com/rm/settings/protection/l-321.4844374.5418540',
+        'V Live' => 'https://www.vrbo.com/4844374?dateless=true', 
          
         'Pricelabs' => 'https://app.pricelabs.co/pricing?listings=be694a73-23f3-414b-a6af-12198666c1de&pms_name=smartbnb&open_calendar=true',
         'Comp Set' => 'https://app.pricelabs.co/reports/155484?compSet=59+Gregory+Drive+Franklin+NC&template=full_dashboard',
@@ -101,7 +107,8 @@ $propsAll = array(
         'A Live' => 'https://www.airbnb.com/rooms/1397966363653363779?source_impression_id=p3_1752274162_P3ZEAwc7Eau_D_ga',
         
         'Vrbo Listing' => 'https://www.vrbo.com/supply/pe/?propertyId=120453789', 
-        'V Calendar' => 'https://www.vrbo.com/p/calendar/321.4824102.5398269', 
+        'V Fees' => 'https://www.vrbo.com/pxcalendars/settings/321.4824102.5398269/fees', 
+        'V Ins' => 'https://www.vrbo.com/rm/settings/protection/l-321.4824102.5398269',
         'V Live' => 'https://www.vrbo.com/4824102?dateless=true', 
 
         'Book Listing' => 'https://admin.booking.com/hotel/hoteladmin/extranet_ng/manage/home.html?hotel_account_id=23703383&hotel_id=15044068&lang=xu&ses=1c60931044f027c41c4b46d559f647db',
@@ -122,7 +129,7 @@ $propsAll = array(
         'Turno' => 'https://app.turno.com/properties/258377',
         'G-Drive' => 'https://drive.google.com/drive/folders/1u4P7hDa_OXMzd3wGbEeNF0pFPHXueRiA?usp=drive_link',
         'Prop Hub' => 'https://littlebookstays.com/wp-admin/post.php?post=115&action=edit', 
-        'Viatour' => 'https://vi.me/nypNX',
+        'Viatour' => 'https://vi.me/Khe9W',
         
         'Airbnb Listing' => 'https://www.airbnb.com/hosting/listings/editor/841300394500737442/details/photo-tour',
         'Amenities' => 'https://www.airbnb.com/hosting/listings/editor/841300394500737442/details/amenities',
@@ -132,6 +139,7 @@ $propsAll = array(
         'Rankbreeze' => 'https://app.rankbreeze.com/rankings/116605/optimization',
         'Hospitable' => 'https://my.hospitable.com/properties/property/1830574/messaging-rules', 
         'H Calendar' => 'https://my.hospitable.com/calendar/property/1830574', 
+        'Hostb' => 'https://www.hostbuddy.ai/workbench/NY%20%7C%20Brklyn%20%7C%2011229%20%7C%202%201%201',
     ),
  
 );
@@ -245,7 +253,7 @@ $propsAll = array(
         <div class="col-sm text-sm-end">'.$propTitle.'<br />
         <a href="'.$p['close'].'" target="_BLANK">'.$p['client'].'</a> <br />
         <a href="https://www.google.com/maps/place/'.$p['zip'].'" target="_BLANK">'.$p['zip'].'</a></div>
-        <div class="col-sm text-start">'; 
+        <div class="col-4 text-start">'; 
     
         if ($p['Turno']) {
             $output .= '<a target="_BLANK" href="'.$p['Turno'].'">Turno</a> | ';
@@ -258,37 +266,46 @@ $propsAll = array(
             $output .= '<a target="_BLANK" href="'.$p['G-Drive'].'">G-Drive</a>';
         } 
 
-        if ($p['Viatour']) { 
-            $output .= ' | <a target="_BLANK" href="'.$p['Viatour'].'"><span class="viatour">Viatour</span></a>';
-        } 
-
         if ($p['Prop Hub']) { 
             $output .= ' | <a target="_BLANK" href="'.$p['Prop Hub'].'"><span class="propHub">Prop Hub</span></a>'.$newline;
         } 
 
         if ($p['Airbnb Listing']) { 
-            $output .= '<a target="_BLANK" href="'.$p['Airbnb Listing'].'">Airbnb Listing</a> | <a target="_BLANK" href="'.$p['Amenities'].'">Amen</a> | <a target="_BLANK" href="'.$p['Fees'].'">Fees</a> | <a target="_BLANK" href="'.$p['A Live'].'">Live</a>';
+            $output .= '<a target="_BLANK" href="'.$p['Airbnb Listing'].'">A Listing</a> | <a target="_BLANK" href="'.$p['Amenities'].'">Amen</a> | <a target="_BLANK" href="'.$p['Fees'].'">Fees</a> | <a target="_BLANK" href="'.$p['A Live'].'">Live</a>';
         }
 
         if ($p['Vrbo Listing']) { 
-            $output .= $newline.'<a target="_BLANK" href="'.$p['Vrbo Listing'].'">Vrbo Listing</a> |  <a target="_BLANK" href="'.$p['V Calendar'].'">Calendar</a> | <a target="_BLANK" href="'.$p['V Live'].'">Live</a>';
+            $output .= $newline.'<a target="_BLANK" href="'.$p['Vrbo Listing'].'">V Listing</a> |  <a target="_BLANK" href="'.$p['V Fees'].'">Fees</a> | <a target="_BLANK" href="'.$p['V Ins'].'">Ins</a> | <a target="_BLANK" href="'.$p['V Live'].'">Live</a>';
         }
     
         if ($p['Book Listing']) { 
-            $output .= $newline.'<a target="_BLANK" href="'.$p['Book Listing'].'">Booking.com Listing</a> | <a target="_BLANK" href="'.$p['B Calendar'].'">Calendar</a> | <a target="_BLANK" href="'.$p['B Live'].'">Live</a>';
+            $output .= $newline.'<a target="_BLANK" href="'.$p['Book Listing'].'">B Listing</a> | <a target="_BLANK" href="'.$p['B Calendar'].'">Calendar</a> | <a target="_BLANK" href="'.$p['B Live'].'">Live</a>';
         }
 
-        $output .= $newline.'<a target="_BLANK" href="'.$p['Pricelabs'].'"><span class="pricelabs">Pricelabs</span></a> | '; 
+        $output .= $newline;  
 
-        if($p['Comp Set'])
-            $output .= '<a target="_BLANK" href="'.$p['Comp Set'].'">Comp Set</a> '; 
+        $output .= '<a target="_BLANK" href="'.$p['Hospitable'].'"><span class="hospital">Hospital</span></a> | <a target="_BLANK" href="'.$p['H Calendar'].'">Calendar</a> '; 
 
-    
-        $output .= $newline;
+        if($p['Hostb']) {
+             $output .= ' | <a target="_BLANK" href="'.$p['Hostb'].'"><span class="hostb">Hostbuddy</span></a>';
+        } 
 
-
-        $output .= '<a target="_BLANK" href="'.$p['Hospitable'].'">Hospitable</a> | <a target="_BLANK" href="'.$p['H Calendar'].'">Calendar</a>'; 
         $output .= '</div>
+        <div class="col-sm text-start"> ';
+ 
+        if($p['Pricelabs']) {
+            $output .= '<a target="_BLANK" href="'.$p['Pricelabs'].'"><span class="pricelabs">Pricelabs</span></a> '; 
+
+            if($p['Comp Set'])
+            $output .= ' | <a target="_BLANK" href="'.$p['Comp Set'].'">Comp Set</a> '; 
+        }
+
+
+        if ($p['Viatour']) { 
+            $output .= $newline.'<a target="_BLANK" href="'.$p['Viatour'].'"><span class="viator">Viator</span></a>';
+        } 
+
+        $output .= '</div> 
         </div>';
 
         echo $output.$newline;
