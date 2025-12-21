@@ -32,7 +32,6 @@ function menuDropDown ($mainName, $dropDownMenu) {
         $display .= '<li><a href="'.$menu['href'].'" target="_BLANK">'.$name.' '.$caret .'</a></li>';
 
        
-
         if($menu['attr'] == 'd') //divider
             $div = '<li class="divider"></li>';
          $display .= $div;
@@ -387,10 +386,10 @@ echo menuDropDown($mainCohost, $menuCohost);
             'attr' => 'd',
             'submenu' => array(
                 'E Templates' => array(
-                    'href' => ''
+                    'href' => 'https://app.close.com/settings/templates/email/'
                 ), 
                 'E Workflows' => array(
-                    'href' => ''
+                    'href' => 'https://app.close.com/workflows/'
                 ), 
             )
 
@@ -421,93 +420,95 @@ echo menuDropDown($mainCohost, $menuCohost);
     ); 
 
 
-echo menuDropDown($mainSales, $menuSales);
+    echo menuDropDown($mainSales, $menuSales);
 
 
-?>
-               
- 
-<?php
+    $mainGuests = 'Guests';
 
-$priceLabs = array(
-    'Pricelabs Dashboard' => array(
-        'href' => 'https://pricelabs.co/pricing',
-        'attr' => 'target="_BLANK"' ),
-    'Comp Sets' => array(
-        'href' => 'https://pricelabs.co/reports',
-        'attr' => 'target="_BLANK"',
-         'divider' => 1, ),
-
-    'Hospitable | Inbox' => array (
-        'href' => 'https://my.hospitable.com/inbox/segments/default',
-        'attr' => 'target="_BLANK"',
-        'divider' => 1,
-        'dropdown' => array (
-            'Calendars' => array (
-                'href' => 'https://my.hospitable.com/calendar/occupancy',
-                'attr' => 'target="_BLANK"' ),
-            'AI Questions' => array (
-                'href' => 'https://my.hospitable.com/gx/questions',
-                'attr' => 'target="_BLANK"' ),
-            'Upsells' => array (
-                'href' => 'https://my.hospitable.com/gx/upsells',
-                'attr' => 'target="_BLANK"' ), 
-            'Msg Rules' => array (
-                'href' => 'https://my.hospitable.com/gx/rules',
-                'attr' => 'target="_BLANK"' ),
+   $menuGuests = array(
+        'BNB Messages' => array(
+            'href' => 'https://www.airbnb.com/hosting/inbox/folder/all/', 
+            'attr' => 'd'
+        ), 
+        'Hospital Inbox' => array(
+            'href' => 'https://my.hospitable.com/inbox/segments/default', 
+            'attr' => 'c'
+        ), 
+        'Calendars' => array (
+            'href' => 'https://my.hospitable.com/calendar/occupancy', 
         ),
-    ),
-    
-    'Rankbreeze' => array (
-        'href' => 'https://app.rankbreeze.com/listings',
-        'attr' => 'target="_BLANK"',
-        'divider' => 1  ),
-    
-    'Turno Calendar' => array(
-        'href' => 'https://app.turno.com/view/schedule',
-        'attr' => 'target="_BLANK"' ),
-    'Turno Chat' => array(
-        'href' => 'https://chat.turno.com/',
-        'attr' => 'target="_BLANK"' ),     
-);
+        'Msg Rules' => array (
+            'href' => 'https://my.hospitable.com/gx/rules',
+        ),
+        'Upsells' => array (
+            'href' => 'https://my.hospitable.com/gx/upsells',
+            'attr' => 'd'
+        ), 
+        'Hosp AI' => array (
+            'href' => 'https://my.hospitable.com/gx/questions'
+        ),
+        'Hostbuddy' => array (
+            'href' => 'https://www.hostbuddy.ai/properties'
+        ),
 
 
-$bnb = array(
-    'Get Help' => array(
-        'href' => 'https://www.airbnb.com/help/contact-us?entry=HELP_CENTER&role=home_host',
-        'attr' => 'target="_BLANK"' ),
-    'Res Center' => array(
-        'href' => 'https://www.airbnb.com/resolutions',
-        'attr' => 'target="_BLANK"' ),
-    'Trans History' => array(
-        'href' => 'https://www.airbnb.com/users/transaction_history',
-        'attr' => 'target="_BLANK"' ),
     );
+
+    echo menuDropDown($mainGuests, $menuGuests);
+
+ 
+    $mainPM = 'PM';
+
+   $menuPM = array(
+        'Pricelabs Dashboard' => array(
+            'href' => 'https://pricelabs.co/pricing',
+        ),
+        'Comp Sets' => array(
+            'href' => 'https://pricelabs.co/reports',
+            'attr' => 'd' 
+        ), 
+        'Rankbreeze' => array (
+            'href' => 'https://app.rankbreeze.com/listings',
+        ), 
+        'Intellihost' => array (
+            'href' => 'https://intellihost.com',
+            'attr' => 'd' 
+        ), 
+        'Turno Calendar' => array(
+            'href' => 'https://app.turno.com/view/schedule',
+        ),
+        'Turno Chat' => array(
+            'href' => 'https://chat.turno.com/',
+        ),     
+
+   );
+
+
+   echo menuDropDown($mainPM, $menuPM);
+ 
+    $mainBNB = 'BNB'; 
+
+   $menuBNB = array(
+        'Get Help' => array(
+            'href' => 'https://www.airbnb.com/help/contact-us?entry=HELP_CENTER&role=home_host',
+        ),
+        'Res Center' => array(
+            'href' => 'https://www.airbnb.com/resolutions',
+        ),
+        'Trans History' => array(
+            'href' => 'https://www.airbnb.com/users/transaction_history', 
+        ),
+        'Maint | Appts' => array(
+            'href' => 'https://app.close.com/activities/custom-activity/actitype_3oEjtZdr8UkkqfmtJBDdWi/save_bjqFnOtjRgQsI0Qm9AqG4fSPAGxCtCfOgK6oskcFcIS/',
+        ),
+    );
+
+    
+   echo menuDropDown($mainBNB, $menuBNB);
  
 ?>    
 
-                <li id="pm">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">PM <b class="caret"></b></a>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                        
-                        <?php
-                            echo dropdownMenu($priceLabs);
-                        ?>
-                                         
-                     </ul>
-                </li>
-
-                <li id="bnb">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">BNB <b class="caret"></b></a>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                        
-                        <?php
-                            echo dropdownMenu($bnb);
-                        ?>
-                                         
-                     </ul>
-                </li>
- 
+             
                 </ul><!--navbar-->
                 
                 <ul class="nav navbar-nav navbar-left">
