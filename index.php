@@ -45,7 +45,6 @@ function menuDropDown ($mainName, $dropDownMenu) {
 
 
 
-
 function dropDownMenu ($menu) {
     //print_r($menu); exit;
     
@@ -259,19 +258,25 @@ switch($_GET['action']) {
                 <a class="navbar-brand" href="?action=db">SPM</a>
             </div>
 
-<?php
 
-    $menuLocal = array( 
-        'Localhost' => array(
-            'href' => 'http://localhost',
-            'attr' => 'target="_BLANK"' ),
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav"  id="main-menu">
+                     
+<?php
+    $mainLocal = 'Localhost';
+
+    $menuLocal = array(
+       'Localhost' => array(
+            'href' => 'http://localhost'
+        ), 
         'phpMyAdmin' => array(
-            'href' => 'http://localhost/phpmyadmin/',
-            'attr' => 'target="_BLANK"' ),
+            'href' => 'http://localhost/phpmyadmin/', 
+        ),
         'Account Manager' => array(
             'href' => 'http://SaintlyAccountsManager.test',
-            'attr' => 'target="_BLANK"' ),
-        'divider' => 1,
+            'attr' => 'd' 
+        ),
         'Achive Links' => array(
             'href' => '?action=archive'),
         'NUS Blog & SEO' => array(
@@ -282,55 +287,33 @@ switch($_GET['action']) {
             'href' => '.'),
     );
 
+    echo menuDropDown($mainLocal, $menuLocal);
 
 
-?>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav"  id="main-menu">
-                    <li class="dropdown" id="localhost">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Localhost <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                           
-                            <?php
-                            echo displayMenu($menuLocal);
-                            ?>				
-                        </ul>
-                    </li>
+    $mainHost= 'Host';
 
-<?php
-$menuGmail = array( 
-    'gmail Accounts' => array(
-        'href' => 'https://mail.google.com/mail/u/0/?shva=1#settings/accounts',
-        'attr' => 'target="_BLANK"' ),
-    'gmail Filters' => array(
-        'href' => 'https://mail.google.com/mail/u/0/?shva=1#settings/filters',
-        'attr' => 'target="_BLANK"',
-        'divider' => 1, ),
+    $menuHost = array(
+        'gmail Accounts' => array(
+            'href' => 'https://mail.google.com/mail/u/0/?shva=1#settings/accounts'
+        ),
+        'gmail Filters' => array(
+            'href' => 'https://mail.google.com/mail/u/0/?shva=1#settings/filters',
+            'attr' => 'd' 
+        ),
+        'Hostinger' => array(
+            'href' => 'https://hpanel.hostinger.com/domains',
+        ),
+        'Domains' => array(
+            'href' => 'https://hpanel.hostinger.com/domains',
+        ),
+        'phpMyAdmin' => array(
+            'href' => 'https://hpanel.hostinger.com/websites/littlebookstays.com/databases/my-sql-databases',
+        ) 
+    );
+ 
+    echo menuDropDown($mainHost, $menuHost);
 
-    'Hostinger' => array(
-        'href' => 'https://hpanel.hostinger.com/domains',
-        'attr' => 'target="_BLANK"' ),
-    'Domains' => array(
-        'href' => 'https://hpanel.hostinger.com/domains',
-        'attr' => 'target="_BLANK"' ),
-    'phpMyAdmin' => array(
-        'href' => 'https://hpanel.hostinger.com/websites/littlebookstays.com/databases/my-sql-databases',
-        'attr' => 'target="_BLANK"' ),
-);
-
-?>
-
-                    <li id="gmail">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gmail & HM<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-
-                            <?php echo dropDownMenu($menuGmail) ?>
-        
-                        </ul>
-                    </li> 
-
-<?php 
+ 
 
     $mainCohost = 'Cohost';
 
@@ -425,7 +408,7 @@ echo menuDropDown($mainCohost, $menuCohost);
 
     $mainGuests = 'Guests';
 
-   $menuGuests = array(
+    $menuGuests = array(
         'BNB Messages' => array(
             'href' => 'https://www.airbnb.com/hosting/inbox/folder/all/', 
             'attr' => 'd'
@@ -497,6 +480,7 @@ echo menuDropDown($mainCohost, $menuCohost);
         ),
         'Trans History' => array(
             'href' => 'https://www.airbnb.com/users/transaction_history', 
+            'attr' => 'd'
         ),
         'Maint | Appts' => array(
             'href' => 'https://app.close.com/activities/custom-activity/actitype_3oEjtZdr8UkkqfmtJBDdWi/save_bjqFnOtjRgQsI0Qm9AqG4fSPAGxCtCfOgK6oskcFcIS/',
