@@ -1,5 +1,52 @@
 <?php
 
+function menuDropDown ($mainName, $dropDownMenu) {
+
+    $display = '<li id="cohost">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">'.$mainName.'<b class="caret"></b></a>
+            <ul class="dropdown-menu">';
+
+    //loop thru drop down menu
+    foreach($dropDownMenu as $name => $menu) {
+        $div = $caret = '';  //attr | c =caret | d = divider
+
+        if($menu['attr'] == 'c') //caret
+            $caret = '<b class="caret"></b>';
+
+
+        if($menu['submenu']) { //submenu - right side
+            $display .= '<li class="dropdown-submenu">
+                <a tabindex="-1" target="_BLANK" href="'.$menu['href'].'">'.$name.'</a>
+                    <ul class="dropdown-menu">';
+
+            //loop thru submenu
+            foreach($menu['submenu'] as $subName => $subURL) {
+                $display .= '<li><a href="'.$subURL['href'].'" target="_BLANK">'.$subName.'  </a></li>';
+            }
+
+            $display .= '
+                </ul>
+            </li>'; 
+        }
+        else  //normal menu item
+        $display .= '<li><a href="'.$menu['href'].'" target="_BLANK">'.$name.' '.$caret .'</a></li>';
+
+       
+
+        if($menu['attr'] == 'd') //divider
+            $div = '<li class="divider"></li>';
+         $display .= $div;
+    }
+
+    $display .= '</ul>
+    </li>';
+
+    return $display; 
+}
+
+
+
+
 function dropDownMenu ($menu) {
     //print_r($menu); exit;
     
@@ -283,144 +330,102 @@ $menuGmail = array(
         
                         </ul>
                     </li> 
-                   
-<?php
 
-    $menuCohost = array(
-        'Cohost Course 1' => array(
+<?php 
+
+    $mainCohost = 'Cohost';
+
+   $menuCohost = array(
+        'Cohost Group' => array(
             'href' => 'https://cohostingacquisitions.circle.so/c/module-1/',
-            'attr' => 'target="_BLANK"'),
-        'Cohost Course 2' => array( 
-            'href' => 'https://cohostingacquisitions.circle.so/c/elite-curriculum/',
-            'attr' => 'target="_BLANK"'),
+            'attr' => 'c'
+        ), 
+        'Cohost Course ' => array(
+            'href' => 'https://cohostingacquisitions.circle.so/c/module-1/',
+        ),
         'Group Chat' => array(
             'href' => 'https://cohostingacquisitions.circle.so/c/group-chat/',
-            'attr' => 'target="_BLANK"'),
-        );
+            'attr' => 'd'
+        ),
 
-    $oldCourse = array(
-        'Viator Shop' => array(
-            'href' => 'https://selector.viator.com/edit-shop',
-            'attr' => 'target="_BLANK"'),
-        'Viator Dashboard' => array( 
-            'href' => 'https://partners.viator.com/dashboard',
-            'attr' => 'target="_BLANK"'), 
-        );
+        'Batch Skip Trace' => array(
+            'href' => 'https://app.batchskiptracing.com/app/skip-trace/list',
+            'attr' => 'target="_BLANK"',
+            'attr' => 'd'
+        ), 
 
-    $menuEvents = array(
-        'BiggerPocketsForum' => array(
-            'href' => 'https://www.biggerpockets.com/forums/530',
-            'attr' => 'target="_BLANK"' ),  
-    );
+        'Upwork Msg' => array(
+            'href' => 'https://www.upwork.com/ab/messages/rooms/room_007a0a45db0a964b83f0854be6c2e37e?pageTitle=Mahran%20Makin&companyReference=1816859020641894400&sidebar=true',
+        ),
+        'Upwork Trans History' => array(
+            'href' => 'https://www.upwork.com/nx/payments/reports/transaction-history',
+            'attr' => 'target="_BLANK"',
+            
+        ),
+
+    ); 
+
+
+echo menuDropDown($mainCohost, $menuCohost);
+
+
+    $mainSales = 'Sales';
+
+    $menuSales = array(
+        'Close' => array( 
+            'href' => ' https://app.close.com/tasks/inbox/',
+            'attr' => 'c'
+        ), 
+        'All Leads' => array( 
+            'href' => 'https://app.close.com/leads',
+        ), 
+        'Sched Links' => array( 
+            'href' => 'https://app.close.com/settings/scheduling-links/my-links/',
+        ), 
+        'Email Templates' => array( 
+            'href' => 'https://app.close.com/settings/templates/email/',
+            'attr' => 'd',
+            'submenu' => array(
+                'E Templates' => array(
+                    'href' => ''
+                ), 
+                'E Workflows' => array(
+                    'href' => ''
+                ), 
+            )
+
+        ), //'Email Templates'
+        'Google Meets' => array( 
+            'href' => ' ', 
+        ),
+        'Calendly' => array( 
+            'href' => 'https://calendly.com/kaiba-online-acc/prop-mgr?preview_source=et_card',
+            'attr' => 'd',
+        ),
+        'Rev Projections' => array(
+           'submenu' => array(
+                'Awning' => array(
+                    'href' => 'https://awning.com/airbnb-estimator'
+                ), 
+                'Airdna' => array(
+                    'href' => 'https://app.airdna.co/data',
+                    'attr' => 'target="_BLANK"' 
+                ),
+                'Pricelabs Rev Est' => array(
+                    'href' => 'https://app.pricelabs.co/revenue_estimator', 
+                ),
+            )
+
+        )
        
+    ); 
+
+
+echo menuDropDown($mainSales, $menuSales);
+
+
 ?>
-
-                    <li id="cohost">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cohost<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                           
-                        <li><a href="#" target="_BLANK">Cohost Group<b class="caret"></b></a></li>
-                           <?php
-                            echo displayMenu($menuCohost);
-                            ?>
-
-                        <li class="divider"></li>
-
-                            <li class="dropdown-submenu">
-                            <a tabindex="-1" target="_BLANK" href="https://selector.viator.com/edit-shop">Viator</a>
-                            <ul class="dropdown-menu"> 
-                                <?php
-                                echo displayMenu($oldCourse);
-                                ?>
-                            </ul>
-                        </li>
-
-                        <li class="divider"></li>
-
-                            <?php
-                            echo displayMenu($menuEvents);
-                            ?>
-                        </ul>
-                    </li>
-					
-<?php
-$menuContacts = array( 
-    'Upwork Messages' => array(
-        'href' => 'https://www.upwork.com/ab/messages/rooms/room_007a0a45db0a964b83f0854be6c2e37e?pageTitle=Mahran%20Makin&companyReference=1816859020641894400&sidebar=true',
-        'attr' => 'target="_BLANK"' 
-    ),
-    'Transaction History' => array(
-        'href' => 'https://www.upwork.com/nx/payments/reports/transaction-history',
-        'attr' => 'target="_BLANK"',
-        'divider' => 1,
-    ),
-     
-    'Batch Skip Trace' => array(
-        'href' => 'https://app.batchskiptracing.com/app/skip-trace/list',
-        'attr' => 'target="_BLANK"',
-        'divider' => 1,
-    ), 
-    
-    'Close Leads' => array(
-        'href' => 'https://app.close.com/leads',
-        'attr' => 'target="_BLANK"' 
-    ), 
-    'Email Signature' => array( 
-        'href' => 'https://app.close.com/settings/email/',
-        'attr' => 'target="_BLANK"' 
-    ),
-    'Email Templates' => array( 
-        'href' => 'https://app.close.com/settings/templates/email/',
-        'attr' => 'target="_BLANK"' 
-    ),
-    'Close Sched Links' => array(
-        'href' => 'https://app.close.com/settings/scheduling-links/my-links/',
-        'attr' => 'target="_BLANK"' 
-    ),
-);
-?>                 
-                    <li id="contacts"> 
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Contacts <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-
-                            <?php
-                            echo dropdownMenu($menuContacts);
-                            ?>
-                            
-                        </ul>
-                    </li>
-
-<?php
- 
-$menuSales = array( 
-    'divider',
-    'Awning' => array(
-        'href' => 'https://awning.com/airbnb-estimator',
-        'attr' => 'target="_BLANK"'
-    ), 
-    'Airdna' => array(
-        'href' => 'https://app.airdna.co/data',
-        'attr' => 'target="_BLANK"'
-    ),
-    'Pricelabs Rev Est' => array(
-        'href' => 'https://app.pricelabs.co/revenue_estimator',
-        'attr' => 'target="_BLANK"'),
-);
-?>
-                <li id="contacts"> 
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Sales <b class="caret"></b></a>
-                      
-                    <ul class="dropdown-menu"> 
-                        <li>
-                            <a target="_BLANK" href="https://calendly.com/kaiba-online-acc/prop-mgr?preview_source=et_card&month=2025-07">Calendly</a>
-                        </li>
-
-                       
-                        <?php
-                        echo displayMenu($menuSales);
-                        ?> 
-                    </ul>
-                </li>
+               
  
 <?php
 

@@ -28,6 +28,11 @@ $propsAll = array(
         'Amenities' => 'https://www.airbnb.com/hosting/listings/editor/1570074268054232382/details/amenities',
         'Fees' => 'https://www.airbnb.com/multicalendar/1570074268054232382/pricing-settings#fees',
         'A Live' => 'https://www.airbnb.com/rooms/1570074268054232382/',
+
+        'Vrbo Listing' => 'https://www.vrbo.com/supply/pe/?propertyId=123807237', 
+        'V Fees' => 'https://www.vrbo.com/pxcalendars/settings/321.4995977.5570140/fees',
+        'V Ins' => 'https://www.vrbo.com/rm/settings/protection/l-321.4995977.5570140',
+        'V Live' => 'https://www.vrbo.com/4995977?dateless=true', 
          
         'Pricelabs' => 'https://app.pricelabs.co/pricing?listings=0f570685-186b-41ac-81e1-68093536a3fd&pms_name=smartbnb&open_calendar=true', 
         'Comp Set' => 'https://app.pricelabs.co/reports/162367?compSet=Lake+Erie+PA+16507&template=full_dashboard',
@@ -35,32 +40,7 @@ $propsAll = array(
         'Hospitable' => 'https://my.hospitable.com/properties/property/2084386/messaging-rules',
         'H Calendar' => 'https://my.hospitable.com/calendar/property/2084386', 
     ), 
- 
-
-/*
-    '6/3/1.5 | 1680 Willow Grove' => array(
-        'client' => 'Angela Scott', 
-        'close' => 'https://app.close.com/lead/lead_j5cfFo7sx6C4ngnbzUqd3qMHoZsAInpP9xowaRaL5Ei/', 
-        'zip' => '19090', 
-        'shorturl' => 'airbnb.com/h/willow-grove-townhouse', 
-        'Turno' => 'https://app.turno.com/properties/616644',
-        'G-Drive' => '#', 
-        'Prop Hub' => '#',
-        'Viatour' => '#',
-
-        'Airbnb Listing' => 'https://www.airbnb.com/hosting/listings/editor/1556014027336970177/details/photo-tour', 
-        'Amenities' => 'https://www.airbnb.com/hosting/listings/editor/1556014027336970177/details/amenities',
-        'Fees' => 'https://www.airbnb.com/hosting/listings/editor/1556014027336970177/details/fees',
-        'A Live' => 'https://www.airbnb.com/rooms/1556014027336970177/',
-         
-        'Pricelabs' => 'https://app.pricelabs.co/pricing?listings=e1b08cf6-b39c-44ab-b8fe-59fd024ac396&pms_name=smartbnb&open_calendar=true', 
-        'Comp Set' => 'https://app.pricelabs.co/reports/160875?compSet=1680+Easton+Rd++Willow+Grove+PA&template=full_dashboard',
-        'Rankbreeze' => '#',
-        'Hospitable' => 'https://my.hospitable.com/properties/property/2060148/messaging-rules',
-        'H Calendar' => 'https://my.hospitable.com/calendar/property/2060148', 
-    ), 
- */
-
+  
     '6/3/1.5 | 59 Gregory Dr ' => array(
         'client' => 'Steve Summers', 
         'close' => 'https://app.close.com/lead/lead_oia96IQJqCQ094vteteMEnU4ddKON1Q50WKlozLiRkI/#contactId=cont_42RCv5CNx0lb6UFUeO6UHPZVmZk15xDUJetIP26sf69', 
