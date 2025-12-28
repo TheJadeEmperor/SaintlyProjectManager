@@ -160,7 +160,23 @@ echo '<p>&nbsp;</p><p><b>Wordpress plugins</b></p>';
 echo displayLinks($tools); 
 
 
+echo '<p>&nbsp;</p><p><b>Find tenants</b></p>';
+
+$tenants = array(
+    'TurboTenant' => 'https://rental.turbotenant.com',
+    'Leads' => 'https://rental.turbotenant.com/owners/renters/leads?page=0', 
+    'Property' => 'https://rental.turbotenant.com/owners/properties/manage/TGlzdGluZzoxNDMyNzYw/overview',
+    'sublet' => 'https://www.sublet.com/'
+
+); 
+
+echo displayLinks($tenants); 
+
+
 ?>
+
+ 
+    
     </td>
     </tr>
 </table>

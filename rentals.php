@@ -119,7 +119,6 @@ $propsAll = array(
         'Rankbreeze' => 'https://app.rankbreeze.com/rankings/116605/optimization',
         'Hospitable' => 'https://my.hospitable.com/properties/property/1830574/messaging-rules', 
         'H Calendar' => 'https://my.hospitable.com/calendar/property/1830574', 
-        'Hostb' => 'https://www.hostbuddy.ai/workbench/NY%20%7C%20Brklyn%20%7C%2011229%20%7C%202%201%201',
     ),
  
 );
@@ -158,15 +157,7 @@ $propsAll = array(
                 LOS = length of stay <br /> 
             </div>
              <div class="section-heading">
-                <br />Furnished Finder<br /> 
-                <a href="https://www.furnishedfinder.com/members/tenant-lead" target="_BLANK">Leads</a><br /> 
-                <a href="https://www.furnishedfinder.com/members/tenant-message" target="_BLANK">Messages</a> <br /> 
-                <a href="https://www.furnishedfinder.com/members/pm/availability?p=930555_1" target="_BLANK"> Calendar</a> <br />
-            
-                <br />TurboTenant<br />
-                <a href=" https://rental.turbotenant.com/owners/renters/leads?page=0" target="_BLANK"> Leads</a> <br />
-                <a href=" https://rental.turbotenant.com/owners/properties/manage/TGlzdGluZzoxNDMyNzYw/overview" target="_BLANK">Property</a> <br />
-            
+    
             </div>
             <div>
                 <br /> AI Tools <br /> 
