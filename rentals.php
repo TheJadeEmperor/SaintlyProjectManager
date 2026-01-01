@@ -173,6 +173,15 @@ $propsAll = array(
 
                 <a href="https://drive.google.com/drive/folders/1bqj6vWUCHvW9Wk5KSSCcWHB0NK7BFCQH" target="_BLANK">VA Training</a><br /> 
             </div>
+            <div>
+                <br />
+                Tenants <br />
+                <a href="https://rental.turbotenant.com/owners/renters/leads" target="_BLANK">TurboTenant</a> <br />
+
+                <a href="https://app.close.com/lead/lead_FL2SnEgR1sfgAAA9HwmmRCscCUQ7eKiVjFLIlQCQwU3/" target="_BLANK">Zamir Shine</a><br /> 
+
+                 <br />
+            </div>
         </div>
         <div class="col-9">
             <div class="row">

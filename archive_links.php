@@ -116,16 +116,25 @@ classcentral.org
 logodiffusion 
 fakedetail.com
 ',
-    'AI img' => 'https://coopeai.com/',
-    'Deepfake videos ' => 'heygen',
     
-
 );
 
 
-
-echo '<p><b>Hacking & AI</b></p>';
+echo '<p><b>Hacking</b></p>';
 echo displayLinks($hack); 
+
+$ai = array( 
+    'AI img' => 'https://coopeai.com/', 
+    'AI Images' => 'Chatgpt Sora
+Gemini',
+    'Deepfake videos ' => 'https://heygen.com',
+    'Coding' => 'https://claude.ai',
+    'Website' => 'https://webflow.ai'
+);
+
+echo '<p><b>AI</b></p>';
+echo displayLinks($ai); 
+
 
 
 
@@ -166,12 +175,29 @@ $tenants = array(
     'TurboTenant' => 'https://rental.turbotenant.com',
     'Leads' => 'https://rental.turbotenant.com/owners/renters/leads?page=0', 
     'Property' => 'https://rental.turbotenant.com/owners/properties/manage/TGlzdGluZzoxNDMyNzYw/overview',
-    'sublet' => 'https://www.sublet.com/'
+    'sublet' => 'https://www.sublet.com/', 
+    'sinistar' => 'https://sinistar.com/', 
+    'crew dogs' => 'crew dogs',
+    'Navigating an Airbnb Ban...' => 'https://www.odntuk.com/blog/navigating-an-airbnb-ban-and-moving-from-short-term-rentals-to-month-to-month-hosting'
 
 ); 
 
 echo displayLinks($tenants); 
 
+
+$radio5g = array (
+    '5GRadio1' => 'https://5gradio1.com/',
+    'radio.co' => 'https://studio.radio.co/stations/sbd4b81243',
+    'radioking' => 'https://manager.radioking.com/radio/652294/dashboard',
+    'My Apps | Elfsight' => ' https://dash.elfsight.com/apps/radio-player',
+    'radioking' => 'https://manager.radioking.com/radio/652294/dashboard',
+    'myculturelink' => ' https://myculturelink.com/',
+
+   
+); 
+
+
+echo displayLinks($radio5g); 
 
 ?>
 
