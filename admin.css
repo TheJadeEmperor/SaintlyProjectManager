@@ -14,7 +14,7 @@ body, container {
     background-repeat: repeat-x;
     background-color: #fff6f6;
     font-family: Tahoma, Geneva, sans-serif;
-    font-size: small;
+    font-size: 18px;
     font-weight: 100;
     margin: 0px;
 }
@@ -174,7 +174,7 @@ a:hover  {
     padding: 7px; 
     text-decoration: none;
     text-align: left;
-    font-weight:600;
+    font-weight: 600;
 }
 
 .adminBox table * {

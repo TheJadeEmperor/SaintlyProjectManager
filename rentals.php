@@ -21,9 +21,11 @@ $propsAll = array(
         'shorturl' => 'https://airbnb.com/h/lake-erie',
         'Turno' => 'https://app.turno.com/properties/624428',
         'G-Drive' => 'https://drive.google.com/drive/folders/1nC_tfC4Fm2e90bo6jLfZgGEaBeV_pZdN?usp=sharing', 
+        
         'Prop Hub' => 'https://littlebookstays.com/wp-admin/post.php?post=227&action=edit',
         'Viatour' => 'https://vi.me/yYHFa', 
-
+        'HostB' => 'https://www.hostbuddy.ai/property-chat/d5f77c9d8f39',
+        
         'Airbnb Listing' => 'https://www.airbnb.com/hosting/listings/editor/1570074268054232382/details/photo-tour', 
         'Amenities' => 'https://www.airbnb.com/hosting/listings/editor/1570074268054232382/details/amenities',
         'Fees' => 'https://www.airbnb.com/multicalendar/1570074268054232382/pricing-settings#fees',
@@ -36,7 +38,7 @@ $propsAll = array(
          
         'Pricelabs' => 'https://app.pricelabs.co/pricing?listings=0f570685-186b-41ac-81e1-68093536a3fd&pms_name=smartbnb&open_calendar=true', 
         'Comp Set' => 'https://app.pricelabs.co/reports/162367?compSet=Lake+Erie+PA+16507&template=full_dashboard',
-        'Rankbreeze' => '#', 
+        'Rankbreeze' => 'https://app.rankbreeze.com/rankings/140051/optimization', 
         'Hospitable' => 'https://my.hospitable.com/properties/property/2084386/messaging-rules',
         'H Calendar' => 'https://my.hospitable.com/calendar/property/2084386', 
     ), 
@@ -48,9 +50,11 @@ $propsAll = array(
         'shorturl' => 'airbnb.com/h/tumbling-leaf-cabin',
         'Turno' => 'https://app.turno.com/properties/589380',
         'G-Drive' => 'https://drive.google.com/drive/folders/1PDWk7DbFB25ypyLAVJsrBxu4uN8W9EKd', 
+
         'Prop Hub' => 'https://littlebookstays.com/wp-admin/post.php?post=131&action=edit',
-  
         'Viatour' => 'https://vi.me/nypNX',
+        'HostB' => 'https://www.hostbuddy.ai/property-chat/cd6d75ce85ab',
+
         
         'Airbnb Listing' => 'https://www.airbnb.com/hosting/listings/editor/1501050725249962697/details/photo-tour', 
         'Amenities' => 'https://www.airbnb.com/hosting/listings/editor/1501050725249962697/details/amenities',
@@ -72,16 +76,15 @@ $propsAll = array(
     '10/3/2 | 105 Pine Cone Lane' => array(
         'client' => 'Jennifer Cottone', 
         'close' => 'https://app.close.com/lead/lead_IRrbBfQiVtuFhiBHnGUSzej8vX4yPcRzIrFa1KTxc8X/', 
-        
         'zip' => '18426',
         'shorturl' => 'https://airbnb.com/h/mtg-firepit',
-
         'G-Drive' => 'https://drive.google.com/drive/folders/14ylgljqnW7Zy_HcoxXhxOSiO9VZqv9VH?usp=drive_link', 
+        
         'Prop Hub' => 'https://littlebookstays.com/wp-admin/post.php?post=119&action=edit', 
         'Viatour' => 'https://vi.me/agHe1',
+        'HostB' => 'https://www.hostbuddy.ai/property-chat/c012b30e8d51',
 
         'Airbnb Listing' => 'https://www.airbnb.com/hosting/listings/editor/1397966363653363779/details/photo-tour',
-
         'Amenities' => 'https://www.airbnb.com/hosting/listings/editor/1397966363653363779/details/amenities',
         'Fees' => 'https://www.airbnb.com/multicalendar/1397966363653363779/pricing-settings/fees',
         'A Live' => 'https://www.airbnb.com/rooms/1397966363653363779?source_impression_id=p3_1752274162_P3ZEAwc7Eau_D_ga',
@@ -110,6 +113,7 @@ $propsAll = array(
         'G-Drive' => 'https://drive.google.com/drive/folders/1u4P7hDa_OXMzd3wGbEeNF0pFPHXueRiA?usp=drive_link',
         'Prop Hub' => 'https://littlebookstays.com/wp-admin/post.php?post=115&action=edit', 
         'Viatour' => 'https://vi.me/Khe9W',
+        'HostB' => 'https://www.hostbuddy.ai/property-chat/45fe2f34858d',
         
         'Airbnb Listing' => 'https://www.airbnb.com/hosting/listings/editor/841300394500737442/details/photo-tour',
         'Amenities' => 'https://www.airbnb.com/hosting/listings/editor/841300394500737442/details/amenities',
@@ -266,10 +270,7 @@ $propsAll = array(
 
         $output .= '<a target="_BLANK" href="'.$p['Hospitable'].'"><span class="hospital">Hospital</span></a> | <a target="_BLANK" href="'.$p['H Calendar'].'">Calendar</a> '; 
 
-        if($p['Hostb']) {
-             $output .= ' | <a target="_BLANK" href="'.$p['Hostb'].'"><span class="hostb">Hostbuddy</span></a>';
-        } 
-
+     
         $output .= '</div>
         <div class="col-sm text-start"> ';
  
@@ -280,9 +281,12 @@ $propsAll = array(
             $output .= ' | <a target="_BLANK" href="'.$p['Comp Set'].'">Comp Set</a> '; 
         }
 
-
         if ($p['Viatour']) { 
             $output .= $newline.'<a target="_BLANK" href="'.$p['Viatour'].'"><span class="viator">Viator</span></a>';
+        } 
+
+         if($p['HostB']) {
+             $output .= ' | <a target="_BLANK" href="'.$p['HostB'].'"><span class="hostb">Hostbuddy</span></a>';
         } 
 
         $output .= '</div> 

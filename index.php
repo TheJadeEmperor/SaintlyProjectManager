@@ -453,8 +453,8 @@ echo menuDropDown($mainCohost, $menuCohost);
         'Rankbreeze' => array (
             'href' => 'https://app.rankbreeze.com/listings',
         ), 
-        'Intellihost' => array (
-            'href' => 'https://intellihost.com',
+        'Intellihost DeepRank' => array (
+            'href' => 'https://clients.intellihost.co/deep-rank-ai',
             'attr' => 'd' 
         ), 
         'Turno Calendar' => array(
