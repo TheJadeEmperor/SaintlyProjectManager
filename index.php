@@ -308,7 +308,11 @@ switch($_GET['action']) {
         ),
         'phpMyAdmin' => array(
             'href' => 'https://hpanel.hostinger.com/websites/littlebookstays.com/databases/my-sql-databases',
-        ) 
+        ),
+        'Notion Home Base' => array(
+            'href' => 'https://www.notion.so/Put-these-docs-into-notion-2ece540782c18085b79dd552bc03b48d?source=copy_link'
+        )
+
     );
  
     echo menuDropDown($mainHost, $menuHost);
@@ -318,7 +322,7 @@ switch($_GET['action']) {
     $mainCohost = 'Cohost';
 
    $menuCohost = array(
-        'Cohost Group' => array(
+        'Cohost Course' => array(
             'href' => 'https://cohostingacquisitions.circle.so/c/module-1/',
             'attr' => 'c'
         ), 
@@ -327,6 +331,9 @@ switch($_GET['action']) {
         ),
         'Group Chat' => array(
             'href' => 'https://cohostingacquisitions.circle.so/c/group-chat/',
+        ),
+        'Events Calendar' => array(
+            'href' => 'https://cohostingacquisitions.circle.so/events',
             'attr' => 'd'
         ),
 
@@ -354,13 +361,19 @@ echo menuDropDown($mainCohost, $menuCohost);
     $mainSales = 'Sales';
 
     $menuSales = array(
-        'Close' => array( 
+        'Close | Inbox' => array( 
             'href' => ' https://app.close.com/tasks/inbox/',
             'attr' => 'c'
         ), 
         'All Leads' => array( 
             'href' => 'https://app.close.com/leads',
         ), 
+        'Sales Calls' => array( 
+            'href' => 'https://app.close.com/activities/custom-activity/actitype_3OqOoCupUQuxlOENmuEx0J/save_bpIvBpT4oH6oKXHh2CkeEMPeUZrEUqkAIdKXpTmPVF7/
+',
+        ), 
+
+
         'Sched Links' => array( 
             'href' => 'https://app.close.com/settings/scheduling-links/my-links/',
         ), 
@@ -378,7 +391,7 @@ echo menuDropDown($mainCohost, $menuCohost);
 
         ), //'Email Templates'
         'Google Meets' => array( 
-            'href' => ' ', 
+            'href' => 'https://meet.google.com/zjn-zuxt-zzp', 
         ),
         'Calendly' => array( 
             'href' => 'https://calendly.com/kaiba-online-acc/prop-mgr?preview_source=et_card',
@@ -463,6 +476,13 @@ echo menuDropDown($mainCohost, $menuCohost);
         'Turno Chat' => array(
             'href' => 'https://chat.turno.com/',
         ),     
+        'Teammates & Cleaners' => array(
+            'href' => 'https://www.notion.so/Teammates-Cleaners-2ede540782c180f9af9ef51f201b3fcc?source=copy_link',
+        ),
+        
+        'Maint | Appts' => array(
+            'href' => 'https://app.close.com/activities/custom-activity/actitype_3oEjtZdr8UkkqfmtJBDdWi/save_bjqFnOtjRgQsI0Qm9AqG4fSPAGxCtCfOgK6oskcFcIS/',
+        ),
 
    );
 
@@ -482,9 +502,15 @@ echo menuDropDown($mainCohost, $menuCohost);
             'href' => 'https://www.airbnb.com/users/transaction_history', 
             'attr' => 'd'
         ),
-        'Maint | Appts' => array(
-            'href' => 'https://app.close.com/activities/custom-activity/actitype_3oEjtZdr8UkkqfmtJBDdWi/save_bjqFnOtjRgQsI0Qm9AqG4fSPAGxCtCfOgK6oskcFcIS/',
+        'Bad Review SOP' => array(
+            'href' => 'https://habitual-airbus-6d2.notion.site/Bad-Review-SOP-2f3e540782c1802e91d1c71fe2dc1548
+',  
         ),
+        'Prop Hub' => array(
+            'href' => 'https://www.notion.so/LBS-Prop-Hub-2ede540782c1800685a1f6ed31f72e0f', 
+           
+        ),
+
     );
 
     
