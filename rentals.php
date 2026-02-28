@@ -115,6 +115,26 @@ $propsAll = array(
         'Viatour' => 'https://vi.me/Khe9W',
         'HostB' => 'https://www.hostbuddy.ai/property-chat/45fe2f34858d',
         
+        'Airbnb Listing' => 'https://www.airbnb.com/hosting/listings/editor/1624021775204340721/details/photo-tour',
+        'Amenities' => 'https://www.airbnb.com/hosting/listings/editor/1624021775204340721/details/amenities',
+        'Fees' => 'https://www.airbnb.com/multicalendar/1624021775204340721/pricing-settings/fees',
+        'A Live' => 'https://www.airbnb.com/rooms/1624021775204340721?source_impression_id=p3_1719790415_P36temSnhYUDm2Le',
+        'Pricelabs' => 'https://app.pricelabs.co/pricing?listings=b67a0e70-784b-4c5f-9713-e2b2cfe7342c&pms_name=smartbnb&open_calendar=true', 
+        'Rankbreeze' => 'https://app.rankbreeze.com/rankings/116605/optimization',
+        'Hospitable' => 'https://my.hospitable.com/properties/property/1830574/messaging-rules', 
+        'H Calendar' => 'https://my.hospitable.com/calendar/property/1830574', 
+    ),
+
+    'Unlisted | 2037 Coyle Street ' => array(
+        'client' => 'Me myself & I',
+        'zip' => '11229',
+        'shorturl' => 'https://airbnb.com/h/royal-room-brooklyn',
+        'Turno' => 'https://app.turno.com/properties/258377',
+        'G-Drive' => 'https://drive.google.com/drive/folders/1u4P7hDa_OXMzd3wGbEeNF0pFPHXueRiA?usp=drive_link',
+        'Prop Hub' => 'https://littlebookstays.com/wp-admin/post.php?post=115&action=edit', 
+        'Viatour' => 'https://vi.me/Khe9W',
+        'HostB' => 'https://www.hostbuddy.ai/property-chat/45fe2f34858d',
+        
         'Airbnb Listing' => 'https://www.airbnb.com/hosting/listings/editor/841300394500737442/details/photo-tour',
         'Amenities' => 'https://www.airbnb.com/hosting/listings/editor/841300394500737442/details/amenities',
         'Fees' => 'https://www.airbnb.com/multicalendar/841300394500737442/pricing-settings/fees',

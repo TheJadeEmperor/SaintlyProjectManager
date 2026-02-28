@@ -508,7 +508,6 @@ echo menuDropDown($mainCohost, $menuCohost);
         ),
         'Prop Hub' => array(
             'href' => 'https://www.notion.so/LBS-Prop-Hub-2ede540782c1800685a1f6ed31f72e0f', 
-           
         ),
 
     );
