@@ -482,7 +482,13 @@ echo menuDropDown($mainCohost, $menuCohost);
         
         'Maint | Appts' => array(
             'href' => 'https://app.close.com/activities/custom-activity/actitype_3oEjtZdr8UkkqfmtJBDdWi/save_bjqFnOtjRgQsI0Qm9AqG4fSPAGxCtCfOgK6oskcFcIS/',
+            'attr' => 'd' 
         ),
+        'Listings List' => array (
+            'href' => 'https://www.notion.so/Listings-List-Clients-Cleaners-2f1e540782c180c5a798d7ac4933e741',
+            
+        ), 
+        
 
    );
 

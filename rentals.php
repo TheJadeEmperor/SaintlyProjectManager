@@ -120,6 +120,12 @@ $propsAll = array(
         'Fees' => 'https://www.airbnb.com/multicalendar/1624021775204340721/pricing-settings/fees',
         'A Live' => 'https://www.airbnb.com/rooms/1624021775204340721?source_impression_id=p3_1719790415_P36temSnhYUDm2Le',
         'Pricelabs' => 'https://app.pricelabs.co/pricing?listings=b67a0e70-784b-4c5f-9713-e2b2cfe7342c&pms_name=smartbnb&open_calendar=true', 
+
+        'Vrbo Listing' => 'https://www.vrbo.com/supply/pe/?propertyId=96496552', 
+        'V Fees' => 'https://www.vrbo.com/pxcalendars/settings/321.3541578.4114724/fees',
+        'V Ins' => 'https://www.vrbo.com/rm/settings/protection/l-321.3541578.4114724',
+        'V Live' => 'https://www.vrbo.com/3541578?dateless=true', 
+         
         'Rankbreeze' => 'https://app.rankbreeze.com/rankings/116605/optimization',
         'Hospitable' => 'https://my.hospitable.com/properties/property/1830574/messaging-rules', 
         'H Calendar' => 'https://my.hospitable.com/calendar/property/1830574', 
@@ -198,12 +204,7 @@ $propsAll = array(
                 <a href="https://drive.google.com/drive/folders/1bqj6vWUCHvW9Wk5KSSCcWHB0NK7BFCQH" target="_BLANK">VA Training</a><br /> 
             </div>
             <div>
-                <br />
-                Tenants <br />
-                <a href="https://rental.turbotenant.com/owners/renters/leads" target="_BLANK">TurboTenant</a> <br />
-
-                <a href="https://app.close.com/lead/lead_FL2SnEgR1sfgAAA9HwmmRCscCUQ7eKiVjFLIlQCQwU3/" target="_BLANK">Zamir Shine</a><br /> 
-
+              
                  <br />
             </div>
         </div>
