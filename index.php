@@ -3,8 +3,8 @@
 function menuDropDown ($mainName, $dropDownMenu) {
 
     $display = '<li id="cohost">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">'.$mainName.'<b class="caret"></b></a>
-            <ul class="dropdown-menu">';
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">'.$mainName.'<b class="caret"></b></a>
+    <ul class="dropdown-menu">';
 
     //loop thru drop down menu
     foreach($dropDownMenu as $name => $menu) {
@@ -12,7 +12,6 @@ function menuDropDown ($mainName, $dropDownMenu) {
 
         if($menu['attr'] == 'c') //caret
             $caret = '<b class="caret"></b>';
-
 
         if($menu['submenu']) { //submenu - right side
             $display .= '<li class="dropdown-submenu">
@@ -337,6 +336,9 @@ switch($_GET['action']) {
             'attr' => 'd'
         ),
 
+        'Data Submit' => array(
+            'href' => 'https://awais.codes/co-hosting-acquisitions/',
+        ),
         'Batch Skip Trace' => array(
             'href' => 'https://app.batchskiptracing.com/app/skip-trace/list',
             'attr' => 'target="_BLANK"',
@@ -357,7 +359,6 @@ switch($_GET['action']) {
 
 echo menuDropDown($mainCohost, $menuCohost);
 
-
     $mainSales = 'Sales';
 
     $menuSales = array(
@@ -368,11 +369,9 @@ echo menuDropDown($mainCohost, $menuCohost);
         'All Leads' => array( 
             'href' => 'https://app.close.com/leads',
         ), 
-        'Sales Calls' => array( 
-            'href' => 'https://app.close.com/activities/custom-activity/actitype_3OqOoCupUQuxlOENmuEx0J/save_bpIvBpT4oH6oKXHh2CkeEMPeUZrEUqkAIdKXpTmPVF7/
-',
+        'AI Agent' => array( 
+            'href' => 'https://app.close.com/chloe/agentconfig_032u5sLbxvJrebGDYtQ4Ja/',
         ), 
-
 
         'Sched Links' => array( 
             'href' => 'https://app.close.com/settings/scheduling-links/my-links/',
@@ -410,9 +409,7 @@ echo menuDropDown($mainCohost, $menuCohost);
                     'href' => 'https://app.pricelabs.co/revenue_estimator', 
                 ),
             )
-
         )
-       
     ); 
 
 
@@ -463,18 +460,12 @@ echo menuDropDown($mainCohost, $menuCohost);
             'href' => 'https://pricelabs.co/reports',
             'attr' => 'd' 
         ), 
-        'Rankbreeze' => array (
-            'href' => 'https://app.rankbreeze.com/listings',
-        ), 
         'Intellihost DeepRank' => array (
             'href' => 'https://clients.intellihost.co/deep-rank-ai',
             'attr' => 'd' 
         ), 
         'Turno Calendar' => array(
             'href' => 'https://app.turno.com/view/schedule',
-        ),
-        'Turno Chat' => array(
-            'href' => 'https://chat.turno.com/',
         ),     
         'Teammates & Cleaners' => array(
             'href' => 'https://www.notion.so/Teammates-Cleaners-2ede540782c180f9af9ef51f201b3fcc?source=copy_link',

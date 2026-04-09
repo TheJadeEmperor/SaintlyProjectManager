@@ -191,12 +191,14 @@ $propsAll = array(
             </div>
             <div>
                 <br /> AI Tools <br /> 
-                <a href="https://www.chatgpt.com/" target="_BLANK">chumpgpt</a><br /> 
-                <a href="https://www.grok.com" target="_BLANK">grok</a> <br /> 
-                <a href="https://gemini.google.com/app" target="_BLANK">gemini</a> <br />
+                <a target="_BLANK" href="https://www.grok.com">grok</a> <br /> 
+                <a target="_BLANK" href="https://gemini.google.com/app">gemini</a> <br />
+                <a target="_BLANK" href="https://app.n8n.cloud/dashboard?utm_source=paid_google&utm_medium=cpc_google&utm_campaign=google_sem_brand_XX_prospecting_12/23&utm_content=Brand-Exact&utm_term=n8n">n8n</a><br /> 
+                <a target="_BLANK" href="https://dashboard.retellai.com/call-history">Retell</a><br /> 
+                <a target="_BLANK" href="https://zapier.com/app/assets/zaps">Zapier</a>
             </div>
             <div>
-                <br /> Sales Forms <br /> 
+                <br /> <b>Sales Forms</b> <br /> 
                 <a href="https://drive.google.com/drive/folders/1fBPRkrfLUd7_hx08NCDepKgLcgMP1Ekw" target="_BLANK">Onboarding Forms</a><br /> 
 
                 <a href="https://drive.google.com/drive/folders/1vYQLa272dzjUdnllnQyAd-0k-mgxkuMJ" target="_BLANK">Scripts</a><br /> 
