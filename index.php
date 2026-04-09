@@ -6,39 +6,39 @@ function menuDropDown ($mainName, $dropDownMenu) {
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">'.$mainName.'<b class="caret"></b></a>
     <ul class="dropdown-menu">';
 
-    //loop thru drop down menu
     foreach($dropDownMenu as $name => $menu) {
-        $div = $caret = '';  //attr | c =caret | d = divider
+        $div = $caret = $iconHTML = ''; 
 
-        if($menu['attr'] == 'c') //caret
-            $caret = '<b class="caret"></b>';
+        // 1. Logic for adding the icon
+        if(isset($menu['icon'])) {
+            // This creates <i class="fa fa-folder"></i> for example
+            $iconHTML = '<i class="fa '.$menu['icon'].'" style="width: 20px; text-align: center; margin-right: 5px;"></i> ';
+        }
 
-        if($menu['submenu']) { //submenu - right side
+        if($menu['attr'] == 'c') $caret = '<b class="caret"></b>';
+
+        if(isset($menu['submenu'])) { 
             $display .= '<li class="dropdown-submenu">
-                <a tabindex="-1" target="_BLANK" href="'.$menu['href'].'">'.$name.'</a>
+                <a tabindex="-1" target="_BLANK" href="'.$menu['href'].'">'.$iconHTML.$name.'</a>
                     <ul class="dropdown-menu">';
 
-            //loop thru submenu
             foreach($menu['submenu'] as $subName => $subURL) {
-                $display .= '<li><a href="'.$subURL['href'].'" target="_BLANK">'.$subName.'  </a></li>';
+                $subIcon = isset($subURL['icon']) ? '<i class="fa '.$subURL['icon'].'" style="width: 20px; text-align: center; margin-right: 5px;"></i> ' : '';
+                $display .= '<li><a href="'.$subURL['href'].'" target="_BLANK">'.$subIcon.$subName.'</a></li>';
             }
 
-            $display .= '
-                </ul>
-            </li>'; 
+            $display .= '</ul></li>'; 
         }
-        else  //normal menu item
-        $display .= '<li><a href="'.$menu['href'].'" target="_BLANK">'.$name.' '.$caret .'</a></li>';
+        else {
+            // 2. Apply iconHTML here for normal items
+            $display .= '<li><a href="'.$menu['href'].'" target="_BLANK">'.$iconHTML.$name.' '.$caret .'</a></li>';
+        }
 
-       
-        if($menu['attr'] == 'd') //divider
-            $div = '<li class="divider"></li>';
-         $display .= $div;
+        if($menu['attr'] == 'd') $div = '<li class="divider"></li>';
+        $display .= $div;
     }
 
-    $display .= '</ul>
-    </li>';
-
+    $display .= '</ul></li>';
     return $display; 
 }
 
@@ -140,12 +140,6 @@ switch($_GET['action']) {
 		$link = 'https://mail.google.com/mail/u/0/?shva=1#settings/accounts';
 		break;
 
-    case 'api-login': 
-        $link = $apiHost;
-        break;
-    case 'curl': 
-        $link = $apiHost .'curl.php';
-        break;
 
     case 'splash-freereport-live':
         $link = 'https://ultimateneobuxstrategy.com/?action=freereport';
@@ -184,14 +178,19 @@ switch($_GET['action']) {
         break;
 }
 ?>
-<html>
+<!DOCTYPE html>
 <head>
     <title>Saintly Projects Manager</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link href="include/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" media="screen" />
     <link href="include/bootstrap/css/bootstrap-theme.css" rel="stylesheet" type="text/css" media="screen" />    
+
     <link href="<?= $dir ?>admin.css" rel="stylesheet" type="text/css" media="screen" />
     <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
     <script src="http://code.jquery.com/jquery-latest.min.js" type='text/javascript' /></script> 
+
     <script src="include/jquery-ui/ui/jquery-ui.js"></script>
     <script src="include/bootstrap/js/bootstrap.js"></script>
     <style>
@@ -237,9 +236,7 @@ switch($_GET['action']) {
             webkit-border-radius: 6px 0 6px 6px;
         }
 
-        .container {
-            margin: 0 !important;
-        }
+      
     </style>
 </head>
 <body>
@@ -267,19 +264,21 @@ switch($_GET['action']) {
 
     $menuLocal = array(
        'Localhost' => array(
-            'href' => 'http://localhost'
+            'href' => 'http://localhost',
+            'icon' => 'fa-home'
         ), 
         'phpMyAdmin' => array(
             'href' => 'http://localhost/phpmyadmin/', 
-        ),
+            'icon' => 'fa-database' ),
         'Account Manager' => array(
             'href' => 'http://SaintlyAccountsManager.test',
-            'attr' => 'd' 
-        ),
+            'icon' => 'fa-user', 
+            'attr' => 'd' ),
         'Achive Links' => array(
-            'href' => '?action=archive'),
+            'href' => '?action=archive',
+            'icon' => 'fa-archive' ),
         'NUS Blog & SEO' => array(
-            'href' => '?action=blog'),
+            'href' => '?action=blog' ),
         'NUS BPS' => array(
             'href' => '?action=nus'),           
         'Little Book Stays' => array(
@@ -293,10 +292,12 @@ switch($_GET['action']) {
 
     $menuHost = array(
         'gmail Accounts' => array(
-            'href' => 'https://mail.google.com/mail/u/0/?shva=1#settings/accounts'
+            'href' => 'https://mail.google.com/mail/u/0/?shva=1#settings/accounts',
+            'icon' => 'fa-envelope'
         ),
         'gmail Filters' => array(
             'href' => 'https://mail.google.com/mail/u/0/?shva=1#settings/filters',
+            'icon' => 'fa-filter',
             'attr' => 'd' 
         ),
         'Hostinger' => array(
@@ -317,7 +318,6 @@ switch($_GET['action']) {
     echo menuDropDown($mainHost, $menuHost);
 
  
-
     $mainCohost = 'Cohost';
 
    $menuCohost = array(
@@ -327,32 +327,27 @@ switch($_GET['action']) {
         ), 
         'Cohost Course ' => array(
             'href' => 'https://cohostingacquisitions.circle.so/c/module-1/',
+             'icon' => 'fa-graduation-cap',
         ),
         'Group Chat' => array(
             'href' => 'https://cohostingacquisitions.circle.so/c/group-chat/',
+            'icon' => 'fa-comments'
         ),
         'Events Calendar' => array(
             'href' => 'https://cohostingacquisitions.circle.so/events',
+            'icon' => 'fa-calendar',
             'attr' => 'd'
         ),
 
         'Data Submit' => array(
             'href' => 'https://awais.codes/co-hosting-acquisitions/',
+            'icon' => 'fa-file'
         ),
         'Batch Skip Trace' => array(
             'href' => 'https://app.batchskiptracing.com/app/skip-trace/list',
-            'attr' => 'target="_BLANK"',
-            'attr' => 'd'
+            'icon' => 'fa-search',
+             
         ), 
-
-        'Upwork Msg' => array(
-            'href' => 'https://www.upwork.com/ab/messages/rooms/room_007a0a45db0a964b83f0854be6c2e37e?pageTitle=Mahran%20Makin&companyReference=1816859020641894400&sidebar=true',
-        ),
-        'Upwork Trans History' => array(
-            'href' => 'https://www.upwork.com/nx/payments/reports/transaction-history',
-            'attr' => 'target="_BLANK"',
-            
-        ),
 
     ); 
 
@@ -364,20 +359,29 @@ echo menuDropDown($mainCohost, $menuCohost);
     $menuSales = array(
         'Close | Inbox' => array( 
             'href' => ' https://app.close.com/tasks/inbox/',
+            'icon' => 'fa-inbox', 
             'attr' => 'c'
         ), 
         'All Leads' => array( 
             'href' => 'https://app.close.com/leads',
+            'icon' => 'fa-users'
         ), 
         'AI Agent' => array( 
             'href' => 'https://app.close.com/chloe/agentconfig_032u5sLbxvJrebGDYtQ4Ja/',
+            'icon' => 'fa-android'
         ), 
 
+        'Statuses & Pipes' => array( 
+            'href' => 'https://app.close.com/settings/statuses/',
+            'icon' => 'fa-link'
+        ), 
         'Sched Links' => array( 
-            'href' => 'https://app.close.com/settings/scheduling-links/my-links/',
+            'href' => 'https://app.close.com/settings/scheduling/',
+            'icon' => 'fa-link'
         ), 
         'Email Templates' => array( 
             'href' => 'https://app.close.com/settings/templates/email/',
+            'icon' => 'fa-file-text',
             'attr' => 'd',
             'submenu' => array(
                 'E Templates' => array(
@@ -391,12 +395,15 @@ echo menuDropDown($mainCohost, $menuCohost);
         ), //'Email Templates'
         'Google Meets' => array( 
             'href' => 'https://meet.google.com/zjn-zuxt-zzp', 
+            'icon' => 'fa-video-camera'
         ),
         'Calendly' => array( 
             'href' => 'https://calendly.com/kaiba-online-acc/prop-mgr?preview_source=et_card',
+            'icon' => 'fa-calendar-check-o',
             'attr' => 'd',
         ),
         'Rev Projections' => array(
+            'icon' => 'fa-line-chart',
            'submenu' => array(
                 'Awning' => array(
                     'href' => 'https://awning.com/airbnb-estimator'
@@ -421,27 +428,38 @@ echo menuDropDown($mainCohost, $menuCohost);
     $menuGuests = array(
         'BNB Messages' => array(
             'href' => 'https://www.airbnb.com/hosting/inbox/folder/all/', 
+            'icon' => 'fa-commenting',
             'attr' => 'd'
         ), 
         'Hospital Inbox' => array(
             'href' => 'https://my.hospitable.com/inbox/segments/default', 
+            'icon' => 'fa-inbox',
             'attr' => 'c'
         ), 
+        'User Mgmt' => array(
+            'href' => 'https://my.hospitable.com/settings/user-management', 
+            'icon' => 'fa-inbox',
+        ), 
         'Calendars' => array (
-            'href' => 'https://my.hospitable.com/calendar/occupancy', 
+            'href' => 'https://my.hospitable.com/calendar/occupancy',
+            'icon' => 'fa-calendar', 
         ),
         'Msg Rules' => array (
             'href' => 'https://my.hospitable.com/gx/rules',
+            'icon' => 'fa-cog'
         ),
         'Upsells' => array (
             'href' => 'https://my.hospitable.com/gx/upsells',
-            'attr' => 'd'
+            'attr' => 'd',
+            'icon' => 'fa-tag'
         ), 
         'Hosp AI' => array (
-            'href' => 'https://my.hospitable.com/gx/questions'
+            'href' => 'https://my.hospitable.com/gx/questions',
+            'icon' => 'fa-magic'
         ),
         'Hostbuddy' => array (
-            'href' => 'https://www.hostbuddy.ai/properties'
+            'href' => 'https://www.hostbuddy.ai/properties',
+            'icon' => 'fa-android'
         ),
 
 
@@ -455,32 +473,32 @@ echo menuDropDown($mainCohost, $menuCohost);
    $menuPM = array(
         'Pricelabs Dashboard' => array(
             'href' => 'https://pricelabs.co/pricing',
+            'icon' => 'fa-tachometer',
         ),
         'Comp Sets' => array(
             'href' => 'https://pricelabs.co/reports',
+            'icon' => 'fa-bar-chart',
             'attr' => 'd' 
         ), 
         'Intellihost DeepRank' => array (
             'href' => 'https://clients.intellihost.co/deep-rank-ai',
+            'icon' => 'fa-trophy',
             'attr' => 'd' 
         ), 
         'Turno Calendar' => array(
             'href' => 'https://app.turno.com/view/schedule',
+            'icon' => 'fa-calendar',
         ),     
-        'Teammates & Cleaners' => array(
-            'href' => 'https://www.notion.so/Teammates-Cleaners-2ede540782c180f9af9ef51f201b3fcc?source=copy_link',
-        ),
-        
+       
         'Maint | Appts' => array(
             'href' => 'https://app.close.com/activities/custom-activity/actitype_3oEjtZdr8UkkqfmtJBDdWi/save_bjqFnOtjRgQsI0Qm9AqG4fSPAGxCtCfOgK6oskcFcIS/',
+            'icon' => 'fa-wrench',
             'attr' => 'd' 
         ),
         'Listings List' => array (
             'href' => 'https://www.notion.so/Listings-List-Clients-Cleaners-2f1e540782c180c5a798d7ac4933e741',
-            
+             'icon' => 'fa-list'
         ), 
-        
-
    );
 
 
@@ -491,27 +509,62 @@ echo menuDropDown($mainCohost, $menuCohost);
    $menuBNB = array(
         'Get Help' => array(
             'href' => 'https://www.airbnb.com/help/contact-us?entry=HELP_CENTER&role=home_host',
+            'icon' => 'fa-question',
         ),
         'Res Center' => array(
             'href' => 'https://www.airbnb.com/resolutions',
+            'icon' => 'fa-balance-scale',
         ),
         'Trans History' => array(
             'href' => 'https://www.airbnb.com/users/transaction_history', 
+            'icon' => 'fa-money',
             'attr' => 'd'
         ),
         'Bad Review SOP' => array(
-            'href' => 'https://habitual-airbus-6d2.notion.site/Bad-Review-SOP-2f3e540782c1802e91d1c71fe2dc1548
-',  
+            'href' => 'https://habitual-airbus-6d2.notion.site/Bad-Review-SOP-2f3e540782c1802e91d1c71fe2dc1548',  
+            'icon' => 'fa-exclamation-triangle'
         ),
         'Prop Hub' => array(
             'href' => 'https://www.notion.so/LBS-Prop-Hub-2ede540782c1800685a1f6ed31f72e0f', 
+            'icon' => 'fa-building', 
         ),
 
     );
 
     
-   echo menuDropDown($mainBNB, $menuBNB);
+    echo menuDropDown($mainBNB, $menuBNB);
  
+
+    $mainTeam = 'Team'; 
+
+    $menuTeam = array(
+        'Zoha Trello' => array(
+            'href' => 'https://trello.com/b/9NK1LyNF/zoha-assistant-benjamin',
+            'icon' => 'fa-book',
+        ),
+        'VA Progress Tracker' => array(
+            'href' => 'https://www.notion.so/VA-Progress-Tracker-2eee540782c180669ff0ce20540e2a34',
+            'icon' => 'fa-book',
+        ), 
+        'Teammates & Cleaners' => array(
+            'href' => 'https://www.notion.so/Teammates-Cleaners-2ede540782c180f9af9ef51f201b3fcc?source=copy_link',
+            'icon' => 'fa-users',
+            'attr' => 'd'
+        ),
+
+        'Upwork Msg' => array(
+            'href' => 'https://www.upwork.com/ab/messages/rooms/room_007a0a45db0a964b83f0854be6c2e37e?pageTitle=Mahran%20Makin&companyReference=1816859020641894400&sidebar=true',
+            'icon' => 'fa-briefcase'
+        ),
+        'Upwork Trans History' => array(
+            'href' => 'https://www.upwork.com/nx/payments/reports/transaction-history', 
+            'icon' => 'fa-money'
+        ),
+        
+
+    );
+
+    echo menuDropDown($mainTeam, $menuTeam);
 ?>    
 
              
@@ -521,7 +574,7 @@ echo menuDropDown($mainCohost, $menuCohost);
                     <li>
                         <form class="navbar-form navbar-left" role="search">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="URL" value="<?= $link ?>" onclick="this.select();" size="70">
+                                <input type="text" class="form-control" placeholder="URL" value="<?= $link ?>" onclick="this.select();" size="40">
                                 <a href="<?=$link?>" target="_BLANK"><input type="button" value="Open in New Window" /></a>
                             </div>
                         </form>

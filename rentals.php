@@ -155,23 +155,31 @@ $propsAll = array(
 
 ?>
 <head>
-    <title>Saintly Projects Manager</title>
+    <title>Saintly Project Manager</title>
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-      <link href="<?= $dir ?>admin.css" rel="stylesheet" type="text/css" media="screen" />
-  
+   
     <script src="http://code.jquery.com/jquery-latest.min.js" type='text/javascript' /></script> 
     <script src="include/jquery-ui/ui/jquery-ui.js"></script>
     <script src="include/bootstrap/js/bootstrap.js"></script>
 
+    <link href="<?= $dir ?>admin.css" rel="stylesheet" type="text/css" media="screen" />
+  
     <style>
         .container {
             margin: 0 !important;
             max-width: unset
+        }
+
+        .fa {
+            width: 20px; text-align: center; margin-right: 5px;
         }
     </style>
 </head>
@@ -186,24 +194,25 @@ $propsAll = array(
                 ADR = average daily rate <br />
                 LOS = length of stay <br /> 
             </div>
-             <div class="section-heading">
-    
+            
+            <div>
+                <br /> <strong>AI Tools</strong>  <br /> 
+                <i class="fa fa-magic"></i> <a target="_BLANK" href="https://www.grok.com">grok</a> | novels <br /> 
+                <i class="fa fa-diamond"></i> <a target="_BLANK" href="https://gemini.google.com/app">gemini | most things</a> <br />
+                <i class="fa fa-code"></i> <a target="_BLANK" href="https://claude.ai/chat/">claude | code</a><br /> 
+                <i class="fa fa-sitemap"></i> <a target="_BLANK" href="https://app.n8n.cloud/dashboard?utm_source=paid_google&utm_medium=cpc_google&utm_campaign=google_sem_brand_XX_prospecting_12/23&utm_content=Brand-Exact&utm_term=n8n">n8n</a> | connects close to retell <br /> 
+                <i class="fa fa-phone"></i> <a target="_BLANK" href="https://dashboard.retellai.com/call-history">Retell</a> | ai agent <br /> 
+                <i class="fa fa-bolt"></i> <a target="_BLANK" href="https://zapier.com/app/assets/zaps">Zapier</a> | automates close
             </div>
             <div>
-                <br /> AI Tools <br /> 
-                <a target="_BLANK" href="https://www.grok.com">grok</a> <br /> 
-                <a target="_BLANK" href="https://gemini.google.com/app">gemini</a> <br />
-                <a target="_BLANK" href="https://app.n8n.cloud/dashboard?utm_source=paid_google&utm_medium=cpc_google&utm_campaign=google_sem_brand_XX_prospecting_12/23&utm_content=Brand-Exact&utm_term=n8n">n8n</a><br /> 
-                <a target="_BLANK" href="https://dashboard.retellai.com/call-history">Retell</a><br /> 
-                <a target="_BLANK" href="https://zapier.com/app/assets/zaps">Zapier</a>
-            </div>
-            <div>
-                <br /> <b>Sales Forms</b> <br /> 
-                <a href="https://drive.google.com/drive/folders/1fBPRkrfLUd7_hx08NCDepKgLcgMP1Ekw" target="_BLANK">Onboarding Forms</a><br /> 
+                <br /> <strong>Sales Forms</strong> <br /> 
+                <i class="fa fa-file-text-o"></i> <a href="https://drive.google.com/drive/folders/1fBPRkrfLUd7_hx08NCDepKgLcgMP1Ekw" target="_BLANK">Onboarding Forms</a> | gdrive<br /> 
 
-                <a href="https://drive.google.com/drive/folders/1vYQLa272dzjUdnllnQyAd-0k-mgxkuMJ" target="_BLANK">Scripts</a><br /> 
+                <i class="fa fa-check-square-o"></i> <a href="https://www.notion.so/Onboarding-Steps-2f0e540782c180c4a93ced63633d4337" target="_BLANK">Onboarding Steps</a>  | notion<br /> 
 
-                <a href="https://drive.google.com/drive/folders/1bqj6vWUCHvW9Wk5KSSCcWHB0NK7BFCQH" target="_BLANK">VA Training</a><br /> 
+                <i class="fa fa-microphone"></i> <a href="https://drive.google.com/drive/folders/1vYQLa272dzjUdnllnQyAd-0k-mgxkuMJ" target="_BLANK">Sales Scripts</a> | gdrive<br /> 
+
+                <i class="fa fa-book"></i> <a href="https://drive.google.com/drive/folders/1bqj6vWUCHvW9Wk5KSSCcWHB0NK7BFCQH" target="_BLANK">VA Training</a> | gdrive<br /> 
             </div>
             <div>
               

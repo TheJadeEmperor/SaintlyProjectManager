@@ -19,6 +19,7 @@ body, container {
     margin: 0px;
 }
 
+
 a, a:visited  {
     color: #8060d7;
     text-decoration: none;
@@ -208,4 +209,8 @@ a:hover  {
 
 .hospital {
     color: #ed3c6a;
+}
+
+b, strong {
+    font-weight: 600  !important;
 }
