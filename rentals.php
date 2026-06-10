@@ -11,154 +11,14 @@ $localBlog = 'http://vacationrentals4ny.test/blog';
 $siteWP = 'https://littlebookstays.com/wp-login.php';
 $localWP = 'http://vacationrentals4ny.test/wp-login.php';
 
-
-$propsAll = array(
-
-    '7/3/2 | Lake Erie' => array(
-        'client' => 'Sandra Tendilla', 
-        'close' => 'https://app.close.com/lead/lead_gyxKXy0QY2NiOVxQdo7eM9iqb1CxLEerJfppX6KCfiz/#contactId=cont_UeAVsuRTtiPjXRPgG1BvJJRVVLh5EUaTsRq7lcSdFa1', 
-        'zip' => '16507', 
-        'shorturl' => 'https://airbnb.com/h/lake-erie',
-        'Turno' => 'https://app.turno.com/properties/624428',
-        'G-Drive' => 'https://drive.google.com/drive/folders/1nC_tfC4Fm2e90bo6jLfZgGEaBeV_pZdN?usp=sharing', 
-        
-        'Prop Hub' => 'https://littlebookstays.com/wp-admin/post.php?post=227&action=edit',
-        'Viatour' => 'https://vi.me/yYHFa', 
-        'HostB' => 'https://www.hostbuddy.ai/property-chat/d5f77c9d8f39',
-        
-        'Airbnb Listing' => 'https://www.airbnb.com/hosting/listings/editor/1570074268054232382/details/photo-tour', 
-        'Amenities' => 'https://www.airbnb.com/hosting/listings/editor/1570074268054232382/details/amenities',
-        'Fees' => 'https://www.airbnb.com/multicalendar/1570074268054232382/pricing-settings#fees',
-        'A Live' => 'https://www.airbnb.com/rooms/1570074268054232382/',
-
-        'Vrbo Listing' => 'https://www.vrbo.com/supply/pe/?propertyId=123807237', 
-        'V Fees' => 'https://www.vrbo.com/pxcalendars/settings/321.4995977.5570140/fees',
-        'V Ins' => 'https://www.vrbo.com/rm/settings/protection/l-321.4995977.5570140',
-        'V Live' => 'https://www.vrbo.com/4995977?dateless=true', 
-         
-        'Pricelabs' => 'https://app.pricelabs.co/pricing?listings=0f570685-186b-41ac-81e1-68093536a3fd&pms_name=smartbnb&open_calendar=true', 
-        'Comp Set' => 'https://app.pricelabs.co/reports/162367?compSet=Lake+Erie+PA+16507&template=full_dashboard',
-        'Rankbreeze' => 'https://app.rankbreeze.com/rankings/140051/optimization', 
-        'Hospitable' => 'https://my.hospitable.com/properties/property/2084386/messaging-rules',
-        'H Calendar' => 'https://my.hospitable.com/calendar/property/2084386', 
-    ), 
-  
-    '6/3/1.5 | 59 Gregory Dr ' => array(
-        'client' => 'Steve Summers', 
-        'close' => 'https://app.close.com/lead/lead_oia96IQJqCQ094vteteMEnU4ddKON1Q50WKlozLiRkI/#contactId=cont_42RCv5CNx0lb6UFUeO6UHPZVmZk15xDUJetIP26sf69', 
-        'zip' => '28734',
-        'shorturl' => 'airbnb.com/h/tumbling-leaf-cabin',
-        'Turno' => 'https://app.turno.com/properties/589380',
-        'G-Drive' => 'https://drive.google.com/drive/folders/1PDWk7DbFB25ypyLAVJsrBxu4uN8W9EKd', 
-
-        'Prop Hub' => 'https://littlebookstays.com/wp-admin/post.php?post=131&action=edit',
-        'Viatour' => 'https://vi.me/nypNX',
-        'HostB' => 'https://www.hostbuddy.ai/property-chat/cd6d75ce85ab',
-
-        
-        'Airbnb Listing' => 'https://www.airbnb.com/hosting/listings/editor/1501050725249962697/details/photo-tour', 
-        'Amenities' => 'https://www.airbnb.com/hosting/listings/editor/1501050725249962697/details/amenities',
-        'Fees' => 'https://www.airbnb.com/multicalendar/1501050725249962697/pricing-settings/fees',
-        'A Live' => 'https://www.airbnb.com/rooms/1501050725249962697',
-
-        'Vrbo Listing' => 'https://www.vrbo.com/supply/pe/?propertyId=120651120', 
-        'V Fees' => 'https://www.vrbo.com/pxcalendars/settings/321.4844374.5418540/fees',
-        'V Ins' => 'https://www.vrbo.com/rm/settings/protection/l-321.4844374.5418540',
-        'V Live' => 'https://www.vrbo.com/4844374?dateless=true', 
-         
-        'Pricelabs' => 'https://app.pricelabs.co/pricing?listings=be694a73-23f3-414b-a6af-12198666c1de&pms_name=smartbnb&open_calendar=true',
-        'Comp Set' => 'https://app.pricelabs.co/reports/155484?compSet=59+Gregory+Drive+Franklin+NC&template=full_dashboard',
-        'Rankbreeze' => 'https://app.rankbreeze.com/rankings/127212/optimization ',
-        'Hospitable' => 'https://my.hospitable.com/properties/property/1970206/messaging-rules',
-        'H Calendar' => 'https://my.hospitable.com/calendar/property/1970206', 
-    ), 
+$newline = ' <br />';
  
-    '10/3/2 | 105 Pine Cone Lane' => array(
-        'client' => 'Jennifer Cottone', 
-        'close' => 'https://app.close.com/lead/lead_IRrbBfQiVtuFhiBHnGUSzej8vX4yPcRzIrFa1KTxc8X/', 
-        'zip' => '18426',
-        'shorturl' => 'https://airbnb.com/h/mtg-firepit',
-        'G-Drive' => 'https://drive.google.com/drive/folders/14ylgljqnW7Zy_HcoxXhxOSiO9VZqv9VH?usp=drive_link', 
-        
-        'Prop Hub' => 'https://littlebookstays.com/wp-admin/post.php?post=119&action=edit', 
-        'Viatour' => 'https://vi.me/agHe1',
-        'HostB' => 'https://www.hostbuddy.ai/property-chat/c012b30e8d51',
-
-        'Airbnb Listing' => 'https://www.airbnb.com/hosting/listings/editor/1397966363653363779/details/photo-tour',
-        'Amenities' => 'https://www.airbnb.com/hosting/listings/editor/1397966363653363779/details/amenities',
-        'Fees' => 'https://www.airbnb.com/multicalendar/1397966363653363779/pricing-settings/fees',
-        'A Live' => 'https://www.airbnb.com/rooms/1397966363653363779?source_impression_id=p3_1752274162_P3ZEAwc7Eau_D_ga',
-        
-        'Vrbo Listing' => 'https://www.vrbo.com/supply/pe/?propertyId=120453789', 
-        'V Fees' => 'https://www.vrbo.com/pxcalendars/settings/321.4824102.5398269/fees', 
-        'V Ins' => 'https://www.vrbo.com/rm/settings/protection/l-321.4824102.5398269',
-        'V Live' => 'https://www.vrbo.com/4824102?dateless=true', 
-
-        'Book Listing' => 'https://admin.booking.com/hotel/hoteladmin/extranet_ng/manage/home.html?hotel_account_id=23703383&hotel_id=15044068&lang=xu&ses=1c60931044f027c41c4b46d559f647db',
-        'B Calendar' => 'https://admin.booking.com/hotel/hoteladmin/extranet_ng/manage/calendar/index.html?lang=xu&hotel_id=15044068&ses=1c60931044f027c41c4b46d559f647db&source=nav',
-        'B Live' => 'https://www.booking.com/hotel/us/1mi-to-lake-wallenpaupack-firepit-pet-friendly-greentown.html',
-
-        'Pricelabs' => 'https://app.pricelabs.co/pricing?listings=0e7b5cb5-de02-4a13-abb9-6b2f87e557e5&pms_name=smartbnb&open_calendar=true',
-        'Comp Set' => 'https://app.pricelabs.co/reports/140863?compSet=Green+Town&template=full_dashboard',
-        'Rankbreeze' => 'https://app.rankbreeze.com/rankings/116604/optimization',
-        'Hospitable' => 'https://my.hospitable.com/properties/property/1830588/messaging-rules',
-        'H Calendar' => 'https://my.hospitable.com/calendar/property/1830588', 
-    ), 
-
-    '2/1/1 | 2037 Coyle Street ' => array(
-        'client' => 'Me myself & I',
-        'zip' => '11229',
-        'shorturl' => 'https://airbnb.com/h/royal-room-brooklyn',
-        'Turno' => 'https://app.turno.com/properties/258377',
-        'G-Drive' => 'https://drive.google.com/drive/folders/1u4P7hDa_OXMzd3wGbEeNF0pFPHXueRiA?usp=drive_link',
-        'Prop Hub' => 'https://littlebookstays.com/wp-admin/post.php?post=115&action=edit', 
-        'Viatour' => 'https://vi.me/Khe9W',
-        'HostB' => 'https://www.hostbuddy.ai/property-chat/45fe2f34858d',
-        
-        'Airbnb Listing' => 'https://www.airbnb.com/hosting/listings/editor/1624021775204340721/details/photo-tour',
-        'Amenities' => 'https://www.airbnb.com/hosting/listings/editor/1624021775204340721/details/amenities',
-        'Fees' => 'https://www.airbnb.com/multicalendar/1624021775204340721/pricing-settings/fees',
-        'A Live' => 'https://www.airbnb.com/rooms/1624021775204340721?source_impression_id=p3_1719790415_P36temSnhYUDm2Le',
-        'Pricelabs' => 'https://app.pricelabs.co/pricing?listings=b67a0e70-784b-4c5f-9713-e2b2cfe7342c&pms_name=smartbnb&open_calendar=true', 
-
-        'Vrbo Listing' => 'https://www.vrbo.com/supply/pe/?propertyId=96496552', 
-        'V Fees' => 'https://www.vrbo.com/pxcalendars/settings/321.3541578.4114724/fees',
-        'V Ins' => 'https://www.vrbo.com/rm/settings/protection/l-321.3541578.4114724',
-        'V Live' => 'https://www.vrbo.com/3541578?dateless=true', 
-         
-        'Rankbreeze' => 'https://app.rankbreeze.com/rankings/116605/optimization',
-        'Hospitable' => 'https://my.hospitable.com/properties/property/1830574/messaging-rules', 
-        'H Calendar' => 'https://my.hospitable.com/calendar/property/1830574', 
-    ),
-
-    'Unlisted | 2037 Coyle Street ' => array(
-        'client' => 'Me myself & I',
-        'zip' => '11229',
-        'shorturl' => 'https://airbnb.com/h/royal-room-brooklyn',
-        'Turno' => 'https://app.turno.com/properties/258377',
-        'G-Drive' => 'https://drive.google.com/drive/folders/1u4P7hDa_OXMzd3wGbEeNF0pFPHXueRiA?usp=drive_link',
-        'Prop Hub' => 'https://littlebookstays.com/wp-admin/post.php?post=115&action=edit', 
-        'Viatour' => 'https://vi.me/Khe9W',
-        'HostB' => 'https://www.hostbuddy.ai/property-chat/45fe2f34858d',
-        
-        'Airbnb Listing' => 'https://www.airbnb.com/hosting/listings/editor/841300394500737442/details/photo-tour',
-        'Amenities' => 'https://www.airbnb.com/hosting/listings/editor/841300394500737442/details/amenities',
-        'Fees' => 'https://www.airbnb.com/multicalendar/841300394500737442/pricing-settings/fees',
-        'A Live' => 'https://www.airbnb.com/rooms/841300394500737442?source_impression_id=p3_1719790415_P36temSnhYUDm2Le',
-        'Pricelabs' => 'https://app.pricelabs.co/pricing?listings=b67a0e70-784b-4c5f-9713-e2b2cfe7342c&pms_name=smartbnb&open_calendar=true', 
-        'Rankbreeze' => 'https://app.rankbreeze.com/rankings/116605/optimization',
-        'Hospitable' => 'https://my.hospitable.com/properties/property/1830574/messaging-rules', 
-        'H Calendar' => 'https://my.hospitable.com/calendar/property/1830574', 
-    ),
- 
-);
 
 ?>
 <head>
     <title>Saintly Project Manager</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
@@ -171,17 +31,6 @@ $propsAll = array(
     <script src="include/bootstrap/js/bootstrap.js"></script>
 
     <link href="<?= $dir ?>admin.css" rel="stylesheet" type="text/css" media="screen" />
-  
-    <style>
-        .container {
-            margin: 0 !important;
-            max-width: unset
-        }
-
-        .fa {
-            width: 20px; text-align: center; margin-right: 5px;
-        }
-    </style>
 </head>
 
 <center>
@@ -197,12 +46,15 @@ $propsAll = array(
             
             <div>
                 <br /> <strong>AI Tools</strong>  <br /> 
-                <i class="fa fa-magic"></i> <a target="_BLANK" href="https://www.grok.com">grok</a> | novels <br /> 
-                <i class="fa fa-diamond"></i> <a target="_BLANK" href="https://gemini.google.com/app">gemini | most things</a> <br />
-                <i class="fa fa-code"></i> <a target="_BLANK" href="https://claude.ai/chat/">claude | code</a><br /> 
-                <i class="fa fa-sitemap"></i> <a target="_BLANK" href="https://app.n8n.cloud/dashboard?utm_source=paid_google&utm_medium=cpc_google&utm_campaign=google_sem_brand_XX_prospecting_12/23&utm_content=Brand-Exact&utm_term=n8n">n8n</a> | connects close to retell <br /> 
-                <i class="fa fa-phone"></i> <a target="_BLANK" href="https://dashboard.retellai.com/call-history">Retell</a> | ai agent <br /> 
-                <i class="fa fa-bolt"></i> <a target="_BLANK" href="https://zapier.com/app/assets/zaps">Zapier</a> | automates close
+                 
+                <i class="fa fa-diamond"></i> <a target="_BLANK" href="https://gemini.google.com/app">gemini | chat</a> <br />
+
+                <i class="fa fa-folder"></i> <a target="_BLANK" href="https://grok.com/project">grok projects</a> <br />
+
+                <i class="fa fa-magic"></i> <a target="_BLANK" href="https://www.grok.com">grok | novels </a><br />
+
+                <i class="fa fa-code"></i> <a target="_BLANK" href="https://claude.ai/projects">claude | code</a><br /> 
+                 
             </div>
             <div>
                 <br /> <strong>Sales Forms</strong> <br /> 
@@ -218,8 +70,8 @@ $propsAll = array(
               
                  <br />
             </div>
-        </div>
-        <div class="col-9">
+        </div><!-- <div class="col-2 text-start">--> 
+        <div class="col-8">
             <div class="row">
                 <div class="col-lg">
                     <div class="section-heading">
@@ -243,6 +95,10 @@ $propsAll = array(
                     <a target="_BLANK" href="<?=$localBlog?>"><?=$localBlog?></a> <br />
                     <a target="_BLANK" href="<?=$siteWP?>"><?=$siteWP?></a>
                 </div>
+
+
+       
+
             </div>
 
             <div class="row">
@@ -253,88 +109,108 @@ $propsAll = array(
                 </div>
             </div>
 
-   
+
+
 
 <?php
-    $newline = ' <br />';
 
-    foreach ($propsAll as $propName => $p) {
 
-        if ($p['shorturl']) 
-            $propTitle = '<a target="_BLANK" href="'.$p['shorturl'].'">'.$propName.'</a>';
-        else 
-            $propTitle = $propName; 
+// --- DB Props ---
+    $mysqli = new mysqli('localhost', 'root', 'password', 'props');
 
-        $output = '<div class="row">
-        <div class="col-sm text-sm-end">'.$propTitle.'<br />
-        <a href="'.$p['close'].'" target="_BLANK">'.$p['client'].'</a> <br />
-        <a href="https://www.google.com/maps/place/'.$p['zip'].'" target="_BLANK">'.$p['zip'].'</a></div>
-        <div class="col-4 text-start">'; 
-    
-        if ($p['Turno']) {
-            $output .= '<a target="_BLANK" href="'.$p['Turno'].'">Turno</a> | ';
+    if (!$mysqli->connect_error) {
+        $result = $mysqli->query("SELECT * FROM props ORDER BY num desc");
+
+        while ($p = $result->fetch_assoc()) {
+
+            $propName = $p['name']; // or a name field if you add one to the table
+
+            if ($p['shorturl'])
+                $propTitle = '<a target="_BLANK" href="'.$p['shorturl'].'">'.$propName.'</a>';
+            else
+                $propTitle = $propName;
+
+            $output = '<div class="row">
+            <div class="col-sm text-sm-end">'.$propTitle.'<br />
+            <a href="'.$p['close'].'" target="_BLANK">'.$p['client'].'</a> <br />
+            <a href="https://www.google.com/maps/place/'.$p['zip'].'" target="_BLANK">'.$p['zip'].'</a></div>
+            <div class="col-4 text-start">';
+
+            if ($p['turno']) {
+                $output .= '<a target="_BLANK" href="'.$p['turno'].'">Turno</a> | ';
+            }
+
+            if ($p['gdrive']) {
+                $output .= '<a target="_BLANK" href="https://drive.google.com/drive/folders/'.$p['gdrive'].'">G-Drive</a>';
+            }
+
+            if ($p['hub']) {
+                $output .= ' | <a target="_BLANK" href="https://littlebookstays.com/wp-admin/post.php?post='.$p['hub'].'&action=edit"><span class="propHub">Prop Hub</span></a>'.$newline;
+            }
+			
+            if ($p['a_listing']) {
+                $output .= '<a target="_BLANK" href="https://www.airbnb.com/hosting/listings/editor/'.$p['a_listing'].'/details/photo-tour">A Listing</a> | <a target="_BLANK" href="'.$p['a_amen'].'">Amen</a> | <a target="_BLANK" href="'.$p['a_fees'].'">Fees</a> | <a target="_BLANK" href="'.$p['a_live'].'">Live</a>';
+            }
+			 
+
+            if ($p['v_list']) {
+                $output .= $newline.'<a target="_BLANK" href="'.$p['v_list'].'">V Listing</a> | <a target="_BLANK" href="'.$p['v_fees'].'">Fees</a> | <a target="_BLANK" href="'.$p['v_ins'].'">Ins</a>';
+            }
+
+            $output .= $newline;
+
+          
+            $output .= '<a target="_BLANK" href="https://my.hospitable.com/calendar/property/'.$p['hosp'].'"><span class="hospital">H Calendar</span></a> | <a target="_BLANK" href="'.$p['hostB'].'"><span class="hospital">HostB</span></a>'; 
+			 
+		
+            if ($p['pricelabs']) {
+                $output .= $newline.'<a target="_BLANK" href=" https://app.pricelabs.co/pricing?listings='.$p['pricelabs'].'pms_name=smartbnb&open_calendar=true"><span class="pricelabs">Pricelabs</span></a>';
+
+                if ($p['compset'])
+                    $output .= ' | <a target="_BLANK" href="https://app.pricelabs.co/reports/'.$p['compset'].'&template=full_dashboard ">Comp Set</a>';
+
+                // 
+
+                if ($p['intel'])
+                    $output .= ' <a target="_BLANK" href="'.$p['intel'].'">Intellihost</a>';
+
+            }
+
+            
+            $output .= '</div>
+            <div class="col-sm text-start">
+            
+            </div>
+            </div>';
+
+            echo $output.$newline;
         }
 
-        if($p['Rankbreeze']) 
-            $output .= ' <a target="_BLANK" href="'.$p['Rankbreeze'].'">Rankbreeze</a> '.$newline; 
-
-        if ($p['G-Drive']) { 
-            $output .= '<a target="_BLANK" href="'.$p['G-Drive'].'">G-Drive</a>';
-        } 
-
-        if ($p['Prop Hub']) { 
-            $output .= ' | <a target="_BLANK" href="'.$p['Prop Hub'].'"><span class="propHub">Prop Hub</span></a>'.$newline;
-        } 
-
-        if ($p['Airbnb Listing']) { 
-            $output .= '<a target="_BLANK" href="'.$p['Airbnb Listing'].'">A Listing</a> | <a target="_BLANK" href="'.$p['Amenities'].'">Amen</a> | <a target="_BLANK" href="'.$p['Fees'].'">Fees</a> | <a target="_BLANK" href="'.$p['A Live'].'">Live</a>';
-        }
-
-        if ($p['Vrbo Listing']) { 
-            $output .= $newline.'<a target="_BLANK" href="'.$p['Vrbo Listing'].'">V Listing</a> |  <a target="_BLANK" href="'.$p['V Fees'].'">Fees</a> | <a target="_BLANK" href="'.$p['V Ins'].'">Ins</a> | <a target="_BLANK" href="'.$p['V Live'].'">Live</a>';
-        }
-    
-        if ($p['Book Listing']) { 
-            $output .= $newline.'<a target="_BLANK" href="'.$p['Book Listing'].'">B Listing</a> | <a target="_BLANK" href="'.$p['B Calendar'].'">Calendar</a> | <a target="_BLANK" href="'.$p['B Live'].'">Live</a>';
-        }
-
-        $output .= $newline;  
-
-        $output .= '<a target="_BLANK" href="'.$p['Hospitable'].'"><span class="hospital">Hospital</span></a> | <a target="_BLANK" href="'.$p['H Calendar'].'">Calendar</a> '; 
-
-     
-        $output .= '</div>
-        <div class="col-sm text-start"> ';
- 
-        if($p['Pricelabs']) {
-            $output .= '<a target="_BLANK" href="'.$p['Pricelabs'].'"><span class="pricelabs">Pricelabs</span></a> '; 
-
-            if($p['Comp Set'])
-            $output .= ' | <a target="_BLANK" href="'.$p['Comp Set'].'">Comp Set</a> '; 
-        }
-
-        if ($p['Viatour']) { 
-            $output .= $newline.'<a target="_BLANK" href="'.$p['Viatour'].'"><span class="viator">Viator</span></a>';
-        } 
-
-         if($p['HostB']) {
-             $output .= ' | <a target="_BLANK" href="'.$p['HostB'].'"><span class="hostb">Hostbuddy</span></a>';
-        } 
-
-        $output .= '</div> 
-        </div>';
-
-        echo $output.$newline;
+        $mysqli->close();
     }
 
+   
 ?>
+    </div><!--<div class="col-8">-->
+    
+   
+
+    <!-- right sidebar -->
+    <div id="teammates" class="col-2 text-start">   
+        
+        <div class="section-heading">
+            <br /><strong>Teammates</strong><br />
+
+            <i class="fa fa-trophy"></i> <a target="_BLANK" href=" https://app.close.com/lead/lead_n0vfRarxwMaY6aqUKqFVuFyY59jbVIf51D8UISzdYeE/">Intellihost</a><br />
+            <i class="fa fa-android"></i> <a target="_BLANK" href="https://app.close.com/lead/lead_QOQdqH8zFy0J8hnPPZqqlyCN84D0NGb6lfK1FrrVkzg/">Hostbuddy</a><br />
+            <i class="fa fa-book"></i> <a target="_BLANK" href="https://app.close.com/lead/lead_on24Hvop5B62XTCxZVEB8nsNnKWcwYYcu4CzbaD0Ir3/">Hostco</a><br />
+
+        </div>
     </div>
-</div>
 
 
-<p>&nbsp;</p>
-
-         
+</div><!--row-->  
+     
     </div>
 </div>
 

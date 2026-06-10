@@ -6,7 +6,7 @@ iframe { height: 92%; width: 99%;
     border: 1px solid black;
 }
 
-body, container {	
+body, .container {	
     margin: 0 !important;
     max-width: unset;
     color: #8060d7;
@@ -202,15 +202,22 @@ a:hover  {
 .propHub {
      color:#1d2327;
 }
-
-.hostb {
-    color: #146ef5;
-}
-
+ 
 .hospital {
     color: #ed3c6a;
 }
 
 b, strong {
     font-weight: 600  !important;
+}
+
+
+.fa {
+    width: 20px; text-align: center; margin-right: 5px;
+}
+
+#teammates {
+    border-left: 2px solid #ddd;
+    padding-left: 10px;
+    font-size: 0.9em;
 }

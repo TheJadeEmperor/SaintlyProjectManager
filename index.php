@@ -104,9 +104,7 @@ switch($_GET['action']) {
     case 'localhost':
         $link = 'http://localhost';
         break;
-    case 'archive':
-        $link = 'archive_links.php';
-        break;
+  
     case 'newsletters':
         $link = $newslHost;
         break;
@@ -162,16 +160,16 @@ switch($_GET['action']) {
         $link = 'http://localhost/bestpayingsites/?action=translate';
         break;
 
+    case 'archive':
+        $link = 'archive/archive_links.php';
+        break;
     case 'nus':
-        $link = 'nus.php';
+        $link = 'archive/nus.php';
         break;
 	case 'blog': 
-		$link = 'blog_nus.php';
+		$link = 'archive/blog_nus.php';
 		break;
-  
-    case 'nus': 
-        $link = 'nus.php';
-
+   
     case 'rentals': 
     default:
         $link = 'rentals.php';
@@ -235,7 +233,6 @@ switch($_GET['action']) {
             moz-border-radius: 6px 0 6px 6px;
             webkit-border-radius: 6px 0 6px 6px;
         }
-
       
     </style>
 </head>
@@ -344,7 +341,7 @@ switch($_GET['action']) {
             'icon' => 'fa-file'
         ),
         'Batch Skip Trace' => array(
-            'href' => 'https://app.batchskiptracing.com/app/skip-trace/list',
+            'href' => 'https://app.batchdata.com/property-skip-trace',
             'icon' => 'fa-search',
              
         ), 
