@@ -12,7 +12,7 @@ $siteWP = 'https://littlebookstays.com/wp-login.php';
 $localWP = 'http://vacationrentals4ny.test/wp-login.php';
 
 $newline = ' <br />';
- 
+
 
 ?>
 <head>
@@ -159,17 +159,18 @@ $newline = ' <br />';
 
             $output .= $newline;
 
-          
-            $output .= '<a target="_BLANK" href="https://my.hospitable.com/calendar/property/'.$p['hosp'].'"><span class="hospital">H Calendar</span></a> | <a target="_BLANK" href="'.$p['hostB'].'"><span class="hospital">HostB</span></a>'; 
+            $output .= '<a target="_BLANK" href="https://my.hospitable.com/calendar/property/'.$p['hosp'].'"><span class="hospital">H Calendar</span></a> | <a target="_BLANK" href="'.$p['hosp_msg'].'"><span class="hospital">H Msg</span></a> ';
+            
+
+            if ($p['hostco'])
+                $output .= ' | <a target="_BLANK" href="'.$p['hostco'].'"><span class="hospital">Hostco</span></a>'; 
 			 
 		
             if ($p['pricelabs']) {
-                $output .= $newline.'<a target="_BLANK" href=" https://app.pricelabs.co/pricing?listings='.$p['pricelabs'].'pms_name=smartbnb&open_calendar=true"><span class="pricelabs">Pricelabs</span></a>';
+                $output .= $newline.'<a target="_BLANK" href=" https://app.pricelabs.co/pricing?listings='.$p['pricelabs'].'&pms_name=smartbnb&open_calendar=true"><span class="pricelabs">Pricelabs</span></a>';
 
                 if ($p['compset'])
                     $output .= ' | <a target="_BLANK" href="https://app.pricelabs.co/reports/'.$p['compset'].'&template=full_dashboard ">Comp Set</a>';
-
-                // 
 
                 if ($p['intel'])
                     $output .= ' <a target="_BLANK" href="'.$p['intel'].'">Intellihost</a>';
@@ -194,7 +195,6 @@ $newline = ' <br />';
     </div><!--<div class="col-8">-->
     
    
-
     <!-- right sidebar -->
     <div id="teammates" class="col-2 text-start">   
         

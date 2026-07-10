@@ -390,12 +390,12 @@ echo menuDropDown($mainCohost, $menuCohost);
             )
 
         ), //'Email Templates'
-        'Google Meets' => array( 
+        'Google Meets' => array(
             'href' => 'https://meet.google.com/zjn-zuxt-zzp', 
             'icon' => 'fa-video-camera'
         ),
-        'Calendly' => array( 
-            'href' => 'https://calendly.com/kaiba-online-acc/prop-mgr?preview_source=et_card',
+        'Calendly' => array(
+            'href' => 'https://calendly.com/littlebookstays/30min',
             'icon' => 'fa-calendar-check-o',
             'attr' => 'd',
         ),
@@ -411,6 +411,9 @@ echo menuDropDown($mainCohost, $menuCohost);
                 ),
                 'Pricelabs Rev Est' => array(
                     'href' => 'https://app.pricelabs.co/revenue_estimator', 
+                ),
+                'VantageSTR Prospects' => array(
+                    'href' => 'https://vantagestr.co/dashboard/operator/prospects', 
                 ),
             )
         )
@@ -450,10 +453,6 @@ echo menuDropDown($mainCohost, $menuCohost);
             'attr' => 'd',
             'icon' => 'fa-tag'
         ), 
-        'Hosp AI' => array (
-            'href' => 'https://my.hospitable.com/gx/questions',
-            'icon' => 'fa-magic'
-        ),
         'Hostbuddy' => array (
             'href' => 'https://www.hostbuddy.ai/properties',
             'icon' => 'fa-android'
@@ -492,10 +491,16 @@ echo menuDropDown($mainCohost, $menuCohost);
             'icon' => 'fa-wrench',
             'attr' => 'd' 
         ),
-        'Listings List' => array (
-            'href' => 'https://www.notion.so/Listings-List-Clients-Cleaners-2f1e540782c180c5a798d7ac4933e741',
-             'icon' => 'fa-list'
-        ), 
+
+        'Hostco' => array(
+            'href' => 'https://app.thehost.co/overview/stores/',
+            'icon' => 'fa-book', 
+        ),
+		'Truvi' =>  array(
+            'href' => 'https://platform.truvi.com/listings?pageNumber=1&pageSize=10&searchString=',
+            'icon' => 'fa-book', 
+        ),
+
    );
 
 
@@ -517,13 +522,10 @@ echo menuDropDown($mainCohost, $menuCohost);
             'icon' => 'fa-money',
             'attr' => 'd'
         ),
-        'Bad Review SOP' => array(
-            'href' => 'https://habitual-airbus-6d2.notion.site/Bad-Review-SOP-2f3e540782c1802e91d1c71fe2dc1548',  
-            'icon' => 'fa-exclamation-triangle'
-        ),
+      
         'Prop Hub' => array(
             'href' => 'https://www.notion.so/LBS-Prop-Hub-2ede540782c1800685a1f6ed31f72e0f', 
-            'icon' => 'fa-building', 
+            'icon' => 'fa-list', 
         ),
 
     );
@@ -535,8 +537,8 @@ echo menuDropDown($mainCohost, $menuCohost);
     $mainTeam = 'Team'; 
 
     $menuTeam = array(
-        'Zoha Trello' => array(
-            'href' => 'https://trello.com/b/9NK1LyNF/zoha-assistant-benjamin',
+        'VA Trello' => array(
+            'href' => 'https://trello.com/b/9NK1LyNF/prop-mgr-for-lbs',
             'icon' => 'fa-book',
         ),
         'VA Progress Tracker' => array(
