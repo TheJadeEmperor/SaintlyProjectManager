@@ -496,10 +496,7 @@ echo menuDropDown($mainCohost, $menuCohost);
             'href' => 'https://app.thehost.co/overview/stores/',
             'icon' => 'fa-book', 
         ),
-		'Truvi' =>  array(
-            'href' => 'https://platform.truvi.com/listings?pageNumber=1&pageSize=10&searchString=',
-            'icon' => 'fa-book', 
-        ),
+		
 
    );
 
@@ -517,10 +514,16 @@ echo menuDropDown($mainCohost, $menuCohost);
             'href' => 'https://www.airbnb.com/resolutions',
             'icon' => 'fa-balance-scale',
         ),
+
         'Trans History' => array(
             'href' => 'https://www.airbnb.com/users/transaction_history', 
             'icon' => 'fa-money',
             'attr' => 'd'
+        ),
+
+        'Truvi' =>  array(
+            'href' => 'https://platform.truvi.com/listings?pageNumber=1&pageSize=10&searchString=',
+            'icon' => 'fa-book', 
         ),
       
         'Prop Hub' => array(

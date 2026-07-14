@@ -204,6 +204,7 @@ $newline = ' <br />';
             <i class="fa fa-trophy"></i> <a target="_BLANK" href=" https://app.close.com/lead/lead_n0vfRarxwMaY6aqUKqFVuFyY59jbVIf51D8UISzdYeE/">Intellihost</a><br />
             <i class="fa fa-android"></i> <a target="_BLANK" href="https://app.close.com/lead/lead_QOQdqH8zFy0J8hnPPZqqlyCN84D0NGb6lfK1FrrVkzg/">Hostbuddy</a><br />
             <i class="fa fa-book"></i> <a target="_BLANK" href="https://app.close.com/lead/lead_on24Hvop5B62XTCxZVEB8nsNnKWcwYYcu4CzbaD0Ir3/">Hostco</a><br />
+             <i class="fa fa-book"></i> <a target="_BLANK" href="https://app.close.com/lead/lead_ugTE9dJoj0W6p3OfKTbF4wBuIBpw79WKFKuoinwEda2/">Vrbo Villains</a><br />
 
         </div>
     </div>
