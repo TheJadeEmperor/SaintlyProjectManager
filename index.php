@@ -388,23 +388,11 @@ echo menuDropDown($mainCohost, $menuCohost);
                     'href' => 'https://app.close.com/workflows/'
                 ), 
             )
-
         ), //'Email Templates'
-        'Google Meets' => array(
-            'href' => 'https://meet.google.com/zjn-zuxt-zzp', 
-            'icon' => 'fa-video-camera'
-        ),
-        'Calendly' => array(
-            'href' => 'https://calendly.com/littlebookstays/30min',
-            'icon' => 'fa-calendar-check-o',
-            'attr' => 'd',
-        ),
+        
         'Rev Projections' => array(
             'icon' => 'fa-line-chart',
            'submenu' => array(
-                'Awning' => array(
-                    'href' => 'https://awning.com/airbnb-estimator'
-                ), 
                 'Airdna' => array(
                     'href' => 'https://app.airdna.co/data',
                     'attr' => 'target="_BLANK"' 
@@ -412,11 +400,26 @@ echo menuDropDown($mainCohost, $menuCohost);
                 'Pricelabs Rev Est' => array(
                     'href' => 'https://app.pricelabs.co/revenue_estimator', 
                 ),
-                'VantageSTR Prospects' => array(
+                'Vantage Prospects' => array(
                     'href' => 'https://vantagestr.co/dashboard/operator/prospects', 
                 ),
-            )
-        )
+                'Vantage Pipeline' => array(
+                    'href' => 'https://vantagestr.co/dashboard/operator/pipeline', 
+                ),
+            ),
+            'attr' => 'd',
+        ),
+    
+        'Google Meets' => array(
+            'href' => 'https://meet.google.com/zjn-zuxt-zzp', 
+            'icon' => 'fa-video-camera'
+        ),
+        'Calendly' => array(
+            'href' => 'https://calendly.com/littlebookstays/30min',
+            'icon' => 'fa-calendar-check-o',
+           
+        ),
+
     ); 
 
 
@@ -473,8 +476,7 @@ echo menuDropDown($mainCohost, $menuCohost);
         ),
         'Comp Sets' => array(
             'href' => 'https://pricelabs.co/reports',
-            'icon' => 'fa-bar-chart',
-            'attr' => 'd' 
+            'icon' => 'fa-bar-chart', 
         ), 
         'Intellihost DeepRank' => array (
             'href' => 'https://clients.intellihost.co/deep-rank-ai',
@@ -539,15 +541,17 @@ echo menuDropDown($mainCohost, $menuCohost);
 
     $mainTeam = 'Team'; 
 
+
+
     $menuTeam = array(
-        'VA Trello' => array(
+        'Trello 2026 Goals' => array(
+            'href' => 'https://trello.com/b/lx8xpiWr/2024-goals',
+            'icon' => 'fa-book',
+        ),
+        'LBS Trello' => array(
             'href' => 'https://trello.com/b/9NK1LyNF/prop-mgr-for-lbs',
             'icon' => 'fa-book',
         ),
-        'VA Progress Tracker' => array(
-            'href' => 'https://www.notion.so/VA-Progress-Tracker-2eee540782c180669ff0ce20540e2a34',
-            'icon' => 'fa-book',
-        ), 
         'Teammates & Cleaners' => array(
             'href' => 'https://www.notion.so/Teammates-Cleaners-2ede540782c180f9af9ef51f201b3fcc?source=copy_link',
             'icon' => 'fa-users',

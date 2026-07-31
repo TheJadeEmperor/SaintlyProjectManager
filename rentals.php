@@ -92,12 +92,9 @@ $newline = ' <br />';
                     Live <br />
                     <a target="_BLANK" href="<?=$siteAirbnb?>"><?=$siteAirbnb?></a> <br />
                     <a target="_BLANK" href="<?=$siteG?>"><?=$siteG?></a> <br />
-                    <a target="_BLANK" href="<?=$localBlog?>"><?=$localBlog?></a> <br />
+                    <a target="_BLANK" href="<?=$siteBlog?>"><?=$siteBlog?></a> <br />
                     <a target="_BLANK" href="<?=$siteWP?>"><?=$siteWP?></a>
                 </div>
-
-
-       
 
             </div>
 
@@ -109,9 +106,7 @@ $newline = ' <br />';
                 </div>
             </div>
 
-
-
-
+            
 <?php
 
 
@@ -122,6 +117,8 @@ $newline = ' <br />';
         $result = $mysqli->query("SELECT * FROM props ORDER BY num desc");
 
         while ($p = $result->fetch_assoc()) {
+
+            if($p['status'] == 0) {continue;}
 
             $propName = $p['name']; // or a name field if you add one to the table
 
@@ -149,9 +146,15 @@ $newline = ' <br />';
             }
 			
             if ($p['a_listing']) {
-                $output .= '<a target="_BLANK" href="https://www.airbnb.com/hosting/listings/editor/'.$p['a_listing'].'/details/photo-tour">A Listing</a> | <a target="_BLANK" href="'.$p['a_amen'].'">Amen</a> | <a target="_BLANK" href="'.$p['a_fees'].'">Fees</a> | <a target="_BLANK" href="'.$p['a_live'].'">Live</a>';
+                $output .= '<a target="_BLANK" href="https://www.airbnb.com/hosting/listings/editor/'.$p['a_listing'].'/details/photo-tour">A Listing</a> | 
+                <a target="_BLANK" href="https://www.airbnb.com/hosting/listings/editor/'.$p['a_listing'].'/details/amenities">Amen</a> | 
+                <a target="_BLANK" href="https://www.airbnb.com/multicalendar/'.$p['a_listing'].'/pricing-settings/fees">Fees</a> | 
+                <a target="_BLANK" href="https://www.airbnb.com/rooms/'.$p['a_listing'].'?source_impression_id=p3_1719790415_P36temSnhYUDm2Le">Live</a>';
             }
 			 
+
+
+            
 
             if ($p['v_list']) {
                 $output .= $newline.'<a target="_BLANK" href="'.$p['v_list'].'">V Listing</a> | <a target="_BLANK" href="'.$p['v_fees'].'">Fees</a> | <a target="_BLANK" href="'.$p['v_ins'].'">Ins</a>';
