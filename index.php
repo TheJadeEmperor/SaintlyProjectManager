@@ -280,7 +280,7 @@ switch($_GET['action']) {
             'href' => '?action=nus'),           
         'Little Book Stays' => array(
             'href' => '.'),
-    );
+    ); 
 
     echo menuDropDown($mainLocal, $menuLocal);
 
@@ -461,7 +461,6 @@ echo menuDropDown($mainCohost, $menuCohost);
             'icon' => 'fa-android'
         ),
 
-
     );
 
     echo menuDropDown($mainGuests, $menuGuests);
@@ -469,7 +468,7 @@ echo menuDropDown($mainCohost, $menuCohost);
  
     $mainPM = 'PM';
 
-   $menuPM = array(
+    $menuPM = array(
         'Pricelabs Dashboard' => array(
             'href' => 'https://pricelabs.co/pricing',
             'icon' => 'fa-tachometer',
@@ -486,8 +485,7 @@ echo menuDropDown($mainCohost, $menuCohost);
         'Turno Calendar' => array(
             'href' => 'https://app.turno.com/view/schedule',
             'icon' => 'fa-calendar',
-        ),     
-       
+        ), 
         'Maint | Appts' => array(
             'href' => 'https://app.close.com/activities/custom-activity/actitype_3oEjtZdr8UkkqfmtJBDdWi/save_bjqFnOtjRgQsI0Qm9AqG4fSPAGxCtCfOgK6oskcFcIS/',
             'icon' => 'fa-wrench',

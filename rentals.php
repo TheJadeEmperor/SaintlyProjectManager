@@ -60,7 +60,13 @@ $newline = ' <br />';
                 <br /> <strong>Sales Forms</strong> <br /> 
                 <i class="fa fa-file-text-o"></i> <a href="https://drive.google.com/drive/folders/1fBPRkrfLUd7_hx08NCDepKgLcgMP1Ekw" target="_BLANK">Onboarding Forms</a> | gdrive<br /> 
 
-                <i class="fa fa-check-square-o"></i> <a href="https://www.notion.so/Onboarding-Steps-2f0e540782c180c4a93ced63633d4337" target="_BLANK">Onboarding Steps</a>  | notion<br /> 
+                <i class="fa fa-check-square-o"></i> <a href="http://localhost//onboarding_steps/" target="_BLANK">Onboarding Steps</a> | localhost<br /> 
+
+                <i class="fa fa-check-square-o"></i> <a href="http://vacationrentals4ny.test/wp-admin/admin.php?page=lbs-onboarding" target="_BLANK">Onboarding Steps</a> | Staging WP<br /> 
+
+                <i class="fa fa-check-square-o"></i> <a href="https://littlebookstays.com/wp-admin/admin.php?page=lbs-onboarding" target="_BLANK">Onboarding Steps</a> | Live WP<br /> 
+
+
 
                 <i class="fa fa-microphone"></i> <a href="https://drive.google.com/drive/folders/1vYQLa272dzjUdnllnQyAd-0k-mgxkuMJ" target="_BLANK">Sales Scripts</a> | gdrive<br /> 
 
@@ -151,10 +157,7 @@ $newline = ' <br />';
                 <a target="_BLANK" href="https://www.airbnb.com/multicalendar/'.$p['a_listing'].'/pricing-settings/fees">Fees</a> | 
                 <a target="_BLANK" href="https://www.airbnb.com/rooms/'.$p['a_listing'].'?source_impression_id=p3_1719790415_P36temSnhYUDm2Le">Live</a>';
             }
-			 
-
-
-            
+			             
 
             if ($p['v_list']) {
                 $output .= $newline.'<a target="_BLANK" href="'.$p['v_list'].'">V Listing</a> | <a target="_BLANK" href="'.$p['v_fees'].'">Fees</a> | <a target="_BLANK" href="'.$p['v_ins'].'">Ins</a>';
@@ -180,7 +183,6 @@ $newline = ' <br />';
 
             }
 
-            
             $output .= '</div>
             <div class="col-sm text-start">
             
@@ -211,7 +213,7 @@ $newline = ' <br />';
 
         </div>
     </div>
-
+ 
 
 </div><!--row-->  
      
