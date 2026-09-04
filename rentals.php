@@ -1,15 +1,12 @@
 <?php
 $siteAirbnb = 'https://littlebookstays.com';
-$localAirbnb = 'http://vacationrentals4ny.test';
-
-$siteG = 'https://littlebookstays.com/guests/';
-$localG = 'http://vacationrentals4ny.test/guests/';
+$localAirbnb = 'http://littlebookstays.test';
 
 $siteBlog = 'https://littlebookstays.com/blog';
-$localBlog = 'http://vacationrentals4ny.test/blog';
+$localBlog = 'http://littlebookstays.test/blog';
 
 $siteWP = 'https://littlebookstays.com/wp-login.php';
-$localWP = 'http://vacationrentals4ny.test/wp-login.php';
+$localWP = 'http://littlebookstays.test/wp-login.php';
 
 $newline = ' <br />';
 
@@ -39,9 +36,11 @@ $newline = ' <br />';
 
         <div class="col-2 text-start">
             <div class="section-heading">
-                <br /> RevPAR = Rev per available room <br /> 
+                <br /> 
+                Airbnb Atrocity = 15.5% fee <br />
+                Hospital = 18.35% to even out the 15.5% fee <br />
                 ADR = average daily rate <br />
-                LOS = length of stay <br /> 
+                2 night min | 3 night min for far out bookings<br /> 
             </div>
             
             <div>
@@ -62,10 +61,9 @@ $newline = ' <br />';
 
                 <i class="fa fa-check-square-o"></i> <a href="http://localhost//onboarding_steps/" target="_BLANK">Onboarding Steps</a> | localhost<br /> 
 
-                <i class="fa fa-check-square-o"></i> <a href="http://vacationrentals4ny.test/wp-admin/admin.php?page=lbs-onboarding" target="_BLANK">Onboarding Steps</a> | Staging WP<br /> 
+                <i class="fa fa-check-square-o"></i> <a href="http://littlebookstays.test/wp-admin/admin.php?page=lbs-onboarding" target="_BLANK">Onboarding Steps</a> | Staging WP<br /> 
 
                 <i class="fa fa-check-square-o"></i> <a href="https://littlebookstays.com/wp-admin/admin.php?page=lbs-onboarding" target="_BLANK">Onboarding Steps</a> | Live WP<br /> 
-
 
 
                 <i class="fa fa-microphone"></i> <a href="https://drive.google.com/drive/folders/1vYQLa272dzjUdnllnQyAd-0k-mgxkuMJ" target="_BLANK">Sales Scripts</a> | gdrive<br /> 
@@ -90,14 +88,12 @@ $newline = ' <br />';
                 <div class="col-sm text-sm-end">
                     Localhost <br />
                     <a target="_BLANK" href="<?=$localAirbnb?>"><?=$localAirbnb?></a> <br />
-                    <a target="_BLANK" href="<?=$localG?>"><?=$localG?></a> <br />
                     <a target="_BLANK" href="<?=$localBlog?>"><?=$localBlog?></a> <br />
                     <a target="_BLANK" href="<?=$localWP?>"><?=$localWP?></a>
                 </div>
                 <div class="col-sm text-start">
                     Live <br />
                     <a target="_BLANK" href="<?=$siteAirbnb?>"><?=$siteAirbnb?></a> <br />
-                    <a target="_BLANK" href="<?=$siteG?>"><?=$siteG?></a> <br />
                     <a target="_BLANK" href="<?=$siteBlog?>"><?=$siteBlog?></a> <br />
                     <a target="_BLANK" href="<?=$siteWP?>"><?=$siteWP?></a>
                 </div>
@@ -107,7 +103,7 @@ $newline = ' <br />';
             <div class="row">
                 <div class="col-lg">
                     <div class="section-heading">
-                        <br /><p> Listings | <a target="_BLANK" href="https://www.airbnb.com/hosting/listings">Airbnb</a> | <a target="_BLANK" href="https://www.vrbo.com/p/properties">VRBO</a> </p> 
+                        <br /><p> Listings | <strong><a target="_BLANK" href="https://www.airbnb.com/hosting/listings">Airbnb</a></strong> | <a target="_BLANK" href="https://www.vrbo.com/p/properties">VRBO</a> </p> 
                     </div>
                 </div>
             </div>
@@ -117,10 +113,10 @@ $newline = ' <br />';
 
 
 // --- DB Props ---
-    $mysqli = new mysqli('localhost', 'root', 'password', 'props');
+    $mysqli = new mysqli('localhost', 'root', 'password', 'rentals');
 
     if (!$mysqli->connect_error) {
-        $result = $mysqli->query("SELECT * FROM props ORDER BY num desc");
+        $result = $mysqli->query("SELECT * FROM pm_prop_hub ORDER BY num desc");
 
         while ($p = $result->fetch_assoc()) {
 
@@ -137,49 +133,58 @@ $newline = ' <br />';
             <div class="col-sm text-sm-end">'.$propTitle.'<br />
             <a href="'.$p['close'].'" target="_BLANK">'.$p['client'].'</a> <br />
             <a href="https://www.google.com/maps/place/'.$p['zip'].'" target="_BLANK">'.$p['zip'].'</a></div>
-            <div class="col-4 text-start">';
+            <div class="col-5 text-start">';
 
             if ($p['turno']) {
                 $output .= '<a target="_BLANK" href="'.$p['turno'].'">Turno</a> | ';
             }
 
             if ($p['gdrive']) {
-                $output .= '<a target="_BLANK" href="https://drive.google.com/drive/folders/'.$p['gdrive'].'">G-Drive</a>';
+
+                $base_url_gdrive = 'https://drive.google.com/drive/folders/';
+
+                $output .= '<a target="_BLANK" href="'.$base_url_gdrive.$p['gdrive'].'">G-Drive</a>';
             }
 
-            if ($p['hub']) {
-                $output .= ' | <a target="_BLANK" href="https://littlebookstays.com/wp-admin/post.php?post='.$p['hub'].'&action=edit"><span class="propHub">Prop Hub</span></a>'.$newline;
+            
+            if ($p['hostco']) {
+                $base_url_hostco = 'https://app.thehost.co/store/';
+
+                $output .= ' | <a target="_BLANK" href="'.$base_url_hostco.$p['hostco'].'"><span class="hospital">Hostco</span></a>'; 
             }
-			
+			 
+ 
             if ($p['a_listing']) {
-                $output .= '<a target="_BLANK" href="https://www.airbnb.com/hosting/listings/editor/'.$p['a_listing'].'/details/photo-tour">A Listing</a> | 
+                $output .= $newline.'<a target="_BLANK" href="https://www.airbnb.com/hosting/listings/editor/'.$p['a_listing'].'/details/photo-tour">A Listing</a> | 
                 <a target="_BLANK" href="https://www.airbnb.com/hosting/listings/editor/'.$p['a_listing'].'/details/amenities">Amen</a> | 
-                <a target="_BLANK" href="https://www.airbnb.com/multicalendar/'.$p['a_listing'].'/pricing-settings/fees">Fees</a> | 
-                <a target="_BLANK" href="https://www.airbnb.com/rooms/'.$p['a_listing'].'?source_impression_id=p3_1719790415_P36temSnhYUDm2Le">Live</a>';
+                <a target="_BLANK" href="https://www.airbnb.com/multicalendar/'.$p['a_listing'].'/discounts">Discounts</a> | 
+                <a target="_BLANK" href="'.$p['a_direct'].'">Direct</a>';
             }
-			             
+
 
             if ($p['v_list']) {
-                $output .= $newline.'<a target="_BLANK" href="'.$p['v_list'].'">V Listing</a> | <a target="_BLANK" href="'.$p['v_fees'].'">Fees</a> | <a target="_BLANK" href="'.$p['v_ins'].'">Ins</a>';
+                $output .= $newline.'<a target="_BLANK" href="'.$p['v_list'].'">V Listing</a> 
+                | <a target="_BLANK" href="'.$p['v_fees'].'">Fees</a> 
+                | <a target="_BLANK" href="'.$p['v_ins'].'">Ins</a>';
             }
 
             $output .= $newline;
 
-            $output .= '<a target="_BLANK" href="https://my.hospitable.com/calendar/property/'.$p['hosp'].'"><span class="hospital">H Calendar</span></a> | <a target="_BLANK" href="'.$p['hosp_msg'].'"><span class="hospital">H Msg</span></a> ';
-            
+           
+            $base_url_h_calendar = 'https://my.hospitable.com/calendar/property/'; 
+            $base_url_h_msg = 'https://my.hospitable.com/gx/messaging/rules;query=';
+            $base_url_h_custom_code = 'https://my.hospitable.com/gx/messaging/custom-codes;query=';
 
-            if ($p['hostco'])
-                $output .= ' | <a target="_BLANK" href="'.$p['hostco'].'"><span class="hospital">Hostco</span></a>'; 
-			 
+            $output .= '<a target="_BLANK" href="'.$base_url_h_calendar.$p['hosp'].'"><span class="hospital">H Calendar</span></a> 
+            | <a target="_BLANK" href="'.$p['hosp_msg'].'"><span class="hospital">H Msg</span></a> 
+            | <a target="_BLANK" href="'.$p['h_custom_code'].'"><span class="hospital">H Custom Codes</span></a>';
+
 		
             if ($p['pricelabs']) {
                 $output .= $newline.'<a target="_BLANK" href=" https://app.pricelabs.co/pricing?listings='.$p['pricelabs'].'&pms_name=smartbnb&open_calendar=true"><span class="pricelabs">Pricelabs</span></a>';
 
                 if ($p['compset'])
                     $output .= ' | <a target="_BLANK" href="https://app.pricelabs.co/reports/'.$p['compset'].'&template=full_dashboard ">Comp Set</a>';
-
-                if ($p['intel'])
-                    $output .= ' <a target="_BLANK" href="'.$p['intel'].'">Intellihost</a>';
 
             }
 
@@ -206,10 +211,17 @@ $newline = ' <br />';
         <div class="section-heading">
             <br /><strong>Teammates</strong><br />
 
-            <i class="fa fa-trophy"></i> <a target="_BLANK" href=" https://app.close.com/lead/lead_n0vfRarxwMaY6aqUKqFVuFyY59jbVIf51D8UISzdYeE/">Intellihost</a><br />
+            <i class="fa fa-android"></i> <a target="_BLANK" href="https://app.close.com/lead/lead_k1dzGfSSEdfEs9wfWtflyMhm5RrJr5GASSBkxM8fw5R/">CC Mahran Makin</a><br />
+
+            <i class="fa fa-android"></i> <a target="_BLANK" href="https://app.close.com/lead/lead_xZEzkkgcSF7sJuXrXLUzvhSFvSOpizwrzfguYpgoO5U/">VA Zoha</a><br />
+                     
             <i class="fa fa-android"></i> <a target="_BLANK" href="https://app.close.com/lead/lead_QOQdqH8zFy0J8hnPPZqqlyCN84D0NGb6lfK1FrrVkzg/">Hostbuddy</a><br />
+
             <i class="fa fa-book"></i> <a target="_BLANK" href="https://app.close.com/lead/lead_on24Hvop5B62XTCxZVEB8nsNnKWcwYYcu4CzbaD0Ir3/">Hostco</a><br />
+
              <i class="fa fa-book"></i> <a target="_BLANK" href="https://app.close.com/lead/lead_ugTE9dJoj0W6p3OfKTbF4wBuIBpw79WKFKuoinwEda2/">Vrbo Villains</a><br />
+
+             <i class="fa fa-book"></i> <a target="_BLANK" href="https://app.close.com/lead/lead_Qicd9QBBuzBNL55aJ8ias8AvJQYmMxtddB4Z9L1Oe1m/">Clickfire</a><br />
 
         </div>
     </div>

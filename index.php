@@ -11,8 +11,8 @@ function menuDropDown ($mainName, $dropDownMenu) {
 
         // 1. Logic for adding the icon
         if(isset($menu['icon'])) {
-            // This creates <i class="fa fa-folder"></i> for example
-            $iconHTML = '<i class="fa '.$menu['icon'].'" style="width: 20px; text-align: center; margin-right: 5px;"></i> ';
+            $colorStyle = isset($menu['iconColor']) ? 'color:'.$menu['iconColor'].'; ' : '';
+            $iconHTML = '<i class="fa '.$menu['icon'].'" style="'.$colorStyle.'width: 20px; text-align: center; margin-right: 5px;"></i> ';
         }
 
         if($menu['attr'] == 'c') $caret = '<b class="caret"></b>';
@@ -43,41 +43,6 @@ function menuDropDown ($mainName, $dropDownMenu) {
 }
 
 
-
-function dropDownMenu ($menu) {
-    //print_r($menu); exit;
-    
-    foreach($menu as $name => $url) {
-       
-        if ($url['dropdown']) { 
-           
-            $display .= '<li class="dropdown-submenu">
-                <a tabindex="-1" target="_BLANK" href="'.$url['href'].'">'.$name.'</a>
-                    <ul class="dropdown-menu">';
-
-                    $display .=  displayMenu($url['dropdown']);
-            
-                        $display .= '
-                    </ul>
-                </li>'; 
-        }
-        else {
-            $display .= '<li><a href="'.$url['href'].'" '.$url['attr'].'>'.$name.'</a>';
- 
-            if($url['caret']) {
-                $display = '<b class="caret"></b>'; 
-            }
-
-            $display .= '</li>';
-        }
-
-        if($url['divider']) {
-            $display .= '<li class="divider"></li>'; 
-        }
-
-    }
-    return $display;
-}
 
 function displayMenu($menu) {
     foreach($menu as $name => $url) {
@@ -262,18 +227,24 @@ switch($_GET['action']) {
     $menuLocal = array(
        'Localhost' => array(
             'href' => 'http://localhost',
-            'icon' => 'fa-home'
+            'icon' => 'fa-home',
+            'iconColor' => '#e05c3a',   // red-orange
         ), 
         'phpMyAdmin' => array(
-            'href' => 'http://localhost/phpmyadmin/', 
-            'icon' => 'fa-database' ),
+            'href' => 'http://localhost/phpmyadmin5.2.3/', 
+            'icon' => 'fa-database',
+            'iconColor' => '#4a90d9',   // blue
+        ),
         'Account Manager' => array(
             'href' => 'http://SaintlyAccountsManager.test',
-            'icon' => 'fa-user', 
+            'icon' => 'fa-user',
+            'iconColor' => '#3a9e6e',   // green
             'attr' => 'd' ),
         'Achive Links' => array(
             'href' => '?action=archive',
-            'icon' => 'fa-archive' ),
+            'icon' => 'fa-archive',
+            'iconColor' => '#8c6b3e',   // brown
+        ),
         'NUS Blog & SEO' => array(
             'href' => '?action=blog' ),
         'NUS BPS' => array(
@@ -290,11 +261,13 @@ switch($_GET['action']) {
     $menuHost = array(
         'gmail Accounts' => array(
             'href' => 'https://mail.google.com/mail/u/0/?shva=1#settings/accounts',
-            'icon' => 'fa-envelope'
+            'icon' => 'fa-envelope',
+            'iconColor' => '#e05c7a',   // red-pink
         ),
         'gmail Filters' => array(
             'href' => 'https://mail.google.com/mail/u/0/?shva=1#settings/filters',
             'icon' => 'fa-filter',
+            'iconColor' => '#7a8c9e',   // gray
             'attr' => 'd' 
         ),
         'Hostinger' => array(
@@ -324,26 +297,29 @@ switch($_GET['action']) {
         ), 
         'Cohost Course ' => array(
             'href' => 'https://cohostingacquisitions.circle.so/c/module-1/',
-             'icon' => 'fa-graduation-cap',
+            'icon' => 'fa-graduation-cap',
+            'iconColor' => '#8c6b3e',   // brown
         ),
         'Group Chat' => array(
             'href' => 'https://cohostingacquisitions.circle.so/c/group-chat/',
-            'icon' => 'fa-comments'
+            'icon' => 'fa-comments',
+            'iconColor' => '#4a90d9',   // blue
         ),
         'Events Calendar' => array(
             'href' => 'https://cohostingacquisitions.circle.so/events',
             'icon' => 'fa-calendar',
+            'iconColor' => '#3a9e6e',   // green
             'attr' => 'd'
         ),
-
         'Data Submit' => array(
             'href' => 'https://awais.codes/co-hosting-acquisitions/',
-            'icon' => 'fa-file'
+            'icon' => 'fa-file',
+            'iconColor' => '#7a8c9e',   // gray
         ),
         'Batch Skip Trace' => array(
             'href' => 'https://app.batchdata.com/property-skip-trace',
             'icon' => 'fa-search',
-             
+            'iconColor' => '#e0963a',   // orange
         ), 
 
     ); 
@@ -356,29 +332,34 @@ echo menuDropDown($mainCohost, $menuCohost);
     $menuSales = array(
         'Close | Inbox' => array( 
             'href' => ' https://app.close.com/tasks/inbox/',
-            'icon' => 'fa-inbox', 
+            'icon' => 'fa-inbox',
+            'iconColor' => '#4a90d9',   // blue
             'attr' => 'c'
         ), 
         'All Leads' => array( 
             'href' => 'https://app.close.com/leads',
-            'icon' => 'fa-users'
+            'icon' => 'fa-users',
+            'iconColor' => '#5b8dd9',   // blue
         ), 
         'AI Agent' => array( 
             'href' => 'https://app.close.com/chloe/agentconfig_032u5sLbxvJrebGDYtQ4Ja/',
-            'icon' => 'fa-android'
+            'icon' => 'fa-android',
+            'iconColor' => '#3a9e6e',   // green
         ), 
-
         'Statuses & Pipes' => array( 
             'href' => 'https://app.close.com/settings/statuses/',
-            'icon' => 'fa-link'
+            'icon' => 'fa-link',
+            'iconColor' => '#7a8c9e',   // gray
         ), 
         'Sched Links' => array( 
             'href' => 'https://app.close.com/settings/scheduling/',
-            'icon' => 'fa-link'
+            'icon' => 'fa-link',
+            'iconColor' => '#7a8c9e',   // gray
         ), 
         'Email Templates' => array( 
             'href' => 'https://app.close.com/settings/templates/email/',
             'icon' => 'fa-file-text',
+            'iconColor' => '#e0963a',   // orange
             'attr' => 'd',
             'submenu' => array(
                 'E Templates' => array(
@@ -392,6 +373,7 @@ echo menuDropDown($mainCohost, $menuCohost);
         
         'Rev Projections' => array(
             'icon' => 'fa-line-chart',
+            'iconColor' => '#3a9e6e',   // green
            'submenu' => array(
                 'Airdna' => array(
                     'href' => 'https://app.airdna.co/data',
@@ -409,15 +391,15 @@ echo menuDropDown($mainCohost, $menuCohost);
             ),
             'attr' => 'd',
         ),
-    
         'Google Meets' => array(
             'href' => 'https://meet.google.com/zjn-zuxt-zzp', 
-            'icon' => 'fa-video-camera'
+            'icon' => 'fa-video-camera',
+            'iconColor' => '#e05c3a',   // red-orange
         ),
         'Calendly' => array(
             'href' => 'https://calendly.com/littlebookstays/30min',
             'icon' => 'fa-calendar-check-o',
-           
+            'iconColor' => '#4a90d9',   // blue
         ),
 
     ); 
@@ -432,33 +414,40 @@ echo menuDropDown($mainCohost, $menuCohost);
         'BNB Messages' => array(
             'href' => 'https://www.airbnb.com/hosting/inbox/folder/all/', 
             'icon' => 'fa-commenting',
+            'iconColor' => '#e05c3a',   // red-orange (Airbnb)
             'attr' => 'd'
         ), 
         'Hospital Inbox' => array(
             'href' => 'https://my.hospitable.com/inbox/segments/default', 
             'icon' => 'fa-inbox',
+            'iconColor' => '#e05c7a',   // red-pink (Hospitable)
             'attr' => 'c'
         ), 
         'User Mgmt' => array(
             'href' => 'https://my.hospitable.com/settings/user-management', 
             'icon' => 'fa-inbox',
+            'iconColor' => '#7a8c9e',   // gray
         ), 
         'Calendars' => array (
             'href' => 'https://my.hospitable.com/calendar/occupancy',
-            'icon' => 'fa-calendar', 
+            'icon' => 'fa-calendar',
+            'iconColor' => '#4a90d9',   // blue
         ),
         'Msg Rules' => array (
             'href' => 'https://my.hospitable.com/gx/rules',
-            'icon' => 'fa-cog'
+            'icon' => 'fa-cog',
+            'iconColor' => '#7a8c9e',   // gray
         ),
         'Upsells' => array (
             'href' => 'https://my.hospitable.com/gx/upsells',
             'attr' => 'd',
-            'icon' => 'fa-tag'
+            'icon' => 'fa-tag',
+            'iconColor' => '#e0963a',   // orange
         ), 
         'Hostbuddy' => array (
             'href' => 'https://www.hostbuddy.ai/properties',
-            'icon' => 'fa-android'
+            'icon' => 'fa-android',
+            'iconColor' => '#3a9e6e',   // green
         ),
 
     );
@@ -472,31 +461,35 @@ echo menuDropDown($mainCohost, $menuCohost);
         'Pricelabs Dashboard' => array(
             'href' => 'https://pricelabs.co/pricing',
             'icon' => 'fa-tachometer',
+            'iconColor' => '#e0763a',   // orange (Pricelabs brand)
         ),
         'Comp Sets' => array(
             'href' => 'https://pricelabs.co/reports',
-            'icon' => 'fa-bar-chart', 
+            'icon' => 'fa-bar-chart',
+            'iconColor' => '#3a9e6e',   // green
         ), 
         'Intellihost DeepRank' => array (
             'href' => 'https://clients.intellihost.co/deep-rank-ai',
             'icon' => 'fa-trophy',
+            'iconColor' => '#e0c03a',   // gold
             'attr' => 'd' 
         ), 
         'Turno Calendar' => array(
             'href' => 'https://app.turno.com/view/schedule',
             'icon' => 'fa-calendar',
+            'iconColor' => '#7a5c3e',   // brown (Turno)
         ), 
         'Maint | Appts' => array(
             'href' => 'https://app.close.com/activities/custom-activity/actitype_3oEjtZdr8UkkqfmtJBDdWi/save_bjqFnOtjRgQsI0Qm9AqG4fSPAGxCtCfOgK6oskcFcIS/',
             'icon' => 'fa-wrench',
+            'iconColor' => '#7a8c9e',   // gray
             'attr' => 'd' 
         ),
-
         'Hostco' => array(
             'href' => 'https://app.thehost.co/overview/stores/',
-            'icon' => 'fa-book', 
+            'icon' => 'fa-book',
+            'iconColor' => '#8c6b3e',   // brown
         ),
-		
 
    );
 
@@ -509,26 +502,24 @@ echo menuDropDown($mainCohost, $menuCohost);
         'Get Help' => array(
             'href' => 'https://www.airbnb.com/help/contact-us?entry=HELP_CENTER&role=home_host',
             'icon' => 'fa-question',
+            'iconColor' => '#e05c3a',   // red-orange (Airbnb)
         ),
         'Res Center' => array(
             'href' => 'https://www.airbnb.com/resolutions',
             'icon' => 'fa-balance-scale',
+            'iconColor' => '#7a8c9e',   // gray
         ),
-
         'Trans History' => array(
             'href' => 'https://www.airbnb.com/users/transaction_history', 
             'icon' => 'fa-money',
+            'iconColor' => '#3a9e6e',   // green
             'attr' => 'd'
         ),
 
-        'Truvi' =>  array(
-            'href' => 'https://platform.truvi.com/listings?pageNumber=1&pageSize=10&searchString=',
-            'icon' => 'fa-book', 
-        ),
-      
         'Prop Hub' => array(
             'href' => 'https://www.notion.so/LBS-Prop-Hub-2ede540782c1800685a1f6ed31f72e0f', 
-            'icon' => 'fa-list', 
+            'icon' => 'fa-list',
+            'iconColor' => '#8c6b3e',   // brown
         ),
 
     );
@@ -545,26 +536,29 @@ echo menuDropDown($mainCohost, $menuCohost);
         'Trello 2026 Goals' => array(
             'href' => 'https://trello.com/b/lx8xpiWr/2024-goals',
             'icon' => 'fa-book',
+            'iconColor' => '#4a90d9',   // blue (Trello)
         ),
-        'LBS Trello' => array(
+        'Trello LBS VA Tasks' => array(
             'href' => 'https://trello.com/b/9NK1LyNF/prop-mgr-for-lbs',
             'icon' => 'fa-book',
+            'iconColor' => '#5b8dd9',   // blue
         ),
-        'Teammates & Cleaners' => array(
-            'href' => 'https://www.notion.so/Teammates-Cleaners-2ede540782c180f9af9ef51f201b3fcc?source=copy_link',
-            'icon' => 'fa-users',
+        'Trello LBS Later Tasks' => array(
+            'href' => 'https://trello.com/b/UJ8yPVr0/lbs-later-tasks',
+            'icon' => 'fa-book',
+            'iconColor' => '#5b8dd9',   // green
             'attr' => 'd'
         ),
-
         'Upwork Msg' => array(
             'href' => 'https://www.upwork.com/ab/messages/rooms/room_007a0a45db0a964b83f0854be6c2e37e?pageTitle=Mahran%20Makin&companyReference=1816859020641894400&sidebar=true',
-            'icon' => 'fa-briefcase'
+            'icon' => 'fa-briefcase',
+            'iconColor' => '#3e8c6b',   // teal-green (Upwork)
         ),
         'Upwork Trans History' => array(
             'href' => 'https://www.upwork.com/nx/payments/reports/transaction-history', 
-            'icon' => 'fa-money'
+            'icon' => 'fa-money',
+            'iconColor' => '#3a9e6e',   // green
         ),
-        
 
     );
 
