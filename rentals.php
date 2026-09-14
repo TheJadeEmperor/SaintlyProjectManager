@@ -8,6 +8,10 @@ $localBlog = 'http://littlebookstays.test/blog';
 $siteWP = 'https://littlebookstays.com/wp-login.php';
 $localWP = 'http://littlebookstays.test/wp-login.php';
 
+$sitePropHub = 'https://littlebookstays.com/wp-admin/admin.php?page=lbs-prop-hub';
+$localPropHub = 'http://littlebookstays.test/wp-admin/admin.php?page=lbs-prop-hub';
+
+
 $newline = ' <br />';
 
 
@@ -57,14 +61,14 @@ $newline = ' <br />';
             </div>
             <div>
                 <br /> <strong>Sales Forms</strong> <br /> 
-                <i class="fa fa-file-text-o"></i> <a href="https://drive.google.com/drive/folders/1fBPRkrfLUd7_hx08NCDepKgLcgMP1Ekw" target="_BLANK">Onboarding Forms</a> | gdrive<br /> 
 
-                <i class="fa fa-check-square-o"></i> <a href="http://localhost//onboarding_steps/" target="_BLANK">Onboarding Steps</a> | localhost<br /> 
+                <i class="fa fa-check-square-o"></i> <a href="http://littlebookstays.test/wp-admin/admin.php?page=lbs-prop-hub" target="_BLANK">Prop Hub</a> | localhost<br /> 
+
+                <i class="fa fa-file-text-o"></i> <a href="https://drive.google.com/drive/folders/1fBPRkrfLUd7_hx08NCDepKgLcgMP1Ekw" target="_BLANK">Onboarding Forms</a> | gdrive<br /> 
 
                 <i class="fa fa-check-square-o"></i> <a href="http://littlebookstays.test/wp-admin/admin.php?page=lbs-onboarding" target="_BLANK">Onboarding Steps</a> | Staging WP<br /> 
 
                 <i class="fa fa-check-square-o"></i> <a href="https://littlebookstays.com/wp-admin/admin.php?page=lbs-onboarding" target="_BLANK">Onboarding Steps</a> | Live WP<br /> 
-
 
                 <i class="fa fa-microphone"></i> <a href="https://drive.google.com/drive/folders/1vYQLa272dzjUdnllnQyAd-0k-mgxkuMJ" target="_BLANK">Sales Scripts</a> | gdrive<br /> 
 
@@ -87,15 +91,17 @@ $newline = ' <br />';
             <div class="row">
                 <div class="col-sm text-sm-end">
                     Localhost <br />
-                    <a target="_BLANK" href="<?=$localAirbnb?>"><?=$localAirbnb?></a> <br />
-                    <a target="_BLANK" href="<?=$localBlog?>"><?=$localBlog?></a> <br />
-                    <a target="_BLANK" href="<?=$localWP?>"><?=$localWP?></a>
+                    <a target="_BLANK" href="<?=$localAirbnb ?>"><?=$localAirbnb?></a> <br />
+                    <a target="_BLANK" href="<?=$localBlog ?>"><?=$localBlog?></a> <br />
+                    <a target="_BLANK" href="<?=$localWP ?>"><?=$localWP?></a>
+                    <a target="_BLANK" href="<?=$localPropHub ?>"><?=$localPropHub ?></a>
                 </div>
                 <div class="col-sm text-start">
                     Live <br />
-                    <a target="_BLANK" href="<?=$siteAirbnb?>"><?=$siteAirbnb?></a> <br />
-                    <a target="_BLANK" href="<?=$siteBlog?>"><?=$siteBlog?></a> <br />
-                    <a target="_BLANK" href="<?=$siteWP?>"><?=$siteWP?></a>
+                    <a target="_BLANK" href="<?=$siteAirbnb ?>"><?=$siteAirbnb?></a> <br />
+                    <a target="_BLANK" href="<?=$siteBlog ?>"><?=$siteBlog?></a> <br />
+                    <a target="_BLANK" href="<?=$siteWP ?>"><?=$siteWP?></a>
+                    <a target="_BLANK" href="<?=$sitePropHub ?>"><?=$sitePropHub ?></a>
                 </div>
 
             </div>
@@ -171,14 +177,16 @@ $newline = ' <br />';
             $output .= $newline;
 
            
+            $p['hosp_id'] = $p['hosp'];
             $base_url_h_calendar = 'https://my.hospitable.com/calendar/property/'; 
             $base_url_h_msg = 'https://my.hospitable.com/gx/messaging/rules;query=';
             $base_url_h_custom_code = 'https://my.hospitable.com/gx/messaging/custom-codes;query=';
 
-            $output .= '<a target="_BLANK" href="'.$base_url_h_calendar.$p['hosp'].'"><span class="hospital">H Calendar</span></a> 
-            | <a target="_BLANK" href="'.$p['hosp_msg'].'"><span class="hospital">H Msg</span></a> 
-            | <a target="_BLANK" href="'.$p['h_custom_code'].'"><span class="hospital">H Custom Codes</span></a>';
 
+            $output .= '<a target="_BLANK" href="'.$base_url_h_calendar.$p['hosp_id'].'"><span class="hospital">H Calendar</span></a> 
+            | <a target="_BLANK" href="'.$p['hosp_msg'].'"><span class="hospital">H Msg</span></a> 
+            | <a target="_BLANK" href="'.$p['h_custom_code'].'"><span class="hospital">H Custom Codes</span></a> | <a target="_BLANK" href="https://my.hospitable.com/properties/property/'.$p['hosp_id'].'/details/essentials"><span class="hospital">H Prop</span></a>';
+   
 		
             if ($p['pricelabs']) {
                 $output .= $newline.'<a target="_BLANK" href=" https://app.pricelabs.co/pricing?listings='.$p['pricelabs'].'&pms_name=smartbnb&open_calendar=true"><span class="pricelabs">Pricelabs</span></a>';
@@ -210,9 +218,7 @@ $newline = ' <br />';
         
         <div class="section-heading">
             <br /><strong>Teammates</strong><br />
-
-            <i class="fa fa-android"></i> <a target="_BLANK" href="https://app.close.com/lead/lead_k1dzGfSSEdfEs9wfWtflyMhm5RrJr5GASSBkxM8fw5R/">CC Mahran Makin</a><br />
-
+ 
             <i class="fa fa-android"></i> <a target="_BLANK" href="https://app.close.com/lead/lead_xZEzkkgcSF7sJuXrXLUzvhSFvSOpizwrzfguYpgoO5U/">VA Zoha</a><br />
                      
             <i class="fa fa-android"></i> <a target="_BLANK" href="https://app.close.com/lead/lead_QOQdqH8zFy0J8hnPPZqqlyCN84D0NGb6lfK1FrrVkzg/">Hostbuddy</a><br />
@@ -224,8 +230,45 @@ $newline = ' <br />';
              <i class="fa fa-book"></i> <a target="_BLANK" href="https://app.close.com/lead/lead_Qicd9QBBuzBNL55aJ8ias8AvJQYmMxtddB4Z9L1Oe1m/">Clickfire</a><br />
 
         </div>
-    </div>
+
+        <div class>
+        .<br>
+        .<br>
  
+
+    <!-- CLEANERS SECTION (new) -->
+    <div class="section-heading">
+        <br /><strong>Cleaners</strong><br />
+<?php
+    $mysqli2 = new mysqli('localhost', 'root', 'password', 'rentals');
+    if (!$mysqli2->connect_error) {
+        $cleaners = $mysqli2->query("SELECT * FROM pm_cleaners ORDER BY name");
+        
+        while ($c = $cleaners->fetch_assoc()) {
+            echo '<i class="fa fa-users"></i> ';
+            
+            if ($c['close']) {
+                echo '<a target="_BLANK" href="'.$c['close'].'">'.$c['name'].'</a>';
+            } else {
+                echo $c['name'];
+            }
+            
+            echo ' <br />';
+            echo '&nbsp;&nbsp;&nbsp;<small>'.$c['manager'].' | '.$c['staff'].' staff</small> <br />';
+            
+            if ($c['photos']) {
+                echo '&nbsp;&nbsp;&nbsp;<small><a target="_BLANK" href="'.$c['photos'].'">Photos</a></small> <br />';
+            }
+            
+            echo '<br />';
+        }
+        $mysqli2->close();
+    }
+?>
+    </div>
+</div>
+
+
 
 </div><!--row-->  
      

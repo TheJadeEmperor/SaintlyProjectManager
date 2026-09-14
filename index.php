@@ -496,9 +496,15 @@ echo menuDropDown($mainCohost, $menuCohost);
 
    echo menuDropDown($mainPM, $menuPM);
  
-    $mainBNB = 'BNB'; 
+$mainBNB = 'BNB'; 
 
    $menuBNB = array(
+        'BNB Messages' => array(
+            'href' => 'https://www.airbnb.com/hosting/inbox/folder/all/', 
+            'icon' => 'fa-commenting',
+            'iconColor' => '#e05c3a',   // red-orange (Airbnb)
+            'attr' => 'd'
+        ), 
         'Get Help' => array(
             'href' => 'https://www.airbnb.com/help/contact-us?entry=HELP_CENTER&role=home_host',
             'icon' => 'fa-question',
@@ -514,12 +520,6 @@ echo menuDropDown($mainCohost, $menuCohost);
             'icon' => 'fa-money',
             'iconColor' => '#3a9e6e',   // green
             'attr' => 'd'
-        ),
-
-        'Prop Hub' => array(
-            'href' => 'https://www.notion.so/LBS-Prop-Hub-2ede540782c1800685a1f6ed31f72e0f', 
-            'icon' => 'fa-list',
-            'iconColor' => '#8c6b3e',   // brown
         ),
 
     );
