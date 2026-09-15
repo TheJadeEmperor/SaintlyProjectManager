@@ -423,11 +423,6 @@ echo menuDropDown($mainCohost, $menuCohost);
             'iconColor' => '#e05c7a',   // red-pink (Hospitable)
             'attr' => 'c'
         ), 
-        'User Mgmt' => array(
-            'href' => 'https://my.hospitable.com/settings/user-management', 
-            'icon' => 'fa-inbox',
-            'iconColor' => '#7a8c9e',   // gray
-        ), 
         'Calendars' => array (
             'href' => 'https://my.hospitable.com/calendar/occupancy',
             'icon' => 'fa-calendar',
@@ -468,16 +463,11 @@ echo menuDropDown($mainCohost, $menuCohost);
             'icon' => 'fa-bar-chart',
             'iconColor' => '#3a9e6e',   // green
         ), 
-        'Intellihost DeepRank' => array (
-            'href' => 'https://clients.intellihost.co/deep-rank-ai',
-            'icon' => 'fa-trophy',
-            'iconColor' => '#e0c03a',   // gold
-            'attr' => 'd' 
-        ), 
         'Turno Calendar' => array(
             'href' => 'https://app.turno.com/view/schedule',
             'icon' => 'fa-calendar',
-            'iconColor' => '#7a5c3e',   // brown (Turno)
+            'iconColor' => '#7a5c3e',   // brown 
+            'attr' => 'd' 
         ), 
         'Maint | Appts' => array(
             'href' => 'https://app.close.com/activities/custom-activity/actitype_3oEjtZdr8UkkqfmtJBDdWi/save_bjqFnOtjRgQsI0Qm9AqG4fSPAGxCtCfOgK6oskcFcIS/',
@@ -490,6 +480,12 @@ echo menuDropDown($mainCohost, $menuCohost);
             'icon' => 'fa-book',
             'iconColor' => '#8c6b3e',   // brown
         ),
+         'StayFi' => array(
+            'href' => 'https://app.stayfi.com/sign_in',
+            'icon' => 'fa-book',
+            'iconColor' => '#8c6b3e',   // brown
+        ),
+
 
    );
 

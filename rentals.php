@@ -87,20 +87,20 @@ $newline = ' <br />';
                     </div>
                 </div>
             </div>
-
+    
             <div class="row">
                 <div class="col-sm text-sm-end">
                     Localhost <br />
                     <a target="_BLANK" href="<?=$localAirbnb ?>"><?=$localAirbnb?></a> <br />
                     <a target="_BLANK" href="<?=$localBlog ?>"><?=$localBlog?></a> <br />
-                    <a target="_BLANK" href="<?=$localWP ?>"><?=$localWP?></a>
+                    <a target="_BLANK" href="<?=$localWP ?>"><?=$localWP?></a> <br />
                     <a target="_BLANK" href="<?=$localPropHub ?>"><?=$localPropHub ?></a>
                 </div>
                 <div class="col-sm text-start">
                     Live <br />
                     <a target="_BLANK" href="<?=$siteAirbnb ?>"><?=$siteAirbnb?></a> <br />
                     <a target="_BLANK" href="<?=$siteBlog ?>"><?=$siteBlog?></a> <br />
-                    <a target="_BLANK" href="<?=$siteWP ?>"><?=$siteWP?></a>
+                    <a target="_BLANK" href="<?=$siteWP ?>"><?=$siteWP?></a> <br />
                     <a target="_BLANK" href="<?=$sitePropHub ?>"><?=$sitePropHub ?></a>
                 </div>
 
