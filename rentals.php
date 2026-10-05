@@ -14,7 +14,7 @@ $localPropHub = 'http://littlebookstays.test/wp-admin/admin.php?page=lbs-prop-hu
 
 $newline = ' <br />';
 
-
+ 
 ?>
 <head>
     <title>Saintly Project Manager</title>
@@ -33,7 +33,7 @@ $newline = ' <br />';
 
     <link href="<?= $dir ?>admin.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
-
+ 
 <center>
 <div class="container">
     <div class="row">
@@ -41,6 +41,8 @@ $newline = ' <br />';
         <div class="col-2 text-start">
             <div class="section-heading">
                 <br /> 
+                New clickfire lead -  import into Close<br />
+                <a href="http://localhost//close_crm_api/clickfire_gsheet_import.php">clickfire_gsheet_import.php</a><br /><br />
                 Airbnb Atrocity = 15.5% fee <br />
                 Hospital = 18.35% to even out the 15.5% fee <br />
                 ADR = average daily rate <br />
