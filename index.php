@@ -70,32 +70,6 @@ switch($_GET['action']) {
         $link = 'http://localhost';
         break;
   
-    case 'newsletters':
-        $link = $newslHost;
-        break;
-
-    case 'newsl-index':
-        $link = $newslHost;
-        break;
-    case 'newsl-all':
-        $link = $newslHost.'AllSubscribers';
-        break;
-    case 'newsl-mms':
-        $link = $newslHost.'MakeMoneySurveys';
-        break;
-    case 'newsl-ppb':
-        $link = $newslHost.'PaypalBooster';
-        break;
-    case 'newsl-nus':
-        $link = $newslHost.'NeobuxUltimateStrategy';
-        break;
-    case 'newsl-translate':
-        $link = $newslHost.'TranslatorJobs';
-        break;
-    case 'newsl-online':
-        $link = $newslHost.'OnlineJobs';
-        break;
-         
 	case 'gmail-filters':
 		$link = 'https://mail.google.com/mail/u/0/?shva=1#settings/filters';
 		break;
@@ -103,38 +77,22 @@ switch($_GET['action']) {
 		$link = 'https://mail.google.com/mail/u/0/?shva=1#settings/accounts';
 		break;
 
-
-    case 'splash-freereport-live':
-        $link = 'https://ultimateneobuxstrategy.com/?action=freereport';
-        break;
-    case 'splash-freereport-local':
-        $link = 'http://NeobuxUltimateStrategy.test/?action=freereport';
-        break;
  
-    case 'splash-ppb-live': 
-        $link = 'https://bestpayingsites.com/?action=booster';
-        break;
-    case 'splash-ppb-local': 
-        $link = 'http://localhost/bestpayingsites/?action=booster';
-        break;
-
-    case 'splash-video-live': 
-        $link = 'https://bestpayingsites.com/?action=translate';
-        break;
-    case 'splash-video-local': 
-        $link = 'http://localhost/bestpayingsites/?action=translate';
-        break;
-
     case 'archive':
         $link = 'archive/archive_links.php';
         break;
     case 'nus':
-        $link = 'archive/nus.php';
+        $link = 'archive/nus_bps.php';
         break;
-	case 'blog': 
-		$link = 'archive/blog_nus.php';
+	case 'blog':
+    case 'codeNinja': 
+		$link = 'archive/code_ninja.php';
 		break;
-   
+
+    case 'hustles': 
+        $link = 'hustles.php';
+        break;
+
     case 'rentals': 
     default:
         $link = 'rentals.php';
@@ -216,7 +174,6 @@ switch($_GET['action']) {
                 <a class="navbar-brand" href="?action=db">SPM</a>
             </div>
 
-
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav"  id="main-menu">
@@ -240,6 +197,12 @@ switch($_GET['action']) {
             'icon' => 'fa-user',
             'iconColor' => '#3a9e6e',   // green
             'attr' => 'd' ),
+        'Little Book Stays' => array(
+            'href' => '.'), 
+        'Hustles' => array(
+            'href' => '?action=hustles',
+             'attr' => 'd' ), 
+
         'Achive Links' => array(
             'href' => '?action=archive',
             'icon' => 'fa-archive',
@@ -247,16 +210,17 @@ switch($_GET['action']) {
         ),
         'NUS Blog & SEO' => array(
             'href' => '?action=blog' ),
-        'NUS BPS' => array(
-            'href' => '?action=nus'),           
-        'Little Book Stays' => array(
-            'href' => '.'),
+        'NUS & BPS' => array(
+            'href' => '?action=nus'),   
+        'Code Ninja' => array(
+            'href' => '?action=codeNinja'),
+
     ); 
 
     echo menuDropDown($mainLocal, $menuLocal);
 
 
-    $mainHost= 'Host';
+    $mainHost= 'Hostinger';
 
     $menuHost = array(
         'gmail Accounts' => array(

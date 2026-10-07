@@ -12,7 +12,7 @@ function displayLinks ($tools) {
 <table>
     <tr valign="top">
         <td>
-<?
+<?php
 
 $tools = array(
     'Word to PDF' => 'https://smallpdf.com/word-to-pdf',
@@ -101,7 +101,7 @@ echo displayLinks($tools);
     </td>
     <td>
 
-<?
+<?php
 $hack = array(  
     'Hidden wiki – Tor' => 'http://zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion/wiki/index.php/Main_Page',
     

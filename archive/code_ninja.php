@@ -1,12 +1,14 @@
-<?php 
+<?php
+$siteNUS = 'http://ultimateneobuxstrategy.com/';
+$localNUS = 'http://neobuxultimatestrategy.test/';
+$prlog = 'https://biz.prlog.org/';
+
 $siteBLWS = 'https://benjaminlouie.com';
 $localBLWS = 'http://localhost//BenjaminLouie';
 
 $scamLocal = 'http://localhost//SusanZhuangScam';
 $scamSite = 'https://susanzhuangscam.com/';
 
-$site5G = 'https://5gradio1.com';
-$local5G = 'http://localhost//5gradio1.com';
 ?>
 <head>
     <title>Saintly Projects Manager</title>
@@ -24,8 +26,7 @@ $local5G = 'http://localhost//5gradio1.com';
 
 <center>
 <div class="container">
-    
-    <div class="row">
+     <div class="row">
         <div class="col-lg">
           <div class="section-heading">
             <br /> <p>BL Web Solutions</p>
@@ -33,9 +34,9 @@ $local5G = 'http://localhost//5gradio1.com';
         </div>
     </div>
     
-    <div class="row">
+   <div class="row">
         <div class="col-sm text-sm-end">
-         
+
             <a target="_BLANK" href="<?=$localBLWS?>"><?=$localBLWS?></a>
         </div>
         <div class="col-sm text-start">
@@ -62,42 +63,50 @@ $local5G = 'http://localhost//5gradio1.com';
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-lg">
-          <div class="section-heading">
-            <br /> <p>CCP Steve Chan</p>
-          </div>
-        </div>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-sm text-sm-end">
-         
-            <a target="_BLANK" href="<?=$ccpLocal?>"><?=$ccpLocal?></a>
-        </div>
-        <div class="col-sm text-start">
-      
-            <a target="_BLANK" href="<?=$ccpSite?>"><?=$ccpSite?></a>
-        </div>
-    </div>
+    <p>&nbsp;</p>
 
     <div class="row">
         <div class="col-lg">
-          <div class="section-heading">
-            <br /><p>5GRadio1</p>
-          </div>
-        </div>
-    </div>
+        
+    
 
-    <div class="row">
-        <div class="col-md text-sm-end">
-         
-            <a target="_BLANK" href="<?=$local5G?>"><?=$local5G?></a>
-        </div>
-        <div class="col-md text-start">
-         
-            <a target="_BLANK" href="<?=$site5G?>"><?=$site5G?></a>
-        </div>
-    </div>
+    <p>PRLog acct page<br />
 
-</div> 
+
+<center>
+    <table>
+    <tr valign="top">
+        <td>
+            <div class="contentBox">
+
+<a target="_BLANK" href="https://www.prlog.org/pub/manage.html">https://www.prlog.org/pub/manage.html</a>
+</p>
+
+<p>PRLog Business Proile - Goldmoney<br />
+<a target="_BLANK" href="<?=$prlog?>goldmoney/"><?=$prlog?>goldmoney</a></p>
+
+<p>PRLog Business Proile - NUS<br />
+<a target="_BLANK" href="<?=$prlog?>neobux/"><?=$prlog?>neobux</a></p>
+
+<p>NUS Blog Admin | Local<br />
+<a target="_BLANK" href="<?=$localNUS?>admin/pages/postList.php"><?=$localNUS?>admin/pages/postList.php</a></p>
+
+<p>NUS Blog Admin | Live<br />
+<a target="_BLANK" href="<?=$siteNUS?>admin/pages/postList.php"><?=$siteNUS?>admin/pages/postList.php</a> </p>
+
+<p>NUS Blog | Local<br />
+<a target="_BLANK" href="<?=$localNUS?>?action=posts"><?=$localNUS?>?action=posts</a></p>
+
+<p>NUS Blog | Live<br />
+<a target="_BLANK" href="<?=$siteNUS?>?action=posts"><?=$siteNUS?>?action=posts</a></p>
+
+		</div>
+	</td>
+	</tr>
+</table>
+
 </center>
+</div>
+</center>
+</body>
+</html>
