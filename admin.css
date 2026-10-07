@@ -220,3 +220,11 @@ b, strong {
     padding-left: 10px;
     font-size: 0.9em;
 }
+
+#salesForms a {
+    text-decoration: underline;
+}
+
+#salesForms a:hover {
+    text-decoration: none;
+}

@@ -41,11 +41,9 @@ $newline = ' <br />';
         <div class="col-2 text-start">
             <div class="section-heading">
                 <br /> 
-                New clickfire lead -  import into Close<br />
-                <a href="http://localhost//close_crm_api/clickfire_gsheet_import.php">clickfire_gsheet_import.php</a><br /><br />
                 Airbnb Atrocity = 15.5% fee <br />
-                Hospital = 18.35% to even out the 15.5% fee <br />
-                ADR = average daily rate <br />
+                Hospital = 18.35% to even out the 15.5% fee<br />
+                Vrbo Villains = 12% fee <br /> 
                 2 night min | 3 night min for far out bookings<br /> 
             </div>
             
@@ -60,8 +58,10 @@ $newline = ' <br />';
 
                 <i class="fa fa-code"></i> <a target="_BLANK" href="https://claude.ai/projects">claude | code</a><br /> 
                  
+                <i class="fa fa-book"></i> <a target="_BLANK" href="https://chatgpt.com/">chatgpt</a> | research<br /> 
+                 
             </div>
-            <div>
+            <div id="salesForms">
                 <br /> <strong>Sales Forms</strong> <br /> 
 
                 <i class="fa fa-check-square-o"></i> <a href="http://littlebookstays.test/wp-admin/admin.php?page=lbs-prop-hub" target="_BLANK">Prop Hub</a> | localhost<br /> 
