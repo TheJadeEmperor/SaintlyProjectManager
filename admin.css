@@ -228,3 +228,42 @@ b, strong {
 #salesForms a:hover {
     text-decoration: none;
 }
+
+.hustle-links-row {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.hustle-links-row > .hustle-link-column {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.hustle-links-row > .hustle-link-column.col-12 {
+    flex-basis: 100%;
+    max-width: 100%;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.contentBox {
+    border: 1px solid gray;
+    padding: 25px;
+    margin-bottom: 15px;
+}
+
+.hustle-account-box {
+    width: fit-content;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.hustle-account-box.rightAlign {
+    margin-left: auto;
+}
+
+.rightAlign {
+    text-align: right;
+}

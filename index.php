@@ -1,5 +1,6 @@
 <?php
 
+
 function menuDropDown ($mainName, $dropDownMenu) {
 
     $display = '<li id="cohost">
@@ -43,7 +44,7 @@ function menuDropDown ($mainName, $dropDownMenu) {
 }
 
 
-
+/*
 function displayMenu($menu) {
     foreach($menu as $name => $url) {
         if($name == 'divider')
@@ -52,7 +53,7 @@ function displayMenu($menu) {
             $display .= '<li><a href="'.$url['href'].'" '.$url['attr'].'>'.$name.'</a></li>';
     }
     return $display;
-} 
+} */
 
 $newslHost = 'http://saintlynewsletters.test/';
 $apiHost = 'http://localhost/btcAPI/';
@@ -199,7 +200,7 @@ switch($_GET['action']) {
             'attr' => 'd' ),
         'Little Book Stays' => array(
             'href' => '.'), 
-        'Hustles' => array(
+        'Side Hustles' => array(
             'href' => '?action=hustles',
              'attr' => 'd' ), 
 

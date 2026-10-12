@@ -1,329 +1,108 @@
-<style>
-    h1, h2 {
-        text-align: center; 
-    }
-    .contentBox {
-        border: 1px solid gray;
-        padding: 25px;
-        margin-bottom: 15px;
-    }
-</style>
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="admin.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
 <?php
-//domains
-$siteNUS = 'https://tools.joinflyp.com/my-items'; 
+include('include/config.php');
+//domains 
+$flypDomain = 'https://tools.joinflyp.com/'; 
 
-
-
-$siteBPS = 'https://bestpayingsites.com/';
-$localBPS = 'http://BestPayingSites.test/';
-
-$sitePPB = 'https://bestpayingsites.com/ppbooster/';
-$localPPB = 'http://bestpayingsites.test/ppbooster/';
-
-$siteSurveys = 'https://bestpayingsites.com/surveys/';
-$localSurveys = 'http://bestpayingsites.test/surveys/';
-
-//spm pages
-$downloadPage = '?action=download&id=vipuser';
-$membersPage = 'members';
-$adminPage = 'admin';
-
-$sitePages = '<p align="center"><b>Site Pages</b></p>';
-
-$nus = array(
-    'live' => array(
-        'Main Site' => '<a href="'.$siteNUS.'" target="_blank">'.$siteNUS.'</a>',
-        'Download Page' => '<a href="'.$siteNUS.$downloadPage.'" target="_blank">'.$siteNUS.$downloadPage.'</a>',
-        'Members Login' => '<a href="'.$siteNUS.$membersPage.'" target="_blank">'.$siteNUS.$membersPage.'</a>',
-        'Admin Login' => '<a href="'.$siteNUS.$adminPage.'" target="_blank">'.$siteNUS.$adminPage.'</a>'
-    ),
-    'local' => array(
-        'Main Site' => '<a href="'.$localNUS.'" target="_blank">'.$localNUS.'</a>',
-        'Download Page' => '<a href="'.$localNUS.$downloadPage.'" target="_blank">'.$localNUS.$downloadPage.'</a>',
-        'Members Login' => '<a href="'.$localNUS.$membersPage.'" target="_blank">'.$localNUS.$membersPage.'</a>',
-        'Admin Login' => '<a href="'.$localNUS.$adminPage.'" target="_blank">'.$localNUS.$adminPage.'</a>'
-    ),
-);
-
-$bps = array(
-    'live' => array(
-        'Main Site' => '<a href="'.$siteBPS.'" target="_blank">'.$siteBPS.'</a>',
-        'Download Page' => '<a href="'.$siteBPS.$downloadPage.'" target="_blank">'.$siteBPS.$downloadPage.'</a>',
-        'Members Login' => '<a href="'.$siteBPS.$membersPage.'" target="_blank">'.$siteBPS.$membersPage.'</a>',
-        'Admin Login' => '<a href="'.$siteBPS.$adminPage.'" target="_blank">'.$siteBPS.$adminPage.'</a>'
-    ),
-    'local' => array(
-        'Main Site' => '<a href="'.$localBPS.'" target="_blank">'.$localBPS.'</a>',
-        'Download Page' => '<a href="'.$localBPS.$downloadPage.'" target="_blank">'.$localBPS.$downloadPage.'</a>',
-        'Members Login' => '<a href="'.$localBPS.$membersPage.'" target="_blank">'.$localBPS.$membersPage.'</a>',
-        'Admin Login' => '<a href="'.$localBPS.$adminPage.'" target="_blank">'.$localBPS.$adminPage.'</a>'
-    ),
-); 
-
-$ppb = array(
-    'live' => array(
-        'Main Site' => '<a href="'.$sitePPB.'" target="_blank">'.$sitePPB.'</a>',
-        'Download Page' => '<a href="'.$sitePPB.$downloadPage.'" target="_blank">'.$sitePPB.$downloadPage.'</a>',
-		'FAQ Page' => '<a href="'.$siteBPS.'?action=faq" target="_blank">'.$siteBPS.'?action=faq</a>'
-    ),
-    'local' => array(
-        'Main Site' => '<a href="'.$localPPB.'" target="_blank">'.$localPPB.'</a>',
-        'Download Page' => '<a href="'.$localPPB.$downloadPage.'" target="_blank">'.$localPPB.$downloadPage.'</a>',
-		'FAQ Page' => '<a href="'.$localBPS.'?action=faq" target="_blank">'.$localBPS.'?action=faq</a>'
-    ),
-);
-
-$surveys = array(
-    'live' => array(
-        'Main Site' => '<a href="'.$siteSurveys.'" target="_blank">'.$siteSurveys.'</a>',
-        'Download Page' => '<a href="'.$siteSurveys.$downloadPage.'" target="_blank">'.$siteSurveys.$downloadPage.'</a>',
-    ),
-    'local' => array(
-        'Main Site' => '<a href="'.$localSurveys.'" target="_blank">'.$localSurveys.'</a>',
-        'Download Page' => '<a href="'.$localSurveys.$downloadPage.'" target="_blank">'.$localSurveys.$downloadPage.'</a>',
-    ),
-); 
-
-
-$scamLocal = 'http://localhost//SusanZhuangLies/';
-$scamSite = 'https://susanzhuanglies.com/';
+ 
 ?> 
-<center>
-
-
-<table>
-    <tr valign="top">
-        <td align="left">
-            <div class="contentBox">
-             <p>Flyp<br />
-             
-            https://tools.joinflyp.com/my-items</p>
-           
-            </p>
-            </div>
-        </td>
-        <td>
-            <div class="contentBox">
-            <p>Mercari</p>
-            
-            https://www.mercari.com/mypage/listings/active/
-            </div>
-        </td>
-    </tr>
-</table>
-</center>
-
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-xs-12">
+    <div class="container-fluid">
+        <div class="row hustle-links-row">
+            <div class="col-12 hustle-link-column">
+                <div class="row">
+                    <center><p>Marketing </p> </center>
+                </div>
+            </div>
+        </div>
+
+        <div class="row hustle-links-row">
+            <div class="col-md-6 hustle-link-column">
+                <div class="contentBox rightAlign">
+                    <p>Mailchimp<br />
+                    <a href="https://login.mailchimp.com/" target="_blank">https://login.mailchimp.com/</a></p>
+
+                    <p>U: <?=$mailchimpUser ?> P: <?=$mailchimpPass ?> </p>
+
+                    <p>Canva<br />
+                    <a href="https://www.canva.com/projects" target="_blank">https://www.canva.com/projects</a></p>
+
+                    <p>U: <?=$mailchimpUser ?> P: <?=$mailchimpPass ?> </p>
+                </div>
+            </div>
+            <div class="col-md-6 hustle-link-column">
+                <div class="contentBox">
+                    <p>tinyurl <br />
+                    <a href="https://tinyurl.com/#recent-links" target="_blank">https://tinyurl.com/#recent-links</a></p>
+
+                    <p>U: <?=$tinyurlUser ?> P: <?=$tinyurlPass ?>  </p>
+
+                    <p>  <br />
+                    <a href=" " target="_blank"> </a></p>
+
+                    <p>U: <?=$x ?> P: <?=$x ?>  </p>
+                </div>
+            </div>
+        </div>
+        <!--
+        <div class="row hustle-links-row">
+            <div class="col-md-6 hustle-link-column">
+                <div class="contentBox rightAlign">
+
+                </div>
+            </div>
+            <div class="col-md-6 hustle-link-column">
+                <div class="contentBox">
+
+                </div>
+            </div>
+        </div> --> 
+    </div>
+
+    <div class="row hustle-links-row">
+        <div class="col-md-6 hustle-link-column">
+            <div class="contentBox hustle-account-box rightAlign">
+                <p>Flyp</p> 
+                <a href="https://tools.joinflyp.com/my-items" target="_blank">https://tools.joinflyp.com/my-items</a><br /> <a href=" https://tools.joinflyp.com/my-items" target="_blank">https://tools.joinflyp.com/my-items</a></p>
+
+                <p>U: <?=$flypUser ?> P: <?=$flypPass?>  </p> 
            
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6">
-            <div class="contentBox">
-                <h2>NUS - live</h2>
-                <?php
-                foreach($nus['live'] as $siteTitle => $siteURL) {
-                    echo '<p>'.$siteTitle.'<br />'.$siteURL.'</p>';
-                }
-                ?>
-
-                <p align="center"><b>Site Pages</b></p>
-
-                <p>PTC Mini-Sites Sales Page<br />
-                <a href="<?=$siteNUS?>minisite" target="_blank"><?=$siteNUS?>minisite</a></p>
-		
-                <p>Neobux Basics DL Page<br />
-                <a href="<?=$siteNUS?>basics" target="_blank"><?=$siteNUS?>basics</a></p>
-                
-                <p>Blog Posts<br />
-                <a href="<?=$siteNUS?>?action=posts" target="_blank"><?=$siteNUS?>?action=posts</a></p>
-                
-                <p>FAQ Page<br />
-                <a href="<?=$siteNUS?>?action=faq" target="_blank"><?=$siteNUS?>?action=faq</a></p>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="contentBox">
-                <h2>NUS - localhost</h2>
-                <?
-                foreach($nus['local'] as $siteTitle => $siteURL) {
-                     echo '<p>'.$siteTitle.'<br />'.$siteURL.'</p>';
-                }
-                
-                echo $sitePages;
-                ?>
-                
-                <p>PTC Mini-Sites Sales Page<br />
-                <a href="<?=$localNUS?>minisite" target=_blank><?=$localNUS?>minisite</a></p>
-                
-                <p>Neobux Basics DL Page<br />
-                <a href="<?=$localNUS?>basics" target=_blank><?=$localNUS?>basics</a></p>
-                 
-                <p>Blog Posts<br />
-                <a href="<?=$localNUS?>?action=posts" target=_blank><?=$localNUS?>?action=posts</a></p>
-                
-                <p>FAQ Page<br />
-                <a href="<?=$localNUS?>?action=faq" target="_blank"><?=$localNUS?>?action=faq</a></p>
+        <div class="col-md-6 hustle-link-column">
+            <div class="contentBox hustle-account-box">
+                <p>Mercari</p>
+                <p><a href="https://www.mercari.com/mypage/listings/active/" target="_blank">https://www.mercari.com/mypage/listings/active/</a></p>
+
+                <p>U: <?=$mercUser ?> P: <?=$mercPass ?>  </p> 
             </div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-6">
-            <div class="contentBox">
-                <h2>EPS - live</h2>
-                <?
-                foreach($bps['live'] as $siteTitle => $siteURL) {
-                     echo '<p>'.$siteTitle.'<br />'.$siteURL.'</p>';
-                }
-                
-                echo $sitePages;
-                ?>
-                
-                <p>PTC Mini Sites<br />
-                <a href="<?=$siteBPS?>site" target=_blank><?=$siteBPS?>site</a></p>
-                
-                <p>Bonus Downloads<br />
-                <a href="<?=$siteBPS?>?action=bonus" target="_blank"><?=$siteBPS?>?action=bonus</a></p>	
-                
-                <p>F.A.Q. <br />
-                <a href="<?=$siteBPS?>?action=faq" target="_blank"><?=$siteBPS?>?action=faq</a></p>
-                <p>Contact Form <br />
-                <a href="<?=$siteBPS?>?action=contact" target="_blank"><?=$siteBPS?>?action=contact</a></p>
-            </div>
+    <div class="row hustle-links-row">
+        <div class="col-md-6 hustle-link-column">
+            <div class="contentBox hustle-account-box rightAlign">
+                <p>eBay - VA to register<br />
+                <a href="https://www.ebay.com/sh/lst/active" target="_blank">https://www.ebay.com/sh/lst/active</a></p>
+
+                 <p>U: <?=$ebayUser ?> P: <?=$ebayPass ?>  </p> 
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="contentBox">
-                <h2>EPS - localhost</h2>
-                <?
-                foreach($bps['local'] as $siteTitle => $siteURL) {
-                    echo '<p>'.$siteTitle.'<br />'.$siteURL.'</p>';
-                }
-                 
-                echo $sitePages;
-                ?>
-                                
-                <p>PTC Mini Sites<br />
-                <a href="<?=$localBPS?>site" target="_blank"><?=$localBPS?>site</a></p>
+        <div class="col-md-6 hustle-link-column">
+            <div class="contentBox hustle-account-box">
+                <p>Etsy - VA to register <br />
+                <a href="https://www.etsy.com/your/shops/me/listings/active" target="_blank">https://www.etsy.com/your/shops/me/listings/active</a></p>
 
-                <p>Bonus Downloads<br />
-                <a href="<?=$localBPS?>?action=bonus" target="_blank"><?=$localBPS?>?action=bonus</a></p>
-                
-                <p>F.A.Q. <br />
-                <a href="<?=$localBPS?>?action=faq" target="_blank"><?=$localBPS?>?action=faq</a></p>
-
-                <p>Contact Form <br />
-                <a href="<?=$localBPS?>?action=contact" target="_blank"><?=$localBPS?>?action=contact</a></p>
+                <p>U: <?=$etsyUser ?> P: <?=$etsyPass ?>  </p> 
             </div>
         </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6">
-            <div class="contentBox">
-                <h2>PP Booster - live</h2>
-                <?
-                foreach($ppb['live'] as $siteTitle => $siteURL) {
-                    echo '<p>'.$siteTitle.'<br />'.$siteURL.'</p>';
-                }
-                ?>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="contentBox">
-                <h2>PP Booster - local</h2>
-                <?
-                foreach($ppb['local'] as $siteTitle => $siteURL) {
-                    echo '<p>'.$siteTitle.'<br />'.$siteURL.'</p>';
-                }
-                ?>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6">
-            <div class="contentBox">
-                <h2>BPS - live</h2>
-                <?
-                foreach($surveys['live'] as $siteTitle => $siteURL) {
-                    echo '<p>'.$siteTitle.'<br />'.$siteURL.'</p>';
-                }
-                ?>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="contentBox">
-                <h2>BPS - local</h2>
-                <?
-                foreach($surveys['local'] as $siteTitle => $siteURL) {
-                    echo '<p>'.$siteTitle.'<br />'.$siteURL.'</p>';
-                }
-                ?>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6">
-            <div class="contentBox">
-                <h2>Writing Jobs - Landing Page</h2>
-            
-                <p>Live</p>
-
-                <p><a href="<?=$siteBPS?>?action=real-translator-jobs" target="_blank"><?=$siteBPS?>?action=real-translator-jobs</a></p>	
-            
-                <p>Localhost</p>
-                    
-                <p><a href="<?=$localBPS?>?action=real-translator-jobs" target="_blank"><?=$localBPS?>?action=real-translator-jobs</a></p>   
-
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="contentBox">
-                <h2>Get Cash For Surveys - Landing Page</h2>
-            
-                <p>Live</p>
-
-                <p><a href="<?=$siteBPS?>?action=get-cash-for-surveys" target="_blank"><?=$siteBPS?>?action=get-cash-for-surveys</a></p>	
-            
-                <p>Localhost</p>
-                    
-                <p><a href="<?=$localBPS?>?action=get-cash-for-surveys" target="_blank"><?=$localBPS?>?action=get-cash-for-surveys</a></p>           
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6">
-            <div class="contentBox">
-                <h2>Social Media Jobs Opt in Page</h2>
-			
-                <p>Live</p>
-
-                <p><a href="<?=$siteBPS?>?action=clickbank" target="_BLANK"><?=$siteBPS?>?action=clickbank</a></p>	
-			
-                <p>Localhost</p>
-					
-                <p><a href="<?=$localBPS?>?action=clickbank" target="_blank"><?=$localBPS?>?action=clickbank</a></p>           
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="contentBox">
-                <h2>Extreme Tracking Links</h2>
-		
-                <p>NUS</p>
-
-                <p title="password: 1a1a1a1a"><a href="http://extremetracking.com/open;geo?login=nus" target="_blank">http://extremetracking.com/open;geo?login=nus</a><br /></p> 
-		
-                <p>CodeGeass</p>
-				
-                <p><a href="http://extremetracking.com/open?login=geass" target="_blank">http://extremetracking.com/open?login=geass</a></p>           
-            </div>
-        </div>
-    </div>
 </div>
+
+
+</body>
+</html>
