@@ -44,16 +44,6 @@ function menuDropDown ($mainName, $dropDownMenu) {
 }
 
 
-/*
-function displayMenu($menu) {
-    foreach($menu as $name => $url) {
-        if($name == 'divider')
-            $display .= '<li class="divider"></li>';
-        else
-            $display .= '<li><a href="'.$url['href'].'" '.$url['attr'].'>'.$name.'</a></li>';
-    }
-    return $display;
-} */
 
 $newslHost = 'http://saintlynewsletters.test/';
 $apiHost = 'http://localhost/btcAPI/';
@@ -186,23 +176,26 @@ switch($_GET['action']) {
        'Localhost' => array(
             'href' => 'http://localhost',
             'icon' => 'fa-home',
-            'iconColor' => '#e05c3a',   // red-orange
+            'iconColor' => '#e05c3a',   // red-orange 
         ), 
         'phpMyAdmin' => array(
             'href' => 'http://localhost/phpmyadmin5.2.3/', 
             'icon' => 'fa-database',
             'iconColor' => '#4a90d9',   // blue
-        ),
+        ), 
         'Account Manager' => array(
             'href' => 'http://SaintlyAccountsManager.test',
             'icon' => 'fa-user',
-            'iconColor' => '#3a9e6e',   // green
-            'attr' => 'd' ),
-        'Little Book Stays' => array(
+            'iconColor' => '#3a9e6e',   // green 
+            'attr' => 'd' ),  
+        'Little Book Stays' => array( 
             'href' => '.'), 
-        'Side Hustles' => array(
+        'Side Hustles' => array( 
             'href' => '?action=hustles',
-             'attr' => 'd' ), 
+            ), 
+        'Atlantis' => array(
+            'href' => './atlantis/',
+            'attr' => 'd' ), 
 
         'Achive Links' => array(
             'href' => '?action=archive',
@@ -275,11 +268,6 @@ switch($_GET['action']) {
             'icon' => 'fa-calendar',
             'iconColor' => '#3a9e6e',   // green
             'attr' => 'd'
-        ),
-        'Data Submit' => array(
-            'href' => 'https://awais.codes/co-hosting-acquisitions/',
-            'icon' => 'fa-file',
-            'iconColor' => '#7a8c9e',   // gray
         ),
         'Batch Skip Trace' => array(
             'href' => 'https://app.batchdata.com/property-skip-trace',
@@ -356,11 +344,7 @@ echo menuDropDown($mainCohost, $menuCohost);
             ),
             'attr' => 'd',
         ),
-        'Google Meets' => array(
-            'href' => 'https://meet.google.com/zjn-zuxt-zzp', 
-            'icon' => 'fa-video-camera',
-            'iconColor' => '#e05c3a',   // red-orange
-        ),
+
         'Calendly' => array(
             'href' => 'https://calendly.com/littlebookstays/30min',
             'icon' => 'fa-calendar-check-o',
@@ -480,7 +464,7 @@ $mainBNB = 'BNB';
             'href' => 'https://www.airbnb.com/users/transaction_history', 
             'icon' => 'fa-money',
             'iconColor' => '#3a9e6e',   // green
-            'attr' => 'd'
+
         ),
 
     );

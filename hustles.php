@@ -42,10 +42,10 @@ $flypDomain = 'https://tools.joinflyp.com/';
 
                     <p>U: <?=$tinyurlUser ?> P: <?=$tinyurlPass ?>  </p>
 
-                    <p>  <br />
-                    <a href=" " target="_blank"> </a></p>
 
-                    <p>U: <?=$x ?> P: <?=$x ?>  </p>
+                    <p>Flyp <br />
+                    <a href="https://tools.joinflyp.com/my-items" target="_blank">https://tools.joinflyp.com/my-items</a><br /> 
+                    <p>U: <?=$flypUser ?> P: <?=$flypPass?>  </p> 
                 </div>
             </div>
         </div>
@@ -67,11 +67,11 @@ $flypDomain = 'https://tools.joinflyp.com/';
     <div class="row hustle-links-row">
         <div class="col-md-6 hustle-link-column">
             <div class="contentBox hustle-account-box rightAlign">
-                <p>Flyp</p> 
-                <a href="https://tools.joinflyp.com/my-items" target="_blank">https://tools.joinflyp.com/my-items</a><br /> <a href=" https://tools.joinflyp.com/my-items" target="_blank">https://tools.joinflyp.com/my-items</a></p>
+              
+                <p>Poshmark <br />
+                <a href="https://poshmark.com/login?fpm=true" target="_blank">https://poshmark.com/login?fpm=true</a></p>
 
-                <p>U: <?=$flypUser ?> P: <?=$flypPass?>  </p> 
-           
+                <p>U: <?=$poshmarkUser ?> P: <?=$poshmarkPass ?>  </p>
             </div>
         </div>
         <div class="col-md-6 hustle-link-column">
@@ -95,7 +95,7 @@ $flypDomain = 'https://tools.joinflyp.com/';
         </div>
         <div class="col-md-6 hustle-link-column">
             <div class="contentBox hustle-account-box">
-                <p>Etsy - VA to register <br />
+                <p>Etsy<br />
                 <a href="https://www.etsy.com/your/shops/me/listings/active" target="_blank">https://www.etsy.com/your/shops/me/listings/active</a></p>
 
                 <p>U: <?=$etsyUser ?> P: <?=$etsyPass ?>  </p> 

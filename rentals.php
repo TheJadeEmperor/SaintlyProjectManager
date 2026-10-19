@@ -228,9 +228,7 @@ $newline = ' <br />';
             <i class="fa fa-book"></i> <a target="_BLANK" href="https://app.close.com/lead/lead_on24Hvop5B62XTCxZVEB8nsNnKWcwYYcu4CzbaD0Ir3/">Hostco</a><br />
 
              <i class="fa fa-book"></i> <a target="_BLANK" href="https://app.close.com/lead/lead_ugTE9dJoj0W6p3OfKTbF4wBuIBpw79WKFKuoinwEda2/">Vrbo Villains</a><br />
-
-             <i class="fa fa-book"></i> <a target="_BLANK" href="https://app.close.com/lead/lead_Qicd9QBBuzBNL55aJ8ias8AvJQYmMxtddB4Z9L1Oe1m/">Clickfire</a><br />
-
+ 
         </div>
 
         <div class>
