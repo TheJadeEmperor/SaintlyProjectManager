@@ -1,551 +1,681 @@
 
-        :root {
-            --ink: #0a2a3f;
-            --teal: #1b7f9e;
-            --aqa: #7fe0d8;
-            box-sizing: border-box;
-            padding-top: env(safe-area-inset-top, 0px);
-            padding-bottom: env(safe-area-inset-bottom, 0px)
-        }
-
-        html {
-            scroll-padding-top: env(safe-area-inset-top, 0px)
-        }
-
-        * {
-            box-sizing: border-box
-        }
-
-        body {
-            margin: 0;
-            height: 100vh;
-            background: #0b6f8c;
-            font-family: Marcellus, Cinzel, serif;
-            color: var(--ink);
-            overflow: hidden;
-            display: grid;
-            grid-template-rows: 1fr;
-            position: relative
-        }
-
-        .sea {
-            position: fixed;
-            inset: 0;
-            z-index: 0;
-            overflow: hidden;
-            pointer-events: none;
-            background: url("../include/assets/ocean.jpg") center/cover
-        }
-
-        .sea i {
-            position: absolute;
-            inset: -8%
-        }
-
-        .sea i:nth-child(2) {
-            transform: scaleX(-1);
-            mix-blend-mode: screen;
-            opacity: .4;
-            animation: pan 38s ease-in-out infinite alternate
-        }
-
-        .sea i:nth-child(1) {
-            animation: pan2 52s ease-in-out infinite alternate
-        }
-
-        .sea::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgba(2, 20, 40, .08)
-        }
-
-        @keyframes pan {
-            to {
-                transform: scaleX(-1) translate(5%, 3%) scale(1.08)
-            }
-        }
-
-        @keyframes pan2 {
-            to {
-                transform: translate(-4%, -2%) scale(1.06)
-            }
-        }
-
-        .bub {
-            position: absolute;
-            bottom: -20px;
-            border-radius: 50%;
-            border: 2px solid rgba(255, 255, 255, .55);
-            animation: rise linear infinite
-        }
-
-        @keyframes rise {
-            to {
-                transform: translateY(-110vh) translateX(18px)
-            }
-        }
-
-        header {
-            position: absolute;
-            top: clamp(14px, 3.2vh, 32px);
-            left: 50%;
-            z-index: 3;
-            padding: 0;
-            text-align: center;
-            background: none;
-            transform: translateX(-50%)
-        }
-
-        .frame {
-            position: relative;
-            display: inline-block;
-            width: min(88vw, 330px);
-            padding: 15px 28px 16px;
-            border: 1px solid rgba(157, 220, 214, .82);
-            border-radius: 0;
-            background: transparent;
-            box-shadow: 0 5px 18px rgba(0, 20, 35, .16), inset 0 0 18px rgba(127, 224, 216, .04);
-        }
-
-        .frame::before {
-            content: "";
-            position: absolute;
-            inset: 7px;
-            border: 1px solid rgba(175, 228, 220, .65);
-            clip-path: polygon(5% 0, 44% 0, 48% 5%, 52% 0, 95% 0, 100% 8%, 100% 42%, 97% 46%, 100% 50%, 100% 92%, 95% 100%, 56% 100%, 52% 95%, 48% 100%, 5% 100%, 0 92%, 0 55%, 3% 50%, 0 45%, 0 8%);
-            pointer-events: none
-        }
-
-        .frame::after {
-            content: "";
-            position: absolute;
-            top: -1px;
-            bottom: -1px;
-            left: 50%;
-            width: 22px;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, transparent 45%, rgba(157, 220, 214, .82) 46%, rgba(157, 220, 214, .82) 54%, transparent 55%) top/100% 12px no-repeat, linear-gradient(45deg, transparent 45%, rgba(157, 220, 214, .82) 46%, rgba(157, 220, 214, .82) 54%, transparent 55%) bottom/100% 12px no-repeat;
-            pointer-events: none
-        }
-
-        h1 {
-            margin: 0;
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(1.7rem, 2.65vw, 2.35rem);
-            line-height: 1.02;
-            color: #e9f3ec;
-            letter-spacing: .2px;
-            text-transform: none;
-            text-shadow: 0 2px 5px rgba(4, 26, 43, .82), 0 0 10px rgba(127, 224, 216, .12);
-            font-weight: 400
-        }
-
-        .sub-title {
-            margin-top: 3px;
-            font-family: Caveat, cursive;
-            font-size: .95rem;
-            color: var(--aqa);
-            letter-spacing: 1.5px;
-            text-transform: none;
-            font-weight: 600;
-            opacity: .9
-        }
-
-        main {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 16px 24px;
-            overflow-y: auto;
-            min-height: 0
-        }
-
-        .map {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: clamp(28px, 4vh, 48px) clamp(180px, 18vw, 300px);
-            width: 100%;
-            max-width: 1440px;
-            height: auto;
-            min-height: 100%;
-            margin: 0 auto;
-            align-content: space-evenly;
-            justify-items: center
-        }
-
-        .island {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            color: inherit;
-            outline-offset: 3px;
-            transition: transform .3s;
-            width: min(100%, 400px)
-        }
-
-        .isl {
-            position: relative;
-            width: 100%;
-            margin-bottom: 3px;
-            flex-shrink: 0;
-            filter: drop-shadow(0 10px 8px rgba(2, 20, 40, .4));
-            animation: bob 6s ease-in-out infinite
-        }
-
-        .island:nth-child(5) {
-            grid-column: 1/-1
-        }
-
-        .island:nth-child(2) .isl {
-            animation-delay: -1.5s
-        }
-
-        .island:nth-child(3) .isl {
-            animation-delay: -3s
-        }
-
-        .island:nth-child(4) .isl {
-            animation-delay: -4.5s
-        }
-
-        .island:nth-child(4) .btn {
-            margin-top: -35px
-        }
-
-        @keyframes bob {
-            50% {
-                translate: 0 -4px
-            }
-        }
-
-        .isl img {
-            display: block;
-            width: 100%;
-            height: auto
-        }
-
-        .island:hover,
-        .island:focus-visible {
-            transform: scale(1.02)
-        }
-
-        .island:hover .isl,
-        .island:focus-visible .isl {
-            filter: drop-shadow(0 12px 10px rgba(2, 20, 40, .55))
-        }
-
-        .btn {
-            position: relative;
-            padding: 8px 20px 7px;
-            font-family: "Cinzel Decorative", Cinzel, serif;
-            font-size: .66rem;
-            font-weight: 700;
-            letter-spacing: 1.05px;
-            color: #f7f4dc;
-            background: linear-gradient(180deg, rgba(22, 116, 136, .92), rgba(5, 65, 84, .94));
-            border: 1px solid rgba(198, 231, 198, .78);
-            border-radius: 2px;
-            text-align: center;
-            cursor: pointer;
-            transition: all .3s;
-            text-transform: none;
-            overflow: hidden;
-            flex-shrink: 0;
-            margin-bottom: 2px;
-            white-space: nowrap;
-            box-shadow: 0 4px 10px rgba(2, 20, 40, .32), inset 0 1px 0 rgba(255, 255, 255, .18), inset 0 0 12px rgba(127, 224, 216, .10)
-        }
-
-        .btn::before {
-            content: "";
-            position: absolute;
-            inset: 3px;
-            border: 1px solid rgba(198, 231, 198, .28);
-            border-radius: 1px;
-            opacity: .7;
-            pointer-events: none;
-            animation: shimmer 2.6s ease-in-out infinite
-        }
-
-        @keyframes shimmer {
-
-            0%,
-            100% {
-                opacity: .3
-            }
-
-            50% {
-                opacity: .7
-            }
-        }
-
-        .btn:hover {
-            background: linear-gradient(180deg, rgba(36, 145, 159, .96), rgba(8, 78, 96, .96));
-            box-shadow: 0 6px 16px rgba(2, 20, 40, .42), 0 0 12px rgba(127, 224, 216, .22);
-            border-color: rgba(235, 249, 232, .96);
-            transform: translateY(-2px)
-        }
-
-        .sub {
-            margin: 1px 0 0;
-            font-family: Caveat, cursive;
-            font-size: .9rem;
-            font-weight: 600;
-            letter-spacing: .2px;
-            color: rgba(235, 250, 244, .78);
-            text-align: center;
-            line-height: 1.1;
-            flex-shrink: 0;
-            text-shadow: 0 1px 3px rgba(2, 20, 40, .65)
-        }
-
-        .software-island {
-            position: relative;
-            z-index: 2;
-            width: min(90%, 360px)
-        }
-
-        .docs-center-island {
-            position: relative;
-            z-index: 2;
-            width: min(100%, 400px)
-        }
-
-        .docs-center-island .island-link {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            text-decoration: none;
-            color: inherit
-        }
-
-        .software-island .island-link {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            text-decoration: none;
-            color: inherit
-        }
-
-        .software-island .island-link .isl {
-            width: 100%
-        }
-
-        .cohost-island {
-            position: relative;
-            z-index: 2;
-            width: min(100%, 400px)
-        }
-
-        .cohost-island .island-link {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            text-decoration: none;
-            color: inherit
-        }
-
-        .cohost-island .island-link .isl {
-            width: 100%
-        }
-
-        .finance-island {
-            position: relative;
-            z-index: 2;
-            width: min(100%, 400px)
-        }
-
-        .finance-island .island-link {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            text-decoration: none;
-            color: inherit
-        }
-
-        .finance-island .island-link .isl {
-            width: 100%
-        }
-
-        .fanservice-island {
-            width: min(110%, 440px)
-        }
-
-        .software-dialog {
-            top: 50%;
-            position: absolute;
-            right: calc(100% + 18px);
-            z-index: 4;
-            display: grid;
-            gap: 12px;
-            width: min(300px, 42vw);
-            padding: 20px 24px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-50%) translateX(8px);
-            transition: opacity .2s, transform .2s, visibility 0s linear .2s
-        }
-
-        .software-island:hover .software-dialog,
-        .software-island:focus-within .software-dialog,
-        .cohost-island:hover .software-dialog,
-        .cohost-island:focus-within .software-dialog,
-        .finance-island:hover .software-dialog,
-        .finance-island:focus-within .software-dialog,
-        .docs-center-island:hover .software-dialog,
-        .docs-center-island:focus-within .software-dialog {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(-50%);
-            transition-delay: 0s
-        }
-
-        .finance-island .software-dialog {
-            top: 50%;
-            left: 120%;
-            transform: translate(-50%, -50%) translateY(8px) 
-        }
-
-        .cohost-island .software-dialog {
-            top: 60% !important;
-            right: 50%;
-            left: unset
-        }
-
-        .software-island .software-dialog {
-            right: 50%;
-            left: unset
-        }
-
-        .finance-island:hover .software-dialog,
-        .finance-island:focus-within .software-dialog {
-            transform: translate(-50%, -50%)
-        }
-
-        .docs-center-island .software-dialog {
-            top: 50%;
-            left: 120%;
-            right: auto;
-            transform: translate(-50%, -50%) translateY(8px)
-        }
-
-        .docs-center-island:hover .software-dialog,
-        .docs-center-island:focus-within .software-dialog {
-            transform: translate(-50%, -50%)
-        }
-
-        .software-dialog a {
-            position: relative;
-            color: #e9f3ec;
-            font-family: Marcellus, Cinzel, serif;
-            font-size: .95rem;
-            text-decoration: none;
-            text-shadow: 0 1px 4px rgba(4, 26, 43, .82)
-        }
-
-        .software-dialog a:hover,
-        .software-dialog a:focus-visible {
-            color: var(--aqa);
-            text-decoration: underline;
-            text-underline-offset: 3px
-        }
-
-        .software-dialog .placeholder {
-            color: #e9f3ec;
-            font-family: Marcellus, Cinzel, serif;
-            font-size: .95rem;
-            text-shadow: 0 1px 4px rgba(4, 26, 43, .82)
-        }
-
-        @media(max-height:780px) {
-            .map {
-                gap: 8px clamp(150px, 18vw, 230px)
-            }
-        }
-
-        @media(max-width:1000px) {
-            .map {
-                grid-template-columns: minmax(0, 1fr)
-            }
-        }
-
-        @media(max-width:700px) {
-            body {
-                grid-template-rows: auto 1fr
-            }
-
-            header {
-                position: relative;
-                top: auto;
-                left: auto;
-                transform: none;
-                padding: 10px 12px
-            }
-
-            .frame {
-                padding: 8px 14px
-            }
-
-            h1 {
-                font-size: 1.45rem
-            }
-
-            .map {
-                gap: 12px 24px;
-                max-width: 640px
-            }
-
-            .software-island {
-                grid-column: 1/-1
-            }
-
-            .finance-island {
-                grid-column: 1/-1
-            }
-
-            .cohost-island {
-                grid-column: 1/-1
-            }
-
-            .software-dialog {
-                position: static;
-                display: none;
-                width: min(300px, calc(100vw - 30px));
-                margin: 12px auto 0;
-                transform: none;
-                opacity: 1;
-                visibility: visible;
-                transition: none;
-                padding: 40px;
-            }
-
-            .software-island:hover .software-dialog,
-            .software-island:focus-within .software-dialog,
-            .cohost-island:hover .software-dialog,
-            .cohost-island:focus-within .software-dialog,
-            .finance-island:hover .software-dialog,
-            .finance-island:focus-within .software-dialog,
-            .docs-center-island:hover .software-dialog,
-            .docs-center-island:focus-within .software-dialog {
-                display: grid;
-                transform: none
-            }
-
-
-        }
-
-        @media (prefers-reduced-motion:reduce) {
-            * {
-                animation: none !important;
-                transition: none !important
-            }
-        }
+:root {
+    --ink: #0a2a3f;
+    --teal: #1b7f9e;
+    --aqa: #7fe0d8;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px)
+}
+
+html {
+    scroll-padding-top: env(safe-area-inset-top, 0px)
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: #0b6f8c;
+    font-family: Marcellus, Cinzel, serif;
+    color: var(--ink);
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 1fr;
+    position: relative
+}
+
+p {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.sea {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background: url("../include/assets/ocean.jpg") center/cover
+}
+
+.sea i {
+    position: absolute;
+    inset: -8%
+}
+
+.sea i:nth-child(2) {
+    transform: scaleX(-1);
+    mix-blend-mode: screen;
+    opacity: .4;
+    animation: pan 38s ease-in-out infinite alternate
+}
+
+.sea i:nth-child(1) {
+    animation: pan2 52s ease-in-out infinite alternate
+}
+
+.sea::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(2, 20, 40, .08)
+}
+
+@keyframes pan {
+    to {
+        transform: scaleX(-1) translate(5%, 3%) scale(1.08)
+    }
+}
+
+@keyframes pan2 {
+    to {
+        transform: translate(-4%, -2%) scale(1.06)
+    }
+}
+
+.bub {
+    position: absolute;
+    bottom: -20px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, .55);
+    animation: rise linear infinite
+}
+
+@keyframes rise {
+    to {
+        transform: translateY(-110vh) translateX(18px)
+    }
+}
+
+header {
+    position: absolute;
+    top: clamp(14px, 3.2vh, 32px);
+    left: 50%;
+    z-index: 3;
+    padding: 0;
+    text-align: center;
+    background: none;
+    transform: translateX(-50%)
+}
+
+.frame {
+    position: relative;
+    display: inline-block;
+    width: min(88vw, 330px);
+    padding: 15px 28px 16px;
+    border: 1px solid rgba(157, 220, 214, .82);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: 0 5px 18px rgba(0, 20, 35, .16), inset 0 0 18px rgba(127, 224, 216, .04);
+}
+
+.frame::before {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    border: 1px solid rgba(175, 228, 220, .65);
+    clip-path: polygon(5% 0, 44% 0, 48% 5%, 52% 0, 95% 0, 100% 8%, 100% 42%, 97% 46%, 100% 50%, 100% 92%, 95% 100%, 56% 100%, 52% 95%, 48% 100%, 5% 100%, 0 92%, 0 55%, 3% 50%, 0 45%, 0 8%);
+    pointer-events: none
+}
+
+.frame::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    left: 50%;
+    width: 22px;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, transparent 45%, rgba(157, 220, 214, .82) 46%, rgba(157, 220, 214, .82) 54%, transparent 55%) top/100% 12px no-repeat, linear-gradient(45deg, transparent 45%, rgba(157, 220, 214, .82) 46%, rgba(157, 220, 214, .82) 54%, transparent 55%) bottom/100% 12px no-repeat;
+    pointer-events: none
+}
+
+h1 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.7rem, 2.65vw, 2.35rem);
+    line-height: 1.02;
+    color: #e9f3ec;
+    letter-spacing: .2px;
+    text-transform: none;
+    text-shadow: 0 2px 5px rgba(4, 26, 43, .82), 0 0 10px rgba(127, 224, 216, .12);
+    font-weight: 400
+}
+
+.sub-title {
+    margin-top: 3px;
+    font-family: Caveat, cursive;
+    font-size: .95rem;
+    color: var(--aqa);
+    letter-spacing: 1.5px;
+    text-transform: none;
+    font-weight: 600;
+    opacity: .9
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 16px 24px;
+    overflow-y: auto;
+    min-height: 0
+}
+
+.map {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(28px, 4vh, 48px) clamp(180px, 18vw, 300px);
+    width: 100%;
+    max-width: 1440px;
+    height: auto;
+    min-height: 100%;
+    margin: 0 auto;
+    align-content: space-evenly;
+    justify-items: center
+}
+
+.island {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    outline-offset: 3px;
+    transition: transform .3s;
+    width: min(100%, 400px)
+}
+
+.isl {
+    position: relative;
+    width: 100%;
+    margin-bottom: 3px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 10px 8px rgba(2, 20, 40, .4));
+    animation: bob 6s ease-in-out infinite
+}
+
+.island:nth-child(5) {
+    grid-column: 1/-1
+}
+
+.island:nth-child(2) .isl {
+    animation-delay: -1.5s
+}
+
+.island:nth-child(3) .isl {
+    animation-delay: -3s
+}
+
+.island:nth-child(4) .isl {
+    animation-delay: -4.5s
+}
+
+.island:nth-child(4) .btn {
+    margin-top: -35px
+}
+
+@keyframes bob {
+    50% {
+        translate: 0 -4px
+    }
+}
+
+.isl img {
+    display: block;
+    width: 100%;
+    height: auto
+}
+
+.island:hover,
+.island:focus-visible {
+    transform: scale(1.02)
+}
+
+.island:hover .isl,
+.island:focus-visible .isl {
+    filter: drop-shadow(0 12px 10px rgba(2, 20, 40, .55))
+}
+
+.btn {
+    opacity: 0.75;
+    position: relative;
+    padding: 8px 20px 7px;
+    font-family: "Cinzel Decorative", Cinzel, serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 1.05px;
+    color: #f7f4dc;
+    background: linear-gradient(180deg, rgba(22, 116, 136, .92), rgba(5, 65, 84, .94));
+    border: 1px solid rgba(198, 231, 198, .78);
+    border-radius: 2px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .3s;
+    text-transform: none;
+    overflow: hidden;
+    flex-shrink: 0;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(2, 20, 40, .32), inset 0 1px 0 rgba(255, 255, 255, .18), inset 0 0 12px rgba(127, 224, 216, .10)
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border: 1px solid rgba(198, 231, 198, .28);
+    border-radius: 1px;
+    opacity: .7;
+    pointer-events: none;
+    animation: shimmer 2.6s ease-in-out infinite
+}
+
+@keyframes shimmer {
+
+    0%,
+    100% {
+        opacity: .3
+    }
+
+    50% {
+        opacity: .7
+    }
+}
+
+.btn:hover {
+    background: linear-gradient(180deg, rgba(86, 187, 201, 0.96), rgba(8, 78, 96, .96));
+    box-shadow: 0 6px 16px rgba(2, 20, 40, .42), 0 0 12px rgba(127, 224, 216, .22);
+    border-color: rgba(235, 249, 232, .96);
+    color: #fff;
+    transform: translateY(-2px)
+}
+
+.sub {
+    margin: 1px 0 0;
+    font-family: Caveat, cursive;
+    font-size: .9rem;
+    font-weight: 600;
+    letter-spacing: .2px;
+    color: rgba(235, 250, 244, .78);
+    text-align: center;
+    line-height: 1.1;
+    flex-shrink: 0;
+    text-shadow: 0 1px 3px rgba(2, 20, 40, .65)
+}
+
+.software-island {
+    position: relative;
+    z-index: 2;
+    width: min(90%, 360px)
+}
+
+.docs-center-island {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 400px)
+}
+
+.docs-center-island .island-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+    color: inherit
+}
+
+.software-island .island-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+    color: inherit
+}
+
+.software-island .island-link .isl {
+    width: 100%
+}
+
+.cohost-island {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 400px)
+}
+
+.cohost-island .island-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+    color: inherit
+}
+
+.cohost-island .island-link .isl {
+    width: 100%
+}
+
+.finance-island {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 400px)
+}
+
+.finance-island .island-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+    color: inherit
+}
+
+.finance-island .island-link .isl {
+    width: 100%
+}
+
+.fanservice-island {
+    width: min(110%, 440px)
+}
+
+.software-dialog {
+    top: 50%;
+    position: absolute;
+    right: calc(100% + 18px);
+    z-index: 4;
+    display: grid;
+    gap: 12px;
+    width: min(300px, 42vw);
+    padding: 20px 24px;
+    opacity: 0.6;
+    visibility: hidden;
+    transform: translateY(-50%) translateX(8px);
+    transition: opacity .5s, transform .2s, visibility 0s linear .2s
+}
+
+.software-island:hover .software-dialog,
+.software-island:focus-within .software-dialog,
+.cohost-island:hover .software-dialog,
+.cohost-island:focus-within .software-dialog,
+.finance-island:hover .software-dialog,
+.finance-island:focus-within .software-dialog,
+.docs-center-island:hover .software-dialog,
+.docs-center-island:focus-within .software-dialog {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%);
+    transition-delay: 0s;
+    
+}
+
+.finance-island .software-dialog {
+    top: 50%;
+    left: 120%;
+    transform: translate(-50%, -50%) translateY(8px) 
+}
+
+.cohost-island .software-dialog {
+    top: 60% !important;
+    right: 50%;
+    left: unset
+}
+
+.software-island .software-dialog {
+    right: 50%;
+    left: unset
+}
+
+.finance-island:hover .software-dialog,
+.finance-island:focus-within .software-dialog {
+    transform: translate(-50%, -50%)
+}
+
+.docs-center-island .software-dialog {
+    top: 50%;
+    left: 120%;
+    right: auto;
+    transform: translate(-50%, -50%) translateY(8px)
+}
+
+.docs-center-island:hover .software-dialog,
+.docs-center-island:focus-within .software-dialog {
+    transform: translate(-50%, -50%)
+}
+
+.software-dialog a {
+    position: relative;
+    color: #e9f3ec;
+    font-family: Marcellus, Cinzel, serif; 
+    text-decoration: none;
+    text-shadow: 0 1px 4px rgba(4, 26, 43, .82)
+}
+
+.software-dialog a:hover,
+.software-dialog a:focus-visible {
+    color: var(--aqa);
+    text-decoration: underline;
+    text-underline-offset: 3px
+}
+
+.software-dialog .placeholder {
+    color: #e9f3ec;
+    font-family: Marcellus, Cinzel, serif;
+    font-size: .95rem;
+    text-shadow: 0 1px 4px rgba(4, 26, 43, .82)
+}
+
+@media(max-height:780px) {
+    .map {
+        gap: 8px clamp(150px, 18vw, 230px)
+    }
+}
+
+@media(max-width:1000px) {
+    .map {
+        grid-template-columns: minmax(0, 1fr)
+    }
+}
+
+@media(max-width:700px) {
+    body {
+        grid-template-rows: auto 1fr
+    }
+
+    header {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        padding: 10px 12px
+    }
+
+    .frame {
+        padding: 8px 14px
+    }
+
+    h1 {
+        font-size: 1.45rem
+    }
+
+    .map {
+        gap: 12px 24px;
+        max-width: 640px
+    }
+
+    .software-island {
+        grid-column: 1/-1
+    }
+
+    .finance-island {
+        grid-column: 1/-1
+    }
+
+    .cohost-island {
+        grid-column: 1/-1
+    }
+
+    .software-dialog {
+        position: static;
+        display: none;
+        width: min(300px, calc(100vw - 30px));
+        margin: 12px auto 0;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        transition: none;
+        padding: 40px;
+    }
+
+    .software-island:hover .software-dialog,
+    .software-island:focus-within .software-dialog,
+    .cohost-island:hover .software-dialog,
+    .cohost-island:focus-within .software-dialog,
+    .finance-island:hover .software-dialog,
+    .finance-island:focus-within .software-dialog,
+    .docs-center-island:hover .software-dialog,
+    .docs-center-island:focus-within .software-dialog {
+        display: grid;
+        transform: none
+    }
+
+
+}
+
+@media (prefers-reduced-motion:reduce) {
+    * {
+        animation: none !important;
+        transition: none !important
+    }
+}
+
+.atlantis-navbar {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+    min-height: 50px;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.atlantis-navbar .navbar-brand {
+    float: none;
+}
+
+.atlantis-navbar .navbar-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    float: none;
+    margin: 0;
+}
+
+.atlantis-navbar .navbar-nav > li {
+    float: none;
+}
+
+.atlantis-navbar .navbar-brand,
+.atlantis-navbar .navbar-nav > li > .atlantis-dropdown > summary {
+    color: #f4f7f2;
+    text-shadow: 0 1px 4px rgba(4, 26, 43, .8);
+}
+
+.atlantis-navbar .navbar-brand:hover,
+.atlantis-navbar .navbar-brand:focus,
+.atlantis-navbar .navbar-nav > li > .atlantis-dropdown > summary:hover,
+.atlantis-navbar .navbar-nav > li > .atlantis-dropdown > summary:focus {
+    color: #fff;
+    background: rgba(255, 255, 255, .12);
+}
+
+.atlantis-dropdown {
+    position: relative;
+}
+
+.atlantis-dropdown > summary {
+    padding: 15px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.atlantis-dropdown > summary::-webkit-details-marker {
+    display: none;
+}
+
+.atlantis-dropdown[open] > .dropdown-menu {
+    display: block;
+}
+
+.atlantis-dropdown .dropdown-menu {
+    margin-top: 0;
+}
+
+.atlantis-welcome {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    padding: 0 8px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.atlantis-welcome h1 {
+    margin: 0;
+    color: #f4f7f2;
+    font-family: "Cinzel Decorative", Cinzel, serif;
+    font-size: clamp(1rem, 2.2vw, 1.4rem);
+    font-weight: 700;
+    letter-spacing: .02em;
+    white-space: nowrap;
+    text-shadow: 0 1px 4px rgba(4, 26, 43, .9), 0 0 12px rgba(127, 224, 216, .4);
+}
+
+@media(max-width:700px) {
+    .atlantis-welcome {
+        position: static;
+        order: 3;
+        width: 100%;
+        padding: 6px 8px;
+        transform: none;
+        text-align: center;
+    }
+
+    .atlantis-welcome h1 {
+        font-size: 1.15rem;
+    }
+
+    .atlantis-navbar {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .atlantis-navbar .navbar-brand {
+        display: block;
+        order: 1;
+    }
+
+    .atlantis-navbar .navbar-nav {
+        order: 2;
+        justify-content: flex-start;
+    }
+}

@@ -1,3 +1,6 @@
+<?php
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'menu.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,78 +9,82 @@
     <title>Welcome to Atlantis</title>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cinzel+Decorative:wght@700;900&family=Caveat:wght@600;700&family=Marcellus&display=swap">
+    <link rel="stylesheet" href="../include/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../include/atlantis.css">
-   
 </head>
 <body>
     <div class="sea" aria-hidden="true">
         <div id="life"></div>
     </div>
-    <header>
-        <div class="frame">
-            <h1>Welcome to <br />Atlantis</h1>
-        </div>
-    </header>
+    <?php renderAtlantisMenu($menus); ?>
     <main>
         <nav class="map" aria-label="Atlantis islands">
             <div class="island docs-center-island">
                 <a target="_blank" class="island-link" href="docs.php">
                     <div class="isl"><img src="../include/assets/document_center.png" alt="Document Center island"></div>
                     <button class="btn" type="button"> Document Center </button>
-                    <div class="sub">Ehhh what's up doc?</div>
+                    
                 </a>
                 <div class="software-dialog frame" role="group" aria-label="Document Center links">
-                    <span class="placeholder">Document links go here.</span>
-                    <a target="_blank" rel="noopener" href="https://app.notion.com/p/Loser-Loans-332e540782c180fba65dda63b5d0633c">Loser Loans</a>
-                    <a target="_blank" rel="noopener" href="http://localhost/novels">Novels</a>
+                  
+                    <p><a target="_blank" rel="noopener" href="https://app.notion.com/p/Loser-Loans-332e540782c180fba65dda63b5d0633c">Loser Loans</a></p>
+
+                    <p><a target="_blank" rel="noopener" href="http://saintlyaccountsmanager.test/">Accts Manager</a></p>
+
+                    <p><a target="_blank" rel="noopener" href="http://localhost/novels">Novels</a></p>
                 </div> 
             </div>
             <div class="island cohost-island">
                 <a class="island-link" href="http://saintlyprojectmanager.test/?action=ninja">
                     <div class="isl"><img src="../include/assets/shared_forum.png" alt="Co-hosting island"></div>
                     <button class="btn" type="button"> Co-hosting</button>
-                    <div class="sub">Airbnb Atrocities</div>
+                     
                 </a>
                 <div class="software-dialog frame" role="group" aria-label="Co-hosting links">
                     <a target="_blank" rel="noopener" href="https://trello.com/b/lx8xpiWr/2026-goals">2026 Goals</a>
-                    <a target="_blank" rel="noopener" href="https://trello.com/b/9NK1LyNF/prop-mgr-for-lbs">Trello LBS VA Tasks</a> 
-                   
+
+                    <a target="_blank" rel="noopener" href="https://trello.com/b/9NK1LyNF/prop-mgr-for-lbs">LBS VA Tasks</a> 
+
+                    <a target="_blank" rel="noopener" href="https://trello.com/b/PYxZriXG/onboarding-va">Onboarding VA</a>
+                    
                 </div>
             </div>
             <div class="island finance-island">
                 <a target="_blank" class="island-link" href="ccc.php">
                     <div class="isl"><img src="../include/assets/finances.png" alt="Finances island"></div>
                     <button class="btn" type="button">Enter Finances </button>
-                    <div class="sub">Is Financial Freedom really free?</div>
+                    
                 </a>
 
                 <div class="software-dialog frame" role="group" aria-label="Finance links">
-                    <a target="_blank" rel="noopener" href="../banking/plaid.php">Banking Balances</a>
+                    <a target="_blank" rel="noopener" href="plaid.php">Banking Balances</a>
 
                     <a target="_blank" rel="noopener" href="https://www.notion.so/Crap-Credit-Cards-2eee540782c180688ae5d744f91d1cca">Crap Credit Cards</a>
+
+                    <a target="_blank" rel="noopener" href="https://www.notion.so/2efe540782c180f2b770f9802638b8a0?v=2efe540782c18053b39b000c59572d94">Switch CC for Bonuses</a>
+
                     <a target="_blank" rel="noopener" href="https://www.notion.so/315e540782c1803ab64dd61f5b0566bb?v=315e540782c180df8432000cc109da2f">Utility Bills</a>
-                    <a target="_blank" rel="noopener" href="https://www.notion.so/2efe540782c180f2b770f9802638b8a0?v=2efe540782c18053b39b000c59572d94">Other Finance</a>
+                  
                 </div>
             </div>
             <div target="_blank" class="island software-island">
                 <a class="island-link" href="#">
                     <div class="isl"><img src="../include/assets/sorrowful_software.png" alt="Sorrowful Software island"></div>
                     <button class="btn" type="button"> Sorrowful Software </button>
-                    <div class="sub">Bugging bugs</div>
                 </a>
                 
                 <div class="software-dialog frame" role="group" aria-label="Sorrowful Software links"> 
                     <a target="_blank" href="../gmail_filters/">gmail filter editor</a>
-                    <a target="_blank" href="https://mail.google.com/mail/u/0/#settings/filters">gmail filters</a>
+                    <a target="_blank" href="https://mail.google.com/mail/u/0/#settings/filters">gmail filters list</a>
                     <a target="_blank" href="https://drive.google.com/drive/folders/1usncxY8h4s0JMsqYz9MuXAuMWx3P0csg?usp=sharing">purge
                         gmails gscripts</a>
                 </div>
             </div>
             
-            <a target="_blank" class="island fanservice-island" href="../FanService/">
+            <a target="_blank" class="island fanservice-island" href="http://localhost/FanService/?page=goat">
                 <div class="isl"><img src="../include/assets/fanservice.png" alt="Fan Service island"></div>
                 <button class="btn" type="button"> Fan Service </button>
-                <div class="sub">FanService</div>
+                 
             </a>
         </nav>
     </main>

@@ -1,5 +1,10 @@
 <?php
+
 declare(strict_types=1);
+
+
+include( 'menu.php' );
+
 
 $isHttps = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== '' && $_SERVER['HTTPS'] !== 'off';
 ini_set('session.use_strict_mode', '1');
@@ -217,7 +222,7 @@ function loadPlaidAccessToken(string $bank = 'chase'): ?string
     return $accessToken;
 }
 
-require_once __DIR__ . DIRECTORY_SEPARATOR . 'config.php';
+require_once '../include/config.php';
 $action = $_GET['action'] ?? null;
 if ($action !== null) {
     try {
