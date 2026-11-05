@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'menu.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +24,7 @@ require_once __DIR__ . DIRECTORY_SEPARATOR . 'menu.php';
                 <a target="_blank" class="island-link" href="docs.php">
                     <div class="isl"><img src="../include/assets/document_center.png" alt="Document Center island"></div>
                     <button class="btn" type="button"> Document Center </button>
-                    
+
                 </a>
                 <div class="software-dialog frame" role="group" aria-label="Document Center links">
                   
@@ -41,7 +42,7 @@ require_once __DIR__ . DIRECTORY_SEPARATOR . 'menu.php';
                      
                 </a>
                 <div class="software-dialog frame" role="group" aria-label="Co-hosting links">
-                    <a target="_blank" rel="noopener" href="https://trello.com/b/lx8xpiWr/2026-goals">2026 Goals</a>
+                    <a target="_blank" rel="noopener" href="<?=$trello2026 ?>">2026 Goals</a>
 
                     <a target="_blank" rel="noopener" href="https://trello.com/b/9NK1LyNF/prop-mgr-for-lbs">LBS VA Tasks</a> 
 
@@ -74,7 +75,7 @@ require_once __DIR__ . DIRECTORY_SEPARATOR . 'menu.php';
                 </a>
                 
                 <div class="software-dialog frame" role="group" aria-label="Sorrowful Software links"> 
-                    <a target="_blank" href="../gmail_filters/">gmail filter editor</a>
+                    <a target="_blank" href="<?=$gmailFilterEditor ?>">gmail filter editor</a>
                     <a target="_blank" href="https://mail.google.com/mail/u/0/#settings/filters">gmail filters list</a>
                     <a target="_blank" href="https://drive.google.com/drive/folders/1usncxY8h4s0JMsqYz9MuXAuMWx3P0csg?usp=sharing">purge
                         gmails gscripts</a>

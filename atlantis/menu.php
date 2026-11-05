@@ -1,5 +1,21 @@
 <?php
 
+
+$gmailFilterEditor = 'http://localhost//gmail_filters/'; 
+
+$trello2026 = 'https://trello.com/b/lx8xpiWr/2026-goals';
+$trelloLBS = 'https://trello.com/b/9NK1LyNF/prop-mgr-for-lbs';
+$trelloOnboarding = 'https://trello.com/b/PYxZriXG/onboarding-va';
+
+$ccc = 'https://www.notion.so/Crap-Credit-Cards-2eee540782c180688ae5d744f91d1cca';
+
+$utilityBills = 'https://www.notion.so/315e540782c1803ab64dd61f5b0566bb?v=315e540782c180df8432000cc109da2f';
+
+$otherFinance = 'https://www.notion.so/2efe540782c180f2b770f9802638b8a0?v=2efe540782c18053b39b000c59572d94';
+
+$fanService = 'http://localhost/FanService/?page=goat';
+
+
 $menus = array(
     'Documents' => array(
         'Document Center' => array('href' => '../banking/docs.php'),
@@ -7,9 +23,9 @@ $menus = array(
         'Novels' => array('href' => 'http://localhost/novels'),
     ),
     'Co-hosting' => array(
-        '2026 Goals' => array('href' => 'https://trello.com/b/lx8xpiWr/2026-goals'),
-        'Trello LBS VA Tasks' => array('href' => 'https://trello.com/b/9NK1LyNF/prop-mgr-for-lbs'),
-        'Onboarding VA' => array('href' => 'https://trello.com/b/PYxZriXG/onboarding-va'),
+        '2026 Goals' => array('href' => $trello2026 ),
+        'Trello LBS VA Tasks' => array('href' => $trelloLBS ),
+        'Onboarding VA' => array('href' => $trelloOnboarding ),
     ),
     'Finances' => array(
         'Banking Balances' => array('href' => 'plaid.php'),
@@ -18,14 +34,15 @@ $menus = array(
         'Other Finance' => array('href' => 'https://www.notion.so/2efe540782c180f2b770f9802638b8a0?v=2efe540782c18053b39b000c59572d94'),
     ),
     'Software' => array(
-        'Gmail Filter Editor' => array('href' => '../gmail_filters/'),
+        'Gmail Filter Editor' => array('href' => $gmailFilterEditor ),
         'Gmail Filters' => array('href' => 'https://mail.google.com/mail/u/0/#settings/filters'),
         'Purge Gmail Scripts' => array('href' => 'https://drive.google.com/drive/folders/1usncxY8h4s0JMsqYz9MuXAuMWx3P0csg?usp=sharing'),
     ),
     'Fan Service' => array(
-        'Fan Service' => array('href' => 'http://localhost/FanService/?page=goat'),
+        'Fan Service' => array('href' => $fanService),
     ),
 );
+
 
 function renderAtlantisMenu(array $menus): void
 {

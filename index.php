@@ -208,12 +208,12 @@ function menuDropDown(string $mainName, array $dropDownMenu): void
             'attr' => 'd',
         ),
 
-        'Calendly' => array(
-            'href' => 'https://calendly.com/littlebookstays/30min',
+        'Close CRM API' => array(
+            'href' => 'http://localhost//close_crm_api',
             'icon' => 'fa-calendar-check-o',
             'iconColor' => '#4a90d9',   // blue
         ),
-
+        
     );
 
     $menuGuests = array(
