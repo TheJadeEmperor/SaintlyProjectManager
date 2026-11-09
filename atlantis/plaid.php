@@ -115,14 +115,26 @@ function plaidTokenStorePath(string $bank = 'chase'): string
         throw new InvalidArgumentException('Unsupported bank connection.');
     }
 
-    $privateDirectory = dirname(__DIR__, 3) . DIRECTORY_SEPARATOR . 'plaid-private';
+    $privateDirectory = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'private';
     $tokenKey = $bank === 'chase' ? $clientID : $clientID . ':' . $bank;
     return $privateDirectory . DIRECTORY_SEPARATOR . hash('sha256', $tokenKey) . '.json';
 }
 
 function pendingTransactionsPath(): string
 {
-    return dirname(__DIR__) . DIRECTORY_SEPARATOR . 'pending-transactions.json';
+    return dirname(__DIR__) . DIRECTORY_SEPARATOR . 'private'
+        . DIRECTORY_SEPARATOR . 'pending-transactions.json';
+}
+
+function supportsPendingTransactions(string $bank, string $type, string $accountName): bool
+{
+    if (($bank === 'chase' || $bank === 'td') && $type === 'depository') {
+        return true;
+    }
+
+    return $bank === 'capital_one'
+        && $type === 'credit'
+        && stripos($accountName, 'venture x') !== false;
 }
 
 function getPendingTransactions(string $accountId): array
@@ -565,7 +577,8 @@ if ($action !== null) {
                     'type' => $type,
                     'subtype' => $subtype,
                     'bank' => $bank,
-                    'pending_transactions' => $bank === 'chase' && is_string($account['account_id'] ?? null)
+                    'pending_transactions' => supportsPendingTransactions($bank, $type, $accountName)
+                        && is_string($account['account_id'] ?? null)
                         ? getPendingTransactions($account['account_id'])
                         : [],
                 ];
@@ -644,8 +657,8 @@ $isCapitalOneConnected = is_file(plaidTokenStorePath('capital_one'));
         .pending-sign { position: relative; flex: 0 0 32px; width: 32px; height: 32px; border-radius: 50%; border: 1px solid #9cc7b9; background: #ebf7f1; color: #0e5a4b; font-size: 0; padding: 0; margin: 0; }
         .pending-sign::before, .pending-sign::after, .pending-remove::before { content: ""; position: absolute; top: 50%; left: 50%; width: 10px; height: 2px; border-radius: 1px; background: currentColor; transform: translate(-50%, -50%); }
         .pending-sign::after { width: 2px; height: 10px; }
-        .pending-amount { width: 110px; flex: 0 0 110px; border: 1px solid #d4dde4; border-radius: 6px; padding: .45rem .6rem; font: inherit; }
-        .pending-note { width: 130px; min-width: 70px; max-width: 18vw; flex: 1 1 100px; border: 1px solid #d4dde4; border-radius: 6px; padding: .45rem .6rem; font: inherit; }
+        .pending-amount { width: 100px; flex: 0 0 100px; border: 1px solid #d4dde4; border-radius: 6px; padding: .45rem .6rem; font: inherit; }
+        .pending-note { width: 110px; min-width: 70px; max-width: 18vw; flex: 1 1 100px; border: 1px solid #d4dde4; border-radius: 6px; padding: .45rem .6rem; font: inherit; }
         .pending-remove { position: relative; flex: 0 0 28px; width: 28px; height: 28px; border-radius: 50%; border: 1px solid #d4dde4; background: #fff; color: #7b8592; font-size: 0; padding: 0; margin: 0; }
         .predicted-balance { margin: 0; text-align: right; font-weight: 700; color: #0c4f45; }
         .predicted-label, .predicted-amount { display: block; }
@@ -763,12 +776,21 @@ $isCapitalOneConnected = is_file(plaidTokenStorePath('capital_one'));
         const orderedAccounts = [...accounts].sort((left, right) => {
             const typeOrder = (account) => account.type === 'depository' ? 0 : account.type === 'credit' ? 1 : 2;
             const bankOrder = (account) => account.bank === 'chase' ? 0 : account.bank === 'td' ? 1 : account.bank === 'capital_one' ? 2 : 3;
+            const displayOrder = (account) => {
+                if (account.bank === 'chase' && account.type === 'depository') return 0;
+                if (account.bank === 'td' && account.type === 'depository') return 1;
+                if (account.bank === 'capital_one'
+                    && account.type === 'credit'
+                    && account.name.toLowerCase().includes('venture x')) return 2;
+                return 3;
+            };
             const capitalOneCardOrder = (account) => {
                 if (account.bank !== 'capital_one') return 0;
                 const name = account.name.toLowerCase();
                 return name.includes('savor') ? 0 : name.includes('venture') ? 1 : 2;
             };
-            return typeOrder(left) - typeOrder(right)
+            return displayOrder(left) - displayOrder(right)
+                || typeOrder(left) - typeOrder(right)
                 || bankOrder(left) - bankOrder(right)
                 || capitalOneCardOrder(left) - capitalOneCardOrder(right)
                 || left.name.localeCompare(right.name);
@@ -812,7 +834,14 @@ $isCapitalOneConnected = is_file(plaidTokenStorePath('capital_one'));
 
             article.append(header, detail, balance);
 
-            if (account.bank === 'chase' && account.type === 'depository') {
+            const supportsPendingTransactions = (
+                (account.bank === 'chase' || account.bank === 'td') && account.type === 'depository'
+            ) || (
+                account.bank === 'capital_one'
+                && account.type === 'credit'
+                && account.name.toLowerCase().includes('venture x')
+            );
+            if (supportsPendingTransactions) {
                 const pendingWrapper = document.createElement('div');
                 pendingWrapper.className = 'pending-wrapper';
 
@@ -901,7 +930,7 @@ $isCapitalOneConnected = is_file(plaidTokenStorePath('capital_one'));
                     noteInput.type = 'text';
                     noteInput.className = 'pending-note';
                     noteInput.value = transaction.note || '';
-                    noteInput.maxLength = 500;
+                    noteInput.maxLength = 400;
                     noteInput.placeholder = 'Note';
                     noteInput.setAttribute('aria-label', 'Pending transaction note');
 
@@ -950,7 +979,19 @@ $isCapitalOneConnected = is_file(plaidTokenStorePath('capital_one'));
             accountsElement.append(article);
         }
 
-        const otherAccountsList = orderedAccounts.filter((account) => account.type !== 'depository');
+        const otherAccountsList = orderedAccounts
+            .filter((account) => account.type !== 'depository')
+            .sort((left, right) => {
+                const bankOrder = (account) => account.bank === 'chase' ? 0 : account.bank === 'td' ? 1 : account.bank === 'capital_one' ? 2 : 3;
+                const capitalOneCardOrder = (account) => {
+                    if (account.bank !== 'capital_one') return 0;
+                    const name = account.name.toLowerCase();
+                    return name.includes('savor') ? 0 : name.includes('venture') ? 1 : 2;
+                };
+                return bankOrder(left) - bankOrder(right)
+                    || capitalOneCardOrder(left) - capitalOneCardOrder(right)
+                    || left.name.localeCompare(right.name);
+            });
         for (const account of otherAccountsList) {
             const item = document.createElement('div');
             item.className = 'sidebar-item';
