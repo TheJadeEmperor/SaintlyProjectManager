@@ -1,5 +1,6 @@
 include/config.php
-/banking/config.php
+banking/config.php
+private/
 
 # Windows image file caches
 Thumbs.db

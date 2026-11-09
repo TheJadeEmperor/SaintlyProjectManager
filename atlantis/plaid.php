@@ -1,7 +1,5 @@
 <?php
-
 declare(strict_types=1);
-
 
 include( 'menu.php' );
 
@@ -122,6 +120,123 @@ function plaidTokenStorePath(string $bank = 'chase'): string
     return $privateDirectory . DIRECTORY_SEPARATOR . hash('sha256', $tokenKey) . '.json';
 }
 
+function pendingTransactionsPath(): string
+{
+    return dirname(__DIR__) . DIRECTORY_SEPARATOR . 'pending-transactions.json';
+}
+
+function getPendingTransactions(string $accountId): array
+{
+    $path = pendingTransactionsPath();
+    if (!is_file($path)) {
+        return [];
+    }
+
+    $handle = fopen($path, 'rb');
+    if ($handle === false) {
+        throw new RuntimeException('Could not read pending transactions.');
+    }
+
+    try {
+        if (!flock($handle, LOCK_SH)) {
+            throw new RuntimeException('Could not lock pending transactions.');
+        }
+        $contents = stream_get_contents($handle);
+    } finally {
+        fclose($handle);
+    }
+
+    if (!is_string($contents)) {
+        throw new RuntimeException('Could not read pending transactions.');
+    }
+    if ($contents === '') {
+        return [];
+    }
+
+    try {
+        $data = json_decode($contents, true, 512, JSON_THROW_ON_ERROR);
+    } catch (JsonException $exception) {
+        throw new RuntimeException('The pending transactions file is unreadable.', 0, $exception);
+    }
+    if (!is_array($data) || !isset($data['accounts']) || !is_array($data['accounts'])) {
+        throw new RuntimeException('The pending transactions file has an invalid format.');
+    }
+
+    $transactions = $data['accounts'][hash('sha256', $accountId)] ?? [];
+    if (!is_array($transactions)) {
+        throw new RuntimeException('The saved pending transactions are invalid.');
+    }
+
+    $normalizedTransactions = [];
+    foreach ($transactions as $transaction) {
+        if (is_numeric($transaction)) {
+            $normalizedTransactions[] = ['amount' => (float) $transaction, 'note' => ''];
+            continue;
+        }
+        if (!is_array($transaction)
+            || !is_numeric($transaction['amount'] ?? null)
+            || !is_string($transaction['note'] ?? null)) {
+            throw new RuntimeException('The saved pending transactions are invalid.');
+        }
+        $normalizedTransactions[] = [
+            'amount' => (float) $transaction['amount'],
+            'note' => $transaction['note'],
+        ];
+    }
+
+    return $normalizedTransactions;
+}
+
+function savePendingTransactions(string $accountId, array $transactions): void
+{
+    $directory = dirname(pendingTransactionsPath());
+    if (!is_dir($directory) && !mkdir($directory, 0700, true) && !is_dir($directory)) {
+        throw new RuntimeException('Could not create the pending transactions directory.');
+    }
+
+    $path = pendingTransactionsPath();
+    $handle = fopen($path, 'c+b');
+    if ($handle === false) {
+        throw new RuntimeException('Could not open the pending transactions file.');
+    }
+
+    try {
+        if (!flock($handle, LOCK_EX)) {
+            throw new RuntimeException('Could not lock pending transactions.');
+        }
+
+        $contents = stream_get_contents($handle);
+        if (!is_string($contents)) {
+            throw new RuntimeException('Could not read pending transactions.');
+        }
+        if ($contents === '') {
+            $data = ['accounts' => []];
+        } else {
+            try {
+                $data = json_decode($contents, true, 512, JSON_THROW_ON_ERROR);
+            } catch (JsonException $exception) {
+                throw new RuntimeException('The pending transactions file is unreadable.', 0, $exception);
+            }
+            if (!is_array($data) || !isset($data['accounts']) || !is_array($data['accounts'])) {
+                throw new RuntimeException('The pending transactions file has an invalid format.');
+            }
+        }
+
+        $data['accounts'][hash('sha256', $accountId)] = $transactions;
+        $encodedData = json_encode($data, JSON_THROW_ON_ERROR | JSON_PRETTY_PRINT);
+        if (!rewind($handle) || !ftruncate($handle, 0) || fwrite($handle, $encodedData) !== strlen($encodedData)) {
+            throw new RuntimeException('Could not save pending transactions.');
+        }
+        fflush($handle);
+    } finally {
+        fclose($handle);
+    }
+
+    if (!chmod($path, 0600)) {
+        throw new RuntimeException('Could not secure the pending transactions file.');
+    }
+}
+
 function savePlaidAccessToken(string $accessToken, string $bank = 'chase'): void
 {
     global $clientID, $secret;
@@ -238,6 +353,34 @@ if ($action !== null) {
         $requestBody = json_decode(file_get_contents('php://input'), true, 512, JSON_THROW_ON_ERROR);
         if (!is_array($requestBody)) {
             sendJson(['error' => 'The request body must be a JSON object.'], 400);
+        }
+
+        if ($action === 'save_pending_transactions') {
+            $accountId = $requestBody['account_id'] ?? null;
+            $transactions = $requestBody['transactions'] ?? null;
+            if (!is_string($accountId) || $accountId === '' || strlen($accountId) > 256
+                || !is_array($transactions) || count($transactions) > 100) {
+                sendJson(['error' => 'The pending transactions are invalid.'], 400);
+            }
+
+            $validatedTransactions = [];
+            foreach ($transactions as $transaction) {
+                if (!is_array($transaction)
+                    || !is_numeric($transaction['amount'] ?? null)
+                    || !is_finite((float) $transaction['amount'])
+                    || abs((float) $transaction['amount']) > 1000000000
+                    || !is_string($transaction['note'] ?? null)
+                    || strlen($transaction['note']) > 500) {
+                    sendJson(['error' => 'Each pending transaction must be a valid amount.'], 400);
+                }
+                $validatedTransactions[] = [
+                    'amount' => (float) $transaction['amount'],
+                    'note' => $transaction['note'],
+                ];
+            }
+
+            savePendingTransactions($accountId, $validatedTransactions);
+            sendJson(['saved' => true]);
         }
 
         $plaidBaseUrl = plaidBaseUrl();
@@ -411,6 +554,7 @@ if ($action !== null) {
                     : ($balances['available'] ?? $balances['current'] ?? $balances['limit'] ?? null);
 
                 $accounts[] = [
+                    'account_id' => is_string($account['account_id'] ?? null) ? $account['account_id'] : '',
                     'name' => $accountName,
                     'mask' => is_string($account['mask'] ?? null) ? $account['mask'] : '',
                     'balance' => is_numeric($amount) ? (float) $amount : null,
@@ -421,6 +565,9 @@ if ($action !== null) {
                     'type' => $type,
                     'subtype' => $subtype,
                     'bank' => $bank,
+                    'pending_transactions' => $bank === 'chase' && is_string($account['account_id'] ?? null)
+                        ? getPendingTransactions($account['account_id'])
+                        : [],
                 ];
             }
 
@@ -457,8 +604,24 @@ $isCapitalOneConnected = is_file(plaidTokenStorePath('capital_one'));
     <title>Account balances</title>
     <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
     <style>
-        body { background: #f4f6f8; color: #17212b; font: 16px/1.5 system-ui, sans-serif; margin: 0; padding: 2rem 1rem; }
-        main { background: #fff; border-radius: 12px; box-shadow: 0 4px 20px #17212b12; margin: 0 auto; max-width: 980px; padding: 2rem; }
+        body {
+            background: linear-gradient(rgba(244, 246, 248, 0.28), rgba(244, 246, 248, 0.28)),
+                url('../include/assets/ocean.jpg') center/cover no-repeat fixed;
+            color: #17212b;
+            font: 16px/1.5 system-ui, sans-serif;
+            margin: 0;
+            padding: 2rem 1rem;
+        }
+        main {
+            background: rgba(255, 255, 255, 0.58);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px #17212b12;
+            margin: 0 auto;
+            max-width: 1078px;
+            padding: 2rem;
+        }
         h1 { font-size: 1.6rem; margin-top: 0; }
         button { background: #146c5a; border: 0; border-radius: 6px; color: #fff; cursor: pointer; font: inherit; font-weight: 600; margin: .5rem .5rem .5rem 0; padding: .7rem 1rem; }
         button:disabled { cursor: wait; opacity: .65; }
@@ -472,6 +635,20 @@ $isCapitalOneConnected = is_file(plaidTokenStorePath('capital_one'));
         .account-name { font-weight: 600; }
         .account-tag { color: #146c5a; background: #dff5ee; border-radius: 999px; font-size: .72rem; font-weight: 700; letter-spacing: .04em; padding: .35rem .6rem; text-transform: uppercase; }
         .balance { font-size: 1.5rem; font-weight: 700; margin: .25rem 0 0; }
+        .pending-wrapper { margin-top: .8rem; border-top: 1px solid #d9e5eb; padding-top: .75rem; }
+        .pending-header { margin-bottom: .5rem; }
+        .pending-header-label { font-size: .82rem; color: #4d5d69; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+        .pending-content { display: grid; grid-template-columns: minmax(0, 1fr) max-content; align-items: start; gap: 1rem; }
+        .pending-list { display: grid; gap: .5rem; min-width: 0; }
+        .pending-row { display: flex; align-items: center; gap: .5rem; }
+        .pending-sign { position: relative; flex: 0 0 32px; width: 32px; height: 32px; border-radius: 50%; border: 1px solid #9cc7b9; background: #ebf7f1; color: #0e5a4b; font-size: 0; padding: 0; margin: 0; }
+        .pending-sign::before, .pending-sign::after, .pending-remove::before { content: ""; position: absolute; top: 50%; left: 50%; width: 10px; height: 2px; border-radius: 1px; background: currentColor; transform: translate(-50%, -50%); }
+        .pending-sign::after { width: 2px; height: 10px; }
+        .pending-amount { width: 110px; flex: 0 0 110px; border: 1px solid #d4dde4; border-radius: 6px; padding: .45rem .6rem; font: inherit; }
+        .pending-note { width: 130px; min-width: 70px; max-width: 18vw; flex: 1 1 100px; border: 1px solid #d4dde4; border-radius: 6px; padding: .45rem .6rem; font: inherit; }
+        .pending-remove { position: relative; flex: 0 0 28px; width: 28px; height: 28px; border-radius: 50%; border: 1px solid #d4dde4; background: #fff; color: #7b8592; font-size: 0; padding: 0; margin: 0; }
+        .predicted-balance { margin: 0; text-align: right; font-weight: 700; color: #0c4f45; }
+        .predicted-label, .predicted-amount { display: block; }
         .note { color: #53616d; font-size: .9rem; }
         .sidebar { background: #f5f8fa; border: 1px solid #e0e8ee; border-radius: 10px; padding: 1rem; }
         .sidebar h2 { font-size: 1rem; margin: 0 0 .75rem; }
@@ -481,6 +658,9 @@ $isCapitalOneConnected = is_file(plaidTokenStorePath('capital_one'));
         .sidebar-item .name { font-weight: 600; }
         .sidebar-item .meta { color: #53616d; font-size: .82rem; }
         @media (max-width: 760px) { .accounts-layout { grid-template-columns: 1fr; } }
+        @media (max-width: 560px) {
+            .pending-content { grid-template-columns: minmax(0, 1fr); }
+        }
     </style>
 </head>
 <body>
@@ -594,6 +774,12 @@ $isCapitalOneConnected = is_file(plaidTokenStorePath('capital_one'));
                 || left.name.localeCompare(right.name);
         });
 
+        const formatProjectedBalance = (account, adjustmentsTotal) => {
+            const baseBalance = Number.isFinite(Number(account.balance)) ? Number(account.balance) : 0;
+            const projectedBalance = baseBalance + adjustmentsTotal;
+            return `Projected balance: ${formatCurrency(projectedBalance, account.currency)}`;
+        };
+
         for (const account of orderedAccounts) {
             const article = document.createElement('article');
             const isPrimary = account.type === 'depository';
@@ -625,6 +811,142 @@ $isCapitalOneConnected = is_file(plaidTokenStorePath('capital_one'));
             balance.textContent = formatBalance(account);
 
             article.append(header, detail, balance);
+
+            if (account.bank === 'chase' && account.type === 'depository') {
+                const pendingWrapper = document.createElement('div');
+                pendingWrapper.className = 'pending-wrapper';
+
+                const pendingHeader = document.createElement('div');
+                pendingHeader.className = 'pending-header';
+
+                const pendingLabel = document.createElement('span');
+                pendingLabel.className = 'pending-header-label';
+                pendingLabel.textContent = 'Pending';
+
+                pendingHeader.append(pendingLabel);
+
+                const pendingContent = document.createElement('div');
+                pendingContent.className = 'pending-content';
+
+                const pendingList = document.createElement('div');
+                pendingList.className = 'pending-list';
+
+                const projectedBalance = document.createElement('div');
+                projectedBalance.className = 'predicted-balance';
+                const projectedLabel = document.createElement('span');
+                projectedLabel.className = 'predicted-label';
+                projectedLabel.textContent = 'Projected balance';
+                const projectedAmount = document.createElement('span');
+                projectedAmount.className = 'predicted-amount';
+                projectedBalance.append(projectedLabel, projectedAmount);
+
+                let pendingSaveQueue = Promise.resolve();
+                const updateProjected = () => {
+                    const rows = pendingList.querySelectorAll('.pending-row');
+                    let total = 0;
+                    rows.forEach((pendingRow) => {
+                        const rowAmount = pendingRow.querySelector('.pending-amount');
+                        const numericValue = Number.parseFloat(rowAmount.value || '0');
+                        if (Number.isFinite(numericValue)) {
+                            total += numericValue;
+                        }
+                    });
+                    projectedAmount.textContent = formatCurrency(
+                        (Number.isFinite(Number(account.balance)) ? Number(account.balance) : 0) + total,
+                        account.currency
+                    );
+                };
+
+                const savePending = () => {
+                    const transactions = [...pendingList.querySelectorAll('.pending-row')]
+                        .map((row) => {
+                            const amount = Number.parseFloat(row.querySelector('.pending-amount').value);
+                            return {
+                                amount: Number.isFinite(amount) ? amount : 0,
+                                note: row.querySelector('.pending-note').value
+                            };
+                        });
+                    pendingSaveQueue = pendingSaveQueue
+                        .then(() => postAction('save_pending_transactions', {
+                            account_id: account.account_id,
+                            transactions
+                        }))
+                        .then(() => {
+                            if (errorElement.textContent.startsWith('Unable to save pending transactions:')) {
+                                errorElement.textContent = '';
+                            }
+                        })
+                        .catch((error) => {
+                            errorElement.textContent = `Unable to save pending transactions: ${error.message}`;
+                        });
+                };
+
+                const makePendingRow = (transaction = { amount: '', note: '' }) => {
+                    const row = document.createElement('div');
+                    row.className = 'pending-row';
+
+                    const addButton = document.createElement('button');
+                    addButton.type = 'button';
+                    addButton.className = 'pending-sign';
+                    addButton.setAttribute('aria-label', 'Add pending transaction');
+
+                    const amountInput = document.createElement('input');
+                    amountInput.type = 'number';
+                    amountInput.className = 'pending-amount';
+                    amountInput.value = transaction.amount === '' ? '' : String(transaction.amount);
+                    amountInput.step = '0.01';
+                    amountInput.setAttribute('aria-label', 'Pending transaction amount');
+
+                    const noteInput = document.createElement('input');
+                    noteInput.type = 'text';
+                    noteInput.className = 'pending-note';
+                    noteInput.value = transaction.note || '';
+                    noteInput.maxLength = 500;
+                    noteInput.placeholder = 'Note';
+                    noteInput.setAttribute('aria-label', 'Pending transaction note');
+
+                    const removeButton = document.createElement('button');
+                    removeButton.type = 'button';
+                    removeButton.className = 'pending-remove';
+                    removeButton.setAttribute('aria-label', 'Remove pending transaction');
+
+                    addButton.addEventListener('click', () => {
+                        pendingList.appendChild(makePendingRow());
+                        updateProjected();
+                        savePending();
+                    });
+
+                    amountInput.addEventListener('input', () => {
+                        updateProjected();
+                        savePending();
+                    });
+                    noteInput.addEventListener('input', savePending);
+                    removeButton.addEventListener('click', () => {
+                        row.remove();
+                        updateProjected();
+                        savePending();
+                    });
+
+                    row.append(addButton, amountInput, noteInput, removeButton);
+                    return row;
+                };
+
+                const savedTransactions = Array.isArray(account.pending_transactions)
+                    ? account.pending_transactions
+                    : [];
+                (savedTransactions.length > 0 ? savedTransactions : [''])
+                    .forEach((transaction) => pendingList.appendChild(makePendingRow(
+                        typeof transaction === 'number'
+                            ? { amount: transaction, note: '' }
+                            : transaction
+                    )));
+                updateProjected();
+
+                pendingContent.append(pendingList, projectedBalance);
+                pendingWrapper.append(pendingHeader, pendingContent);
+                article.append(pendingWrapper);
+            }
+
             accountsElement.append(article);
         }
 
