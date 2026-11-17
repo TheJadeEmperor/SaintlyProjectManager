@@ -9,354 +9,63 @@ function menuDropDown(string $mainName, array $dropDownMenu): void
     ?>
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?= $escape($mainName) ?><b class="caret"></b></a>
-        <ul class="dropdown-menu">
-            <?php foreach ($dropDownMenu as $name => $menu):
-                $icon = isset($menu['icon']) ? '<i class="fa ' . $escape($menu['icon']) . '" style="' .
-                    (isset($menu['iconColor']) ? 'color:' . $escape($menu['iconColor']) . '; ' : '') .
-                    'width: 20px; text-align: center; margin-right: 5px;"></i> ' : '';
-                $href = $escape($menu['href'] ?? '#');
-            ?>
-                <?php if (isset($menu['submenu'])): ?>
-                    <li class="dropdown-submenu">
-                        <a tabindex="-1" target="_blank" rel="noopener noreferrer" href="<?= $href ?>"><?= $icon . $escape($name) ?></a>
-                        <ul class="dropdown-menu">
-                            <?php foreach ($menu['submenu'] as $subName => $subMenu): ?>
-                                <li>
-                                    <a href="<?= $escape($subMenu['href'] ?? '#') ?>" target="_blank" rel="noopener noreferrer">
-                                        <?php if (isset($subMenu['icon'])): ?>
-                                            <i class="fa <?= $escape($subMenu['icon']) ?>" style="width: 20px; text-align: center; margin-right: 5px;"></i>
-                                        <?php endif; ?>
-                                        <?= $escape($subName) ?>
-                                    </a>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </li>
-                <?php else: ?>
-                    <li>
-                        <a href="<?= $href ?>" target="_blank" rel="noopener noreferrer">
-                            <?= $icon . $escape($name) ?>
-                            <?php if (($menu['attr'] ?? null) === 'c'): ?><b class="caret"></b><?php endif; ?>
-                        </a>
-                    </li>
-                <?php endif; ?>
-                <?php if (($menu['attr'] ?? null) === 'd'): ?><li class="divider"></li><?php endif; ?>
-            <?php endforeach; ?>
-        </ul>
+        <?php renderMenuItems($dropDownMenu); ?>
     </li>
     <?php
 }
 
+function renderMenuItems(array $items): void
+{
+    $escape = static function ($value): string {
+        return htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8');
+    };
+    ?>
+    <ul class="dropdown-menu">
+        <?php foreach ($items as $name => $menu):
+            $icon = isset($menu['icon']) ? '<i class="fa ' . $escape($menu['icon']) . '" style="' .
+                (isset($menu['iconColor']) ? 'color:' . $escape($menu['iconColor']) . '; ' : '') .
+                'width: 20px; text-align: center; margin-right: 5px;"></i> ' : '';
+            $href = $escape($menu['href'] ?? '#');
+            $target = $escape($menu['target'] ?? '_blank');
+        ?>
+            <?php if (isset($menu['submenu'])): ?>
+                <li class="dropdown-submenu">
+                    <a tabindex="-1" href="<?= $href ?>" target="<?= $target ?>" rel="noopener noreferrer"><?= $icon . $escape($name) ?></a>
+                    <?php renderMenuItems($menu['submenu']); ?>
+                </li>
+            <?php else: ?>
+                <li>
+                    <a href="<?= $href ?>" target="<?= $target ?>" rel="noopener noreferrer">
+                        <?= $icon . $escape($name) ?>
+                        <?php if (($menu['attr'] ?? null) === 'c'): ?><b class="caret"></b><?php endif; ?>
+                    </a>
+                </li>
+            <?php endif; ?>
+            <?php if (($menu['attr'] ?? null) === 'd'): ?><li class="divider"></li><?php endif; ?>
+        <?php endforeach; ?>
+    </ul>
+    <?php
+}
 
 
-
-    $menuLocal = array(
-       'Localhost' => array(
-            'href' => 'http://localhost',
-            'icon' => 'fa-home',
-            'iconColor' => '#e05c3a',   // red-orange
-        ),
-        'phpMyAdmin' => array(
-            'href' => 'http://localhost/phpmyadmin5.2.3/',
-            'icon' => 'fa-database',
-            'iconColor' => '#4a90d9',   // blue
-        ),
-        'Account Manager' => array(
-            'href' => 'http://SaintlyAccountsManager.test',
-            'icon' => 'fa-user',
-            'iconColor' => '#3a9e6e',   // green
-            'attr' => 'd' ),
-        'Little Book Stays' => array(
-            'href' => '.'),
-        'Side Hustles' => array(
-            'href' => '?action=hustles',
-            ), 
-        'Atlantis' => array(
-            'href' => './atlantis/',
-            'attr' => 'd' ),
-
-        'Achive Links' => array(
-            'href' => '?action=archive',
-            'icon' => 'fa-archive',
-            'iconColor' => '#8c6b3e',   // brown
-        ),
-        'NUS Blog & SEO' => array(
-            'href' => '?action=blog' ),
-        'NUS & BPS' => array(
-            'href' => '?action=nus'),
-        'Code Ninja' => array(
-            'href' => '?action=codeNinja'),
-
-    );
-
-    $menuHost = array(
-        'gmail Accounts' => array(
-            'href' => 'https://mail.google.com/mail/u/0/?shva=1#settings/accounts',
-            'icon' => 'fa-envelope',
-            'iconColor' => '#e05c7a',   // red-pink
-        ),
-        'gmail Filters' => array(
-            'href' => 'https://mail.google.com/mail/u/0/?shva=1#settings/filters',
-            'icon' => 'fa-filter',
-            'iconColor' => '#7a8c9e',   // gray
-            'attr' => 'd'
-        ),
-        'Hostinger' => array(
-            'href' => 'https://hpanel.hostinger.com/domains',
-        ),
-        'Domains' => array(
-            'href' => 'https://hpanel.hostinger.com/domains',
-        ),
-        'phpMyAdmin' => array(
-            'href' => 'https://hpanel.hostinger.com/websites/littlebookstays.com/databases/my-sql-databases',
-        ),
-        'Notion Home Base' => array(
-            'href' => 'https://www.notion.so/Put-these-docs-into-notion-2ece540782c18085b79dd552bc03b48d?source=copy_link'
-        )
-
-    );
-
-   $menuCohost = array(
-        'Cohost Course' => array(
-            'href' => 'https://cohostingacquisitions.circle.so/c/module-1/',
-            'attr' => 'c'
-        ),
-        'Cohost Course ' => array(
-            'href' => 'https://cohostingacquisitions.circle.so/c/module-1/',
-            'icon' => 'fa-graduation-cap',
-            'iconColor' => '#8c6b3e',   // brown
-        ),
-        'Group Chat' => array(
-            'href' => 'https://cohostingacquisitions.circle.so/c/group-chat/',
-            'icon' => 'fa-comments',
-            'iconColor' => '#4a90d9',   // blue
-        ),
-        'Events Calendar' => array(
-            'href' => 'https://cohostingacquisitions.circle.so/events',
-            'icon' => 'fa-calendar',
-            'iconColor' => '#3a9e6e',   // green
-            'attr' => 'd'
-        ),
-        'Batch Skip Trace' => array(
-            'href' => 'https://app.batchdata.com/property-skip-trace',
-            'icon' => 'fa-search',
-            'iconColor' => '#e0963a',   // orange
-        ),
-
-    );
-
-    $menuSales = array(
-        'Close | Inbox' => array(
-            'href' => ' https://app.close.com/tasks/inbox/',
-            'icon' => 'fa-inbox',
-            'iconColor' => '#4a90d9',   // blue
-            'attr' => 'c'
-        ),
-        'All Leads' => array(
-            'href' => 'https://app.close.com/leads',
-            'icon' => 'fa-users',
-            'iconColor' => '#5b8dd9',   // blue
-        ),
-        'AI Agent' => array(
-            'href' => 'https://app.close.com/chloe/agentconfig_032u5sLbxvJrebGDYtQ4Ja/',
-            'icon' => 'fa-android',
-            'iconColor' => '#3a9e6e',   // green
-        ),
-        'Statuses & Pipes' => array(
-            'href' => 'https://app.close.com/settings/statuses/',
-            'icon' => 'fa-link',
-            'iconColor' => '#7a8c9e',   // gray
-        ),
-        'Sched Links' => array(
-            'href' => 'https://app.close.com/settings/scheduling/',
-            'icon' => 'fa-link',
-            'iconColor' => '#7a8c9e',   // gray
-        ),
-        'Email Templates' => array(
-            'href' => 'https://app.close.com/settings/templates/email/',
-            'icon' => 'fa-file-text',
-            'iconColor' => '#e0963a',   // orange
-            'attr' => 'd',
-            'submenu' => array(
-                'E Templates' => array(
-                    'href' => 'https://app.close.com/settings/templates/email/'
-                ),
-                'E Workflows' => array(
-                    'href' => 'https://app.close.com/workflows/'
-                ),
-            )
-        ), //'Email Templates'
-
-        'Rev Projections' => array(
-            'icon' => 'fa-line-chart',
-            'iconColor' => '#3a9e6e',   // green
-           'submenu' => array(
-                'Airdna' => array(
-                    'href' => 'https://app.airdna.co/data',
-                    'attr' => 'target="_BLANK"'
-                ),
-                'Pricelabs Rev Est' => array(
-                    'href' => 'https://app.pricelabs.co/revenue_estimator',
-                ),
-                'Vantage Prospects' => array(
-                    'href' => 'https://vantagestr.co/dashboard/operator/prospects',
-                ),
-                'Vantage Pipeline' => array(
-                    'href' => 'https://vantagestr.co/dashboard/operator/pipeline',
-                ),
-            ),
-            'attr' => 'd',
-        ),
-
-        'Close CRM API' => array(
-            'href' => 'http://localhost//close_crm_api',
-            'icon' => 'fa-calendar-check-o',
-            'iconColor' => '#4a90d9',   // blue
-        ),
-        
-    );
-
-    $menuGuests = array(
-        'BNB Messages' => array(
-            'href' => 'https://www.airbnb.com/hosting/inbox/folder/all/',
-            'icon' => 'fa-commenting',
-            'iconColor' => '#e05c3a',   // red-orange (Airbnb)
-            'attr' => 'd'
-        ),
-        'Hospital Inbox' => array(
-            'href' => 'https://my.hospitable.com/inbox/segments/default',
-            'icon' => 'fa-inbox',
-            'iconColor' => '#e05c7a',   // red-pink (Hospitable)
-            'attr' => 'c'
-        ),
-        'Calendars' => array (
-            'href' => 'https://my.hospitable.com/calendar/occupancy',
-            'icon' => 'fa-calendar',
-            'iconColor' => '#4a90d9',   // blue
-        ),
-        'Msg Rules' => array (
-            'href' => 'https://my.hospitable.com/gx/rules',
-            'icon' => 'fa-cog',
-            'iconColor' => '#7a8c9e',   // gray
-        ),
-        'Upsells' => array (
-            'href' => 'https://my.hospitable.com/gx/upsells',
-            'attr' => 'd',
-            'icon' => 'fa-tag',
-            'iconColor' => '#e0963a',   // orange
-        ),
-        'Hostbuddy' => array (
-            'href' => 'https://www.hostbuddy.ai/properties',
-            'icon' => 'fa-android',
-            'iconColor' => '#3a9e6e',   // green
-        ),
-
-    );
-
-    $menuPM = array(
-        'Pricelabs Dashboard' => array(
-            'href' => 'https://pricelabs.co/pricing',
-            'icon' => 'fa-tachometer',
-            'iconColor' => '#e0763a',   // orange (Pricelabs brand)
-        ),
-        'Comp Sets' => array(
-            'href' => 'https://pricelabs.co/reports',
-            'icon' => 'fa-bar-chart',
-            'iconColor' => '#3a9e6e',   // green
-        ),
-        'Turno Calendar' => array(
-            'href' => 'https://app.turno.com/view/schedule',
-            'icon' => 'fa-calendar',
-            'iconColor' => '#7a5c3e',   // brown
-            'attr' => 'd'
-        ),
-        'Maint | Appts' => array(
-            'href' => 'https://app.close.com/activities/custom-activity/actitype_3oEjtZdr8UkkqfmtJBDdWi/save_bjqFnOtjRgQsI0Qm9AqG4fSPAGxCtCfOgK6oskcFcIS/',
-            'icon' => 'fa-wrench',
-            'iconColor' => '#7a8c9e',   // gray
-            'attr' => 'd'
-        ),
-        'Hostco' => array(
-            'href' => 'https://app.thehost.co/overview/stores/',
-            'icon' => 'fa-book',
-            'iconColor' => '#8c6b3e',   // brown
-        ),
-         'StayFi' => array(
-            'href' => 'https://app.stayfi.com/sign_in',
-            'icon' => 'fa-book',
-            'iconColor' => '#8c6b3e',   // brown
-        ),
-
-
-   );
-
-   $menuBNB = array(
-        'BNB Messages' => array(
-            'href' => 'https://www.airbnb.com/hosting/inbox/folder/all/',
-            'icon' => 'fa-commenting',
-            'iconColor' => '#e05c3a',   // red-orange (Airbnb)
-            'attr' => 'd'
-        ),
-        'Get Help' => array(
-            'href' => 'https://www.airbnb.com/help/contact-us?entry=HELP_CENTER&role=home_host',
-            'icon' => 'fa-question',
-            'iconColor' => '#e05c3a',   // red-orange (Airbnb)
-        ),
-        'Res Center' => array(
-            'href' => 'https://www.airbnb.com/resolutions',
-            'icon' => 'fa-balance-scale',
-            'iconColor' => '#7a8c9e',   // gray
-        ),
-        'Trans History' => array(
-            'href' => 'https://www.airbnb.com/users/transaction_history',
-            'icon' => 'fa-money',
-            'iconColor' => '#3a9e6e',   // green
-
-        ),
-
-    );
-
-    $menuTeam = array(
-        'Trello 2026 Goals' => array(
-            'href' => 'https://trello.com/b/lx8xpiWr/2024-goals',
-            'icon' => 'fa-book',
-            'iconColor' => '#4a90d9',   // blue (Trello)
-        ),
-        'Trello LBS VA Tasks' => array(
-            'href' => 'https://trello.com/b/9NK1LyNF/prop-mgr-for-lbs',
-            'icon' => 'fa-book',
-            'iconColor' => '#5b8dd9',   // blue
-        ),
-        'Trello LBS Later Tasks' => array(
-            'href' => 'https://trello.com/b/UJ8yPVr0/lbs-later-tasks',
-            'icon' => 'fa-book',
-            'iconColor' => '#5b8dd9',   // green
-            'attr' => 'd'
-        ),
-        'Upwork Msg' => array(
-            'href' => 'https://www.upwork.com/ab/messages/rooms/room_007a0a45db0a964b83f0854be6c2e37e?pageTitle=Mahran%20Makin&companyReference=1816859020641894400&sidebar=true',
-            'icon' => 'fa-briefcase',
-            'iconColor' => '#3e8c6b',   // teal-green (Upwork)
-        ),
-        'Upwork Trans History' => array(
-            'href' => 'https://www.upwork.com/nx/payments/reports/transaction-history',
-            'icon' => 'fa-money',
-            'iconColor' => '#3a9e6e',   // green
-        ),
-
-    );
-$menus = array(
-    'Localhost' => $menuLocal,
-    'Hostinger' => $menuHost,
-    'Cohost' => $menuCohost,
-    'Sales' => $menuSales,
-    'Guests' => $menuGuests,
-    'PM' => $menuPM,
-    'BNB' => $menuBNB,
-    'Team' => $menuTeam,
-);
-
-
+    $menuFile = __DIR__ . DIRECTORY_SEPARATOR . 'menu.json';
+    $menuJson = file_get_contents($menuFile);
+    $menus = array();
+    $menuLoadError = null;
+    if ($menuJson === false) {
+        $menuLoadError = 'Unable to read menu.json.';
+    } else {
+        try {
+            $decodedMenus = json_decode($menuJson, true, 512, JSON_THROW_ON_ERROR);
+            if (!is_array($decodedMenus)) {
+                $menuLoadError = 'menu.json must contain an object of menu groups.';
+            } else {
+                $menus = $decodedMenus;
+            }
+        } catch (JsonException $exception) {
+            $menuLoadError = 'menu.json has invalid JSON: ' . $exception->getMessage();
+        }
+    }
 
 $siteNUS = 'https://ultimateneobuxstrategy.com/';
 $localNUS = 'http://NeobuxUltimateStrategy.test/';
@@ -364,7 +73,11 @@ $localNUS = 'http://NeobuxUltimateStrategy.test/';
 $siteBPS = 'https://bestpayingsites.com/';
 $localBPS = 'http://BestPayingSites.test/';
 
-switch($_GET['action']) {
+switch ($_GET['action'] ?? '') {
+
+    case 'menu':
+        $link = 'menu.php';
+        break;
 
     //localhost
     case 'localhost':
@@ -394,9 +107,11 @@ switch($_GET['action']) {
         $link = 'hustles.php';
         break;
 
-    case 'rentals': 
-    default:
+    case 'rentals':
         $link = 'rentals.php';
+        break;
+    default:
+        $link = 'hustles.php';
         break;
 }
 ?>
@@ -409,7 +124,7 @@ switch($_GET['action']) {
     <link href="include/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" media="screen" />
     <link href="include/bootstrap/css/bootstrap-theme.css" rel="stylesheet" type="text/css" media="screen" />    
 
-    <link href="<?= $dir ?>admin.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="include/admin.css" rel="stylesheet" type="text/css" media="screen" />
     <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
     <script src="http://code.jquery.com/jquery-latest.min.js" type='text/javascript' /></script> 
 
@@ -460,7 +175,7 @@ switch($_GET['action']) {
       
     </style>
 </head>
-<body>
+<body class="spm-shell">
 
     <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
@@ -485,22 +200,76 @@ switch($_GET['action']) {
 
              
                 </ul><!--navbar-->
+                <ul class="nav navbar-nav">
+                    <li><a href="?action=menu">Edit Menu</a></li>
+                </ul>
                 
                 <ul class="nav navbar-nav navbar-left">
                     <li>
                         <form class="navbar-form navbar-left" role="search">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="URL" value="<?= $link ?>" onclick="this.select();" size="40">
-                                <a href="<?=$link?>" target="_BLANK"><input type="button" value="Open in New Window" /></a>
+                                <input type="text" class="form-control" placeholder="URL" value="<?= $link ?>" onclick="this.select();" size="40" readonly>
                             </div>
                         </form>
                     </li>
                 </ul>
+
+                <ul class="nav navbar-nav navbar-right theme-toggle" aria-label="Color theme">
+                    <li>
+                        <button type="button" class="theme-toggle-button" id="theme-light" aria-label="Light mode" title="Light mode" aria-pressed="true">
+                            <i class="fa fa-sun-o" aria-hidden="true"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="theme-toggle-button" id="theme-dark" aria-label="Dark mode" title="Dark mode" aria-pressed="false">
+                            <i class="fa fa-moon-o" aria-hidden="true"></i>
+                        </button>
+                    </li>
+                </ul>
             </div><!-- /.navbar-collapse -->
+            <?php if ($menuLoadError !== null): ?>
+                <div class="alert alert-danger" role="alert">
+                    <?= htmlspecialchars($menuLoadError, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>
+                    <a href="?action=menu">Open the menu editor to fix it.</a>
+                </div>
+            <?php endif; ?>
         </div><!-- /.container-fluid -->
     </nav>
     <?php
-        echo '<iframe width=100% height=95% src="' . $link . '"></iframe>';
+        echo '<iframe class="spm-content-frame" src="' . $link . '"></iframe>';
     ?>
+    <script>
+        (function () {
+            var lightButton = document.getElementById('theme-light');
+            var darkButton = document.getElementById('theme-dark');
+            var frame = document.querySelector('iframe');
+            var theme = localStorage.getItem('spm-theme') === 'dark' ? 'dark' : 'light';
+
+            function applyTheme(selectedTheme) {
+                theme = selectedTheme;
+                document.body.setAttribute('data-theme', theme);
+                lightButton.setAttribute('aria-pressed', theme === 'light' ? 'true' : 'false');
+                darkButton.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+                localStorage.setItem('spm-theme', theme);
+
+                var frameDocument = frame.contentDocument;
+                if (frameDocument && frameDocument.body) {
+                    frameDocument.body.setAttribute('data-theme', theme);
+                }
+            }
+
+            lightButton.addEventListener('click', function () {
+                applyTheme('light');
+            });
+            darkButton.addEventListener('click', function () {
+                applyTheme('dark');
+            });
+            frame.addEventListener('load', function () {
+                applyTheme(theme);
+            });
+
+            applyTheme(theme);
+        }());
+    </script>
 </body>
 </html>

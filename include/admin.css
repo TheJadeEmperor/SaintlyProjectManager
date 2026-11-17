@@ -6,17 +6,218 @@ iframe { height: 92%; width: 99%;
     border: 1px solid black;
 }
 
+.spm-shell {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.spm-shell > .navbar {
+    flex: 0 0 auto;
+    margin-bottom: 0;
+}
+
+.spm-shell > .spm-content-frame {
+    box-sizing: border-box;
+    display: block;
+    flex: 1 1 auto;
+    height: auto;
+    min-height: 0;
+    width: 100%;
+}
+
 body, .container {	
     margin: 0 !important;
     max-width: unset;
     color: #8060d7;
     background-attachment: fixed;
     background-repeat: repeat-x;
-    background-color: #fff6f6;
+    background-color: #fbf7f7fc;
     font-family: Tahoma, Geneva, sans-serif;
     font-size: 18px;
     font-weight: 100;
     margin: 0px;
+}
+
+.navbar.navbar-default {
+    background-color: #fbf7f7fc;
+    background-image: none;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.theme-toggle-button {
+    background: transparent;
+    border: 0;
+    color: #8060d7;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 15px 12px;
+}
+
+.theme-toggle-button:hover,
+.theme-toggle-button:focus {
+    background: transparent;
+    color: #8060d7;
+}
+
+.theme-toggle-button[aria-pressed="true"] {
+    background-color: rgba(128, 96, 215, 0.12);
+    border-radius: 4px;
+}
+
+.theme-toggle-button .fa {
+    margin: 0;
+}
+
+body[data-theme="dark"] {
+    background-color: #202124;
+    color: #d6d6d6;
+}
+
+body[data-theme="dark"] .container,
+body[data-theme="dark"] .container-fluid {
+    background-color: transparent;
+    color: #d6d6d6;
+}
+
+body[data-theme="dark"] .navbar.navbar-default {
+    background-color: #2b2d31;
+    background-image: none;
+    border-color: #4a4c52;
+}
+
+body[data-theme="dark"] .navbar-default .navbar-nav > li > a,
+body[data-theme="dark"] .navbar-default .navbar-brand,
+body[data-theme="dark"] .theme-toggle-button {
+    color: #d6d6d6;
+}
+
+body[data-theme="dark"] .navbar-default .navbar-nav > li > a:hover,
+body[data-theme="dark"] .navbar-default .navbar-brand:hover,
+body[data-theme="dark"] .theme-toggle-button:hover,
+body[data-theme="dark"] .theme-toggle-button:focus {
+    color: #eeeeee;
+    background-color: #3a3c42;
+}
+
+body[data-theme="dark"] .navbar-default .navbar-nav > .open > a,
+body[data-theme="dark"] .navbar-default .navbar-nav > .open > a:hover,
+body[data-theme="dark"] .navbar-default .navbar-nav > .open > a:focus,
+body[data-theme="dark"] .navbar-default .navbar-nav > .active > a {
+    background-color: #3a3c42;
+    background-image: none;
+    color: #eeeeee;
+}
+
+body[data-theme="dark"] .navbar-default .navbar-collapse,
+body[data-theme="dark"] .navbar-default .navbar-form,
+body[data-theme="dark"] .navbar-default .navbar-toggle {
+    border-color: #4a4c52;
+}
+
+body[data-theme="dark"] .navbar-default .navbar-toggle .icon-bar {
+    background-color: #d6d6d6;
+}
+
+body[data-theme="dark"] .theme-toggle-button[aria-pressed="true"] {
+    background-color: #4a4c52;
+}
+
+body[data-theme="dark"] .dropdown-menu,
+body[data-theme="dark"] .contentBox,
+body[data-theme="dark"] .section-heading,
+body[data-theme="dark"] .well,
+body[data-theme="dark"] .panel,
+body[data-theme="dark"] table,
+body[data-theme="dark"] th,
+body[data-theme="dark"] td,
+body[data-theme="dark"] .ui-widget-content,
+body[data-theme="dark"] .ui-widget-header {
+    background-color: #2b2d31;
+    color: #d6d6d6;
+}
+
+body[data-theme="dark"] .dropdown-menu > li > a,
+body[data-theme="dark"] .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #d6d6d6;
+}
+
+body[data-theme="dark"] .dropdown-menu > li > a:hover,
+body[data-theme="dark"] .dropdown-menu > li > a:focus {
+    background-color: #3a3c42;
+    color: #eeeeee;
+}
+
+body[data-theme="dark"] a,
+body[data-theme="dark"] a:visited {
+    color: #b7a3f2;
+}
+
+body[data-theme="dark"] a:hover {
+    color: #d2c5f7;
+}
+
+body[data-theme="dark"] input:not([type="checkbox"]):not([type="radio"]),
+body[data-theme="dark"] select,
+body[data-theme="dark"] textarea,
+body[data-theme="dark"] .btn:not(.danger):not(.success):not(.info):not(.primary) {
+    background-color: #3a3c42;
+    background-image: none;
+    border-color: #666970;
+    color: #d6d6d6;
+    text-shadow: none;
+}
+
+body[data-theme="dark"] input[type="checkbox"],
+body[data-theme="dark"] input[type="radio"] {
+    accent-color: #8060d7;
+}
+
+body[data-theme="dark"] .btn.danger,
+body[data-theme="dark"] .btn.success,
+body[data-theme="dark"] .btn.info,
+body[data-theme="dark"] .btn.primary {
+    color: #dedede;
+}
+
+body[data-theme="dark"] input::placeholder,
+body[data-theme="dark"] textarea::placeholder {
+    color: #b8b8b8;
+}
+
+body[data-theme="dark"] .activeField,
+body[data-theme="dark"] .activeField:hover {
+    background-color: #3a3c42;
+}
+
+body[data-theme="dark"] .adminBox h2 {
+    background-color: #3a3c42;
+}
+
+body[data-theme="dark"] .adminBox div {
+    background-color: #2b2d31;
+    color: #d6d6d6;
+}
+
+body[data-theme="dark"] .adminBox a,
+body[data-theme="dark"] .adminBox a:hover {
+    background-color: #202124;
+    color: #d6d6d6;
+}
+
+body[data-theme="dark"] .contentBox {
+    border-color: #55585f;
+}
+
+body[data-theme="dark"] iframe {
+    border-color: #55585f;
 }
 
 

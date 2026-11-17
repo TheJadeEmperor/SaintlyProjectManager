@@ -107,11 +107,21 @@ function plaidBaseUrl(): string
     return $urls[$environment];
 }
 
+function supportedBanks(): array
+{
+    return ['chase', 'td', 'capital_one', 'vanguard', 'robinhood'];
+}
+
+function isInvestmentBank(string $bank): bool
+{
+    return in_array($bank, ['vanguard', 'robinhood'], true);
+}
+
 function plaidTokenStorePath(string $bank = 'chase'): string
 {
     global $clientID;
 
-    if (!in_array($bank, ['chase', 'td', 'capital_one'], true)) {
+    if (!in_array($bank, supportedBanks(), true)) {
         throw new InvalidArgumentException('Unsupported bank connection.');
     }
 
@@ -399,7 +409,7 @@ if ($action !== null) {
 
         if ($action === 'create_link_token') {
             $bank = $requestBody['bank'] ?? 'chase';
-            if (!is_string($bank) || !in_array($bank, ['chase', 'td', 'capital_one'], true)) {
+            if (!is_string($bank) || !in_array($bank, supportedBanks(), true)) {
                 sendJson(['error' => 'Select a supported bank connection.'], 400);
             }
 
@@ -413,7 +423,9 @@ if ($action !== null) {
                 'client_name' => 'Saintly Project Manager',
                 'country_codes' => ['US'],
                 'language' => 'en',
-                'products' => ['auth', 'liabilities'],
+                // Brokerage and retirement accounts use Plaid Investments;
+                // bank and credit card accounts use Auth and Liabilities.
+                'products' => isInvestmentBank($bank) ? ['investments'] : ['auth', 'liabilities'],
                 'user' => ['client_user_id' => $clientUserId],
             ]);
 
@@ -425,7 +437,7 @@ if ($action !== null) {
 
         if ($action === 'exchange_public_token') {
             $bank = $requestBody['bank'] ?? 'chase';
-            if (!is_string($bank) || !in_array($bank, ['chase', 'td', 'capital_one'], true)) {
+            if (!is_string($bank) || !in_array($bank, supportedBanks(), true)) {
                 sendJson(['error' => 'Select a supported bank connection.'], 400);
             }
 
@@ -447,7 +459,7 @@ if ($action !== null) {
 
         if ($action === 'get_balance') {
             $bank = $requestBody['bank'] ?? 'chase';
-            if (!is_string($bank) || !in_array($bank, ['chase', 'td', 'capital_one'], true)) {
+            if (!is_string($bank) || !in_array($bank, supportedBanks(), true)) {
                 sendJson(['error' => 'Select a supported bank connection.'], 400);
             }
 
@@ -460,7 +472,9 @@ if ($action !== null) {
                 sendJson(['error' => 'Connect this bank account before requesting a balance.'], 400);
             }
 
-            $balanceResponse = plaidRequest('/accounts/balance/get', [
+            // Investment balances come from /accounts/get (value as of the
+            // latest update, usually the last market close).
+            $balanceResponse = plaidRequest(isInvestmentBank($bank) ? '/accounts/get' : '/accounts/balance/get', [
                 'access_token' => $accessToken,
             ]);
             $liabilityLimits = [];
@@ -543,6 +557,18 @@ if ($action !== null) {
                     ? $account['official_name']
                     : (is_string($account['name'] ?? null) ? $account['name'] : 'Account');
 
+                $accountNicknames = [ 
+                    'chase' => [
+                        '4509' => 'Ink Business Cash',
+                        '1974' => 'Freedom Unlimited',
+                        '9810' => 'Chase Freedom',
+                    ],
+                ];
+                $accountMask = is_string($account['mask'] ?? null) ? $account['mask'] : '';
+                if (isset($accountNicknames[$bank][$accountMask])) {
+                    $accountName = $accountNicknames[$bank][$accountMask];
+                }
+
                 $creditBalance = $type === 'credit'
                     ? ($balances['current'] ?? $balances['available'] ?? null)
                     : null;
@@ -561,9 +587,14 @@ if ($action !== null) {
                         }
                     }
                 }
-                $amount = $type === 'credit'
-                    ? $creditBalance
-                    : ($balances['available'] ?? $balances['current'] ?? $balances['limit'] ?? null);
+                if ($type === 'credit') {
+                    $amount = $creditBalance;
+                } elseif ($type === 'investment') {
+                    // "current" is the total account value; "available" is only the cash part
+                    $amount = $balances['current'] ?? $balances['available'] ?? null;
+                } else {
+                    $amount = $balances['available'] ?? $balances['current'] ?? $balances['limit'] ?? null;
+                }
 
                 $accounts[] = [
                     'account_id' => is_string($account['account_id'] ?? null) ? $account['account_id'] : '',
@@ -608,6 +639,8 @@ $csrfToken = htmlspecialchars($_SESSION['plaid_csrf_token'], ENT_QUOTES, 'UTF-8'
 $isChaseConnected = is_file(plaidTokenStorePath('chase')) || isset($_SESSION['plaid_access_token']);
 $isTdConnected = is_file(plaidTokenStorePath('td'));
 $isCapitalOneConnected = is_file(plaidTokenStorePath('capital_one'));
+$isVanguardConnected = is_file(plaidTokenStorePath('vanguard'));
+$isRobinhoodConnected = is_file(plaidTokenStorePath('robinhood'));
 ?>
 <!doctype html>
 <html lang="en">
@@ -670,6 +703,11 @@ $isCapitalOneConnected = is_file(plaidTokenStorePath('capital_one'));
         .sidebar-item:first-child { border-top: 0; padding-top: 0; }
         .sidebar-item .name { font-weight: 600; }
         .sidebar-item .meta { color: #53616d; font-size: .82rem; }
+        .section-title { font-size: 1.15rem; margin: 1.25rem 0 .75rem; }
+        .investments-section { margin-top: 2rem; padding-top: .5rem; border-top: 2px solid #c9dde4; }
+        .section-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+        .section-total { font-weight: 700; color: #0c4f45; }
+        .investment-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: .75rem; }
         @media (max-width: 760px) { .accounts-layout { grid-template-columns: 1fr; } }
         @media (max-width: 560px) {
             .pending-content { grid-template-columns: minmax(0, 1fr); }
@@ -679,22 +717,32 @@ $isCapitalOneConnected = is_file(plaidTokenStorePath('capital_one'));
 <body>
 <main>
     <h1>Account balances</h1>
-    <p>Securely connect your Chase, TD Bank, and Capital One accounts with Plaid to view their balances, including credit cards.</p>
+    <p>Securely connect your Chase, TD Bank, Capital One, Vanguard, and Robinhood accounts with Plaid to view their balances, including credit cards and investments.</p>
     <button id="connect-chase" type="button">Connect to Plaid</button>
     <button id="connect-td" type="button">Connect a TD Bank account</button>
     <button id="connect-capital-one" type="button">Connect to Capital One</button>
-    <?php if ($isChaseConnected || $isTdConnected || $isCapitalOneConnected): ?>
+    <button id="connect-vanguard" type="button">Connect Vanguard</button>
+    <button id="connect-robinhood" type="button">Connect Robinhood</button>
+    <?php if ($isChaseConnected || $isTdConnected || $isCapitalOneConnected || $isVanguardConnected || $isRobinhoodConnected): ?>
         <button id="refresh" type="button">Refresh balances</button>
     <?php endif; ?>
     <p id="status" role="status" aria-live="polite"></p>
     <p id="error" role="alert"></p>
+    <h2 class="section-title">Banking</h2>
     <div class="accounts-layout">
-        <section id="accounts" class="account-list" aria-label="Linked account balances"></section>
-        <aside id="sidebar" class="sidebar" aria-label="Other linked accounts">
-            <h2>Other linked accounts</h2>
+        <section id="accounts" class="account-list" aria-label="Bank account balances"></section>
+        <aside id="sidebar" class="sidebar" aria-label="Credit cards">
+            <h2>Credit cards</h2>
             <div id="sidebar-list" class="sidebar-list"></div>
         </aside>
     </div>
+    <section id="investments-section" class="investments-section" aria-label="Investment account balances" hidden>
+        <div class="section-heading">
+            <h2 class="section-title">Investments</h2>
+            <span id="investments-total" class="section-total"></span>
+        </div>
+        <div id="investments" class="investment-list"></div>
+    </section>
     <p class="note">Refreshing requests the latest balances from your bank through Plaid. Your encrypted Plaid connection is stored on this server, so you should not need to reconnect just because your browser session expires.</p>
 </main>
 <script>
@@ -702,16 +750,28 @@ $isCapitalOneConnected = is_file(plaidTokenStorePath('capital_one'));
     const connectChaseButton = document.getElementById('connect-chase');
     const connectTdButton = document.getElementById('connect-td');
     const connectCapitalOneButton = document.getElementById('connect-capital-one');
+    const connectVanguardButton = document.getElementById('connect-vanguard');
+    const connectRobinhoodButton = document.getElementById('connect-robinhood');
+    const connectButtons = [connectChaseButton, connectTdButton, connectCapitalOneButton, connectVanguardButton, connectRobinhoodButton];
+    const bankNames = { chase: 'Chase', td: 'TD Bank', capital_one: 'Capital One', vanguard: 'Vanguard', robinhood: 'Robinhood' };
+    const bankRanks = { chase: 0, td: 1, capital_one: 2, vanguard: 3, robinhood: 4 };
+    const bankName = (bank) => bankNames[bank] || 'Bank';
+    const bankRank = (bank) => bank in bankRanks ? bankRanks[bank] : 9;
     const refreshButton = document.getElementById('refresh');
     const connectedBanks = <?= json_encode([
         'chase' => $isChaseConnected,
         'td' => $isTdConnected,
         'capital_one' => $isCapitalOneConnected,
+        'vanguard' => $isVanguardConnected,
+        'robinhood' => $isRobinhoodConnected,
     ], JSON_THROW_ON_ERROR) ?>;
     const statusElement = document.getElementById('status');
     const errorElement = document.getElementById('error');
     const accountsElement = document.getElementById('accounts');
     const sidebarListElement = document.getElementById('sidebar-list');
+    const investmentsSectionElement = document.getElementById('investments-section');
+    const investmentsElement = document.getElementById('investments');
+    const investmentsTotalElement = document.getElementById('investments-total');
 
     async function postAction(action, payload = {}) {
         const response = await fetch(`?action=${encodeURIComponent(action)}`, {
@@ -730,9 +790,7 @@ $isCapitalOneConnected = is_file(plaidTokenStorePath('capital_one'));
     }
 
     function setBusy(isBusy, message = null) {
-        connectChaseButton.disabled = isBusy;
-        connectTdButton.disabled = isBusy;
-        connectCapitalOneButton.disabled = isBusy;
+        connectButtons.forEach((button) => { button.disabled = isBusy; });
         if (refreshButton) refreshButton.disabled = isBusy;
         if (message !== null) statusElement.textContent = message;
         if (isBusy) errorElement.textContent = '';
@@ -762,9 +820,36 @@ $isCapitalOneConnected = is_file(plaidTokenStorePath('capital_one'));
         return formatCurrency(account.balance, account.currency);
     }
 
-    function displayAccounts(accounts) {
+    // Plain-English account kind, e.g. "credit card", "checking account", "IRA", "brokerage account"
+    function describeAccount(account) {
+        if (account.type === 'credit') return 'credit card';
+        if (account.type === 'depository') {
+            return `${account.subtype === 'checking' ? 'checking' : (account.subtype || 'deposit')} account`;
+        }
+        if (account.type === 'investment') {
+            const investmentLabels = {
+                brokerage: 'brokerage account',
+                ira: 'IRA',
+                roth: 'Roth IRA',
+                '401k': '401(k)',
+                '403b': '403(b)',
+                '529': '529 plan',
+                'crypto exchange': 'crypto account',
+                'non-taxable brokerage account': 'brokerage account'
+            };
+            return investmentLabels[account.subtype] || `${account.subtype || 'investment'} account`;
+        }
+        return account.subtype || account.type || 'account';
+    }
+
+    function displayAccounts(allAccounts) {
         accountsElement.replaceChildren();
         sidebarListElement.replaceChildren();
+        investmentsElement.replaceChildren();
+
+        // Hide empty investment accounts (e.g. a crypto account holding $0)
+        const accounts = allAccounts.filter((account) =>
+            !(account.type === 'investment' && Number(account.balance) === 0));
 
         if (accounts.length === 0) {
             statusElement.textContent = 'No linked account was returned. Check the selected accounts in Plaid and try again.';
@@ -774,8 +859,8 @@ $isCapitalOneConnected = is_file(plaidTokenStorePath('capital_one'));
         statusElement.textContent = '';
 
         const orderedAccounts = [...accounts].sort((left, right) => {
-            const typeOrder = (account) => account.type === 'depository' ? 0 : account.type === 'credit' ? 1 : 2;
-            const bankOrder = (account) => account.bank === 'chase' ? 0 : account.bank === 'td' ? 1 : account.bank === 'capital_one' ? 2 : 3;
+            const typeOrder = (account) => account.type === 'depository' ? 0 : account.type === 'credit' ? 1 : account.type === 'investment' ? 2 : 3;
+            const bankOrder = (account) => bankRank(account.bank);
             const displayOrder = (account) => {
                 if (account.bank === 'chase' && account.type === 'depository') return 0;
                 if (account.bank === 'td' && account.type === 'depository') return 1;
@@ -805,7 +890,7 @@ $isCapitalOneConnected = is_file(plaidTokenStorePath('capital_one'));
         for (const account of orderedAccounts) {
             const article = document.createElement('article');
             const isPrimary = account.type === 'depository';
-            const bankName = account.bank === 'td' ? 'TD Bank' : account.bank === 'capital_one' ? 'Capital One' : 'Chase';
+            const institution = bankName(account.bank);
             article.className = `account${isPrimary ? ' primary' : ''}`;
 
             const header = document.createElement('div');
@@ -817,16 +902,15 @@ $isCapitalOneConnected = is_file(plaidTokenStorePath('capital_one'));
 
             const tag = document.createElement('span');
             tag.className = 'account-tag';
-            tag.textContent = account.type === 'credit' ? 'Credit card' : account.subtype === 'checking' ? 'Checking' : (account.subtype || account.type || 'Account');
-            header.append(name, tag);
+            tag.textContent = account.type === 'credit' ? 'Credit card'
+                : account.type === 'investment' ? 'Investment'
+                : account.subtype === 'checking' ? 'Checking' : (account.subtype || account.type || 'Account');
+            // Inside the Investments section the tag would just repeat the heading
+            header.append(...(account.type === 'investment' ? [name] : [name, tag]));
 
             const detail = document.createElement('div');
             detail.className = 'note';
-            detail.textContent = account.type === 'credit'
-                ? `${bankName} credit card`
-                : account.type === 'depository'
-                    ? `${bankName} ${account.subtype === 'checking' ? 'checking' : (account.subtype || 'deposit')} account`
-                    : `${bankName} ${account.subtype || account.type || 'account'}`;
+            detail.textContent = `${institution} ${describeAccount(account)}`;
 
             const balance = document.createElement('p');
             balance.className = 'balance';
@@ -976,13 +1060,22 @@ $isCapitalOneConnected = is_file(plaidTokenStorePath('capital_one'));
                 article.append(pendingWrapper);
             }
 
-            accountsElement.append(article);
+            (account.type === 'investment' ? investmentsElement : accountsElement).append(article);
+        }
+
+        // Investments section: shown only when there is at least one investment account
+        const investmentAccounts = orderedAccounts.filter((account) => account.type === 'investment');
+        investmentsSectionElement.hidden = investmentAccounts.length === 0;
+        if (investmentAccounts.length > 0) {
+            const investmentsTotal = investmentAccounts
+                .reduce((sum, account) => sum + (Number.isFinite(Number(account.balance)) ? Number(account.balance) : 0), 0);
+            investmentsTotalElement.textContent = `Total ${formatCurrency(investmentsTotal, investmentAccounts[0].currency || 'USD')}`;
         }
 
         const otherAccountsList = orderedAccounts
-            .filter((account) => account.type !== 'depository')
+            .filter((account) => account.type !== 'depository' && account.type !== 'investment')
             .sort((left, right) => {
-                const bankOrder = (account) => account.bank === 'chase' ? 0 : account.bank === 'td' ? 1 : account.bank === 'capital_one' ? 2 : 3;
+                const bankOrder = (account) => bankRank(account.bank);
                 const capitalOneCardOrder = (account) => {
                     if (account.bank !== 'capital_one') return 0;
                     const name = account.name.toLowerCase();
@@ -1002,8 +1095,7 @@ $isCapitalOneConnected = is_file(plaidTokenStorePath('capital_one'));
 
             const meta = document.createElement('div');
             meta.className = 'meta';
-            const bankName = account.bank === 'td' ? 'TD Bank' : account.bank === 'capital_one' ? 'Capital One' : 'Chase';
-            meta.textContent = `${bankName} ${account.type === 'credit' ? 'credit card' : (account.subtype || account.type || 'account')} • ${formatBalance(account)}`;
+            meta.textContent = `${bankName(account.bank)} ${describeAccount(account)} • ${formatBalance(account)}`;
 
             item.append(name, meta);
             sidebarListElement.append(item);
@@ -1016,12 +1108,26 @@ $isCapitalOneConnected = is_file(plaidTokenStorePath('capital_one'));
             const banks = Object.keys(connectedBanks).filter((bank) => connectedBanks[bank]);
             if (banks.length === 0) {
                 displayAccounts([]);
-                statusElement.textContent = 'Connect a Chase, TD Bank, or Capital One account to view balances.';
+                statusElement.textContent = 'Connect a Chase, TD Bank, Capital One, Vanguard, or Robinhood account to view balances.';
                 return;
             }
 
-            const results = await Promise.all(banks.map((bank) => postAction('get_balance', { bank })));
-            displayAccounts(results.flatMap((result) => result.accounts));
+            // Load each connection separately so one failing connection
+            // doesn't hide the balances from all the others
+            const results = await Promise.allSettled(banks.map((bank) => postAction('get_balance', { bank })));
+            const accounts = [];
+            const failures = [];
+            results.forEach((result, index) => {
+                if (result.status === 'fulfilled') {
+                    accounts.push(...result.value.accounts);
+                } else {
+                    failures.push(`${bankName(banks[index])}: ${result.reason.message}`);
+                }
+            });
+            displayAccounts(accounts);
+            if (failures.length > 0) {
+                errorElement.textContent = `Could not load ${failures.join(' | ')}`;
+            }
         } catch (error) {
             statusElement.textContent = '';
             errorElement.textContent = error.message;
@@ -1030,8 +1136,8 @@ $isCapitalOneConnected = is_file(plaidTokenStorePath('capital_one'));
         }
     }
 
-    async function connectBank(bank, bankName) {
-        setBusy(true, `Opening Plaid to connect ${bankName}...`);
+    async function connectBank(bank, label) {
+        setBusy(true, `Opening Plaid to connect ${label}...`);
         try {
             if (!window.Plaid) {
                 throw new Error('Plaid Link did not load. Check your connection and reload the page.');
@@ -1040,7 +1146,7 @@ $isCapitalOneConnected = is_file(plaidTokenStorePath('capital_one'));
             const handler = window.Plaid.create({
                 token: result.link_token,
                 onSuccess: async (publicToken) => {
-                    setBusy(true, `Connecting ${bankName}...`);
+                    setBusy(true, `Connecting ${label}...`);
                     try {
                         await postAction('exchange_public_token', { public_token: publicToken, bank });
                         window.location.reload();
@@ -1065,6 +1171,8 @@ $isCapitalOneConnected = is_file(plaidTokenStorePath('capital_one'));
     connectChaseButton.addEventListener('click', () => connectBank('chase', 'Chase'));
     connectTdButton.addEventListener('click', () => connectBank('td', 'TD Bank'));
     connectCapitalOneButton.addEventListener('click', () => connectBank('capital_one', 'Capital One'));
+    connectVanguardButton.addEventListener('click', () => connectBank('vanguard', 'Vanguard'));
+    connectRobinhoodButton.addEventListener('click', () => connectBank('robinhood', 'Robinhood'));
 
     if (refreshButton) {
         refreshButton.addEventListener('click', loadBalance);

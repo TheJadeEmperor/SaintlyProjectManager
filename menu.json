@@ -1,0 +1,326 @@
+{
+    "Localhost": {
+        "Localhost": {
+            "href": "http://localhost",
+            "icon": "fa-home",
+            "iconColor": "#e05c3a"
+        },
+        "phpMyAdmin": {
+            "href": "http://localhost/phpmyadmin5.2.3/",
+            "icon": "fa-database",
+            "iconColor": "#4a90d9"
+        },
+        "Account Manager": {
+            "href": "http://SaintlyAccountsManager.test",
+            "icon": "fa-user",
+            "iconColor": "#3a9e6e",
+            "attr": "d"
+        },
+        "Little Book Stays": {
+            "href": "?action=rentals",
+            "target": "_self"
+        },
+        "Side Hustles": {
+            "href": "?action=hustles",
+            "target": "_self"
+        },
+        "Atlantis": {
+            "href": "./atlantis/",
+            "attr": "d"
+        },
+        "Achive Links": {
+            "href": "?action=archive",
+            "icon": "fa-archive",
+            "iconColor": "#8c6b3e"
+        },
+        "NUS Blog & SEO": {
+            "href": "?action=blog"
+        },
+        "NUS & BPS": {
+            "href": "?action=nus"
+        },
+        "Code Ninja": {
+            "href": "?action=codeNinja"
+        }
+    },
+    "Hostinger": {
+        "gmail Accounts": {
+            "href": "https://mail.google.com/mail/u/0/?shva=1#settings/accounts",
+            "icon": "fa-envelope",
+            "iconColor": "#e05c7a"
+        },
+        "gmail Filters": {
+            "href": "https://mail.google.com/mail/u/0/?shva=1#settings/filters",
+            "icon": "fa-filter",
+            "iconColor": "#7a8c9e",
+            "attr": "d"
+        },
+        "Hostinger": {
+            "href": "https://hpanel.hostinger.com/domains"
+        },
+        "Domains": {
+            "href": "https://hpanel.hostinger.com/domains"
+        },
+        "phpMyAdmin": {
+            "href": "https://hpanel.hostinger.com/websites/littlebookstays.com/databases/my-sql-databases"
+        },
+        "Notion Home Base": {
+            "href": "https://www.notion.so/Put-these-docs-into-notion-2ece540782c18085b79dd552bc03b48d?source=copy_link"
+        }
+    },
+    "Cohost": {
+        "Cohost Course": {
+            "href": "https://cohostingacquisitions.circle.so/c/module-1/",
+            "attr": "c"
+        },
+        "Cohost Course ": {
+            "href": "https://cohostingacquisitions.circle.so/c/module-1/",
+            "icon": "fa-graduation-cap",
+            "iconColor": "#8c6b3e"
+        },
+        "Group Chat": {
+            "href": "https://cohostingacquisitions.circle.so/c/group-chat/",
+            "icon": "fa-comments",
+            "iconColor": "#4a90d9"
+        },
+        "Events Calendar": {
+            "href": "https://cohostingacquisitions.circle.so/events",
+            "icon": "fa-calendar",
+            "iconColor": "#3a9e6e",
+            "attr": "d"
+        },
+        "Batch Skip Trace": {
+            "href": "https://app.batchdata.com/property-skip-trace",
+            "icon": "fa-search",
+            "iconColor": "#e0963a"
+        }
+    },
+    "Sales": {
+        "Close | Inbox": {
+            "href": " https://app.close.com/tasks/inbox/",
+            "icon": "fa-inbox",
+            "iconColor": "#4a90d9",
+            "attr": "c"
+        },
+        "All Leads": {
+            "href": "https://app.close.com/leads",
+            "icon": "fa-users",
+            "iconColor": "#5b8dd9"
+        },
+        "AI Agent": {
+            "href": "https://app.close.com/chloe/agentconfig_032u5sLbxvJrebGDYtQ4Ja/",
+            "icon": "fa-android",
+            "iconColor": "#3a9e6e"
+        },
+        "Statuses & Pipes": {
+            "href": "https://app.close.com/settings/statuses/",
+            "icon": "fa-link",
+            "iconColor": "#7a8c9e"
+        },
+        "Sched Links": {
+            "href": "https://app.close.com/settings/scheduling/",
+            "icon": "fa-link",
+            "iconColor": "#7a8c9e"
+        },
+        "Email Templates": {
+            "href": "https://app.close.com/settings/templates/email/",
+            "icon": "fa-file-text",
+            "iconColor": "#e0963a",
+            "attr": "d",
+            "submenu": {
+                "E Templates": {
+                    "href": "https://app.close.com/settings/templates/email/"
+                },
+                "E Workflows": {
+                    "href": "https://app.close.com/workflows/"
+                }
+            }
+        },
+        "Rev Projections": {
+            "icon": "fa-line-chart",
+            "iconColor": "#3a9e6e",
+            "submenu": {
+                "Airdna": {
+                    "href": "https://app.airdna.co/data",
+                    "attr": "target=\"_BLANK\""
+                },
+                "Pricelabs Rev Est": {
+                    "href": "https://app.pricelabs.co/revenue_estimator"
+                },
+                "Vantage Prospects": {
+                    "href": "https://vantagestr.co/dashboard/operator/prospects"
+                },
+                "Vantage Pipeline": {
+                    "href": "https://vantagestr.co/dashboard/operator/pipeline"
+                }
+            },
+            "attr": "d"
+        },
+        "Close CRM API": {
+            "href": "http://localhost//close_crm_api",
+            "icon": "fa-calendar-check-o",
+            "iconColor": "#4a90d9"
+        }
+    },
+    "Guests": {
+        "BNB Messages": {
+            "href": "https://www.airbnb.com/hosting/inbox/folder/all/",
+            "icon": "fa-commenting",
+            "iconColor": "#e05c3a",
+            "attr": "d"
+        },
+        "Hospital Inbox": {
+            "href": "https://my.hospitable.com/inbox/segments/default",
+            "icon": "fa-inbox",
+            "iconColor": "#e05c7a",
+            "attr": "c"
+        },
+        "Calendars": {
+            "href": "https://my.hospitable.com/calendar/occupancy",
+            "icon": "fa-calendar",
+            "iconColor": "#4a90d9"
+        },
+        "Msg Rules": {
+            "href": "https://my.hospitable.com/gx/rules",
+            "icon": "fa-cog",
+            "iconColor": "#7a8c9e"
+        },
+        "Canned Responses": {
+            "href": "https://my.hospitable.com/gx/messaging/canned-responses",
+            "icon": "fa-cutlery",
+            "iconColor": "#7a8c9e"
+        },
+        "Upsells": {
+            "href": "https://my.hospitable.com/gx/upsells",
+            "attr": "d",
+            "icon": "fa-tag",
+            "iconColor": "#e0963a"
+        },
+        "Hostbuddy": {
+            "href": "https://www.hostbuddy.ai/properties",
+            "icon": "fa-android",
+            "iconColor": "#3a9e6e"
+        }
+    },
+    "PM": {
+        "Pricelabs Dashboard": {
+            "href": "https://pricelabs.co/pricing",
+            "icon": "fa-tachometer",
+            "iconColor": "#e0763a"
+        },
+        "Comp Sets": {
+            "href": "https://pricelabs.co/reports",
+            "icon": "fa-bar-chart",
+            "iconColor": "#3a9e6e"
+        },
+        "Turno Calendar": {
+            "href": "https://app.turno.com/view/schedule",
+            "icon": "fa-calendar",
+            "iconColor": "#7a5c3e",
+            "attr": "d"
+        },
+        "Maint | Appts": {
+            "href": "https://app.close.com/activities/custom-activity/actitype_3oEjtZdr8UkkqfmtJBDdWi/save_bjqFnOtjRgQsI0Qm9AqG4fSPAGxCtCfOgK6oskcFcIS/",
+            "icon": "fa-wrench",
+            "iconColor": "#7a8c9e"
+        },
+        "All SOP | Notion": {
+            "href": "https://app.notion.com/p/All-SOP-3c6e540782c18002afc7cd4f1910206c",
+            "icon": "fa-wrench",
+            "iconColor": "#7a8c9e"
+        },
+        "All SOP | Live": {
+            "href": "https://habitual-airbus-6d2.notion.site/All-SOP-3c6e540782c18002afc7cd4f1910206c",
+            "icon": "fa-wrench",
+            "iconColor": "#7a8c9e",
+            "attr": "d"
+        },
+
+        "Hostco": {
+            "href": "https://app.thehost.co/overview/stores/",
+            "icon": "fa-book",
+            "iconColor": "#8c6b3e"
+        }
+    },
+    "BNB": {
+        "BNB Messages": {
+            "href": "https://www.airbnb.com/hosting/inbox/folder/all/",
+            "icon": "fa-commenting",
+            "iconColor": "#e05c3a",
+            "attr": "d"
+        },
+        "Get Help": {
+            "href": "https://www.airbnb.com/help/contact-us?entry=HELP_CENTER&role=home_host",
+            "icon": "fa-question",
+            "iconColor": "#e05c3a"
+        },
+        "Res Center": {
+            "href": "https://www.airbnb.com/resolutions",
+            "icon": "fa-balance-scale",
+            "iconColor": "#7a8c9e"
+        },
+        "Trans History": {
+            "href": "https://www.airbnb.com/users/transaction_history",
+            "icon": "fa-money",
+            "iconColor": "#3a9e6e"
+        }
+    },
+    "Team": {
+        "Trello 2026 Goals": {
+            "href": "https://trello.com/b/lx8xpiWr/2026-goals",
+            "icon": "fa-book",
+            "iconColor": "#4a90d9"
+        },
+        "Trello LBS VA Tasks": {
+            "href": "https://trello.com/b/9NK1LyNF/prop-mgr-for-lbs",
+            "icon": "fa-book",
+            "iconColor": "#5b8dd9"
+        },
+        "Trello LBS Daily Ops": {
+            "href": "https://trello.com/b/7LFdgACm/lbs-daily-operations",
+            "icon": "fa-book",
+            "iconColor": "#5b8dd9",
+            "attr": "d"
+        },
+        "Upwork Msg": {
+            "href": "https://www.upwork.com/ab/messages/rooms/room_2df888fe16dafef2049a748162423d9e?pageTitle=Mahran%20Makin&companyReference=1816859020641894400",
+            "icon": "fa-briefcase",
+            "iconColor": "#3e8c6b"
+        },
+        "Upwork Trans History": {
+            "href": "https://www.upwork.com/nx/payments/reports/transaction-history",
+            "icon": "fa-money",
+            "iconColor": "#3a9e6e"
+        }
+    },
+    "AI": {
+        "Gemini | Images": {
+            "href": "https://gemini.google.com/app",
+            "icon": "fa-diamond"
+        },
+        "Grok | Novels": {
+            "href": "https://www.grok.com",
+            "icon": "fa-magic",
+            "submenu": {
+                "Grok Projects": {
+                    "href": "https://grok.com/project",
+                    "icon": "fa-folder"
+                }
+            }
+        },
+    "Claude | Clippin": {
+            "href": "https://claude.ai/",
+            "icon": "fa-code",
+            "submenu": {
+                "Claude Projects": {
+                    "href": "https://claude.ai/projects",
+                    "icon": "fa-code"
+                }
+            }
+        },
+        "ChatGPT | Research": {
+            "href": "https://chatgpt.com/",
+            "icon": "fa-book"
+        }
+    }
+}

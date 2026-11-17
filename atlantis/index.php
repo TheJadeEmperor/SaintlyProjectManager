@@ -42,11 +42,11 @@ require_once __DIR__ . DIRECTORY_SEPARATOR . 'menu.php';
                      
                 </a>
                 <div class="software-dialog frame" role="group" aria-label="Co-hosting links">
-                    <a target="_blank" rel="noopener" href="<?=$trello2026 ?>">2026 Goals</a>
+                    <a target="_blank" rel="noopener" href="<?=$trello2026 ?>">Trello 2026 Goals</a>
 
-                    <a target="_blank" rel="noopener" href="https://trello.com/b/9NK1LyNF/prop-mgr-for-lbs">LBS VA Tasks</a> 
+                    <a target="_blank" rel="noopener" href="<?=$trelloLBS?>">LBS VA Tasks</a> 
 
-                    <a target="_blank" rel="noopener" href="https://trello.com/b/PYxZriXG/onboarding-va">Onboarding VA</a>
+                    <a target="_blank" rel="noopener" href="<?=$trelloDailyOps?>">LBS Daily Ops</a>
                     
                 </div>
             </div>
@@ -82,11 +82,19 @@ require_once __DIR__ . DIRECTORY_SEPARATOR . 'menu.php';
                 </div>
             </div>
             
-            <a target="_blank" class="island fanservice-island" href="http://localhost/FanService/?page=goat">
-                <div class="isl"><img src="../include/assets/fanservice.png" alt="Fan Service island"></div>
-                <button class="btn" type="button"> Fan Service </button>
-                 
-            </a>
+            <div class="island fanservice-island">
+                <a target="_blank" class="island-link" href="<?=$fanService ?>">
+                    <div class="isl"><img src="../include/assets/fanservice.png" alt="Fan Service island"></div>
+                    <button class="btn" type="button"> Fan Service </button>
+                </a>
+
+                <div class="software-dialog frame" role="group" aria-label="Fan Service links">
+                    <?php foreach ($menus['Fan Service'] as $linkName => $link): ?>
+                        <?php if ($link['href'] === $fanService) continue; ?>
+                        <a target="_blank" rel="noopener" href="<?= htmlspecialchars($link['href'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($linkName, ENT_QUOTES, 'UTF-8') ?></a>
+                    <?php endforeach; ?>
+                </div>
+            </div>
         </nav>
     </main>
     <script>(function () { var h = '', i, r = Math.random; for (i = 0; i < 14; i++) { var s = 6 + r() * 10; h += '<div class="bub" style="left:' + r() * 100 + '%;width:' + s + 'px;height:' + s + 'px;animation-duration:' + (10 + r() * 14) + 's;animation-delay:-' + r() * 20 + 's"></div>' } document.getElementById('life').innerHTML = h })();</script>

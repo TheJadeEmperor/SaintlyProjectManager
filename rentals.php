@@ -31,7 +31,7 @@ $newline = ' <br />';
     <script src="include/jquery-ui/ui/jquery-ui.js"></script>
     <script src="include/bootstrap/js/bootstrap.js"></script>
 
-    <link href="<?= $dir ?>admin.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="include/admin.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
  
 <center>
@@ -62,19 +62,21 @@ $newline = ' <br />';
                  
             </div>
             <div id="salesForms">
-                <br /> <strong>Sales Forms</strong> <br /> 
-
-                <i class="fa fa-check-square-o"></i> <a href="http://littlebookstays.test/wp-admin/admin.php?page=lbs-prop-hub" target="_BLANK">Prop Hub</a> | localhost<br /> 
-
-                <i class="fa fa-file-text-o"></i> <a href="https://drive.google.com/drive/folders/1fBPRkrfLUd7_hx08NCDepKgLcgMP1Ekw" target="_BLANK">Onboarding Forms</a> | gdrive<br /> 
-
-                <i class="fa fa-check-square-o"></i> <a href="http://littlebookstays.test/wp-admin/admin.php?page=lbs-onboarding" target="_BLANK">Onboarding Steps</a> | Staging WP<br /> 
-
-                <i class="fa fa-check-square-o"></i> <a href="https://littlebookstays.com/wp-admin/admin.php?page=lbs-onboarding" target="_BLANK">Onboarding Steps</a> | Live WP<br /> 
+                <br /> <strong>Sales & Onboarding</strong> <br /> 
 
                 <i class="fa fa-microphone"></i> <a href="https://drive.google.com/drive/folders/1vYQLa272dzjUdnllnQyAd-0k-mgxkuMJ" target="_BLANK">Sales Scripts</a> | gdrive<br /> 
 
                 <i class="fa fa-book"></i> <a href="https://drive.google.com/drive/folders/1bqj6vWUCHvW9Wk5KSSCcWHB0NK7BFCQH" target="_BLANK">VA Training</a> | gdrive<br /> 
+
+                <i class="fa fa-check-square-o"></i> <a href="http://littlebookstays.test/wp-admin/admin.php?page=lbs-prop-hub" target="_BLANK">Prop Hub</a> | localhost<br /> 
+ 
+                <i class="fa fa-check-square-o"></i> <a href="http://littlebookstays.test/wp-admin/admin.php?page=lbs-onboarding" target="_BLANK">Onboarding Steps</a> | Staging WP<br /> 
+
+                <i class="fa fa-check-square-o"></i> <a href="https://littlebookstays.com/wp-admin/admin.php?page=lbs-onboarding" target="_BLANK">Onboarding Steps</a> | Live WP<br /> 
+
+                <i class="fa fa-book"></i> <a href="https://drive.google.com/drive/folders/1Q0KnB9J2PLIqcNipFOEgZCg62ismdrpo" target="_BLANK">Salary | Rent | Clippin</a> | gdrive<br /> 
+
+
             </div>
             <div>
               
@@ -222,20 +224,21 @@ $newline = ' <br />';
             <br /><strong>Teammates</strong><br />
  
             <i class="fa fa-android"></i> <a target="_BLANK" href="https://app.close.com/lead/lead_xZEzkkgcSF7sJuXrXLUzvhSFvSOpizwrzfguYpgoO5U/">VA Zoha</a><br />
+
+            
+            <i class="fa fa-phone"></i> <a target="_BLANK" href="https://app.close.com/lead/lead_k1dzGfSSEdfEs9wfWtflyMhm5RrJr5GASSBkxM8fw5R/">CC Ahmed</a><br />
                      
             <i class="fa fa-android"></i> <a target="_BLANK" href="https://app.close.com/lead/lead_QOQdqH8zFy0J8hnPPZqqlyCN84D0NGb6lfK1FrrVkzg/">Hostbuddy</a><br />
 
             <i class="fa fa-book"></i> <a target="_BLANK" href="https://app.close.com/lead/lead_on24Hvop5B62XTCxZVEB8nsNnKWcwYYcu4CzbaD0Ir3/">Hostco</a><br />
 
-             <i class="fa fa-book"></i> <a target="_BLANK" href="https://app.close.com/lead/lead_ugTE9dJoj0W6p3OfKTbF4wBuIBpw79WKFKuoinwEda2/">Vrbo Villains</a><br />
+            <i class="fa fa-user-secret"></i> <a target="_BLANK" href="https://app.close.com/lead/lead_ugTE9dJoj0W6p3OfKTbF4wBuIBpw79WKFKuoinwEda2/">Vrbo Villains</a><br />
  
         </div>
 
         <div class>
-        .<br>
-        .<br>
+        <br>
  
-
     <!-- CLEANERS SECTION (new) -->
     <div class="section-heading">
         <br /><strong>Cleaners</strong><br />
